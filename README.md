@@ -1,4 +1,4 @@
-# maps-website
+# Falcon BMS - Interactive Maps (Website)
 Falcon BMS maps website
 
 ## Usage
