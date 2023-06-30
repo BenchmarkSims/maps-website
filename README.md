@@ -1,5 +1,5 @@
 # Falcon BMS - Interactive Maps (Website)
-Falcon BMS maps website
+An interactive website for Falcon BMS mission planning
 
 ## Usage
 This content is provided you by the Benchmark Sims team.
