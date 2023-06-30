@@ -1,0 +1,2042 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>KTO Interactive Map</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../common/scripts/map_style.css">
+<script type="text/javascript" src="../common/scripts/map_math.js"></script>
+<script type="text/javascript" src="../common/scripts/map_conrec.js"></script>
+<script type="text/javascript" src="../common/scripts/map_mission.js"></script>
+<script type="text/javascript" src="../common/scripts/map_weather.js"></script>
+<script type="text/javascript" src="../common/scripts/map_files.js"></script>
+<script type="text/javascript" src="../common/scripts/map_draw.js"></script>
+<script type="text/javascript" src="../common/scripts/map_radio.js"></script>
+<script type="text/javascript" src="../common/scripts/map_symbology.js"></script>
+<script type="text/javascript" src="../common/scripts/map_charts.js"></script>
+<script type="text/javascript" src="../common/scripts/map_imcs.js"></script>
+<script type="text/javascript" src="../common/scripts/map_gfs.js"></script>
+<script type="text/javascript" src="../common/scripts/map_actions.js"></script>
+</head>
+<body>
+
+ <!-- Ranges -->
+<div id="CHIK-DO" class="modal"><div class="modal-content">
+<center><b>CHIK-DO RANGE</center></b></center><hr><pre>
+N35&deg58.060' E126&deg42.702'
+Elevation: 3 ft
+CTRL: 233.8
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/01_KTO/charts/01 South Korea/Chik-Do/Chik-Do_Range_Targets.png" onclick="return chart(this)">Range Targets</a>
+<a href="https://cdn.falcon-bms.com/maps/01_KTO/charts/01 South Korea/Chik-Do/Chik-Do_Restrictions.png" onclick="return chart(this)">Restrictions</a></pre>
+</div></div>
+
+<div id="KOTAR" class="modal"><div class="modal-content">
+<center><b>KOTAR RANGE</center></b></center><hr><pre>
+N37&deg08.128' E130&deg20.589'
+Elevation: 2854 ft
+CTRL: 233.8
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/01_KTO/charts/01 South Korea/Kotar/Kotar_Diagram.png" onclick="return chart(this)">Range Diagram</a>
+<a href="https://cdn.falcon-bms.com/maps/01_KTO/charts/01 South Korea/Kotar/Kotar_Targets.png" onclick="return chart(this)">Range Targets</a>
+<a href="https://cdn.falcon-bms.com/maps/01_KTO/charts/01 South Korea/Kotar/Kotar_Restrictions.png" onclick="return chart(this)">Restrictions</a></pre>
+</div></div>
+
+<!-- Airbases -->
+<div id="CHEONGJU" class="modal"><div class="modal-content">
+<center><b>CHEONGJU (RKTU)</center></b></center><hr><pre>
+N36&deg48.100' E128&deg36.314'
+Elevation: 187 ft
+RWY: 06L/24R - 06R/24L
+TCN: 42X
+ATIS: 128.85
+OPS: 305.5
+GND: 275.8
+TWR: 250.2
+APP/DEP: 292.9
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/01_KTO/charts/01 South Korea/Cheongju/Cheongju_Airport.png" onclick="return chart(this)">Airport Diagram</a>
+<a href="https://cdn.falcon-bms.com/maps/01_KTO/charts/01 South Korea/Cheongju/Cheongju_Airport_EOR.png" onclick="return chart(this)">EOR-Procedure Chart</a>
+<a href="https://cdn.falcon-bms.com/maps/01_KTO/charts/01 South Korea/Cheongju/Cheongju_Visual.png" onclick="return chart(this)">APP - Visual 06/24</a>
+<a href="https://cdn.falcon-bms.com/maps/01_KTO/charts/01 South Korea/Cheongju/Cheongju_ILS_24R.png" onclick="return chart(this)">APP - ILS RWY 24R (111.7)</a>
+<a href="https://cdn.falcon-bms.com/maps/01_KTO/charts/01 South Korea/Cheongju/Cheongju_RDR_06.png" onclick="return chart(this)">APP - RDR RWY 06</a>
+<a href="https://cdn.falcon-bms.com/maps/01_KTO/charts/01 South Korea/Cheongju/Cheongju_RDR_24.png" onclick="return chart(this)">APP - RDR RWY 24</a>
+<a href="https://cdn.falcon-bms.com/maps/01_KTO/charts/01 South Korea/Cheongju/Cheongju_TCN_06L.png" onclick="return chart(this)">APP - TCN 06L</a>
+<a href="https://cdn.falcon-bms.com/maps/01_KTO/charts/01 South Korea/Cheongju/Cheongju_TCN_06R.png" onclick="return chart(this)">APP - TCN 06R</a>
+<a href="https://cdn.falcon-bms.com/maps/01_KTO/charts/01 South Korea/Cheongju/Cheongju_TCN_24L.png" onclick="return chart(this)">APP - TCN 24L</a>
+<a href="https://cdn.falcon-bms.com/maps/01_KTO/charts/01 South Korea/Cheongju/Cheongju_DEP_5.png" onclick="return chart(this)">DEP - FIVE</a>
+</pre></div></div>
+
+
+<div id="DAEGU" class="modal"><div class="modal-content">
+<center><b>DAEGU (RKTN)</center></b></center><hr><pre>
+N35&deg57.916' E129&deg55.548'
+Elevation: 353 ft
+RWY: 13R/31L - 13L/31R
+TCN: 125X
+ATIS: 127.65
+GND: 275.8
+TWR: 365.0
+APP/DEP: 346.3
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/01_KTO/charts/01 South Korea/Daegu/Daegu_Airport.png" onclick="return chart(this)">Airport Diagram</a>
+<a href="https://cdn.falcon-bms.com/maps/01_KTO/charts/01 South Korea/Daegu/Daegu_Airport_EOR.png" onclick="return chart(this)">EOR-Procedure Chart</a>
+<a href="https://cdn.falcon-bms.com/maps/01_KTO/charts/01 South Korea/Daegu/Daegu_ILS_13L.png" onclick="return chart(this)">APP - ILS RWY 13L (111.9)</a>
+<a href="https://cdn.falcon-bms.com/maps/01_KTO/charts/01 South Korea/Daegu/Daegu_ILS_13R.png" onclick="return chart(this)">APP - ILS RWY 13R (108.7)</a>
+<a href="https://cdn.falcon-bms.com/maps/01_KTO/charts/01 South Korea/Daegu/Daegu_ILS_31L.png" onclick="return chart(this)">APP - ILS RWY 31L (108.7)</a>
+<a href="https://cdn.falcon-bms.com/maps/01_KTO/charts/01 South Korea/Daegu/Daegu_RDR_13.png" onclick="return chart(this)">APP - RDR RWY 13</a>
+<a href="https://cdn.falcon-bms.com/maps/01_KTO/charts/01 South Korea/Daegu/Daegu_RDR_31.png" onclick="return chart(this)">APP - RDR RWY 31</a>
+<a href="https://cdn.falcon-bms.com/maps/01_KTO/charts/01 South Korea/Daegu/Daegu_TCN_31R.png" onclick="return chart(this)">APP - TCN 31R</a>
+<a href="https://cdn.falcon-bms.com/maps/01_KTO/charts/01 South Korea/Daegu/Daegu_DEP_Talsung3A.png" onclick="return chart(this)">DEP - TALSUNG 3A</a>
+</pre></div></div>
+
+<div id="GANGNEUNG" class="modal"><div class="modal-content">
+<center><b>GANGNEUNG (RKNN)</center></b></center><hr><pre>
+N37&deg46.733' E130&deg30.560'
+Elevation: 35 ft
+RWY: 08/26
+TCN: 056X
+ATIS: 132.05
+GND: 275.8
+TWR: 334.9
+APP/DEP: 304.0
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/01_KTO/charts/01 South Korea/Gangneung/Gangneung_Airport.png" onclick="return chart(this)">Airport Diagram</a>
+<a href="https://cdn.falcon-bms.com/maps/01_KTO/charts/01 South Korea/Gangneung/Gangneung_Airport_EOR.png" onclick="return chart(this)">EOR-Procedure Chart</a>
+<a href="https://cdn.falcon-bms.com/maps/01_KTO/charts/01 South Korea/Gangneung/Gangneung_CTL_08.png" onclick="return chart(this)">APP - CTL RWY 08</a>
+<a href="https://cdn.falcon-bms.com/maps/01_KTO/charts/01 South Korea/Gangneung/Gangneung_ILS_26.png" onclick="return chart(this)">APP - ILS RWY 26 (111.5)</a>
+<a href="https://cdn.falcon-bms.com/maps/01_KTO/charts/01 South Korea/Gangneung/Gangneung_DEP_Kangwon_1.png" onclick="return chart(this)">DEP - KANGWON 1</a>
+</pre></div></div>
+
+<div id="GIMHAE" class="modal"><div class="modal-content">
+<center><b>GIMHAE (RKPK)</center></b></center><hr><pre>
+N35&deg13.558' E130&deg12.398'
+Elevation: 39 ft
+RWY: 18L/36R - 18R/36L
+TCN: 117X
+ATIS: 126.65
+GND: 274.8
+TWR: 233.3
+APP/DEP: 225.1
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/01_KTO/charts/01 South Korea/Gimhae/Gimhae_Airport.png" onclick="return chart(this)">Airport Diagram</a>
+<a href="https://cdn.falcon-bms.com/maps/01_KTO/charts/01 South Korea/Gimhae/Gimhae_TCN_18L.png" onclick="return chart(this)">APP - TCN 18L</a>
+<a href="https://cdn.falcon-bms.com/maps/01_KTO/charts/01 South Korea/Gimhae/Gimhae_TCN_36R.png" onclick="return chart(this)">APP - TCN 36R</a>
+<a href="https://cdn.falcon-bms.com/maps/01_KTO/charts/01 South Korea/Gimhae/Gimhae_ILS_18R.png" onclick="return chart(this)">APP - ILS RWY 18R (108.5)</a>
+<a href="https://cdn.falcon-bms.com/maps/01_KTO/charts/01 South Korea/Gimhae/Gimhae_ILS_36L.png" onclick="return chart(this)">APP - ILS RWY 36L (109.5)</a>
+<a href="https://cdn.falcon-bms.com/maps/01_KTO/charts/01 South Korea/Gimhae/Gimhae_DEP_Nakdong3A.png" onclick="return chart(this)">DEP - NAKDONG 3A</a>
+</pre></div></div>
+
+<div id="GIMPO" class="modal"><div class="modal-content">
+<center><b>GIMPO (RKSS)</center></b></center><hr><pre>
+N37&deg36.868' E127&deg42.801'
+Elevation: 96 ft
+RWY: 14L/32R - 14R/32L
+TCN: 83X
+ATIS: 126.35
+GND: 236.7
+TWR: 240.9
+APP/DEP: 363.8
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/01_KTO/charts/01 South Korea/Gimpo/Gimpo_Airport.png" onclick="return chart(this)">Airport Diagram</a>
+<a href="https://cdn.falcon-bms.com/maps/01_KTO/charts/01 South Korea/Gimpo/Gimpo_ILS_14L.png" onclick="return chart(this)">APP - ILS RWY 14L (109.9)</a>
+<a href="https://cdn.falcon-bms.com/maps/01_KTO/charts/01 South Korea/Gimpo/Gimpo_ILS_14R.png" onclick="return chart(this)">APP - ILS RWY 14R (108.7)</a>
+<a href="https://cdn.falcon-bms.com/maps/01_KTO/charts/01 South Korea/Gimpo/Gimpo_ILS_32L.png" onclick="return chart(this)">APP - ILS RWY 32L (108.3)</a>
+<a href="https://cdn.falcon-bms.com/maps/01_KTO/charts/01 South Korea/Gimpo/Gimpo_ILS_32R.png" onclick="return chart(this)">APP - ILS RWY 32R (110.7)</a>
+<a href="https://cdn.falcon-bms.com/maps/01_KTO/charts/01 South Korea/Gimpo/Gimpo_DEP_1EW.png" onclick="return chart(this)">DEP - 1E/1W</a>
+</pre></div></div>
+
+<div id="GUNSAN" class="modal"><div class="modal-content">
+<center><b>GUNSAN (RKJK)</center></b></center><hr><pre>
+N35&deg57.554' E127&deg24.492'
+Elevation: 10 ft
+RWY: 18/36
+TCN: 75X
+ATIS: 120.225
+GND: 273.525
+TWR: 292.3
+APP/DEP: 292.65
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/01_KTO/charts/01 South Korea/Gunsan/Gunsan_Airport.png" onclick="return chart(this)">Airport Diagram</a>
+<a href="https://cdn.falcon-bms.com/maps/01_KTO/charts/01 South Korea/Gunsan/Gunsan_Airport_EOR.png" onclick="return chart(this)">EOR-Procedure Chart</a>
+<a href="https://cdn.falcon-bms.com/maps/01_KTO/charts/01 South Korea/Gunsan/Gunsan_Visual.png" onclick="return chart(this)">APP - Visual 18/36</a>
+<a href="https://cdn.falcon-bms.com/maps/01_KTO/charts/01 South Korea/Gunsan/Gunsan_ILS_18.png" onclick="return chart(this)">APP - ILS RWY 18 (110.3)</a>
+<a href="https://cdn.falcon-bms.com/maps/01_KTO/charts/01 South Korea/Gunsan/Gunsan_ILS_36.png" onclick="return chart(this)">APP - ILS RWY 36 (110.3)</a>
+<a href="https://cdn.falcon-bms.com/maps/01_KTO/charts/01 South Korea/Gunsan/Gunsan_RDR_18.png" onclick="return chart(this)">APP - RDR RWY 18</a>
+<a href="https://cdn.falcon-bms.com/maps/01_KTO/charts/01 South Korea/Gunsan/Gunsan_RDR_36.png" onclick="return chart(this)">APP - RDR RWY 36</a>
+<a href="https://cdn.falcon-bms.com/maps/01_KTO/charts/01 South Korea/Gunsan/Gunsan_DEP_Aladi1.png" onclick="return chart(this)">DEP - ALADI 1</a>
+<a href="https://cdn.falcon-bms.com/maps/01_KTO/charts/01 South Korea/Gunsan/Gunsan_DEP_Coyote3.png" onclick="return chart(this)">DEP - COYOTE 3</a>
+<a href="https://cdn.falcon-bms.com/maps/01_KTO/charts/01 South Korea/Gunsan/Gunsan_DEP_Patro.png" onclick="return chart(this)">DEP - PATRO</a>
+</pre></div></div>
+
+<div id="GWANGJU" class="modal"><div class="modal-content">
+<center><b>GWANGJU (RKJJ)</center></b></center><hr><pre>
+N35&deg13.065' E127&deg39.682'
+Elevation: 110 ft
+RWY: 04L/22R - 04R/22L
+TCN: 91X
+ATIS: 128.875
+GND: 275.8
+TWR: 254.6
+APP/DEP: 268.0
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/01_KTO/charts/01 South Korea/Gwangju/Gwangju_Airport.png" onclick="return chart(this)">Airport Diagram</a>
+<a href="https://cdn.falcon-bms.com/maps/01_KTO/charts/01 South Korea/Gwangju/Gwangju_Airport_EOR.png" onclick="return chart(this)">EOR-Procedure Chart</a>
+<a href="https://cdn.falcon-bms.com/maps/01_KTO/charts/01 South Korea/Gwangju/Gwangju_ILS_04L.png" onclick="return chart(this)">APP - ILS RWY 04L (111.1)</a>
+<a href="https://cdn.falcon-bms.com/maps/01_KTO/charts/01 South Korea/Gwangju/Gwangju_ILS_22R.png" onclick="return chart(this)">APP - ILS RWY 22R (111.1)</a>
+<a href="https://cdn.falcon-bms.com/maps/01_KTO/charts/01 South Korea/Gwangju/Gwangju_TCN_04R.png" onclick="return chart(this)">APP - TCN RWY 04R</a>
+<a href="https://cdn.falcon-bms.com/maps/01_KTO/charts/01 South Korea/Gwangju/Gwangju_TCN_22L.png" onclick="return chart(this)">APP - TCN RWY 22L</a>
+<a href="https://cdn.falcon-bms.com/maps/01_KTO/charts/01 South Korea/Gwangju/Gwangju_DEP_3A.png" onclick="return chart(this)">DEP - 3A</a>
+<a href="https://cdn.falcon-bms.com/maps/01_KTO/charts/01 South Korea/Gwangju/Gwangju_DEP_4A.png" onclick="return chart(this)">DEP - 4A</a>
+
+</pre></div></div>
+
+<div id="INCHEON" class="modal"><div class="modal-content">
+<center><b>INCHEON (RKSI)</center></b></center><hr><pre>
+N37&deg30.460' E127&deg23.122'
+Elevation: 10 ft
+RWY: 15L/33R-15R/33L-16/34
+TCN: 85X
+ATIS: 128.45
+GND: 266.925
+TWR: 231.8
+APP/DEP: 293.225
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/01_KTO/charts/01 South Korea/Incheon/Incheon_Airport.png" onclick="return chart(this)">Airport Diagram</a>
+<a href="https://cdn.falcon-bms.com/maps/01_KTO/charts/01 South Korea/Incheon/Incheon_ILS_15L.png" onclick="return chart(this)">APP - ILS RWY 15L (111.9)</a>
+<a href="https://cdn.falcon-bms.com/maps/01_KTO/charts/01 South Korea/Incheon/Incheon_ILS_15R.png" onclick="return chart(this)">APP - ILS RWY 15R (109.1)</a>
+<a href="https://cdn.falcon-bms.com/maps/01_KTO/charts/01 South Korea/Incheon/Incheon_ILS_33L.png" onclick="return chart(this)">APP - ILS RWY 33L (109.3)</a>
+<a href="https://cdn.falcon-bms.com/maps/01_KTO/charts/01 South Korea/Incheon/Incheon_ILS_33R.png" onclick="return chart(this)">APP - ILS RWY 33R (108.9)</a>
+<a href="https://cdn.falcon-bms.com/maps/01_KTO/charts/01 South Korea/Incheon/Incheon_DEP_15L+R.png" onclick="return chart(this)">DEP - 15L - 15R</a>
+<a href="https://cdn.falcon-bms.com/maps/01_KTO/charts/01 South Korea/Incheon/Incheon_DEP_33L+R.png" onclick="return chart(this)">DEP - 33L - 33R</a>
+</pre></div></div>
+
+<div id="JUNGWON" class="modal"><div class="modal-content">
+<center><b>JUNGWON (RKTI)</center></b></center><hr><pre>
+N36&deg59.793' E129&deg09.781'
+Elevation: 10 ft
+RWY: 18L/36R - 18R/36L
+TCN: 05X
+ATIS: 135.6
+GND: 275.9
+TWR: 230.15
+APP/DEP: 306.7
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/01_KTO/charts/01 South Korea/Jungwon/Jungwon_Airport.png" onclick="return chart(this)">Airport Diagram</a>
+<a href="https://cdn.falcon-bms.com/maps/01_KTO/charts/01 South Korea/Jungwon/Jungwon_Airport_EOR.png" onclick="return chart(this)">EOR-Procedure Chart</a>
+<a href="https://cdn.falcon-bms.com/maps/01_KTO/charts/01 South Korea/Jungwon/Jungwon_ILS_18L.png" onclick="return chart(this)">APP - ILS RWY 18L (111.3)</a>
+<a href="https://cdn.falcon-bms.com/maps/01_KTO/charts/01 South Korea/Jungwon/Jungwon_ILS_36R.png" onclick="return chart(this)">APP - ILS RWY 36R (111.3)</a>
+<a href="https://cdn.falcon-bms.com/maps/01_KTO/charts/01 South Korea/Jungwon/Jungwon_TCN_18R.png" onclick="return chart(this)">APP - TCN RWY 18R</a>
+<a href="https://cdn.falcon-bms.com/maps/01_KTO/charts/01 South Korea/Jungwon/Jungwon_TCN_36L.png" onclick="return chart(this)">APP - TCN RWY 36L</a>
+<a href="https://cdn.falcon-bms.com/maps/01_KTO/charts/01 South Korea/Jungwon/Jungwon_DEP_1.png" onclick="return chart(this)">DEP - ONE</a></pre>
+</div></div>
+
+<div id="MUAN" class="modal"><div class="modal-content">
+<center><b>MUAN (RKJB)</center></b></center><hr><pre>
+N35&deg00.770' E127&deg09.250'
+Elevation: 44 ft
+RWY: 01/19
+TCN: 65X
+ATIS: 127.425
+GND: 231.7
+TWR: 228.25
+APP/DEP: 240.0
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/01_KTO/charts/01 South Korea/Muan/Muan_Airport.png" onclick="return chart(this)">Airport Diagram</a>
+<a href="https://cdn.falcon-bms.com/maps/01_KTO/charts/01 South Korea/Muan/Muan_ILS_01.png" onclick="return chart(this)">APP - ILS RWY 01 (111.9)</a>
+<a href="https://cdn.falcon-bms.com/maps/01_KTO/charts/01 South Korea/Muan/Muan_ILS_19.png" onclick="return chart(this)">APP - ILS RWY 19 (108.9)</a>
+<a href="https://cdn.falcon-bms.com/maps/01_KTO/charts/01 South Korea/Muan/Muan_DEP_01+19.png" onclick="return chart(this)">DEP - 01/19</a></pre>
+</div></div>
+
+<div id="OSAN" class="modal"><div class="modal-content">
+<center><b>OSAN AB (RKSO)</center></b></center><hr><pre>
+N37&deg04.141' E128&deg00.881'
+Elevation: 97 ft
+RWY: 09L/27R - 09R/27l
+TCN: 94X
+ATIS: 132.125
+GND: 253.7
+TWR: 308.8
+APP/DEP: 306.3
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/01_KTO/charts/01 South Korea/Osan/Osan_Airport.png" onclick="return chart(this)">Airport Diagram</a>
+<a href="https://cdn.falcon-bms.com/maps/01_KTO/charts/01 South Korea/Osan/Osan_Airport_EOR.png" onclick="return chart(this)">EOR-Procedure Chart</a>
+<a href="https://cdn.falcon-bms.com/maps/01_KTO/charts/01 South Korea/Osan/Osan_ILS_09L.png" onclick="return chart(this)">APP - ILS RWY 09L (111.3)</a>
+<a href="https://cdn.falcon-bms.com/maps/01_KTO/charts/01 South Korea/Osan/Osan_ILS_27R.png" onclick="return chart(this)">APP - ILS RWY 27R (111.3)</a>
+<a href="https://cdn.falcon-bms.com/maps/01_KTO/charts/01 South Korea/Osan/Osan_RDR_09.png" onclick="return chart(this)">APP - RDR RWY 09</a>
+<a href="https://cdn.falcon-bms.com/maps/01_KTO/charts/01 South Korea/Osan/Osan_RDR_27.png" onclick="return chart(this)">APP - RDR RWY 27</a>
+<a href="https://cdn.falcon-bms.com/maps/01_KTO/charts/01 South Korea/Osan/Osan_DEP_Draggin1.png" onclick="return chart(this)">DEP - DRAGGIN 1</a>
+<a href="https://cdn.falcon-bms.com/maps/01_KTO/charts/01 South Korea/Osan/Osan_DEP_Mustang3.png" onclick="return chart(this)">DEP - MUSTANG 3</a>
+<a href="https://cdn.falcon-bms.com/maps/01_KTO/charts/01 South Korea/Osan/Osan_DEP_Thunder2.png" onclick="return chart(this)">DEP - THUNDER 2</a>
+<a href="https://cdn.falcon-bms.com/maps/01_KTO/charts/01 South Korea/Osan/Osan_DEP_Yoke4.png" onclick="return chart(this)">DEP - YOKE 4</a></pre>
+</div></div>
+
+<div id="POHANG" class="modal"><div class="modal-content">
+<center><b>POHANG (RKTH)</center></b></center><hr><pre>
+N36&deg02.779' E130&deg48.826'
+Elevation: 37 ft
+RWY: 10/28
+TCN: 72X
+ATIS: 127.4
+OPS: 317.375
+GND: 236.6
+TWR: 236.6
+APP/DEP: 232.4
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/01_KTO/charts/01 South Korea/Pohang/Pohang_Airport.png" onclick="return chart(this)">Airport Diagram</a>
+<a href="https://cdn.falcon-bms.com/maps/01_KTO/charts/01 South Korea/Pohang/Pohang_ILS_10.png" onclick="return chart(this)">APP - ILS RWY 10 (110.9)</a>
+<a href="https://cdn.falcon-bms.com/maps/01_KTO/charts/01 South Korea/Pohang/Pohang_TCN_28.png" onclick="return chart(this)">APP - TCN RWY 28</a>
+<a href="https://cdn.falcon-bms.com/maps/01_KTO/charts/01 South Korea/Pohang/Pohang_DEP_Posco1.png" onclick="return chart(this)">DEP - POSCO 1</a></pre>
+</div></div>
+
+<div id="PYEONGTAEK" class="modal"><div class="modal-content">
+<center><b>PYEONGTAEK AF (RKSG)</center></b></center><hr><pre>
+N36&deg57.931' E128&deg03.884
+Elevation: 102 ft
+RWY: 14/32
+TCN: 19X
+ATIS: 128.25
+OPS: 291 1
+GND: 229.7
+TWR: 257.8
+APP/DEP: 363.1
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/01_KTO/charts/01 South Korea/Pyeongtaek/Pyeongtaek_Airport.png" onclick="return chart(this)">Airport Diagram</a>
+<a href="https://cdn.falcon-bms.com/maps/01_KTO/charts/01 South Korea/Pyeongtaek/Pyeongtaek_ILS_32.png" onclick="return chart(this)">APP - ILS RWY 32 (108.75)</a>
+<a href="https://cdn.falcon-bms.com/maps/01_KTO/charts/01 South Korea/Pyeongtaek/Pyeongtaek_TCN_14.png" onclick="return chart(this)">APP - TCN RWY 14</a>
+<a href="https://cdn.falcon-bms.com/maps/01_KTO/charts/01 South Korea/Pyeongtaek/Pyeongtaek_DEP_Osan1.png" onclick="return chart(this)">DEP - OSAN 1</a></pre>
+</div></div>
+
+<div id="SACHEON" class="modal"><div class="modal-content">
+<center><b>SACHEON (RKPS)</center></b></center><hr><pre>
+N35&deg08.528' E129&deg08.760
+Elevation: 20 ft
+RWY: 06L/24R - 06R/24L
+TCN: 37X
+ATIS: 126.625
+GND: 275.8
+TWR: 305.4
+APP/DEP: 317.425
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/01_KTO/charts/01 South Korea/Sacheon/Sacheon_Airport.png" onclick="return chart(this)">Airport Diagram</a>
+<a href="https://cdn.falcon-bms.com/maps/01_KTO/charts/01 South Korea/Sacheon/Sacheon_Airport_EOR.png" onclick="return chart(this)">EOR-Procedure Chart</a>
+<a href="https://cdn.falcon-bms.com/maps/01_KTO/charts/01 South Korea/Sacheon/Sacheon_ILS_06L.png" onclick="return chart(this)">APP - ILS RWY 06L (111.5)</a>
+<a href="https://cdn.falcon-bms.com/maps/01_KTO/charts/01 South Korea/Sacheon/Sacheon_ILS_24R.png" onclick="return chart(this)">APP - ILS RWY 24R (108.1)</a>
+<a href="https://cdn.falcon-bms.com/maps/01_KTO/charts/01 South Korea/Sacheon/Sacheon_TCN_06R.png" onclick="return chart(this)">APP - TCN RWY 06R</a>
+<a href="https://cdn.falcon-bms.com/maps/01_KTO/charts/01 South Korea/Sacheon/Sacheon_TCN_24L.png" onclick="return chart(this)">APP - TCN RWY 24L</a>
+<a href="https://cdn.falcon-bms.com/maps/01_KTO/charts/01 South Korea/Sacheon/Sacheon_DEP_1.png" onclick="return chart(this)">DEP - ONE</a></pre>
+</div></div>
+
+<div id="SEOSAN" class="modal"><div class="modal-content">
+<center><b>SEOSAN (RKTP)</center></b></center><hr><pre>
+N36&deg41.807' E127&deg19.884'
+Elevation: 26 ft
+RWY: 03L/21R - 03R/21L
+TCN: 52X
+ATIS: 130.3
+OPS: 318.1
+GND: 275.8
+TWR: 353.1
+APP/DEP: 253.95
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/01_KTO/charts/01 South Korea/Seosan/Seosan_Airport.png" onclick="return chart(this)">Airport Diagram</a>
+<a href="https://cdn.falcon-bms.com/maps/01_KTO/charts/01 South Korea/Seosan/Seosan_Airport_EOR.png" onclick="return chart(this)">EOR-Procedure Chart</a>
+<a href="https://cdn.falcon-bms.com/maps/01_KTO/charts/01 South Korea/Seosan/Seosan_ILS_03R.png" onclick="return chart(this)">APP - ILS RWY 03R (111.5)</a>
+<a href="https://cdn.falcon-bms.com/maps/01_KTO/charts/01 South Korea/Seosan/Seosan_HITCN_03L.png" onclick="return chart(this)">APP - HI TCN 03L</a>
+<a href="https://cdn.falcon-bms.com/maps/01_KTO/charts/01 South Korea/Seosan/Seosan_HITCN_21L.png" onclick="return chart(this)">APP - HI TCN 21L</a>
+<a href="https://cdn.falcon-bms.com/maps/01_KTO/charts/01 South Korea/Seosan/Seosan_HITCN_21R.png" onclick="return chart(this)">APP - HI TCN 21R</a>
+<a href="https://cdn.falcon-bms.com/maps/01_KTO/charts/01 South Korea/Seosan/Seosan_DEP_1.png" onclick="return chart(this)">DEP - ONE</a></pre>
+</div></div>
+
+<div id="SEOUL" class="modal"><div class="modal-content">
+<center><b>SEOUL AB (RKSM)</center></b></center><hr><pre>
+N37&deg27 586' E128&deg07.474'
+Elevation: 258 ft
+RWY: 01/19 - 36/18
+TCN: 46X
+ATIS: 126.4
+GND: 276.2
+TWR: 237.1
+APP/DEP: 363.9
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/01_KTO/charts/01 South Korea/Seoul/Seoul_Airport.png" onclick="return chart(this)">Airport Diagram</a>
+<a href="https://cdn.falcon-bms.com/maps/01_KTO/charts/01 South Korea/Seoul/Seoul_ILS_18.png" onclick="return chart(this)">APP - ILS RWY 18 (108.95)</a>
+<a href="https://cdn.falcon-bms.com/maps/01_KTO/charts/01 South Korea/Seoul/Seoul_ILS_19.png" onclick="return chart(this)">APP - ILS RWY 19 (110.9)</a>
+<a href="https://cdn.falcon-bms.com/maps/01_KTO/charts/01 South Korea/Seoul/Seoul_TCN_01.png" onclick="return chart(this)">APP - TCN RWY 01</a>
+<a href="https://cdn.falcon-bms.com/maps/01_KTO/charts/01 South Korea/Seoul/Seoul_TCN_36.png" onclick="return chart(this)">APP - TCN RWY 36</a>
+<a href="https://cdn.falcon-bms.com/maps/01_KTO/charts/01 South Korea/Seoul/Seoul_DEP_Hatch1.png" onclick="return chart(this)">DEP - HATCH 1</a>
+<a href="https://cdn.falcon-bms.com/maps/01_KTO/charts/01 South Korea/Seoul/Seoul_DEP_Noru1.png" onclick="return chart(this)">DEP - NORU 1</a></pre>
+</div></div>
+
+<div id="SOKCHO" class="modal"><div class="modal-content">
+<center><b>SOKCHO (RKND)</center></b></center><hr><pre>
+N38&deg06.185' E130&deg07.622
+Elevation: 258 ft
+RWY: 08/26
+TCN: 43X
+ATIS: 123.15
+GND: 240.4
+TWR: 236.6
+APP/DEP: 304.4
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/01_KTO/charts/01 South Korea/Sokcho/Sokcho_Airport.png" onclick="return chart(this)">Airport Diagram</a>
+<a href="https://cdn.falcon-bms.com/maps/01_KTO/charts/01 South Korea/Sokcho/Sokcho_Airport_EOR.png" onclick="return chart(this)">EOR-Procedure Chart</a>
+<a href="https://cdn.falcon-bms.com/maps/01_KTO/charts/01 South Korea/Sokcho/Sokcho_ILS_26.png" onclick="return chart(this)">APP - ILS RWY 26 (111.0)</a>
+<a href="https://cdn.falcon-bms.com/maps/01_KTO/charts/01 South Korea/Sokcho/Sokcho_TCN_08.png" onclick="return chart(this)">APP - TCN RWY 08 </a>
+<a href="https://cdn.falcon-bms.com/maps/01_KTO/charts/01 South Korea/Sokcho/Sokcho_DEP_1.png" onclick="return chart(this)">DEP - ONE</a></pre>
+</div></div>
+
+<div id="SUWON" class="modal"><div class="modal-content">
+<center><b>SUWON AIRBASE (RKSW)</center></b></center><hr><pre>
+N37&deg16.422' E127&deg57.495'
+Elevation: 167 ft
+RWY: 15L/33R - 15R/33L
+TCN: 22X
+ATIS: 126.425
+GND: 275.7
+TWR: 366.0
+APP/DEP: 306.4
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/01_KTO/charts/01 South Korea/Suwon/Suwon_Airport.png" onclick="return chart(this)">Airport Diagram</a>
+<a href="https://cdn.falcon-bms.com/maps/01_KTO/charts/01 South Korea/Suwon/Suwon_Airport_EOR.png" onclick="return chart(this)">EOR-Procedure Chart</a>
+<a href="https://cdn.falcon-bms.com/maps/01_KTO/charts/01 South Korea/Suwon/Suwon_ILS_33R.png" onclick="return chart(this)">APP - ILS RWY 33R (108.5)</a>
+<a href="https://cdn.falcon-bms.com/maps/01_KTO/charts/01 South Korea/Suwon/Suwon_TCN_15.png" onclick="return chart(this)">APP - TCN RWY 15</a>
+<a href="https://cdn.falcon-bms.com/maps/01_KTO/charts/01 South Korea/Suwon/Suwon_TCN_33L.png" onclick="return chart(this)">APP - TCN RWY 33L</a>
+<a href="https://cdn.falcon-bms.com/maps/01_KTO/charts/01 South Korea/Suwon/Suwon_DEP_6.png" onclick="return chart(this)">DEP - SIX</a></pre>
+</div></div>
+
+<div id="WONJU" class="modal"><div class="modal-content">
+<center><b>WONJU (RKNW)</center></b></center><hr><pre>
+N37&deg27.477' E129&deg13.341
+Elevation: 580 ft
+RWY: 03/21
+TCN: 6OY
+ATIS: 128.6
+OPS: 225.575
+GND: 277.8
+TWR: 265.5
+APP/DEP: 292.6
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/01_KTO/charts/01 South Korea/Wonju/Wonju_Airport.png" onclick="return chart(this)">Airport Diagram</a>
+<a href="https://cdn.falcon-bms.com/maps/01_KTO/charts/01 South Korea/Wonju/Wonju_ILS_03.png" onclick="return chart(this)">APP - ILS RWY 03 (110.2)</a>
+<a href="https://cdn.falcon-bms.com/maps/01_KTO/charts/01 South Korea/Wonju/Wonju_TCN_21.png" onclick="return chart(this)">APP - TCN RWY 21</a>
+<a href="https://cdn.falcon-bms.com/maps/01_KTO/charts/01 South Korea/Wonju/Wonju_DEP_4.png" onclick="return chart(this)">DEP - FOUR</a></pre>
+</div></div>
+
+<div id="YANGYANG" class="modal"><div class="modal-content">
+<center><b>YANGYANG (RKNY)</center></b></center><hr><pre>
+N38&deg04.140' E130&deg11.862'
+Elevation: 230 ft
+RWY: 15/33
+TCN: 43X
+ATIS: 128.825
+GND: 280.125
+TWR: 240.35
+APP/DEP: 241.6
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/01_KTO/charts/01 South Korea/Yangyang/Yangyang_Airport.png" onclick="return chart(this)">Airport Diagram</a>
+<a href="https://cdn.falcon-bms.com/maps/01_KTO/charts/01 South Korea/Yangyang/Yangyang_ILS_33.png" onclick="return chart(this)">APP - ILS RWY 33 (109.3)</a>
+<a href="https://cdn.falcon-bms.com/maps/01_KTO/charts/01 South Korea/Yangyang/Yangyang_TCN_15.png" onclick="return chart(this)">APP - TCN RWY 15</a>
+<a href="https://cdn.falcon-bms.com/maps/01_KTO/charts/01 South Korea/Yangyang/Yangyang_DEP_15.png" onclick="return chart(this)">DEP - 15</a>
+<a href="https://cdn.falcon-bms.com/maps/01_KTO/charts/01 South Korea/Yangyang/Yangyang_DEP_33.png" onclick="return chart(this)">DEP - 33</a></pre>
+</div></div>
+
+<div id="YECHEON" class="modal"><div class="modal-content">
+<center><b>YECHEON AERO (RKTY)</center></b></center><hr><pre>
+N36&deg41.667' E129&deg40.094'
+Elevation: 486 ft
+RWY: 10/28
+TCN: 026X
+ATIS: 135.8
+GND: 234.5
+TWR: 269.5
+APP/DEP: 229.35
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/01_KTO/charts/01 South Korea/Yecheon/Yecheon_Airport.png" onclick="return chart(this)">Airport Diagram</a>
+<a href="https://cdn.falcon-bms.com/maps/01_KTO/charts/01 South Korea/Yecheon/Yecheon_Airport_EOR.png" onclick="return chart(this)">EOR-Procedure Chart</a>
+<a href="https://cdn.falcon-bms.com/maps/01_KTO/charts/01 South Korea/Yecheon/Yecheon_ILS_28.png" onclick="return chart(this)">APP - ILS RWY 28 (109.3)</a>
+<a href="https://cdn.falcon-bms.com/maps/01_KTO/charts/01 South Korea/Yecheon/Yecheon_TCN_10.png" onclick="return chart(this)">APP - TCN RWY 10</a>
+<a href="https://cdn.falcon-bms.com/maps/01_KTO/charts/01 South Korea/Yecheon/Yecheon_DEP_Parot5A.png" onclick="return chart(this)">DEP - PAROT 5A</a></pre>
+</div></div>
+
+<div id="HIROSHIMA" class="modal"><div class="modal-content">
+<center><b>HIROSHIMA (RJOA)</center></b></center><hr><pre>
+N34&deg23.041' E133&deg54.057'
+Elevation: 1070 ft
+RWY: 10/28
+TCN: 024X
+ATIS: 135.8
+OPS: 314.625
+GND: 299.3
+TWR: 357.65
+APP/DEP: 392.625
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/01_KTO/charts/02 Japan/Hiroshima/Hiroshima_Airport.png" onclick="return chart(this)">Airport Diagram</a>
+<a href="https://cdn.falcon-bms.com/maps/01_KTO/charts/02 Japan/Hiroshima/Hiroshima_ILS_10.png" onclick="return chart(this)">APP - ILS RWY 10 (108.8)</a>
+<a href="https://cdn.falcon-bms.com/maps/01_KTO/charts/02 Japan/Hiroshima/Hiroshima_TCN_28.png" onclick="return chart(this)">APP - TCN RWY 28</a>
+<a href="https://cdn.falcon-bms.com/maps/01_KTO/charts/02 Japan/Hiroshima/Hiroshima_DEP_10+28.png" onclick="return chart(this)">DEP - 10/28</a></pre>
+</div></div>
+
+<div id="IWAKUNI" class="modal"><div class="modal-content">
+<center><b>IWAKUNI (RJOI)</center></b></center><hr><pre>
+N34&deg09.951' E133&deg28.748'
+Elevation: 10 ft
+RWY: 02/20
+TCN: 126X
+ATIS: 128.4
+OPS: 335.7
+GND: 321.3
+TWR: 299.75
+APP/DEP: 331.4
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/01_KTO/charts/02 Japan/Iwakuni MCAS/Iwakuni_Airport.png" onclick="return chart(this)">Airport Diagram</a>
+<a href="https://cdn.falcon-bms.com/maps/01_KTO/charts/02 Japan/Iwakuni MCAS/Iwakuni_ILS_02.png" onclick="return chart(this)">APP - ILS RWY 02 (110.15)</a>
+<a href="https://cdn.falcon-bms.com/maps/01_KTO/charts/02 Japan/Iwakuni MCAS/Iwakuni_TCN_20.png" onclick="return chart(this)">APP - TCN RWY 20</a>
+<a href="https://cdn.falcon-bms.com/maps/01_KTO/charts/02 Japan/Iwakuni MCAS/Iwakuni_DEP_02+20.png" onclick="return chart(this)">DEP - 02/20</a></pre>
+</div></div>
+
+<div id="IWAMI" class="modal"><div class="modal-content">
+<center><b>IWAMI (RJOW)</center></b></center><hr><pre>
+N34&deg38.310' E132&deg55.658'
+Elevation: 106 ft
+RWY: 11/19
+TCN: 57X
+ATIS: 127.2
+OPS: 256.0
+GND: 236.8
+TWR: 225.5
+APP/DEP: 279.2
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/01_KTO/charts/02 Japan/Iwami/Iwami_Airport.png" onclick="return chart(this)">Airport Diagram</a>
+<a href="https://cdn.falcon-bms.com/maps/01_KTO/charts/02 Japan/Iwami/Iwami_ILS_11.png" onclick="return chart(this)">APP - ILS RWY 11 (108.7)</a>
+<a href="https://cdn.falcon-bms.com/maps/01_KTO/charts/02 Japan/Iwami/Iwami_TCN_29.png" onclick="return chart(this)">APP - TCN RWY 19</a>
+<a href="https://cdn.falcon-bms.com/maps/01_KTO/charts/02 Japan/Iwami/Iwami_DEP_11+29.png" onclick="return chart(this)">DEP - 11/29</a></pre>
+</div></div>
+
+<div id="TSUSHIMA" class="modal"><div class="modal-content">
+<center><b>TSUSHIMA (RJDT)</center></b></center><hr><pre>
+N34&deg19.166' E130&deg35.881
+Elevation: 160 ft
+RWY: 14/32
+TCN: 64X
+ATIS: 124.325
+OPS: XXX.XXX
+GND: 239.9
+TWR: 231.9
+APP/DEP: 240.125
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/01_KTO/charts/02 Japan/Tsushima/Tsushima_Airport.png" onclick="return chart(this)">Airport Diagram</a>
+<a href="https://cdn.falcon-bms.com/maps/01_KTO/charts/02 Japan/Tsushima/Tsushima_ILS_32.png" onclick="return chart(this)">APP - ILS RWY 32 (108.7)</a>
+<a href="https://cdn.falcon-bms.com/maps/01_KTO/charts/02 Japan/Tsushima/Tsushima_TCN_14.png" onclick="return chart(this)">APP - TCN RWY 14</a>
+<a href="https://cdn.falcon-bms.com/maps/01_KTO/charts/02 Japan/Tsushima/Tsushima_DEP_14+32.png" onclick="return chart(this)">DEP - 14/32</a></pre>
+</div></div>
+
+<div id="YAMAGUCHI" class="modal"><div class="modal-content">
+<center><b>YAMAGUCHI (RJDC)</center></b></center><hr><pre>
+N33&deg55.492' E132&deg29.366'
+Elevation: 15 ft
+RWY: 07/25
+TCN: 45X
+ATIS: 118.025
+OPS: 295.375
+GND: 265.8
+TWR: 260.2
+APP/DEP: 323.75
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/01_KTO/charts/02 Japan/Yamaguchi-Ube/Yamaguchi_Airport.png" onclick="return chart(this)">Airport Diagram</a>
+<a href="https://cdn.falcon-bms.com/maps/01_KTO/charts/02 Japan/Yamaguchi-Ube/Yamaguchi_ILS_07.png" onclick="return chart(this)">APP - ILS RWY 07 (110.1)</a>
+<a href="https://cdn.falcon-bms.com/maps/01_KTO/charts/02 Japan/Yamaguchi-Ube/Yamaguchi_TCN_25.png" onclick="return chart(this)">APP - TCN RWY 25</a>
+<a href="https://cdn.falcon-bms.com/maps/01_KTO/charts/02 Japan/Yamaguchi-Ube/Yamaguchi_DEP_07+25.png" onclick="return chart(this)">DEP - 07/25</a></pre>
+</div></div>
+
+<div id="LIUHE" class="modal"><div class="modal-content">
+<center><b>LIUHE (ZYLH)</center></b></center><hr><pre>
+N42&deg09 997' E126&deg05.412'
+Elevation: 1555 ft
+RWY: 01/19
+ SH: R080&deg 088X DME112
+ATIS: 123.9
+GND: 380.6
+TWR: 390.8
+APP/DEP: 380.8
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/01_KTO/charts/04 China/Liuhe/Liuhe_Airport.png" onclick="return chart(this)">Airport Diagram</a></pre>
+</div></div>
+
+<div id="SHENYANG" class="modal"><div class="modal-content">
+<center><b>SHENYANG (ZYTX)</center></b></center><hr><pre>
+N41&deg55.587' E123&deg37.946'
+Elevation: 254 ft
+RWY: 05L/23R - 05R/23L
+TCN: 88X
+ATIS: 127.45
+GND: 317.5
+TWR: 395.5
+APP/DEP: 392. 6
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/01_KTO/charts/04 China/Shenyang/Shenyang_Airport.png" onclick="return chart(this)">Airport Diagram</a></pre>
+</div></div>
+
+<div id="UGLOVOYE" class="modal"><div class="modal-content">
+<center><b>UGLOVOYE (UUNA)</center></b></center><hr><pre>
+N42&deg59.916' E134&deg00.718'
+Elevation: 600 ft
+RWY: 14/32
+TCN: XXX
+ATIS: 124.05
+GND: 392 5
+TWR: 398.8
+APP/DEP: 392.7
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/01_KTO/charts/05 Russia/Uglovoye/Uglovoye_Airport.png" onclick="return chart(this)">Airport Diagram</a></pre>
+</div></div>
+
+<div id="HAEJU" class="modal"><div class="modal-content">
+<center><b>HAEJU (KP-0002)</center></b></center><hr><pre>
+N38&deg02.223' E126&deg36.807'
+Elevation: 113 ft
+RWY: 12/30
+TCN: R085&deg 58X Dme28
+ATIS: 122.55
+GND: 282.6
+TWR: 280.4
+APP/DEP: 278.6
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/01_KTO/charts/03 North Korea/Haeju/Haeju_Airport.png" onclick="return chart(this)">Airport Diagram</a></pre>
+</div></div>
+
+<div id="HWANGJU" class="modal"><div class="modal-content">
+<center><b>HWANGJU (KP-0020)</center></b></center><hr><pre>
+N38&deg42.959' E126&deg32.227'
+Elevation: 231 ft
+RWY: 12/30
+TCN: R190&deg 59X DME22
+ATIS: 124.1
+GND: 338.4
+TWR: 337.6
+APP/DEP: 335.2
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/01_KTO/charts/03 North Korea/Hwangju/Hwangju_Airport.png" onclick="return chart(this)">Airport Diagram</a></pre>
+</div></div>
+
+<div id="HWANGSUWON" class="modal"><div class="modal-content">
+<center><b>HWANGSUWON (KP-0035)</center></b></center><hr><pre>
+N40&deg43.756' E129&deg50.507'
+Elevation: 3991 ft
+RWY: 12/30
+TCN: R190&deg 50X DME73
+ATIS: 123.55
+GND: 312.6
+TWR: 368.5
+APP/DEP: 344.3
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/01_KTO/charts/03 North Korea/Hwangsuwon/Hwangsuwon_Airport.png" onclick="return chart(this)">Airport Diagram</a></pre>
+</div></div>
+
+<div id="HYON-NI" class="modal"><div class="modal-content">
+<center><b>HYON-NI (KP-0019)</center></b></center><hr><pre>
+N38&deg41.300' E128&deg37.565'
+Elevation: 2598 ft
+RWY: 02/20
+TCN: R188&deg 54X DME33
+ATIS: 124.325
+GND: 241.9
+TWR: 242.9
+APP/DEP: 230.5
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/01_KTO/charts/03 North Korea/Hyon-Ni/Hyon-Ni_Airport.png" onclick="return chart(this)">Airport Diagram</a></pre>
+</div></div>
+
+<div id="IWON" class="modal"><div class="modal-content">
+<center><b>IWON (KP-0059)</center></b></center><hr><pre>
+N40&deg24.718' E130&deg26.856'
+Elevation: 470 ft
+RWY: 08/26
+TCN: R170&deg 50X DME94
+ATIS: 125.4
+GND: 240.6
+TWR: 234.4
+APP/DEP: 228.9
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/01_KTO/charts/03 North Korea/Iwon/Iwon_Airport.png" onclick="return chart(this)">Airport Diagram</a></pre>
+</div></div>
+
+<div id="KAECHON" class="modal"><div class="modal-content">
+<center><b>KAECH'ON (KP-0018)</center></b></center><hr><pre>
+N39&deg47.400' E126&deg42.427'
+Elevation: 204 ft
+RWY: 03/21
+TCN:  R025&deg 51X DME35
+ATIS: 123.85
+GND: 333.1
+TWR: 350.0
+APP/DEP: 340.8
+<hr></pre>
+</div></div>
+
+<div id="KALMA" class="modal"><div class="modal-content">
+<center><b>KALMA (ZKWS)</center></b></center><hr><pre>
+N39&deg13.084' E128&deg45.577'
+Elevation: 14 ft
+RWY: 01/19 - 15/33
+TCN: 54X
+ATIS: 124.65
+GND: 240.65
+TWR: 244.4
+APP/DEP: 264.4
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/01_KTO/charts/03 North Korea/Kalma/Kalma_Airport.png" onclick="return chart(this)">Airport Diagram</a></pre>
+</div></div>
+
+<div id="KOKSAN" class="modal"><div class="modal-content">
+<center><b>KOKSAN (KP-0015)</center></b></center><hr><pre>
+N38&deg48.157' E127&deg32.883'
+Elevation: 1058 ft
+RWY: 05L/23R - 05R/23L
+TCN: R245&deg 54X DME60
+ATIS: 124.4
+GND: 320.2
+TWR: 318.2
+APP/DEP: 319.2
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/01_KTO/charts/03 North Korea/Koksan/Koksan_Airport.png" onclick="return chart(this)">Airport Diagram</a></pre>
+</div></div>
+
+<div id="KUUM-NI" class="modal"><div class="modal-content">
+<center><b>KUUM-NI (KP-0013)</center></b></center><hr><pre>
+N38&deg54.190' E129&deg17.199'
+Elevation: 198 ft
+RWY: 05L/23R - 05R/23L
+TCN: R125&deg 54X DME32
+ATIS: 124.2
+GND: 350.2
+TWR: 388.7
+APP/DEP: 380.6
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/01_KTO/charts/03 North Korea/Kuum-ni/Kuum-ni_Airport.png" onclick="return chart(this)">Airport Diagram</a></pre>
+</div></div>
+
+<div id="KWAIL" class="modal"><div class="modal-content">
+<center><b>KWAIL (KP-0039)</center></b></center><hr><pre>
+N38&deg26.721' E125&deg29.149'
+Elevation: 274 ft
+RWY: 14/32
+TCN: R220&deg 51X DME64
+ATIS: 125.3
+GND: 350.0
+TWR: 349.4
+APP/DEP: 349.6
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/01_KTO/charts/03 North Korea/Kwail/Kwail_Airport.png" onclick="return chart(this)">Airport Diagram</a></pre>
+</div></div>
+
+<div id="MANPO" class="modal"><div class="modal-content">
+<center><b>MANP'O (KP-0053)</center></b></center><hr><pre>
+N41&deg11.801' E127&deg27.140'
+Elevation: 1392 ft
+RWY: 01/19
+TCN: R060&deg 55X DME124
+ATIS: 124.5
+GND: 262.65
+TWR: 242.4
+APP/DEP: 262.4
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/01_KTO/charts/03 North Korea/Manpo/Manp'o_Airport.png" onclick="return chart(this)">Airport Diagram</a></pre>
+</div></div>
+
+<div id="MIRIM" class="modal"><div class="modal-content">
+<center><b>MIRIM (KP-0011)</center></b></center><hr><pre>
+N39&deg03.544' E126&deg39.615'
+Elevation: 127 ft
+RWY: 02/26
+TCN: 59X
+ATIS: 123.45
+GND: 225.1
+TWR: 225.3
+APP/DEP: 225.2
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/01_KTO/charts/03 North Korea/Mirim/Mirim_Airport.png" onclick="return chart(this)">Airport Diagram</a></pre>
+</div></div>
+
+<div id="ONCHON" class="modal"><div class="modal-content">
+<center><b>ONCH'ON (KP-0023)</center></b></center><hr><pre>
+N38°57.412' E125&deg45.757'
+Elevation: 127 ft
+RWY: 02/26
+TCN: R235&deg 51X DME34
+ATIS: 123.45
+GND: 225.1
+TWR: 225.3
+APP/DEP: 225.2
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/01_KTO/charts/03 North Korea/Onch'on/Onch'on_Airport.png" onclick="return chart(this)">Airport Diagram</a></pre>
+</div></div>
+
+<div id="ONGJIN" class="modal"><div class="modal-content">
+<center><b>ONGJIN (KP-0050)</center></b></center><hr><pre>
+N37&deg59.158' E126&deg01.761'
+Elevation: 248 ft
+RWY: 11/29
+TCN: 58X
+ATIS: 124.625
+GND: 322.5
+TWR: 368.1
+APP/DEP: 364.2
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/01_KTO/charts/03 North Korea/Ongjin/Ongjin_Airport.png" onclick="return chart(this)">Airport Diagram</a></pre>
+</div></div>
+
+<div id="ORANG" class="modal"><div class="modal-content">
+<center><b>ORANG (KP-0032)</center></b></center><hr><pre>
+N41&deg27.626' E131&deg48.613'
+Elevation: 151 ft
+RWY: 03/21
+TCN: R110&deg 50X DME80
+ATIS: 123.2
+GND: 263.1
+TWR: 264.0
+APP/DEP: 244.3
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/01_KTO/charts/03 North Korea/Orang/Orang_Airport.png" onclick="return chart(this)">Airport Diagram</a></pre>
+</div></div>
+
+<div id="PANGHYON" class="modal"><div class="modal-content">
+<center><b>PANGHYON (KP-0030)</center></b></center><hr><pre>
+N39&deg58.840' E125&deg51.027'
+Elevation: 362 ft
+RWY: 02L/20R - 02R/20L
+TCN: R115&deg 55X DME42
+ATIS: 125.1
+GND: 271.6
+TWR: 270.8
+APP/DEP: 268.6
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/01_KTO/charts/03 North Korea/Panghyon/Panghyon_Airport.png" onclick="return chart(this)">Airport Diagram</a></pre>
+</div></div>
+
+<div id="PUKCHANG-UP" class="modal"><div class="modal-content">
+<center><b>PUKCH'ANG-UP (KP-0022)</center></b></center><hr><pre>
+N39&deg37.849' E126&deg44.436'
+Elevation: 288 ft
+RWY: 14/32
+TCN: R035&deg 51X DME28
+ATIS: 123.6
+GND: 265.5
+TWR: 264.9
+APP/DEP: 265.1
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/01_KTO/charts/03 North Korea/Pukch'ang-up/Pukch'ang-up_Airport.png" onclick="return chart(this)">Airport Diagram</a></pre>
+</div></div>
+
+<div id="SAMJIYON-UP" class="modal"><div class="modal-content">
+<center><b>SAMJIYON-UP (KP-0029)</center></b></center><hr><pre>
+N41&deg55.243' E130&deg13.612'
+Elevation: 4478 ft
+RWY: 05L/23R - 05R/23L
+TCN: 50X
+ATIS: 125.0
+GND: 298.1
+TWR: 299.1
+APP/DEP: 300.25
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/01_KTO/charts/03 North Korea/Samjiyon-up/Samjiyon-up_Airport.png" onclick="return chart(this)">Airport Diagram</a></pre>
+</div></div>
+
+<div id="SONDOK" class="modal"><div class="modal-content">
+<center><b>SONDOK (KP-0008)</center></b></center><hr><pre>
+N39&deg47.577' E128&deg47.130'
+Elevation: 32 ft
+RWY: 02/20
+WS: R360&deg 54X DME35
+ATIS: 123.7
+GND: 340.3
+TWR: 343.8
+APP/DEP: 342.6
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/01_KTO/charts/03 North Korea/Sondok/Sondok_Airport.png" onclick="return chart(this)">Airport Diagram</a></pre>
+</div></div>
+
+<div id="SUNAN" class="modal"><div class="modal-content">
+<center><b>SUNAN/PYONGYANG (ZKPY)</center></b></center><hr><pre>
+N39&deg14.713' E126&deg21.631°
+Elevation: 174 ft
+RWY: 18/36 - 16/34
+TCN: 51X
+ATIS: 124.8
+GND: 262.5
+TWR: 264.0
+APP/DEP: 265.0
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/01_KTO/charts/03 North Korea/Sunan/Sunan_Airport.png" onclick="return chart(this)">Airport Diagram</a>
+<a href="https://cdn.falcon-bms.com/maps/01_KTO/charts/03 North Korea/Sunan/Sunan_ILS_18.png" onclick="return chart(this)">APP - ILS RWY 18 (109.9)</a>
+<a href="https://cdn.falcon-bms.com/maps/01_KTO/charts/03 North Korea/Sunan/Sunan_ILS_36.png" onclick="return chart(this)">APP - ILS RWY 36 (109.5)</a></pre>
+</div></div>
+
+<div id="SUNCHON" class="modal"><div class="modal-content">
+<center><b>SUNCH'ON (KP-0021)</center></b></center><hr><pre>
+N39&deg26.670' E126&deg42.318'
+Elevation: 228 ft
+RWY: 16L/34R - 16R/34L
+TCN: R055&deg 51X DME19
+ATIS: 123.1
+GND: 256.2
+TWR: 253.1
+APP/DEP: 254.8
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/01_KTO/charts/03 North Korea/Sunch'on/Sunch'on_Airport.png" onclick="return chart(this)">Airport Diagram</a></pre>
+</div></div>
+
+<div id="TAECHON" class="modal"><div class="modal-content">
+<center><b>T'AECH'ON (KP-0006)</center></b></center><hr><pre>
+N39&deg57.415' E126&deg10.724'
+Elevation: 213 ft
+RWY: 12/30
+TCN: R345&deg 51X DME43
+ATIS: 124.7
+GND: 260.4
+TWR: 275.5
+APP/DEP: 268.9
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/01_KTO/charts/03 North Korea/T'aech'on/T'aech'on_Airport.png" onclick="return chart(this)">Airport Diagram</a></pre>
+</div></div>
+
+<div id="TAETAN" class="modal"><div class="modal-content">
+<center><b>TAETAN (KP-0005)</center></b></center><hr><pre>
+N38&deg08.607' E125&deg51.628'
+Elevation: 174 ft
+RWY: 08/26
+TCN:  R320&deg 58X DME12
+ATIS: 124.9
+GND: 209.3
+TWR: 288.7
+APP/DEP: 284.7
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/01_KTO/charts/03 North Korea/Taetan/Taetan_Airport.png" onclick="return chart(this)">Airport Diagram</a></pre>
+</div></div>
+
+<div id="TOKSAN" class="modal"><div class="modal-content">
+<center><b>TOKSAN (ZKTS)</center></b></center><hr><pre>
+N40&deg03.018' E128&deg58 862'
+Elevation: 447 ft
+RWY: 05/23
+TCN: 53X
+ATIS: 123.0
+GND: 340.7
+TWR: 324.8
+APP/DEP: 331.6
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/01_KTO/charts/03 North Korea/Toksan/Toksan_Airport.png" onclick="return chart(this)">Airport Diagram</a>
+<a href="https://cdn.falcon-bms.com/maps/01_KTO/charts/03 North Korea/Toksan/Toksan_ILS_05.png" onclick="return chart(this)">APP - ILS RWY 05 (109.6)</a>
+<a href="https://cdn.falcon-bms.com/maps/01_KTO/charts/03 North Korea/Toksan/Toksan_ILS_23.png" onclick="return chart(this)">APP - ILS RWY 23 (109.6)</a></pre>
+</div></div>
+
+<div id="UIJU" class="modal"><div class="modal-content">
+<center><b>UIJU (ZKUJ)</center></b></center><hr><pre>
+N40&deg14.825' E125&deg01.100'
+Elevation: 120 ft
+RWY: 05/23
+TCN: 55X
+ATIS: 123.3
+GND: 370.6
+TWR: 372.0
+APP/DEP: 372.55
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/01_KTO/charts/03 North Korea/Uiju/Uiju_Airport.png" onclick="return chart(this)">Airport Diagram</a>
+<a href="https://cdn.falcon-bms.com/maps/01_KTO/charts/03 North Korea/Uiju/Uiju_ILS_05.png" onclick="return chart(this)">APP - ILS RWY 05 (110.4)</a>
+<a href="https://cdn.falcon-bms.com/maps/01_KTO/charts/03 North Korea/Uiju/Uiju_ILS_23.png" onclick="return chart(this)">APP - ILS RWY 23 (110.0)</a></pre>
+</div></div>
+
+<!-- Airstrips -->
+<div id="CHONGWON" class="modal"><div class="modal-content">
+<center><b>AIRSTRIP (CHONGWON)</center></b></center><hr><pre>
+N36&deg37.265' E128&deg35.318'
+Elevation: 368 ft
+RWY: 18/36 (6300ft)
+TCN: R180&deg 042X DME11
+Unicom UHF: 233.8
+Unicom VHF: 122.8
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/01_KTO/charts/01 South Korea/Airstrips/Northsouth_Airstrip_SK.png" onclick="return chart(this)">Airport Diagram</a>
+</pre></div></div>
+
+<div id="CHUNCHEON" class="modal"><div class="modal-content">
+<center><b>AIRSTRIP (CHUNCHEON)</center></b></center><hr><pre>
+N37&deg53.781' E128&deg56.751'
+Elevation: 383 ft
+RWY: 18/36 (6300ft)
+TCN: R040&deg 094X DME66
+Unicom UHF: 233.8
+Unicom VHF: 122.8
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/01_KTO/charts/01 South Korea/Airstrips/Northsouth_Airstrip_SK.png" onclick="return chart(this)">Airport Diagram</a>
+</pre></div></div>
+
+<div id="KUMI" class="modal"><div class="modal-content">
+<center><b>AIRSTRIP (KUMI)</center></b></center><hr><pre>
+N36&deg12.633' E128&deg56.751'
+Elevation: 254 ft
+RWY: 09/27 (6300ft)
+TCN: R195&deg 026X DME30
+Unicom UHF: 236.6
+Unicom VHF: 122.6
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/01_KTO/charts/01 South Korea/Airstrips/Eastwest_Airstrip_SK.png" onclick="return chart(this)">Airport Diagram</a>
+</pre></div></div>
+
+<div id="R103" class="modal"><div class="modal-content">
+<center><b>AIRSTRIP (R103)</center></b></center><hr><pre>
+N37&deg28.610' E127&deg39.140'
+Elevation: 135 ft
+RWY: 09/27 (6300ft)
+TCN: R200&deg 083X DME07
+Unicom UHF: 236.6
+Unicom VHF: 122.6
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/01_KTO/charts/01 South Korea/Airstrips/Eastwest_Airstrip_SK.png" onclick="return chart(this)">Airport Diagram</a>
+</pre></div></div>
+
+<div id="R107" class="modal"><div class="modal-content">
+<center><b>AIRSTRIP (R107)</center></b></center><hr><pre>
+N37&deg46.237' E127&deg28.889'
+Elevation: 136 ft
+RWY: 18/36 (6300ft)
+TCN: R325&deg 094X DME51
+Unicom UHF: 233.8
+Unicom VHF: 122.8
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/01_KTO/charts/01 South Korea/Airstrips/Northsouth_Airstrip_SK.png" onclick="return chart(this)">Airport Diagram</a>
+</pre></div></div>
+
+<div id="R110" class="modal"><div class="modal-content">
+<center><b>AIRSTRIP (R110)</center></b></center><hr><pre>
+N36&deg49.119' E127&deg39.642'
+Elevation: 68 ft
+RWY: 18/36 (6300ft)
+TCN: R245&deg 019X DME21
+Unicom UHF: 233.8
+Unicom VHF: 122.8
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/01_KTO/charts/01 South Korea/Airstrips/Northsouth_Airstrip_SK.png" onclick="return chart(this)">Airport Diagram</a>
+</pre></div></div>
+
+<div id="R113" class="modal"><div class="modal-content">
+<center><b>AIRSTRIP (R113)</center></b></center><hr><pre>
+N37&deg43.159' E127&deg49.588'
+Elevation: 171 ft
+RWY: 09/27 (6300ft)
+TCN: R030&deg 083X DME10
+Unicom UHF: 236.6
+Unicom VHF: 122.6
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/01_KTO/charts/01 South Korea/Airstrips/Eastwest_Airstrip_SK.png" onclick="return chart(this)">Airport Diagram</a>
+</pre></div></div>
+
+<div id="R217" class="modal"><div class="modal-content">
+<center><b>AIRSTRIP (R217)</center></b></center><hr><pre>
+N37&deg58.092' E128&deg18.822'
+Elevation: 455 ft
+RWY: 18/36 (6300ft)
+TCN: R010&deg 094X DME56
+Unicom UHF: 233.8
+Unicom VHF: 122.8
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/01_KTO/charts/01 South Korea/Airstrips/Northsouth_Airstrip_SK.png" onclick="return chart(this)">Airport Diagram</a>
+</pre></div></div>
+
+<div id="R218" class="modal"><div class="modal-content">
+<center><b>AIRSTRIP (R217)</center></b></center><hr><pre>
+N37&deg58.092' E128&deg18.822'
+Elevation: 236 ft
+RWY: 18/36 (6300ft)
+TCN: R360&deg 094X DME61
+Unicom UHF: 233.8
+Unicom VHF: 122.8
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/01_KTO/charts/01 South Korea/Airstrips/Northsouth_Airstrip_SK.png" onclick="return chart(this)">Airport Diagram</a>
+</pre></div></div>
+
+<div id="R222" class="modal"><div class="modal-content">
+<center><b>AIRSTRIP (R222)</center></b></center><hr><pre>
+N37&deg52.703' E128&deg06.146'
+Elevation: 360 ft
+RWY: 18/36 (6300ft)
+TCN: R045&deg 083X DME25
+Unicom UHF: 233.8
+Unicom VHF: 122.8
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/01_KTO/charts/01 South Korea/Airstrips/Northsouth_Airstrip_SK.png" onclick="return chart(this)">Airport Diagram</a>
+</pre></div></div>
+
+<div id="R419" class="modal"><div class="modal-content">
+<center><b>AIRSTRIP (419)</center></b></center><hr><pre>
+N37&deg41.926' E129&deg12.823'
+Elevation: 1063 ft
+RWY: 18/36 (6300ft)
+TCN: R360&deg 005X DME43
+Unicom UHF: 233.8
+Unicom VHF: 122.8
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/01_KTO/charts/01 South Korea/Airstrips/Northsouth_Airstrip_SK.png" onclick="return chart(this)">Airport Diagram</a>
+</pre></div></div>
+
+<div id="R505" class="modal"><div class="modal-content">
+<center><b>AIRSTRIP (R505)</center></b></center><hr><pre>
+N36&deg37.265' E128&deg19.205'
+Elevation: 130 ft
+RWY: 18/36 (6300ft)
+TCN: R230&deg 042X DME17
+Unicom UHF: 233.8
+Unicom VHF: 122.8
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/01_KTO/charts/01 South Korea/Airstrips/Northsouth_Airstrip_SK.png" onclick="return chart(this)">Airport Diagram</a>
+</pre></div></div>
+
+<div id="R601" class="modal"><div class="modal-content">
+<center><b>AIRSTRIP (R601)</center></b></center><hr><pre>
+N36&deg41.731' E129&deg25.817'
+Elevation: 666 ft
+RWY: 09/27 (6300ft)
+TCN: R195&deg 026X DME30
+Unicom UHF: 236.6
+Unicom VHF: 122.6
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/01_KTO/charts/01 South Korea/Airstrips/Eastwest_Airstrip_SK.png" onclick="return chart(this)">Airport Diagram</a>
+</pre></div></div>
+
+<div id="R605" class="modal"><div class="modal-content">
+<center><b>AIRSTRIP (R605)</center></b></center><hr><pre>
+N37&deg10.673' E129&deg31.878'
+Elevation: 920 ft
+RWY: 18/36 (6300ft)
+TCN: R055&deg 005X DME21
+Unicom UHF: 233.8
+Unicom VHF: 122.8
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/01_KTO/charts/01 South Korea/Airstrips/Northsouth_Airstrip_SK.png" onclick="return chart(this)">Airport Diagram</a>
+</pre></div></div>
+
+<div id="SINGAL" class="modal"><div class="modal-content">
+<center><b>AIRSTRIP (SINGAL)</center></b></center><hr><pre>
+N37&deg19.295' E128&deg07.928'
+Elevation: 363 ft
+RWY: 18/36 (6300ft)
+TCN: R190&deg 046X DME08
+Unicom UHF: 233.8
+Unicom VHF: 122.8
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/01_KTO/charts/01 South Korea/Airstrips/Northsouth_Airstrip_SK.png" onclick="return chart(this)">Airport Diagram</a>
+</pre></div></div>
+
+<div id="SONGWHAN" class="modal"><div class="modal-content">
+<center><b>AIRSTRIP (SONGWHAN)</center></b></center><hr><pre>
+N36&deg54.508' E128&deg09.622'
+Elevation: 191 ft
+RWY: 18/36 (6300ft)
+TCN: R125&deg 019X DME06
+Unicom UHF: 233.8
+Unicom VHF: 122.8
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/01_KTO/charts/01 South Korea/Airstrips/Northsouth_Airstrip_SK.png" onclick="return chart(this)">Airport Diagram</a>
+</pre></div></div>
+
+<div id="JONGJU" class="modal"><div class="modal-content">
+<center><b>AIRSTRIP (JONGJU)</center></b></center><hr><pre>
+N36&deg51.275' E129&deg55.131'
+Elevation: 589 ft
+RWY: 18/36 (6300ft)
+TCN: R050&deg 026X DME15
+Unicom UHF: 233.8
+Unicom VHF: 122.8
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/01_KTO/charts/01 South Korea/Airstrips/Northsouth_Airstrip_SK.png" onclick="return chart(this)">Airport Diagram</a>
+</pre></div></div>
+
+<!-- North Korea Airstrips -->
+<div id="AYANG-NI" class="modal"><div class="modal-content">
+<center><b>AYANG-NI (KP-0037)</center></b></center><hr><pre>
+N38&deg18.184' E126&deg43.238'
+Elevation: 370 ft
+RWY: 09/27 (6300ft)
+TCN: R160&deg 051X DME62
+Unicom UHF: 233.7
+Unicom VHF: 127.7
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/01_KTO/charts/03 North Korea/Airstrips/Eastwest_Airstrip_NK.png" onclick="return chart(this)">Airport Diagram</a>
+</pre></div></div>
+
+<div id="HOEYANG_SE" class="modal"><div class="modal-content">
+<center><b>HOEYANG SE (KP-0061)</center></b></center><hr><pre>
+N38&deg47.282' E128&deg54.712'
+Elevation: 1695 ft
+RWY: 09/27 (6300ft)
+TCN: R227&deg 054X DME55
+Unicom UHF: 233.7
+Unicom VHF: 127.7
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/01_KTO/charts/03 North Korea/Airstrips/Eastwest_Airstrip_NK.png" onclick="return chart(this)">Airport Diagram</a>
+</pre></div></div>
+
+<div id="ICHON" class="modal"><div class="modal-content">
+<center><b>ICH'ON (KP-0034)</center></b></center><hr><pre>
+N38&deg36.505' E127&deg51.762'
+Elevation: 1084 ft
+RWY: 09/27 (6300ft)
+TCN: R120&deg 051X DME83
+Unicom UHF: 233.7
+Unicom VHF: 127.7
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/01_KTO/charts/03 North Korea/Airstrips/Eastwest_Airstrip_NK.png" onclick="return chart(this)">Airport Diagram</a>
+</pre></div></div>
+
+<div id="KAECHON_SW" class="modal"><div class="modal-content">
+<center><b>KAECH'ON SW</center></b></center><hr><pre>
+N39&deg51.249' E126&deg37.207'
+Elevation: 516 ft
+RWY: 18/36 (6300ft)
+TCN: R015&deg 051X DME37
+Unicom UHF: 231.4
+Unicom VHF: 123.4
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/01_KTO/charts/03 North Korea/Airstrips/Northsouth_Airstrip_NK.png" onclick="return chart(this)">Airport Diagram</a>
+</pre></div></div>
+
+<div id="KILCHU" class="modal"><div class="modal-content">
+<center><b>KILCHU (KP-0016)</center></b></center><hr><pre>
+N40&deg59.144' E131&deg18.570'
+Elevation: 448 ft
+RWY: 18/36 (6300ft)
+TCN: R135&deg 050X DME79
+Unicom UHF: 231.4
+Unicom VHF: 123.4
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/01_KTO/charts/03 North Korea/Airstrips/Northsouth_Airstrip_NK.png" onclick="return chart(this)">Airport Diagram</a>
+</pre></div></div>
+
+<div id="KOJO" class="modal"><div class="modal-content">
+<center><b>KOJO (KP-0057)</center></b></center><hr><pre>
+N38&deg52.132' E129&deg11.725'
+Elevation: 616 ft
+RWY: 09/27 (6300ft)
+TCN: R135&deg 054X DME31
+Unicom UHF: 233.7
+Unicom VHF: 127.7
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/01_KTO/charts/03 North Korea/Airstrips/Eastwest_Airstrip_NK.png" onclick="return chart(this)">Airport Diagram</a>
+</pre></div></div>
+
+<div id="KOKSAN_NK" class="modal"><div class="modal-content">
+<center><b>KOKSAN (KP-0014)</center></b></center><hr><pre>
+N38&deg47.665' E127&deg35.473'
+Elevation: 1064 ft
+RWY: 18/36 (6300ft)
+TCN: R115&deg 051X DME65
+Unicom UHF: 231.4
+Unicom VHF: 123.4
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/01_KTO/charts/03 North Korea/Airstrips/Northsouth_Airstrip_NK.png" onclick="return chart(this)">Airport Diagram</a>
+</pre></div></div>
+
+<div id="KWAKSAN" class="modal"><div class="modal-content">
+<center><b>KWAKSAN (KP-0012)</center></b></center><hr><pre>
+N39&deg43.861' E125&deg44.733'
+Elevation: 301 ft
+RWY: 09/27 (6300ft)
+TCN: R315&deg 051X DME41
+Unicom UHF: 233.7
+Unicom VHF: 127.7
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/01_KTO/charts/03 North Korea/Airstrips/Eastwest_Airstrip_NK.png" onclick="return chart(this)">Airport Diagram</a>
+</pre></div></div>
+
+<div id="KYONGSONG_CHUUL" class="modal"><div class="modal-content">
+<center><b>KYONGSONG CHUUL (KP-0055)</center></b></center><hr><pre>
+N41&deg35.786' E131&deg48.478'
+Elevation: 173 ft
+RWY: 18/36 (6300ft)
+TCN: R105&deg 050X DME77
+Unicom UHF: 231.4
+Unicom VHF: 123.4
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/01_KTO/charts/03 North Korea/Airstrips/Northsouth_Airstrip_NK.png" onclick="return chart(this)">Airport Diagram</a>
+</pre></div></div>
+
+<div id="NUCHON-NI" class="modal"><div class="modal-content">
+<center><b>NUNCH'ON-NI (KP-0052)</center></b></center><hr><pre>
+N38&deg16.568' E127&deg07.865'
+Elevation: 180 ft
+RWY: 09/27 (6300ft)
+TCN: R147&deg 051X DME71
+Unicom UHF: 233.7
+Unicom VHF: 127.7
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/01_KTO/charts/03 North Korea/Airstrips/Eastwest_Airstrip_NK.png" onclick="return chart(this)">Airport Diagram</a>
+</pre></div></div>
+
+<div id="OKPYONG-NI" class="modal"><div class="modal-content">
+<center><b>OKPYONG-NI (KP-0051)</center></b></center><hr><pre>
+N39&deg19.613' E128&deg30.958'
+Elevation: 174 ft
+RWY: 09/27 (6300ft)
+TCN: R295&deg 054X DME12
+Unicom UHF: 233.7
+Unicom VHF: 127.7
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/01_KTO/charts/03 North Korea/Airstrips/Eastwest_Airstrip_NK.png" onclick="return chart(this)">Airport Diagram</a>
+</pre></div></div>
+
+<div id="PANGHYON" class="modal"><div class="modal-content">
+<center><b>PANGHYON (KP-0031)</center></b></center><hr><pre>
+N39&deg56.254' E125&deg46.633'
+Elevation: 463 ft
+RWY: 09/27 (6300ft)
+TCN: R120&deg 055X DME40
+Unicom UHF: 233.7
+Unicom VHF: 127.7
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/01_KTO/charts/03 North Korea/Airstrips/Eastwest_Airstrip_NK.png" onclick="return chart(this)">Airport Diagram</a>
+</pre></div></div>
+
+<div id="PONGSAN" class="modal"><div class="modal-content">
+<center><b>PONGSAN</center></b></center><hr><pre>
+N38&deg32.194' E126&deg32.937'
+Elevation: 188 ft
+RWY: 09/27 (6300ft)
+TCN: R167&deg 051X DME45
+Unicom UHF: 233.7
+Unicom VHF: 127.7
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/01_KTO/charts/03 North Korea/Airstrips/Eastwest_Airstrip_NK.png" onclick="return chart(this)">Airport Diagram</a>
+</pre></div></div>
+
+<div id="SANGWON" class="modal"><div class="modal-content">
+<center><b>SANGWON (KP-0028)</center></b></center><hr><pre>
+N38&deg53.209' E126&deg50.598'
+Elevation: 326 ft
+RWY: 09/27 (6300ft)
+TCN: R140&deg 059X DME14
+Unicom UHF: 233.7
+Unicom VHF: 127.7
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/01_KTO/charts/03 North Korea/Airstrips/Eastwest_Airstrip_NK.png" onclick="return chart(this)">Airport Diagram</a>
+</pre></div></div>
+
+<div id="SONCHON" class="modal"><div class="modal-content">
+<center><b>SONCH'ON (KP-0045)</center></b></center><hr><pre>
+N39&deg47.633' E125&deg19.635'
+Elevation: 281 ft
+RWY: 09/27 (6300ft)
+TCN: R150&deg 055X DME32
+Unicom UHF: 233.7
+Unicom VHF: 127.7
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/01_KTO/charts/03 North Korea/Airstrips/Eastwest_Airstrip_NK.png" onclick="return chart(this)">Airport Diagram</a>
+</pre></div></div>
+
+<div id="SUGAM-NI" class="modal"><div class="modal-content">
+<center><b>SUGAM-NI (KP-0044)</center></b></center><hr><pre>
+N41&deg46.179' E131&deg56.882'
+Elevation: 110 ft
+RWY: 09/27 (6300ft)
+TCN: R095&deg 050X DME79
+Unicom UHF: 233.7
+Unicom VHF: 127.7
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/01_KTO/charts/03 North Korea/Airstrips/Eastwest_Airstrip_NK.png" onclick="return chart(this)">Airport Diagram</a>
+</pre></div></div>
+
+<div id="TAEBUKPO-RI" class="modal"><div class="modal-content">
+<center><b>TAEBUKPO-RI (KP-0007)</center></b></center><hr><pre>
+N38&deg21.417' E127&deg46.622'
+Elevation: 458 ft
+RWY: 09/27 (6300ft)
+TCN: R130&deg 051X DME88
+Unicom UHF: 233.7
+Unicom VHF: 127.7
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/01_KTO/charts/03 North Korea/Airstrips/Eastwest_Airstrip_NK.png" onclick="return chart(this)">Airport Diagram</a>
+</pre></div></div>
+
+<div id="TANGCHON" class="modal"><div class="modal-content">
+<center><b>TANGCH'ON</center></b></center><hr><pre>
+N40&deg25.352' E130&deg36.617'
+Elevation: 196 ft
+RWY: 09/27 (6300ft)
+TCN: R165&deg 050X DME95
+Unicom UHF: 233.7
+Unicom VHF: 127.7
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/01_KTO/charts/03 North Korea/Airstrips/Eastwest_Airstrip_NK.png" onclick="return chart(this)">Airport Diagram</a>
+</pre></div></div>
+
+<div id="YONGHUNG" class="modal"><div class="modal-content">
+<center><b>YONGHUNG (KP-0040)</center></b></center><hr><pre>
+N39&deg33.084' E128&deg33.424'
+Elevation: 22 ft
+RWY: 09/27 (6300ft)
+TCN: R330&deg 054X DME23
+Unicom UHF: 233.7
+Unicom VHF: 127.7
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/01_KTO/charts/03 North Korea/Airstrips/Eastwest_Airstrip_NK.png" onclick="return chart(this)">Airport Diagram</a>
+</pre></div></div>
+
+<!-- VORTACs -->
+<div id="ANYANG" class="modal"><div class="modal-content">
+<center><b>ANYANG VORTAC (SEL)</center></b></center><hr><pre>
+Channel: 102X  Type: E
+Range: 100Nm</pre>
+</div></div>
+
+<div id="GANGWON" class="modal"><div class="modal-content">
+<center><b>GANGWON VORTAC (KAE)</center></b></center><hr><pre>
+Channel: 103X  Type: E
+Range: 140Nm</pre>
+</div></div>
+
+<div id="MOKPO" class="modal"><div class="modal-content">
+<center><b>MOKPO VORTAC (MKP)</center></b></center><hr><pre>
+Channel: 49X  Type: E
+Range: 70Nm</pre>
+</div></div>
+
+<div id="PUSAN" class="modal"><div class="modal-content">
+<center><b>PUSAN VORTAC (PSN)</center></b></center><hr><pre>
+Channel: 65X  Type: A
+Range: 200Nm</pre>
+</div></div>
+
+<div id="TALSUNG" class="modal"><div class="modal-content">
+<center><b>TALSUNG VORTAC (TGU)</center></b></center><hr><pre>
+Channel: 059X  Type: A
+Range: 140Nm</pre>
+</div></div>
+
+<div id="ULJIN" class="modal"><div class="modal-content">
+  <center><b>ULJIN VORTAC (UJN)</center></b></center><hr><pre>
+  Channel: 100X  Type: A
+  Range: 40Nm</pre>
+  </div></div>
+
+<div id="ULSAN" class="modal"><div class="modal-content">
+<center><b>ULSAN VORTAC (USN)</center></b></center><hr><pre>
+Channel: 062X  Type: A
+Range: 40Nm</pre>
+</div></div>
+
+<div id="HGS" class="modal"><div class="modal-content">
+  <center><b>WONJU VORTAC (HGS)</center></b></center><hr><pre>
+  Channel: 060Y  Type: A
+  Range: 40Nm</pre>
+  </div></div>
+
+<div id="YANGJU" class="modal"><div class="modal-content">
+<center><b>YANGJU VORTAC (YJU)</center></b></center><hr><pre>
+Channel: 096X  Type: E
+Range: 140Nm</pre>
+</div></div>
+
+<div id="YAG" class="modal"><div class="modal-content">
+<center><b>YANGYANG VORTAC (YAG)</center></b></center><hr><pre>
+Channel: 043X  Type: A
+Range: 40Nm</pre>
+</div></div>
+
+<div id="YEOSU" class="modal"><div class="modal-content">
+<center><b>YEOSU VORTAC (YSU)</center></b></center><hr><pre>
+Channel: 104X  Type: A
+Range: 40Nm</pre>
+</div></div>
+
+<!-- Other Menus and popups -->
+<div id="SIDC" class="modal" ondrop="dropHandler(event);" ondragover="allowDrop(event)"><div class="modal-content">
+  <center><b>C2 Symbols</center></b></center>
+  <br><b>Symbol Set</b><hr>
+  <table width="95%">
+    <tr>
+      <td align="left" >Identity</td>
+      <td align="left"><select name="sidc-identity" id="sidc-identity" onchange="selectSymbols(this);" style="width:140px">
+        <option value="1006">Hostile</option>
+        <option value="1003">Friend</option>
+      </select></td>
+    </tr>
+    <tr>
+      <td align="left" >Type</td>
+      <td align="left">  <select name="sidc-set" id="sidc-set" onchange="selectSymbols(this);" style="width:140px">
+        <option value="100016">Land Unit</option>
+        <option value="010000">Air</option>
+        <option value="300000">Sea Surface</option>
+      </select></td>
+    </tr>
+   </table>
+
+<br><b>Identification</b><hr>
+  <table width="95%">
+  <tr>
+    <td align="left">Entity</td>
+    <td align="left"><select name="sidc-entity" id="sidc-entity" onchange="selectSymbols(this);" style="width:140px">
+    </select></td>
+    <tr>
+      <td align="left" >Sector 1</td>
+      <td align="left"><select name="sidc-sec1" id="sidc-sec1" onchange="selectSymbols(this);" style="width:140px">
+        <option value="00">Unspecified</option>
+        <option value="00">Airmobile</option>
+        <option value="41">Multi Rocket Launcher</option>
+      </select></td>
+    </tr>
+    <tr>
+      <td align="left" >Sector 2</td>
+      <td align="left"><select name="sidc-sec2" id="sidc-sec2" onchange="selectSymbols(this);" style="width:140px">
+        <option value="00">Unspecified</option>
+      </select></td>
+    </tr>
+  </table>
+  <br><b>Symbol Identification Code</b><hr><br>
+  <table>
+    <tr>
+    <td align="left">
+      <img src="../common/assets/10061000161211000000.ico" id="sidc-symbol" width="32" height="32" alt="symbol">
+    </td>
+    <td align="right">
+      <label>&nbsp;</label>
+      <label id="sidc-val" style='font-size:95%''>10061000161211000000</label>
+    </td>
+    </tr>
+  </table>
+  <center><a href="https://www.jcs.mil/Portals/36/Documents/Doctrine/Other_Pubs/ms_2525d.pdf" style='font-size:70%' target="_blank">MIL-STD-2525D</a></center>
+</div></div>
+
+
+<div id="STYLE" class="modal" ondrop="dropHandler(event);" ondragover="allowDrop(event)"><div class="modal-content">
+  <center><b>Whiteboard</center></b></center>
+
+<br><b>Pencil</b><hr>
+  <table width="95%">
+  <tr>
+    <td align="right" >Line</td>
+    <td align="center"><select name="line-style" id="line-style" onchange="selectStyle(this);">
+      <option value="0">Solid</option>
+      <option value="1">Dash</option>
+      <option value="2">Dots</option>
+    </select></td>
+    <td align="center"><input type="color" name="line-color" id="line-color" value="#000000" onchange="selectStyle(this);" ></td>
+    <td align="center"><input type="number" name="line-width" id="line-width" value="2"  min="1" max="30" onchange="selectStyle(this);" style="width:40px"></td>
+  </tr>
+  <tr>
+    <td align="right">Fill</td>
+    <td align="center"><select name="fill-style" id="fill-style" onchange="selectStyle(this);">
+      <option value="0">None</option>
+      <option value="1">Solid</option>
+    </select></td>
+    <td align="center"><input type="color" name="fill-color" id="fill-color" value="#000000" onchange="selectStyle(this);"></td>
+    <td align="center"></td>
+  </tr>
+  </table>
+<br><b>Opacity</b><hr>
+<table width="95%">
+<tr>
+<td align="center"><input type="range" name="opacity-range" id="opacity-range" value=20 min="0" max="100" onchange="selectStyle(this);">
+</td>
+<td align="right"><input type="number" name="opacity-num" id="opacity-num" value=20 min="0" max="100" onchange="selectStyle(this);" style="width:40px">
+</td>
+</tr>
+</table>
+<br><b>Eraser</b><hr>
+<table width="95%">
+  <tr>
+    <td align="center"><input type="range" name="erase-rng" id="erase-rng" value=16 min="1" max="100" onchange="selectStyle(this);">
+    </td>
+    <td align="right"><input type="number" name="erase-num" id="erase-num" value=16 min="1" max="100" onchange="selectStyle(this);" style="width:40px">
+    </td>
+    </tr>
+    </table>
+</table>
+</div></div>
+
+<div id="CONFIG" class="modal" ondrop="dropHandler(event);" ondragover="allowDrop(event)">
+  <div class="modal-content">
+    <!-- Tabs -->
+    <div class="tab">
+      <button class="tablinks" name="Settings" onclick="openTab('Settings')">Settings</button>
+      <button class="tablinks" name="Connections" onclick="openTab('Connections')">Connectivity</button>
+    </div><br>
+
+    <!-- Tab Content with Settings as default display -->
+    <div id="Settings" class="tabcontent" ondrop="dropHandler(event);" ondragover="allowDrop(event)">
+    <b>Common</b><hr>
+    <input type="checkbox" id="unit" name="imperial" onchange="selectUnit(this);">
+    <label for="unit">Imperial Units</label><br>
+
+    <br><b>Chart</b><hr>
+    <table width="95%">
+    <tr><td><label for="alt-select">Wind Alt.</label></td>
+    <td><select name="altitudes" id="alt-select" onchange="selectAltitude(this);" style="width:110px">
+      <option value="0">0</option>
+      <option value="1">3000</option>
+      <option value="2">6000</option>
+      <option value="3">9000</option>
+      <option value="4">12000</option>
+      <option value="5">18000</option>
+      <option value="6">24000</option>
+      <option value="7">30000</option>
+      <option value="8">40000</option>
+      <option value="9">50000</option>
+    </select></td></tr>
+    <tr><td><label for="wx-select">Weather</label></td>
+    <td><select name="weather" id="wx-select" onchange="selectChart(this);" style="width:110px">
+      <option value="2">Temperature</option>
+      <option value="1">Winds</option>
+      <option value="3">Isobar</option>
+      <option value="0">Doppler</option>
+      <option value="4">Clouds</option>
+    </select></td></tr>
+    <tr><td><label for="flt-select">Map Filter</label></td>
+      <td><select name="filter" id="flt-select" onchange="selectFilter(this);" style="width:110px">
+        <option value="0">Default</option>
+        <option value="3">Night Mode</option>
+        <option value="1">Grayscale</option>
+        <option value="2">Sepia</option>
+      </select></td></tr>
+    </table>
+
+    <br><b>Visibility</b><hr>
+    <input type="checkbox" id="bullseye_hide" name="hide_be" value="on" onchange="selectVisibility(this);">
+    <label for="bullseye_hide">Hide Bullseye</label><br>
+    <input type="checkbox" id="mission_hide" name="hide_ms" value="on" onchange="selectVisibility(this);">
+    <label for="mission_hide">Hide Mission</label><br>
+    <input type="checkbox" id="weather_hide" name="hide_wx" value="on" onchange="selectVisibility(this);">
+    <label for="weather_hide">Hide Weather</label><br>
+    <input type="checkbox" id="whitebrd_hide" name="hide_wb" value="on" onchange="selectVisibility(this);">
+    <label for="whitebrd_hide">Hide Whiteboard</label><br>
+    <input type="checkbox" id="coordinates_hide" name="hide_xy" checked value="on" onchange="selectVisibility(this);">
+    <label for="coordinates_hide">Hide Coordinates</label><br><br>
+    <button><img src="../common/assets/icon_save.png"  id="save" width="32" height="32" alt="save" onclick="button(event)"></button>
+    <button><img src="../common/assets/icon_clear.png" id="clear" width="32" height="32" alt="clear" onclick="button(event)"></button>
+    <button><img src="../common/assets/icon_reset.png" id="reset" width="32" height="32" alt="reset" onclick="button(event)"></button>
+    </div>
+
+    <!-- Connectivity TAB -->
+    <div id="Connections" class="tabcontent">
+      <b>Collaboration</b><hr>
+      <input type="checkbox" id="imcs-secure" value="on" onchange="changedIMCS(this);"><label for="secure">&nbspSecure Connection</label><br><br>
+      <table width="95%">
+        <tr><td align="right">Callsign</td><td><input type="text" id="imcs-callsign" name="callsign" onchange="changedIMCS(this);" style="width:130px"></td></tr>
+        <tr><td align="right">Session</td><td><input type="text" id="imcs-session" name="session" onchange="changedIMCS(this);" style="width:130px"></td></tr>
+        <tr><td align="right">Address</td><td><input type="text" id="imcs-host" name="host" value="collab.falcon-bms.com" onchange="changedIMCS(this);"  style="width:130px"></td></tr>
+        <tr><td align="right" valign="top">Port</td><td><input type="text" id="imcs-port" name="port" value="443" onchange="changedIMCS(this);"  style="width:50px"><br>
+          <button id="imcs-connection" style="float: right; width:50px"" onclick="button(event)">&nbspJoin&nbsp</button></td></tr>
+      </table>
+      <br>
+      <b>Global Forecast System</b><hr>
+      <table width="95%">
+        <tr><td align="right">Date</td><td>
+          <select id="gfs-date" name="date" style="width:100px">
+            <option value="20230531">May 31, 2023</option>
+        </select></td></tr></td></tr>
+        <tr><td align="right">Cycle</td><td>
+          <select name="cycle" id="gfs-cycle" name="cycle" style="width:64px">
+            <option value="00">0000Z</option>
+            <option value="06">0600Z</option>
+            <option value="12">1200Z</option>
+            <option value="18">1800Z</option>
+          </select></td></tr>
+        <tr><td align="right" valign="top">Forecast</td><td><input type="number" id="gfs-off" name="offset"  min="1" max="384" value="1" step="1" required style="width:60px"><br>
+          <!-- <button id="gfs-fetch" style="float: right;" onclick="button(event)">&nbspFetch&nbsp</button></td></tr>-->
+      </table>
+      <br>
+      <button><img src="../common/assets/icon_download.png"  id="download" width="32" height="32" alt="download" onclick="button(event)"></button>
+      <button><img src="../common/assets/icon_save.png"      id="export"   width="32" height="32" alt="export"   onclick="button(event)"></button>
+    </div> <!-- TAB end -->
+  </div>
+</div>
+
+<div id="ROUTE" class="modal" ondrop="dropHandler(event);" ondragover="allowDrop(event)">
+  <div class="modal-content">
+    <!-- Tabs -->
+    <div class="tab">
+      <button class="tablinks" name="Route" onclick="openTab('Route')">Route</button>
+      <button class="tablinks" name="Radio" onclick="openTab('Radio')">Radio</button>
+      <button class="tablinks" name="Mission" onclick="openTab('Mission')">Mission</button>
+    </div><br>
+
+    <!-- Tab Content with Route as default display -->
+    <div id="Route" class="tabcontent">
+      <table width="95%">
+        <tr><td align="left"><label id="stpt-lab">STPT</label></td><td align="left"><label id="stpt-val">1</label></td>
+            <td align="right">
+              <img src="../common/assets/icon_left.png" id="left" width="16" height="16" alt="left" onclick="button(event)">
+              <img src="../common/assets/icon_right.png" id="right" width="16" height="16" alt="right" onclick="button(event)">
+          </td></tr>
+      </table>
+      <hr><br>
+      <center>
+      <label id="lat-val">0</label>&nbsp&nbsp<label id="long-val">0</label><br>
+      <table width="100%">
+        <tr><td><br></td></tr>
+        <tr><th align="right">TOS</th><td align="left">
+          <select name="hrs" id="tos-hrs" onchange="updatedTOS();"><option value="0">09</option></select>
+          <select name="min" id="tos-min" onchange="updatedTOS();"><option value="0">00</option></select>
+          <select name="sec" id="tos-sec" onchange="updatedTOS();"><option value="0">00</option></select>
+          <input type="text" id="day-val" name="day" value="0" readonly hidden>
+        </td></tr>
+        <tr><th align="right">TAS</th><td align="left"><input style="width:65px;" type="number" id="tas-val" name="tas" min="150" max="600" value="350" step="1" onchange=updatedSpeed() required> kts</td></tr>
+        <tr><th align="right">ALT</th><td align="left"><input style="width:65px;" type="number" id="alt-val" name="alt" min="0" max="45000" value="24000" step="100" onchange=updatedAltitude() required> ft</td></tr>
+        </table><br>
+        <table>
+        <tr><th align="right">Track&nbsp</th><td align="left"><label id="trk-val">0&deg</label></td></tr>
+        <tr><td><br></td></tr>
+        <tr><th align="right">Formatation</th><td align="left">
+          <select name="formation" id="formation-select" onchange="selectFormation(this);" style="width:98px">
+            <option value="0">Arrowhead</option>
+            <option value="1">Box</option>
+            <option value="2">Fighting Wing</option>
+            <option value="3">Finger Four</option>
+            <option value="4">Fluid Four</option>
+            <option value="5">Ladder</option>
+            <option value="6">Line Abreast</option>
+            <option value="7">ResCell</option>
+            <option value="8">Route</option>
+            <option value="9">Spread</option>
+            <option value="10">Stack</option>
+            <option value="11">Trail</option>
+            <option value="12">Wedge</option>
+          </select>
+        <tr><td align="right"><b>Enroute</b></td><td align="left">
+          <select name="enroute" id="enroute-select" onchange="selectEnroute(this);" style="width:98px">
+            <option value="0">Nav</option>
+            <option value="1">SEAD</option>
+          </select>
+        </td></tr>
+        <tr><th align="right">Action</th><td align="left">
+          <select name="action" id="action-select" onchange="selectAction(this);" style="width:98px">
+            <option value="0">Nav</option>
+            <option value="1">Takeoff</option>
+            <option value="2">Push</option>
+            <option value="3">Split</option>
+            <option value="4">Refuel</option>
+            <option value="5">Rearm</option>
+            <option value="6">Pickup</option>
+            <option value="7">Land</option>
+            <option value="8">Holding Pt</option>
+            <option value="9">Contact</option>
+            <option value="10">Escort</option>
+            <option value="11">Sweep</option>
+            <option value="12">CAP</option>
+            <option value="13">Intercept</option>
+            <option value="14">Grnd Attack</option>
+            <option value="15">Surf Attack</option>
+            <option value="16">S&D</option>
+            <option value="17">Strike</option>
+            <option value="18">Bomb</option>
+            <option value="19">SEAD</option>
+            <option value="20">ELINT</option>
+            <option value="21">Recon</option>
+            <option value="22">Rescue</option>
+            <option value="23">ASW</option>
+            <option value="24">Fuel</option>
+            <option value="25">Air Drop</option>
+            <option value="26">Jamming</option>
+          </select>
+        </td></tr>
+        <tr><th align="right">Duration</th><td align="left"><input type="number" id="dur-val" onchange="selectDuration(this);" name="dur" min="0" max="120" value="0" step="1" required> min</td></tr>
+      </table><br>
+      </center>
+      <hr><br>
+      <center><label id="options-val">No Options.</label></center>
+      <br>
+    </div>
+
+    <div id="Radio" class="tabcontent">
+      <table width="100%" style='font-size:95%'>
+        <tr><th>PRESET</th><th>UHF</th><th>VHF</th></tr>
+        <tr><td align="left">01 OPS</td><td align="center"><label id="UHF_1">000.000</label></td><td align="center"><label id="VHF_1">000.000</label></td></tr>
+        <tr><td align="left">02 GND</td><td align="center"><label id="UHF_2">000.000</label></td><td align="center"><label id="VHF_2">000.000</label></td></tr>
+        <tr><td align="left">03 TWR</td><td align="center"><label id="UHF_3">000.000</label></td><td align="center"><label id="VHF_3">000.000</label></td></tr>
+        <tr><td align="left">04 DEP</td><td align="center"><label id="UHF_4">000.000</label></td><td align="center"><label id="VHF_4">000.000</label></td></tr>
+        <tr><td align="left">05 CHK</td><td align="center"><label id="UHF_5">000.000</label></td><td align="center"><label id="VHF_5">000.000</label></td></tr>
+        <tr><td align="left">06 TAC</td><td align="center"><label id="UHF_6">000.000</label></td><td align="center"><label id="VHF_6">000.000</label></td></tr>
+        <tr><td align="left">07 APP</td><td align="center"><label id="UHF_7">000.000</label></td><td align="center"><label id="VHF_7">000.000</label></td></tr>
+        <tr><td align="left">08 TWR</td><td align="center"><label id="UHF_8">000.000</label></td><td align="center"><label id="VHF_8">000.000</label></td></tr>
+        <tr><td align="left">09 GND</td><td align="center"><label id="UHF_9">000.000</label></td><td align="center"><label id="VHF_9">000.000</label></td></tr>
+        <tr><td align="left">10 APP</td><td align="center"><label id="UHF_10">000.000</label></td><td align="center"><label id="VHF_10">000.000</label></td></tr>
+        <tr><td align="left">11 TWR</td><td align="center"><label id="UHF_11">000.000</label></td><td align="center"><label id="VHF_11">000.000</label></td></tr>
+        <tr><td align="left">12 GND</td><td align="center"><label id="UHF_12">000.000</label></td><td align="center"><label id="VHF_12">000.000</label></td></tr>
+        <tr><td align="left">13 AAR</td><td align="center"><label id="UHF_13">000.000</label></td><td align="center"><label id="VHF_13">000.000</label></td></tr>
+        <tr><td align="left">14 CMN</td><td align="center"><label id="UHF_14">000.000</label></td><td align="center"><label id="VHF_14">000.000</label></td></tr>
+        <tr><td align="left">15 FLT1</td><td align="center"><label id="UHF_15">000.000</label></td><td align="center"><label id="VHF_15">000.000</label></td></tr>
+        <tr><td align="left">16 FLT2</td><td align="center"><label id="UHF_16">000.000</label></td><td align="center"><label id="VHF_16">000.000</label></td></tr>
+        <tr><td align="left">17 FLT3</td><td align="center"><label id="UHF_17">000.000</label></td><td align="center"><label id="VHF_17">000.000</label></td></tr>
+        <tr><td align="left">18 FLT4</td><td align="center"><label id="UHF_18">000.000</label></td><td align="center"><label id="VHF_18">000.000</label></td></tr>
+        <tr><td align="left">19 FLT5</td><td align="center"><label id="UHF_19">000.000</label></td><td align="center"><label id="VHF_19">000.000</label></td></tr>
+        <tr><td align="left">20 LSO</td><td align="center"><label id="UHF_20">000.000</label></td><td align="center"><label id="VHF_20">000.000</label></td></tr>
+      </table>
+    </div>
+
+    <div id="Mission" class="tabcontent">
+      <b>Flight&nbsp;<label id="flt-num">1</label></b><hr>
+      <table width="100%" style='font-size:95%'>
+        <tr><td align="right">Total Distance</td><td align="right"><label id="flt-dist">0</label></td><td>&nbspNM</td></tr>
+        <tr><td align="right">Flight Duration</td><td align="right"><label id="flt-time">0</label></td><td>&nbsphrs</td></tr>
+        <tr><td align="right">Estimated Fuel</td><td align="right"><label id="flt-fuel">0</label></td><td>&nbsplbs</td></tr>
+        <tr><td align="right">Bingo</td><td align="right"><label id="flt-bingo">0</label></td><td>&nbsplbs</td></tr>
+        <tr><td align="right">Playtime</td><td align="right"><label id="flt-play">0</label></td><td>&nbspmin</td></tr>
+      </table><br>
+      <b>Package&nbsp;</b><input style="width:30px; background-color: #f5f5f5; border: none; font-weight:bold;" type="number" id="pkg-num" onchange="selectPackage(this);" name="package" min="1" max="2" value="1" step="1" required><hr>
+      <table width="100%" style='font-size:95%'>
+        <tr><th align="right">Flight: </th>
+          <td align="left">
+          <select name="flight" id="pkg-flight" onchange="selectPackage(this);" style="width:90px">
+          </select>
+          <select name="seat" id="pkg-seat" onchange="selectPackage(this);" style="width:40px">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+          </select>
+        </td></tr>
+        <tr><th align="right">Chx:</th><td align="left">
+          <select name="channel" id="pkg-chx" onchange="selectPackage(this);" style="width:90px">
+            <option value="11">11/74</option>
+            <option value="12">12/75</option>
+            <option value="13">13/76</option>
+            <option value="14">14/77</option>
+            <option value="15">15/78</option>
+            <option value="16">16/79</option>
+            <option value="17">17/80</option>
+            <option value="18">18/81</option>
+            <option value="19">19/82</option>
+            <option value="20">20/83</option>
+          </select>
+          <select name="band" id="pkg-band" onchange="selectPackage(this);" style="width:40px">
+            <option value="1">Y</option>
+            <option value="-1">X</option>
+          </select>
+        </td></tr>
+        <tr><td align="right"><b>Fuel:</b></td><td align="left"><input style="width:86px;" type="number" id="pkg-fuel" onchange="selectPackage(this);" name="fuel" min="2000" max="15000" value="7000" step="100" required> lbs</td></tr>
+      </table><br>
+      <button class="button"><img src="../common/assets/icon_table1.png" id="btn-flight" width="32" height="32" alt="STPT" onclick="button(event)"></button>
+      <button class="button"><img src="../common/assets/icon_table.png" id="btn-wx" width="32" height="32" alt="WX" onclick="button(event)"></button>
+      <br>
+    </div>
+  </div>
+</div>
+
+<div id="tableDatacard" class="chart">
+  <center><b>Mission Briefing</b></center>
+  <table id="tbl-brf" width="100%" border="1" style="border-collapse:collapse; border-color:Black; border-style:solid; border-width:1pt; font-size:95%">
+    <tr class="d1"><th width="15%" align="right">Callsign</th><td colspan="4">Beast5</td></tr>
+    <tr class="d1"><th  width="15%" align="right">Times</th><td>08:40:00</td><td>08:50:00</td><td>08:54:00</td><td>09:00:00</td></tr>
+    <tr class="d1"><th  width="15%" align="right">Fuel</th><td>8000</td><td>5300/4300</td><th align="right">Laser Code</th><td>1511</td></tr>
+    <tr class="d1"><th  width="15%" align="right">Intel</th><td colspan="4">SA-10</td></tr>
+  </table><br>
+  <center><b>Package</b></center>
+  <table id="tbl-pkg" width="100%" border="1" style="border-collapse:collapse; border-color:Black; border-style:solid; border-width:1pt; font-size:95%">
+    <tr class="d0"><th>Callsign</th><th>UHF</th><th>VHF</th><th>IDM</th><th>TCN</th></tr>
+  </table><br>
+  <center><b>Airbases</b></center>
+  <table id="tbl-afb" width="100%" border="1" style="border-collapse:collapse; border-color:Black; border-style:solid; border-width:1pt; font-size:95%">
+    <tr class="d0"><th width="5%">Type</th><th width="25%">Location</th><th>Airport</th><th>TCN</th><th>GND</th><th>TWR</th><th>APP</th><th>ATIS</th></tr>
+  </table><br>
+  <center><b>Flight Plan</b></center>
+  <table id="tbl-stpts" width="100%" border="1" style="border-collapse:collapse; border-color:Black; border-style:solid; border-width:1pt; font-size:95%">
+    <tr class="d0"><th width="5%">STPT</th><th width="25%">Location</th><th>Action</th><th>TOS</th><th>Hdg.</th><th>Dist.</th><th>TAS</th><th>Mach</th><th>Alt.</th><th>Fuel</th></tr>
+  </table><br>
+  <center><b>Objectives</b></center>
+  <table id="tbl-objs" width="100%" border="1" style="border-collapse:collapse; border-color:Black; border-style:solid; border-width:1pt; font-size:95%">
+    <tr class="d0"><th width="5%">STPT</th><th width="25%">Location</th><th>Target</th></tr>
+  </table><br>
+  <center><b>Support</b></center>
+  <table id="tbl-sppt" width="100%" border="1" style="border-collapse:collapse; border-color:Black; border-style:solid; border-width:1pt; font-size:95%">
+    <tr class="d0"><th width="5%">STPT</th><th width="25%">Location</th><th>Callsign</th><th>Type</th><th>UHF</th><th>VHF</th></tr>
+  </table><br>
+</div>
+
+<div id="tableWeather" class="chart">
+  <center><b>Weather Briefing</b></center>
+  <table id="tbl-wxhdr" width="100%" border="1" style="border-collapse:collapse; border-color:Black; border-style:solid; border-width:1pt; font-size:95%">
+    <tr class="d1"><th width="15%">Callsign</th><td width="60%"></td><th width="10%">Time</th><td>010000Z</td></tr>
+  </table><br>
+  <center><b>Performance Data</b></center>
+  <table id="tbl-wxafb" width="100%" border="1" style="border-collapse:collapse; border-color:Black; border-style:solid; border-width:1pt; font-size:95%">
+    <tr class="d0"><th width="5%">Type</th><th width="20%">Airport</th><th>RWY</th><th>ELEV.</th><th>OAT</th><th>QNH</th><th>PA</th><th>DA</th></tr>
+  </table><br>
+  <center><b>Route METARs</b></center>
+  <table id="tbl-metar" width="100%" border="1" style="border-collapse:collapse; border-color:Black; border-style:solid; border-width:1pt; font-size:95%">
+    <tr class="d0"><th width="5%">#</th><th width="20%">Station</th><th width="63%">METAR</th></tr>
+  </table><br>
+  <center><b>Winds and Temperatures Aloft</b></center>
+  <table id="tbl-winds" width="100%" border="1" style="border-collapse:collapse; border-color:Black; border-style:solid; border-width:1pt; font-size:95%">
+    <tr class="d0"><th width="5%">#</th><th width="20%">Station</th><th>3000 ft</th><th>6000 ft</th><th>9000 ft</th><th>12000 ft</th><th>18000 ft</th><th>24000 ft</th><th>30000 ft</th></tr>
+  </table><br>
+</div>
+
+<div id="chartAltitudes" class="chart">
+<center><h3>Altitude and Velocity</h3></center>
+<center><canvas id="chart" width="800" height="550"></canvas></center>
+</div>
+
+<textarea id="TextEntry" class="text-area""></textarea>
+
+<!-- The Maps and Airbases Overlay -->
+<div id="container">
+  <img src="https://cdn.falcon-bms.com/maps/01_KTO/maps/KTO_UI_Map_4k.png" class="background" id="map" width="3840" height="3840" alt="">
+  <div id="Layers" class="overlay" ondrop="dropHandler(event);" ondragover="allowDrop(event)">
+    <canvas id="annotation" width="3840" height="3840"></canvas>
+    <div id=Airbases class="overlay">
+      <img src="resources/map_airbases.png" id="airbases" width="3840" height="3840" alt="" border="0" usemap="#Map">
+      <div id="UserInputs" class="inputs">
+        <table id="locate" border="0" cellpadding="0" cellspacing="0">
+          <tr>
+          <td style="width: 50px;">&nbsp;</td>
+          <td align="left"><label id="cursor-val" style="color: #ffffff; font-size: small;"></label></td></tr>
+          <tr>
+          <td style="width: 50px;"></td>
+          <td height="40"><select name="airport" id="airports" onchange="locateAirport(this);" onfocus="this.selectedIndex = -1;" size="1" style="width: 282px;font-size: min(3vw, 16px);z-index: 2;"></select></td>
+        </tr>
+        <table id="toolbar" border="0" cellpadding="0" cellspacing="0">
+        <tr><td><img src="../common/assets/icon_toolbar.png" width="32" height="8" border="0" style="display:block"></td></tr>
+        <tr><td><img src="../common/assets/icon_move1.png" id="move" width="32" height="32" alt="move" border="0" style="display:block" onclick="button(event)"></td></tr>
+        <tr><td><img src="../common/assets/icon_zoom1.png" id="zoom1" width="32" height="32" alt="zoom-out" border="0" style="display:block" onclick="button(event)"></td></tr>
+        <tr><td><img src="../common/assets/icon_zoom2.png" id="zoom2" width="32" height="32" alt="zoom-in" border="0" style="display:block" onclick="button(event)"></td></tr>
+        <tr><td><img src="../common/assets/icon_bullseye.png" id="bullseye" width="32" height="32" alt="bullseye" border="0" style="display:block" onclick="button(event)"></td></tr>
+        <tr><td><img src="../common/assets/icon_compass.png" id="compass" width="32" height="32" alt="compass" border="0" style="display:block" onclick="button(event)"></td></tr>
+        <tr><td><img src="../common/assets/icon_ruler.png" id="ruler" width="32" height="32" alt="ruler" border="0" style="display:block" onclick="button(event)"></td></tr>
+        <tr><td><img src="../common/assets/icon_sword.png" id="symbol" width="32" height="32" alt="symbol" border="0" style="display:block" onclick="button(event)"></td></tr>
+        <tr><td><img src="../common/assets/icon_pencil.png" id="pencil" width="32" height="32" alt="pencil" border="0" style="display:block" onclick="button(event)"></td></tr>
+        <tr><td><img src="../common/assets/icon_text.png" id="text" width="32" height="32" alt="text" border="0" style="display:block" onclick="button(event)"></td></tr>
+        <tr><td><img src="../common/assets/icon_eraser.png" id="eraser" width="32" height="32" alt="eraser" border="0" style="display:block" onclick="button(event)"></td></tr>
+        <tr><td><img src="../common/assets/icon_menu.png" id="settings" width="32" height="32" alt="reset" border="0" style="display:block" onclick="button(event)"></td></tr>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- All Map Coordinates based on 4096x4096 Javascript scales to 3840.
+     You must set the map datum in degrees for the map south west corner for Lat/Long calculations-->
+<map name="Map" id="imgMap" data-map-datum="33.84375,123">
+<!-- South Korea -->
+<area shape="circle" coords="1996,2776,17" href="javascript:void(0);" alt="South Korea" title="CHEONGJU" onclick="return popup('CHEONGJU');"/>
+<area shape="circle" coords="1336,3147,17" href="javascript:void(0);" alt="South Korea" title="CHIK-DO" onclick="return popup('CHIK-DO');"/>
+<area shape="circle" coords="2499,3150,17" href="javascript:void(0);" alt="South Korea" title="DAEGU" onclick="return popup('DAEGU');"/>
+<area shape="circle" coords="2642,2339,17" href="javascript:void(0);" alt="South Korea" title="GANGNEUNG" onclick="return popup('GANGNEUNG');"/>
+<area shape="circle" coords="2617,3482,17" href="javascript:void(0);" alt="South Korea" title="GIMHAE" onclick="return popup('GIMHAE');"/>
+<area shape="circle" coords="1663,2422,17" href="javascript:void(0);" alt="South Korea" title="GIMPO" onclick="return popup('GIMPO');"/>
+<area shape="circle" coords="1589,3151,17" href="javascript:void(0);" alt="South Korea" title="GUNSAN" onclick="return popup('GUNSAN');"/>
+<area shape="circle" coords="1697,3483,17" href="javascript:void(0);" alt="South Korea" title="GWANGJU" onclick="return popup('GWANGJU');"/>
+<area shape="circle" coords="1548,2442,17" href="javascript:void(0);" alt="South Korea" title="INCHEON" onclick="return popup('INCHEON');"/>
+<area shape="circle" coords="2188,2692,17" href="javascript:void(0);" alt="South Korea" title="JUNGWON" onclick="return popup('JUNGWON');"/>
+<area shape="circle" coords="2605,2631,17" href="javascript:void(0);" alt="South Korea" title="KOTAR" onclick="return popup('KOTAR');"/>
+<area shape="circle" coords="1502,3559,17" href="javascript:void(0);" alt="South Korea" title="MUAN" onclick="return popup('MUAN');"/>
+<area shape="circle" coords="1782,2658,17" href="javascript:void(0);" alt="South Korea" title="OSAN" onclick="return popup('OSAN');"/>
+<area shape="circle" coords="2809,3112,17" href="javascript:void(0);" alt="South Korea" title="POHANG" onclick="return popup('POHANG');"/>
+<area shape="circle" coords="1801,2704,17" href="javascript:void(0);" alt="South Korea" title="PYEONGTAEK" onclick="return popup('PYEONGTAEK');"/>
+<area shape="circle" coords="2239,3521,17" href="javascript:void(0);" alt="South Korea" title="SACHEON" onclick="return popup('SACHEON');"/>
+<area shape="circle" coords="1551,2828,17" href="javascript:void(0);" alt="South Korea" title="SEOSAN" onclick="return popup('SEOSAN');"/>
+<area shape="circle" coords="1808,2487,17" href="javascript:void(0);" alt="South Korea" title="SEOUL" onclick="return popup('SEOUL');"/>
+<area shape="circle" coords="2494,2196,10" href="javascript:void(0);" alt="South Korea" title="SOKCHO" onclick="return popup('SOKCHO');"/>
+<area shape="circle" coords="1758,2571,17" href="javascript:void(0);" alt="South Korea" title="SUWON" onclick="return popup('SUWON');"/>
+<area shape="circle" coords="2194,2473,10" href="javascript:void(0);" alt="South Korea" title="WONJU" onclick="return popup('WONJU');"/>
+<area shape="circle" coords="2525,2211,10" href="javascript:void(0);" alt="South Korea" title="YANGYANG" onclick="return popup('YANGYANG');"/>
+<area shape="circle" coords="2378,2828,17" href="javascript:void(0);" alt="South Korea" title="YECHEON" onclick="return popup('YECHEON');"/>
+
+<area shape="circle" coords="2000,2858,17" href="javascript:void(0);" alt="South Korea Airstrips" title="CHONGWON" onclick="return popup('CHONGWON');"/>
+<area shape="circle" coords="2091,2285,17" href="javascript:void(0);" alt="South Korea Airstrips" title="CHUNCHEON" onclick="return popup('CHUNCHEON');"/>
+<area shape="circle" coords="2325,3039,17" href="javascript:void(0);" alt="South Korea Airstrips" title="KUMI" onclick="return popup('KUMI');"/>
+<area shape="circle" coords="1646,2480,17" href="javascript:void(0);" alt="South Korea Airstrips" title="R103" onclick="return popup('R103');"/>
+<area shape="circle" coords="1579,2343,17" href="javascript:void(0);" alt="South Korea Airstrips" title="R107" onclick="return popup('R107');"/>
+<area shape="circle" coords="1664,2772,17" href="javascript:void(0);" alt="South Korea Airstrips" title="R110" onclick="return popup('R110');"/>
+<area shape="circle" coords="1699,2370,17" href="javascript:void(0);" alt="South Korea Airstrips" title="R113" onclick="return popup('R113');"/>
+<area shape="circle" coords="1868,2260,17" href="javascript:void(0);" alt="South Korea Airstrips" title="R217" onclick="return popup('R217');"/>
+<area shape="circle" coords="1781,2220,17" href="javascript:void(0);" alt="South Korea Airstrips" title="R218" onclick="return popup('R218');"/>
+<area shape="circle" coords="1794,2300,17" href="javascript:void(0);" alt="South Korea Airstrips" title="R222" onclick="return popup('R222');"/>
+<area shape="circle" coords="2193,2379,17" href="javascript:void(0);" alt="South Korea Airstrips" title="R419" onclick="return popup('R419');"/>
+<area shape="circle" coords="1901,2854,17" href="javascript:void(0);" alt="South Korea Airstrips" title="R505" onclick="return popup('R505');"/>
+<area shape="circle" coords="2293,2830,17" href="javascript:void(0);" alt="South Korea Airstrips" title="R601" onclick="return popup('R601');"/>
+<area shape="circle" coords="2322,2610,17" href="javascript:void(0);" alt="South Korea Airstrips" title="R605" onclick="return popup('R605');"/>
+<area shape="circle" coords="1822,2548,17" href="javascript:void(0);" alt="South Korea Airstrips" title="SINGAL" onclick="return popup('SINGAL');"/>
+<area shape="circle" coords="1837,2730,17" href="javascript:void(0);" alt="South Korea Airstrips" title="SONGWHAN" onclick="return popup('SONGWHAN');"/>
+<area shape="circle" coords="2462,2748,17" href="javascript:void(0);" alt="South Korea Airstrips" title="YONGJU" onclick="return popup('JONGJU');"/>
+
+<!-- North Korea -->
+<area shape="circle" coords="1256,2225,17" href="javascript:void(0);" alt="North Korea" title="HAEJU" onclick="return popup('HAEJU');"/>
+<area shape="circle" coords="1222,1920,17" href="javascript:void(0);" alt="North Korea" title="HWANGJU" onclick="return popup('HWANGJU');"/>
+<area shape="circle" coords="2308,1025,17" href="javascript:void(0);" alt="North Korea" title="HWANGSUWON" onclick="return popup('HWANGSUWON');"/>
+<area shape="circle" coords="1948,1934,17" href="javascript:void(0);" alt="North Korea" title="HYON-NI" onclick="return popup('HYON-NI');"/>
+<area shape="circle" coords="2523,1168,17" href="javascript:void(0);" alt="North Korea" title="IWON" onclick="return popup('IWON');"/>
+<area shape="circle" coords="1259,1452,17" href="javascript:void(0);" alt="North Korea" title="KAECH'ON" onclick="return popup('KAECHON');"/>
+<area shape="circle" coords="1986,1705,17" href="javascript:void(0);" alt="North Korea" title="KALMA" onclick="return popup('KALMA');"/>
+<area shape="circle" coords="1575,1888,17" href="javascript:void(0);" alt="North Korea" title="KOKSAN" onclick="return popup('KOKSAN');"/>
+<area shape="circle" coords="2170,1835,17" href="javascript:void(0);" alt="North Korea" title="KUUM-NI" onclick="return popup('KUUM-NI');"/>
+<area shape="circle" coords="0860,2039,17" href="javascript:void(0);" alt="North Korea" title="KWAIL" onclick="return popup('KWAIL');"/>
+<area shape="circle" coords="1485,0817,17" href="javascript:void(0);" alt="North Korea" title="MANP'O" onclick="return popup('MANPO');"/>
+<area shape="circle" coords="1260,1772,17" href="javascript:void(0);" alt="North Korea" title="MIRIM" onclick="return popup('MIRIM');"/>
+<area shape="circle" coords="0944,1831,17" href="javascript:void(0);" alt="North Korea" title="ONCH'ON" onclick="return popup('ONCHON');"/>
+<area shape="circle" coords="1060,2246,17" href="javascript:void(0);" alt="North Korea" title="ONGJIN" onclick="return popup('ONGJIN');"/>
+<area shape="circle" coords="2936,0698,17" href="javascript:void(0);" alt="North Korea" title="ORANG" onclick="return popup('ORANG');"/>
+<area shape="circle" coords="0972,1349,17" href="javascript:void(0);" alt="North Korea" title="PANGHYON" onclick="return popup('PANGHYON');"/>
+<area shape="circle" coords="1278,1515,17" href="javascript:void(0);" alt="North Korea" title="PUKCH'ANG-UP" onclick="return popup('PUKCHANG-UP');"/>
+<area shape="circle" coords="2388,0500,17" href="javascript:void(0);" alt="North Korea" title="SAMJIYON-UP" onclick="return popup('SAMJIYON-UP');"/>
+<area shape="circle" coords="1974,1446,17" href="javascript:void(0);" alt="North Korea" title="SONDOK" onclick="return popup('SONDOK');"/>
+<area shape="circle" coords="1161,1680,17" href="javascript:void(0);" alt="North Korea" title="SUNAN" onclick="return popup('SUNAN');"/>
+<area shape="circle" coords="1277,1597,17" href="javascript:void(0);" alt="North Korea" title="SUNCH'ON" onclick="return popup('SUNCHON');"/>
+<area shape="circle" coords="1080,1360,17" href="javascript:void(0);" alt="North Korea" title="T'AECH'ON" onclick="return popup('TAECHON');"/>
+<area shape="circle" coords="0993,2172,17" href="javascript:void(0);" alt="North Korea" title="TAETAN" onclick="return popup('TAETAN');"/>
+<area shape="circle" coords="2039,1326,17" href="javascript:void(0);" alt="North Korea" title="TOKSAN" onclick="return popup('TOKSAN');"/>
+<area shape="circle" coords="0684,1240,17" href="javascript:void(0);" alt="North Korea" title="UIJU" onclick="return popup('UIJU');"/>
+
+<area shape="circle" coords="1301,2109,17" href="javascript:void(0);" alt="North Korea Airstrips" title="AYANG-NI" onclick="return popup('AYANG-NI');"/>
+<area shape="circle" coords="2051,1892,17" href="javascript:void(0);" alt="North Korea Airstrips" title="HOEYANG SE" onclick="return popup('HOEYANG_SE');"/>
+<area shape="circle" coords="1690,1968,17" href="javascript:void(0);" alt="North Korea Airstrips" title="ICH'ON" onclick="return popup('ICHON');"/>
+<area shape="circle" coords="1230,1417,17" href="javascript:void(0);" alt="North Korea Airstrips" title="KAECH'ON SW" onclick="return popup('KAECHON_SW');"/>
+<area shape="circle" coords="2794,0914,17" href="javascript:void(0);" alt="North Korea Airstrips" title="KILCHU" onclick="return popup('KILCHU');"/>
+<area shape="circle" coords="2144,1858,17" href="javascript:void(0);" alt="North Korea Airstrips" title="KOJO" onclick="return popup('KOJO');"/>
+<area shape="circle" coords="1595,1891,17" href="javascript:void(0);" alt="North Korea Airstrips" title="KOKSAN HWY" onclick="return popup('KOKSAN_NK');"/>
+<area shape="circle" coords="0942,1472,17" href="javascript:void(0);" alt="North Korea Airstrips" title="KWAKSAN" onclick="return popup('KWAKSAN');"/>
+<area shape="circle" coords="2931,0641,17" href="javascript:void(0);" alt="North Korea Airstrips" title="KYONGSONG CHUUL" onclick="return popup('KYONGSONG_CHUUL');"/>
+<area shape="circle" coords="1443,2121,17" href="javascript:void(0);" alt="North Korea Airstrips" title="NUCH'ON-NI" onclick="return popup('NUCHON-NI');"/>
+<area shape="circle" coords="1906,1654,17" href="javascript:void(0);" alt="North Korea Airstrips" title="OKPYONG-NI" onclick="return popup('OKPYONG-NI');"/>
+<area shape="circle" coords="0940,1381,17" href="javascript:void(0);" alt="North Korea Airstrips" title="PANGHYON" onclick="return popup('PANGHYON');"/>
+<area shape="circle" coords="1238,2004,17" href="javascript:void(0);" alt="North Korea Airstrips" title="PONGSAN" onclick="return popup('PONGSAN');"/>
+<area shape="circle" coords="1330,1850,17" href="javascript:void(0);" alt="North Korea Airstrips" title="SANGWON" onclick="return popup('SANGWON');"/>
+<area shape="circle" coords="0795,1445,17" href="javascript:void(0);" alt="North Korea Airstrips" title="SONCH'ON" onclick="return popup('SONCHON');"/>
+<area shape="circle" coords="2971,0564,17" href="javascript:void(0);" alt="North Korea Airstrips" title="SUGAM-NI" onclick="return popup('SUGAM-NI');"/>
+<area shape="circle" coords="1667,2081,17" href="javascript:void(0);" alt="North Korea Airstrips" title="TAEBUKPO-RI" onclick="return popup('TAEBUKPO-RI');"/>
+<area shape="circle" coords="2580,1165,17" href="javascript:void(0);" alt="North Korea Airstrips" title="TANGCH'ON" onclick="return popup('TANGCHON');"/>
+<area shape="circle" coords="1905,1553,17" href="javascript:void(0);" alt="North Korea Airstrips" title="YONGHUNG" onclick="return popup('YONGHUNG');"/>
+
+<!-- Japan -->
+<area shape="circle" coords="4006,3853,17" href="javascript:void(0);" alt="Japan" title="HIROSHIMA" onclick="return popup('HIROSHIMA');"/>
+<area shape="circle" coords="3858,3955,17" href="javascript:void(0);" alt="Japan" title="IWAKUNI" onclick="return popup('IWAKUNI');"/>
+<area shape="circle" coords="3637,3739,17" href="javascript:void(0);" alt="Japan" title="IWAMI" onclick="return popup('IWAMI');"/>
+<area shape="circle" coords="2790,3878,17" href="javascript:void(0);" alt="Japan" title="TSUSHIMA" onclick="return popup('TSUSHIMA');"/>
+<area shape="circle" coords="3502,4059,17" href="javascript:void(0);" alt="Japan" title="YAMAGUCHI" onclick="return popup('YAMAGUCHI');"/>
+
+<!-- China -->
+<area shape="circle" coords="1024,0392,17" href="javascript:void(0);" alt="China" title="LIUHE" onclick="return popup('LIUHE');"/>
+<area shape="circle" coords="0208,0498,17" href="javascript:void(0);" alt="China" title="SHENYANG" onclick="return popup('SHENYANG');"/>
+
+<!-- Russia -->
+<area shape="circle" coords="3586,15,17" href="javascript:void(0);" alt="Russia" title="UGLOVOYE" onclick="return popup('UGLOVOYE');"/>
+
+<!-- VORTACs -->
+<area shape="circle" coords="1735,2496,17" href="javascript:void(0);" alt="VORTAC" title="ANYANG (SEL)" onclick="return popup('ANYANG');"/>
+<area shape="circle" coords="2552,2350,17" href="javascript:void(0);" alt="VORTAC" title="GANGWON (KAE)" onclick="return popup('GANGWON');"/>
+<area shape="circle" coords="1496,3665,17" href="javascript:void(0);" alt="VORTAC" title="MOKPO (MKP)" onclick="return popup('MOKPO');"/>
+<area shape="circle" coords="2723,3478,17" href="javascript:void(0);" alt="VORTAC" title="PUSAN (PSN)" onclick="return popup('PUSAN');"/>
+<area shape="circle" coords="2471,3198,17" href="javascript:void(0);" alt="VORTAC" title="TALSUNG (TGU)" onclick="return popup('TALSUNG');"/>
+<area shape="circle" coords="2858,2791,17" href="javascript:void(0);" alt="VORTAC" title="ULJIN (UJN)" onclick="return popup('ULJIN');"/>
+<area shape="circle" coords="2809,3286,17" href="javascript:void(0);" alt="VORTAC" title="ULSAN (USN)" onclick="return popup('ULSAN');"/>
+<area shape="circle" coords="2204,2464,5" href="javascript:void(0);"  alt="VORTAC" title="WONJU (HGS)" onclick="return popup('HGS');"/>
+<area shape="circle" coords="1760,2329,17" href="javascript:void(0);" alt="VORTAC" title="YANGJU (YJU)" onclick="return popup('YANGJU');"/>
+<area shape="circle" coords="2513,2195,5" href="javascript:void(0);"  alt="VORTAC" title="YANGYANG (YAG)" onclick="return popup('YAG');"/>
+<area shape="circle" coords="2025,3619,17" href="javascript:void(0);" alt="VORTAC" title="YEOSU (CUN)" onclick="return popup('YEOSU');"/>
+
+<!-- Special Map areas and Coordinates based on 4096x4096-->
+<!-- Map Legend Area -->
+<area shape="rect" coords="0,3580,735,4096" alt="Legend">
+<!-- Set Default Bullseye coordinates -->
+<area shape="circle" coords="1562,2237,1" alt="Bullseye">
+</map>
+
+</body>
+</html>
+

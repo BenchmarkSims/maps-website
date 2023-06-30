@@ -1,0 +1,19 @@
+html {
+    font-size: 90%;
+}
+
+body {
+    font-family: Arial, Helvetica, Serif;
+    font-style: Arial, Helvetica, Serif;
+}
+
+tr.d0 td {
+    background-color: #C0C0C0;
+    color: black;
+    border: 1;
+  }
+  tr.d1 td {
+    background-color: #FFFFFF;
+    color: black;
+    border: 1;
+  }
