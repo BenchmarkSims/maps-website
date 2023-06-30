@@ -57,6 +57,10 @@ var imcs_msg = {
         id: 9, // Message ID
         client: -1,
         on: false, x: -1, y: -1
+    },
+    ping: {
+        id: 10, // Message ID
+        client: -1,
     }
 };
 
@@ -64,7 +68,8 @@ var imcs = {
     socket: null,
     session: "",
     callsign: "",
-    client: -1
+    client: -1,
+    timer: -1,
 }
 
 function imcsDebug(...args) {
@@ -90,6 +95,8 @@ function imcsMsgAuthRcvd(msg) {
         imcs.client = msg.result;
         layer.whitebrd.used = true;
         document.getElementById("imcs-connection").innerHTML = "Leave";
+        // Send Keep alive Ping
+        imcs.timer = setInterval(imcsMsgPingSend, 30000);
     }
 }
 
@@ -200,7 +207,16 @@ var imcsMsgReceive = function(e) {
             break;
         case 9: imcsMsgPointerRcvd(msg);
             break;
+        default:
+            // Ignore unknown Messages or Ping
     }
+}
+
+// Send Ping for Keep alive
+function imcsMsgPingSend() {
+    if (imcs.client < 0 ) return;
+    imcs_msg.ping = { id: 10, client: imcs.client};
+    imcs.socket.send(JSON.stringify(imcs_msg.ping));
 }
 
 // Send Pointer message
@@ -294,6 +310,11 @@ function imcsConnect(callsign, session, url) {
 
 // Close the connection with the IMCS
 function imcsDisconnect() {
+    // Clear the keep alive timer
+    clearInterval(imcs.timer);
+    imcs.timer = -1;
+
+    // Disconnect;
     imcs.socket.close();
     imcs.client = -1;
     document.getElementById("imcs-connection").innerHTML = "Join";
