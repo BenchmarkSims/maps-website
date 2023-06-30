@@ -1,0 +1,166 @@
+body {font-family: Arial, Helvetica, sans-serif;}
+
+#container {
+  position: relative;
+}
+
+#container canvas, #overlay {
+  position: absolute;
+}
+
+.child {
+    pointer-events:all;
+}
+
+/* Define the background map */
+.background {
+  position: absolute;
+  padding: 0;
+  margin: 0;
+  background-size: cover;
+  filter: grayscale(0);
+}
+
+.background_mono {
+  position: absolute;
+  padding: 0;
+  margin: 0;
+  background-size: cover;
+  filter: grayscale(0.95);
+}
+
+.background_sepia {
+  position: absolute;
+  padding: 0;
+  margin: 0;
+  background-size: cover;
+  filter: sepia(0.8);
+}
+
+.background_dark {
+  position: absolute;
+  padding: 0;
+  margin: 0;
+  background-size: cover;
+  filter: brightness(0.8);
+}
+
+.chart {
+  display: none;
+}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0; top: 0;
+  width: 100%; height: 100%;
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgba(0,0,0,0); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+  position: fixed;
+  left: 55px; top: 73px;
+  /* background-color: #f5f5f5; */
+  background-color: rgba(245,245,245,1);
+  border: 1px solid #000000;
+  box-shadow: 5px 5px 5px #222222;
+  margin: auto; padding: 10px; width: 220px; font-size: medium;
+}
+
+/* Overlay Airbases */
+.overlay{
+  position: absolute;
+  border: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* Overlay User Input */
+.inputs{
+  position: fixed;
+  left: 15px; top: 15px;
+  width: 240px;
+  height: 25px;
+}
+
+.text-area{
+  display: none; /* Hidden by default */
+  z-index: 1; /* Sit on top */
+  resize: none;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 100px;
+  left:100px;
+  background: transparent;
+  font: 32px sans-serif;
+  white-space: "pre";
+  border: none;
+  padding: 0;
+  margin: 0;
+  outline: none;
+  color: white;
+  line-height: normal;
+  vertical-align: middle;
+}
+
+/* Style the tab */
+.tab {
+  overflow: hidden;
+  padding: 0;
+  margin: 0;
+  border: none;
+  border: none;
+  border-bottom: none;
+  background-color:#ccc;
+}
+
+/* Style the buttons inside the tab */
+.tab button {
+  background-color: inherit;
+  float: left;
+  border: 1px solid #ccc;
+  border-bottom: none;
+  /*outline: none; */
+  cursor: pointer;
+  padding: 0px 8px;
+  transition: 0.3s;
+  font-size: 17px;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+  background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+  background-color:rgba(245,245,245,1);
+}
+
+/* Style the tab content */
+.tabcontent {
+  display: none;
+  padding: 1px 12px;
+  border: none;
+  border-top: none;
+}
+
+/* Go from zero to full opacity */
+@keyframes fadeEffect {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+button {
+  align-items: center;
+}
+
+/* Some standard Style assignment */
+td, tr, img  { padding: 0px; margin: 0px; border: none; }
+table { border-collapse: collapse; }
+* { margin:0; padding:0; }

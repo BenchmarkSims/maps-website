@@ -1,0 +1,2329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>ITO Interactive Map</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../common/scripts/map_style.css">
+<script type="text/javascript" src="../common/scripts/map_math.js"></script>
+<script type="text/javascript" src="../common/scripts/map_conrec.js"></script>
+<script type="text/javascript" src="../common/scripts/map_mission.js"></script>
+<script type="text/javascript" src="../common/scripts/map_weather.js"></script>
+<script type="text/javascript" src="../common/scripts/map_files.js"></script>
+<script type="text/javascript" src="../common/scripts/map_draw.js"></script>
+<script type="text/javascript" src="../common/scripts/map_radio.js"></script>
+<script type="text/javascript" src="../common/scripts/map_symbology.js"></script>
+<script type="text/javascript" src="../common/scripts/map_charts.js"></script>
+<script type="text/javascript" src="../common/scripts/map_imcs.js"></script>
+<script type="text/javascript" src="../common/scripts/map_gfs.js"></script>
+<script type="text/javascript" src="../common/scripts/map_actions.js"></script>
+</head>
+<body>
+
+<!-- Ranges -->
+
+<!-- Airbases -->
+<div id="ABU_RUDIES" class="modal"><div class="modal-content">
+<center><b>ABU RUDIES (-)</center></b></center><hr><pre>
+N29&deg09.037' E032&deg56.756'
+Elevation: 158 ft
+RWY: 12/30
+TCN: 3Y
+ATIS: 127.55
+OPS: -
+GND: 277.175
+TWR: 245.275
+APP/DEP: 343.85
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/EGYPT/Abu Rudies/Abu Rudies_Airport.png" onclick="return chart(this)">Airport Diagram</a>
+<a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/EGYPT/Abu Rudies/Abu Rudies_APC_RWY01.png " onclick="return chart(this)">APC - RWY 01</a>
+<a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/EGYPT/Abu Rudies/Abu Rudies_APC_RWY19.png.png" onclick="return chart(this)">APC - RWY 19</a>
+</pre></div></div>
+
+<div id="ABU_SUWAYR" class="modal"><div class="modal-content">
+<center><b>ABU SUWAYR (-)</center></b></center><hr><pre>
+N30&deg44.644' E031&deg44.875'
+Elevation: 76 ft
+RWY: 01/19
+TCN: 2Y
+ATIS: 130.25
+OPS: -
+GND: -
+TWR: 123.5
+APP/DEP: -
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/EGYPT/Abu Suwayr/Abu Suwayr_Airport.png" onclick="return chart(this)">Airport Diagram</a>
+<a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/EGYPT/Abu Suwayr/Abu Suwayr_APC_RWY12.png" onclick="return chart(this)">APC - RWY 12</a>
+<a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/EGYPT/Abu Suwayr/Abu Suwayr_APC_RWY30.png" onclick="return chart(this)">APC - RWY 30</a>
+<a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/EGYPT/Abu Suwayr/Abu Suwayr_TCN_30.png" onclick="return chart(this)">TACAN - RWY 30</a>
+</pre></div></div>
+
+<div id="AL_MANSURHA" class="modal"><div class="modal-content">
+<center><b>AL MANSURHA (HE32)</center></b></center><hr><pre>
+N31&deg12.739' E031&deg06.330'
+Elevation: 15 ft
+RWY: 02L/20R - 02R/20L
+TCN: 4Y
+ATIS: 122.275
+OPS: -
+GND: 293.225
+TWR: 394.6
+APP/DEP: 324.85
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/EGYPT/Al Mansurha/Al Mansurha_Airport.png" onclick="return chart(this)">Airport Diagram</a>
+<a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/EGYPT/Al Mansurha/Al Mansurha_APC_RWY02L.png" onclick="return chart(this)">APC - RWY 02L</a>
+<a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/EGYPT/Al Mansurha/Al Mansurha_APC_RWY20R.png" onclick="return chart(this)">APC - RWY 20R</a>
+<a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/EGYPT/Al Mansurha/Al Mansurha_APC_RWY02R.png" onclick="return chart(this)">APC - RWY 02R</a>
+<a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/EGYPT/Al Mansurha/Al Mansurha_APC_RWY20L.png" onclick="return chart(this)">APC - RWY 20L</a>
+</pre></div></div>
+
+<div id="AL_MANZILAH" class="modal"><div class="modal-content">
+<center><b>AL MANZILAH (QEM)</center></b></center><hr><pre>
+N27&deg25.790' E035&deg48.358'
+Elevation: 27 ft
+RWY: 03/21
+TCN: 5Y
+ATIS: 125.825
+OPS: -
+GND: -
+TWR: 125.825
+APP/DEP: -
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/EGYPT/Al Manzilah/Al Manzilah_Airport.png" onclick="return chart(this)">Airport Diagram</a>
+<a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/EGYPT/Al Manzilah/Al Manzilah_APC_RWY03.png" onclick="return chart(this)">APC - RWY 03</a>
+<a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/EGYPT/Al Manzilah/Al Manzilah_APC_RWY21.png" onclick="return chart(this)">APC - RWY 21</a>
+</pre></div></div>
+
+<div id="AL_MINYA" class="modal"><div class="modal-content">
+<center><b>AL MINYA (HE25)</center></b></center><hr><pre>
+N28&deg25.376' E030&deg31.992'
+Elevation: 561 ft
+RWY: 02/20
+TCN: 6Y
+ATIS: 124.875
+OPS: -
+GND: 330.375
+TWR: 256.075
+APP/DEP: 335.025
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/EGYPT/Al Minya/Al Minya_Airport.png" onclick="return chart(this)">Airport Diagram</a>
+<a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/EGYPT/Al Minya/Al Minya_APC_RWY02.png" onclick="return chart(this)">APC - RWY 02</a>
+<a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/EGYPT/Al Minya/Al Minya_APC_RWY20.png" onclick="return chart(this)">APC - RWY 20</a>
+</pre></div></div>
+
+<div id="AL_RHAMANIYA" class="modal"><div class="modal-content">
+<center><b>AL RHAMANIYA ()</center></b></center><hr><pre>
+N31&deg10.056' E030&deg15.766'
+Elevation: 11 ft
+RWY: 02/20
+TCN: 7Y
+ATIS: 126.775
+OPS: -
+GND: -
+TWR: 123.4
+APP/DEP: -
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/EGYPT/Al Minya/Al Minya_Airport.png" onclick="return chart(this)">Airport Diagram</a>
+<a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/EGYPT/Al Minya/Al Minya_APC_RWY02.png" onclick="return chart(this)">APC - RWY 02</a>
+<a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/EGYPT/Al Minya/Al Minya_APC_RWY20.png" onclick="return chart(this)">APC - RWY 20</a>
+</pre></div></div>
+
+<div id="AL_ZAQAZIQ" class="modal"><div class="modal-content">
+<center><b>AL ZAQAZIQ (EG-0002)</center></b></center><hr><pre>
+N30&deg46.614' E031&deg18.774'
+Elevation: 28 ft
+RWY: 14/32
+TCN: 8Y
+ATIS: 122.825
+OPS: -
+GND: 234.35
+TWR: 295.5
+APP/DEP: 309.525
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/EGYPT/Al Zaqaziq/Al Zaqaziq_Airport.png" onclick="return chart(this)">Airport Diagram</a>
+<a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/EGYPT/Al Zaqaziq/Al Zaqaziq_APC_RWY14.png" onclick="return chart(this)">APC - RWY 14</a>
+<a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/EGYPT/Al Zaqaziq/Al Zaqaziq_APC_RWY32.png" onclick="return chart(this)">APC - RWY 32</a>
+</pre></div></div>
+
+<div id="ALISMAYLIA" class="modal"><div class="modal-content">
+<center><b>ALISMAYLIA ()</center></b></center><hr><pre>
+N30&deg45.022' E031&deg51.357'
+Elevation: 48 ft
+RWY: 02L/20R - 02R/20L
+TCN: 10Y
+ATIS: 119.55
+OPS: -
+GND: -
+TWR: 118.55
+APP/DEP: -
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/EGYPT/Alismaylia/Alismaylia_Airport.png" onclick="return chart(this)">Airport Diagram</a>
+<a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/EGYPT/Alismaylia/Alismaylia_APC_RWY02L.png" onclick="return chart(this)">APC - RWY 02L</a>
+<a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/EGYPT/Alismaylia/Alismaylia_APC_RWY20R.png" onclick="return chart(this)">APC - RWY 20R</a>
+<a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/EGYPT/Alismaylia/Alismaylia_APC_RWY02R.png" onclick="return chart(this)">APC - RWY 02R</a>
+<a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/EGYPT/Alismaylia/Alismaylia_APC_RWY20L.png" onclick="return chart(this)">APC - RWY 20L</a>
+</pre></div></div>
+
+<div id="AS_SALIHIYA" class="modal"><div class="modal-content">
+<center><b>AS SALIHIYA ()</center></b></center><hr><pre>
+N31&deg03.120' E031&deg50.069'
+Elevation: 9 ft
+RWY: 03/21
+TCN: 11Y
+ATIS: 120.375
+OPS: -
+GND: -
+TWR: 121.35
+APP/DEP: -
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/EGYPT/As Salihiya/As Salihiya_Airport.png" onclick="return chart(this)">Airport Diagram</a>
+<a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/EGYPT/As Salihiya/As Salihiya_APC_RWY03.png" onclick="return chart(this)">APC - RWY 03</a>
+<a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/EGYPT/As Salihiya/As Salihiya_APC_RWY21.png.png" onclick="return chart(this)">APC - RWY 21</a>
+</pre></div></div>
+
+<div id="AYSUT" class="modal"><div class="modal-content">
+<center><b>AYSUT (HEAT)</center></b></center><hr><pre>
+N27&deg32.268' E030&deg34.237'
+Elevation: 713 ft
+RWY: 11/29
+TCN: 124X
+ATIS: 126.875
+OPS: -
+GND: -
+TWR: 118.1
+APP/DEP: -
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/EGYPT/Aysut/Aysut_Airport.png" onclick="return chart(this)">Airport Diagram</a>
+<a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/EGYPT/Aysut/Aysut_APC_RWY11.png" onclick="return chart(this)">APC - RWY 11</a>
+<a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/EGYPT/Aysut/Aysut_APC_RWY29.png" onclick="return chart(this)">APC - RWY 29</a>
+</pre></div></div>
+
+<div id="BALUZA" class="modal"><div class="modal-content">
+<center><b>BALUZA (HE22)</center></b></center><hr><pre>
+N31&deg10.263' E032&deg19.420'
+Elevation: 17 ft
+RWY: 02/20
+TCN: 12Y
+ATIS: 129.575
+OPS: -
+GND: -
+TWR: 118.1
+APP/DEP: -
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/EGYPT/Baluza/Baluza_Airport.png" onclick="return chart(this)">Airport Diagram</a>
+<a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/EGYPT/Baluza/Baluza_APC_RWY02.png" onclick="return chart(this)">APC - RWY 02</a>
+<a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/EGYPT/Baluza/Baluza_APC_RWY20.png" onclick="return chart(this)">APC - RWY 20</a>
+</pre></div></div>
+
+<div id="BEN_SUEF" class="modal"><div class="modal-content">
+<center><b>BEN SUEF (HEBS)</center></b></center><hr><pre>
+N29&deg35.550' E030&deg36.594'
+Elevation: 84 ft
+RWY: 12/30
+TCN: 13Y
+ATIS: 121.475
+OPS: -
+GND: 233.65
+TWR: 289.4
+APP/DEP: 253.0
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/EGYPT/Ben Suef/Ben Suef_Airport.png" onclick="return chart(this)">Airport Diagram</a>
+<a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/EGYPT/Ben Suef/Ben Suef_APC_RWY12.png" onclick="return chart(this)">APC - RWY 12</a>
+<a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/EGYPT/Ben Suef/Ben Suef_APC_RWY30.png" onclick="return chart(this)">APC - RWY 30</a>
+</pre></div></div>
+
+<div id="BILBAYS" class="modal"><div class="modal-content">
+<center><b>BILBAYS (HE37)</center></b></center><hr><pre>
+N30&deg32.250' E031&deg18.318'
+Elevation: 243 ft
+RWY: 12/30
+TCN: 14Y
+ATIS: 122.95
+OPS: -
+GND: 296.4
+TWR: 355.975
+APP/DEP: 306.15
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/EGYPT/Bilbays/Bilbays_Airport.png" onclick="return chart(this)">Airport Diagram</a>
+<a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/EGYPT/Bilbays/Bilbays_APC_RWY12.png" onclick="return chart(this)">APC - RWY 12</a>
+<a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/EGYPT/Bilbays/Bilbays_APC_RWY30.png" onclick="return chart(this)">APC - RWY 30</a>
+</pre></div></div>
+
+<div id="BILBAYS_2" class="modal"><div class="modal-content">
+<center><b>BILBAYS 2 ()</center></b></center><hr><pre>
+N30&deg33.682' E031&deg22.294'
+Elevation: 241 ft
+RWY: 14/32
+TCN: 15Y
+ATIS: 118.825
+OPS: -
+GND: -
+TWR: 122.05
+APP/DEP: -
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/EGYPT/Bilbays 2/Bilbays 2_Airport.png" onclick="return chart(this)">Airport Diagram</a>
+<a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/EGYPT/Bilbays 2/Bilbays 2_APC_RWY14.png" onclick="return chart(this)">APC - RWY 14</a>
+<a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/EGYPT/Bilbays 2/Bilbays 2_APC_RWY32.png" onclick="return chart(this)">APC - RWY 32</a>
+</pre></div></div>
+
+<div id="BIR_GIFGAFA" class="modal"><div class="modal-content">
+<center><b>BIR GIFGAFA (HE36)</center></b></center><hr><pre>
+N30&deg33.207' E032&deg54.869'
+Elevation: 1209 ft
+RWY: 12/30
+TCN: 17Y
+ATIS: 119.975
+OPS: -
+GND: 288.375
+TWR: 337.0
+APP/DEP: 365.1
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/EGYPT/Bir Gifgafa/Bir Gifgafa_Airport.png" onclick="return chart(this)">Airport Diagram</a>
+<a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/EGYPT/Bir Gifgafa/Bir Gifgafa_APC_RWY12.png" onclick="return chart(this)">APC - RWY 12</a>
+<a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/EGYPT/Bir Gifgafa/Bir Gifgafa_APC_RWY30.png" onclick="return chart(this)">APC - RWY 30</a>
+</pre></div></div>
+
+<div id="BIR_HASSANA" class="modal"><div class="modal-content">
+<center><b>BIR HASSANA ()</center></b></center><hr><pre>
+N30&deg26.862' E033&deg08.230'
+Elevation: 1427 ft
+RWY: 12/30
+TCN: 16Y
+ATIS: 125.025
+OPS: -
+GND: 370.45
+TWR: 253.575
+APP/DEP: 337.95
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/EGYPT/Bir Hassana/Bir Hassana_Airport.png" onclick="return chart(this)">Airport Diagram</a>
+<a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/EGYPT/Bir Hassana/Bir Hassana_APC_RWY12.png" onclick="return chart(this)">APC - RWY 12</a>
+<a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/EGYPT/Bir Hassana/Bir Hassana_APC_RWY30.png" onclick="return chart(this)">APC - RWY 30</a>
+</pre></div></div>
+
+
+<div id="CAIRO_ALMAZA" class="modal"><div class="modal-content">
+<center><b>CAIRO ALMAZA (HEAZ)</center></b></center><hr><pre>
+N30&deg14.347' E030&deg55.092'
+Elevation: 315 ft
+RWY: 12/30
+TCN: 110X
+ATIS: 126.975
+OPS: -
+GND: 366.075
+TWR: 337.575
+APP/DEP: 257.275
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/EGYPT/Cairo Almaza/Cairo Almaza_Airport.png" onclick="return chart(this)">Airport Diagram</a>
+<a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/EGYPT/Cairo Almaza/Cairo Almaza_APC_RWY12.png" onclick="return chart(this)">APC - RWY 12</a>
+<a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/EGYPT/Cairo Almaza/Cairo Almaza_APC_RWY30.png" onclick="return chart(this)">APC - RWY 30</a>
+</pre></div></div>
+
+<div id="CAIRO_INT" class="modal"><div class="modal-content">
+<center><b>CAIRO INT. (HECA)</center></b></center><hr><pre>
+N30&deg17.171' E031&deg10.667'
+Elevation: 158 ft
+RWY: 05L/23R - 05R/23L
+TCN: 72X
+ATIS: 122.6
+OPS: -
+GND: 273.8
+TWR: 316.25
+APP/DEP: 352.825
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/EGYPT/Cairo INT/Cairo INT_Airport.png" onclick="return chart(this)">Airport Diagram</a>
+<a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/EGYPT/Cairo INT/Cairo INT_APC_RWY05L.png" onclick="return chart(this)">APC - RWY 05L</a>
+<a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/EGYPT/Cairo INT/Cairo INT_APC_RWY23R.png" onclick="return chart(this)">APC - RWY 23R</a>
+<a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/EGYPT/Cairo INT/Cairo INT_APC_RWY05R.png" onclick="return chart(this)">APC - RWY 05R</a>
+<a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/EGYPT/Cairo INT/Cairo INT_APC_RWY23L.png" onclick="return chart(this)">APC - RWY 23L</a>
+</pre></div></div>
+
+<div id="CAIRO_WEST" class="modal"><div class="modal-content">
+<center><b>CAIRO WEST (HECW)</center></b></center><hr><pre>
+N30&deg18.046' E030&deg29.735'
+Elevation: 457 ft
+RWY: 01/19 - 18/36
+TCN: 114X
+ATIS: 130.35
+OPS: -
+GND: 344.3
+TWR: 274.0
+APP/DEP: 315.95
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/EGYPT/Cairo West/Cairo West_Airport.png" onclick="return chart(this)">Airport Diagram</a>
+<a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/EGYPT/Cairo West/Cairo West_APC_RWY01.png" onclick="return chart(this)">APC - RWY 01</a>
+<a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/EGYPT/Cairo West/Cairo West_APC_RWY19.png" onclick="return chart(this)">APC - RWY 19</a>
+<a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/EGYPT/Cairo West/Cairo West_APC_RWY18.png" onclick="return chart(this)">APC - RWY 18</a>
+<a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/EGYPT/Cairo West/Cairo West_APC_RWY36.png" onclick="return chart(this)">APC - RWY 36</a>
+</pre></div></div>
+
+<div id="EL_ARISH" class="modal"><div class="modal-content">
+<center><b>EL ARISH (HEAR)</center></b></center><hr><pre>
+N31&deg09.978' E033&deg38.916'
+Elevation: 333 ft
+RWY: 05L/23R - 05R/23L
+TCN: 84X
+ATIS: 123.25
+OPS: -
+GND: -
+TWR: 121.0
+APP/DEP: -
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/EGYPT/El Arish/El Arish_Airport.png" onclick="return chart(this)">Airport Diagram</a>
+<a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/EGYPT/El Arish/El Arish_APC_RWY05L.png" onclick="return chart(this)">APC - RWY 05L</a>
+<a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/EGYPT/El Arish/El Arish_APC_RWY23R.png" onclick="return chart(this)">APC - RWY 23R</a>
+<a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/EGYPT/El Arish/El Arish_APC_RWY05R.png" onclick="return chart(this)">APC - RWY 05R</a>
+<a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/EGYPT/El Arish/El Arish_APC_RWY23L.png" onclick="return chart(this)">APC - RWY 23L</a>
+</pre></div></div>
+
+<div id="EL_GORA" class="modal"><div class="modal-content">
+<center><b>EL GORA (HEGR)</center></b></center><hr><pre>
+N31&deg11.894' E034&deg02.757'
+Elevation: 345 ft
+RWY: 01/19
+TCN: 19Y
+ATIS: 119.85
+OPS: -
+GND: -
+TWR: 118.2
+APP/DEP: -
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/EGYPT/El Gora/El Gora_Airport.png" onclick="return chart(this)">Airport Diagram</a>
+<a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/EGYPT/El Gora/El Gora_APC_RWY01.png" onclick="return chart(this)">APC - RWY 01</a>
+<a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/EGYPT/El Gora/El Gora_APC_RWY19.png" onclick="return chart(this)">APC - RWY 19</a>
+</pre></div></div>
+
+<div id="EL_TOR" class="modal"><div class="modal-content">
+<center><b>EL TOR (HETR)</center></b></center><hr><pre>
+N28&deg35.674' E033&deg26.619'
+Elevation: 357 ft
+RWY: 14/32
+TCN: 20Y
+ATIS: 120.325
+OPS: -
+GND: 398.925
+TWR: 283.75
+APP/DEP: 328.475
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/EGYPT/El Tor/El Tor_Airport.png" onclick="return chart(this)">Airport Diagram</a>
+<a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/EGYPT/El Tor/El Tor_APC_RWY14.png" onclick="return chart(this)">APC - RWY 14</a>
+<a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/EGYPT/El Tor/El Tor_APC_RWY32.png" onclick="return chart(this)">APC - RWY 32</a>
+</pre></div></div>
+
+<div id="EMBADA" class="modal"><div class="modal-content">
+<center><b>EMBADA (HEEM)</center></b></center><hr><pre>
+N30&deg19.473' E030&deg50.364'
+Elevation: 60 ft
+RWY: 03/21
+TCN: 21Y
+ATIS: 123.275
+OPS: -
+GND: -
+TWR: 122.625
+APP/DEP: -
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/EGYPT/Embaba/Embaba_Airport.png" onclick="return chart(this)">Airport Diagram</a>
+<a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/EGYPT/Embaba/Embaba_APC_RWY03.png" onclick="return chart(this)">APC - RWY 03</a>
+<a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/EGYPT/Embaba/Embaba_APC_RWY21.png" onclick="return chart(this)">APC - RWY 21</a>
+</pre></div></div>
+
+<div id="FAID" class="modal"><div class="modal-content">
+<center><b>FAID ()</center></b></center><hr><pre>
+N30&deg32.805' E032&deg00.578'
+Elevation: 34 ft
+RWY: 08/26
+TCN: 22Y
+ATIS: 124.95
+OPS: -
+GND: 384.675
+TWR: 288.925
+APP/DEP: 345.35
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/EGYPT/Faid/Faid_Airport.png" onclick="return chart(this)">Airport Diagram</a>
+<a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/EGYPT/Faid/Faid_APC_RWY08.png" onclick="return chart(this)">APC - RWY 08</a>
+<a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/EGYPT/Faid/Faid_APC_RWY26.png" onclick="return chart(this)">APC - RWY 26</a>
+</pre></div></div>
+
+<div id="GEBEL_EL_BASUR" class="modal"><div class="modal-content">
+<center><b>GEBEL EL BASUR (HE28)</center></b></center><hr><pre>
+N30&deg43.113' E030&deg09.927'
+Elevation: 80 ft
+RWY: 02/20
+TCN: 23Y
+ATIS: 125.875
+OPS: -
+GND: 231.075
+TWR: 293.425
+APP/DEP: 368.4
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/EGYPT/Gebel El Basur/Gebel El Basur_Airport.png" onclick="return chart(this)">Airport Diagram</a>
+<a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/EGYPT/Gebel El Basur/Gebel El Basur_APC_RWY02.png" onclick="return chart(this)">APC - RWY 02</a>
+<a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/EGYPT/Gebel El Basur/Gebel El Basur_APC_RWY20.png" onclick="return chart(this)">APC - RWY 20</a>
+</pre></div></div>
+
+<div id="HULWAN" class="modal"><div class="modal-content">
+<center><b>HULWAN (HE15)</center></b></center><hr><pre>
+N30&deg01.152' E031&deg02.573'
+Elevation: 368 ft
+RWY: 03/21
+TCN: 24Y
+ATIS: 133.275
+OPS: -
+GND: -
+TWR: 122.5
+APP/DEP: -
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/EGYPT/Hulwan/Hulwan_Airport.png" onclick="return chart(this)">Airport Diagram</a>
+<a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/EGYPT/Hulwan/Hulwan_APC_RWY03.png" onclick="return chart(this)">APC - RWY 03</a>
+<a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/EGYPT/Hulwan/Hulwan_APC_RWY21.png" onclick="return chart(this)">APC - RWY 21</a>
+</pre></div></div>
+
+<div id="HURGHADA" class="modal"><div class="modal-content">
+<center><b>HURGHADA (HEGN)</center></b></center><hr><pre>
+N27&deg34.979' E033&deg29.210'
+Elevation: 188 ft
+RWY: 05L/23R - 05R/23L
+TCN: 112X
+ATIS: 120.45
+OPS: -
+GND: -
+TWR: 119.6
+APP/DEP: -
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/EGYPT/Hurghada/Hurghada_Airport.png" onclick="return chart(this)">Airport Diagram</a>
+<a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/EGYPT/Hurghada/Hurghada_APC_RWY05L.png" onclick="return chart(this)">APC - RWY 05L</a>
+<a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/EGYPT/Hurghada/Hurghada_APC_RWY23R.png" onclick="return chart(this)">APC - RWY 23R</a>
+<a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/EGYPT/Hurghada/Hurghada_APC_RWY05R.png" onclick="return chart(this)">APC - RWY 05R</a>
+<a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/EGYPT/Hurghada/Hurghada_APC_RWY23L.png" onclick="return chart(this)">APC - RWY 23L</a>
+</pre></div></div>
+
+<div id="INSHAS" class="modal"><div class="modal-content">
+<center><b>INSHAS (HE12)</center></b></center><hr><pre>
+N30&deg32.876' E031&deg11.807'
+Elevation: 80 ft
+RWY: 02/20
+TCN: 25Y
+ATIS: 127.85
+OPS: -
+GND: 297.225
+TWR: 308.5
+APP/DEP: 384.85
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/EGYPT/Inshas/Inshas_Airport.png" onclick="return chart(this)">Airport Diagram</a>
+<a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/EGYPT/Inshas/Inshas_APC_RWY02.png" onclick="return chart(this)">APC - RWY 02</a>
+<a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/EGYPT/Inshas/Inshas_APC_RWY20.png" onclick="return chart(this)">APC - RWY 20</a>
+</pre></div></div>
+
+<div id="JINKALIS_NEW" class="modal"><div class="modal-content">
+<center><b>JINKALIS NEW ()</center></b></center><hr><pre>
+N31&deg04.197' E029&deg51.195'
+Elevation: 3 ft
+RWY: 03/21
+TCN: 26Y
+ATIS: 134.75
+OPS: -
+GND: 266.925
+TWR: 283.0
+APP/DEP: 357.9
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/EGYPT/Jinkalis New/Jinkalis New_Airport.png" onclick="return chart(this)">Airport Diagram</a>
+<a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/EGYPT/Jinkalis New/Jinkalis New_APC_RWY03.png" onclick="return chart(this)">APC - RWY 03</a>
+<a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/EGYPT/Jinkalis New/Jinkalis New_APC_RWY21.png" onclick="return chart(this)">APC - RWY 21</a>
+</pre></div></div>
+
+<div id="KIRBAN" class="modal"><div class="modal-content">
+<center><b>KIRBAN ()</center></b></center><hr><pre>
+N30&deg25.553' E032&deg08.743'
+Elevation: 30 ft
+RWY: 01/19
+TCN: 27Y
+ATIS: 126.95
+OPS: -
+GND: -
+TWR: 120.3
+APP/DEP: -
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/EGYPT/Kirban/Kirban_Airport.png" onclick="return chart(this)">Airport Diagram</a>
+<a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/EGYPT/Kirban/Kirban_APC_RWY01.png" onclick="return chart(this)">APC - RWY 01</a>
+<a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/EGYPT/Kirban/Kirban_APC_RWY19.png" onclick="return chart(this)">APC - RWY 19</a>
+</pre></div></div>
+
+<div id="KOM_AWASHIM" class="modal"><div class="modal-content">
+<center><b>KOM AWASHIM ()</center></b></center><hr><pre>
+N29&deg53.222' E030&deg27.836'
+Elevation: 42 ft
+RWY: 01/19
+TCN: 28Y
+ATIS: 122.55
+OPS: -
+GND: 307.75
+TWR: 277.4
+APP/DEP: 384.2
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/EGYPT/Kom Awashim/Kom Awashim_Airport.png" onclick="return chart(this)">Airport Diagram</a>
+<a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/EGYPT/Kom Awashim/Kom Awashim_APC_RWY01.png" onclick="return chart(this)">APC - RWY 01</a>
+<a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/EGYPT/Kom Awashim/Kom Awashim_APC_RWY19.png" onclick="return chart(this)">APC - RWY 19</a>
+</pre></div></div>
+
+<div id="LUXUR" class="modal"><div class="modal-content">
+<center><b>LUXUR (HELX)</center></b></center><hr><pre>
+N26&deg08.763' E032&deg19.606'
+Elevation: 779 ft
+RWY: 05L/23R - 05R/23L
+TCN: 91X
+ATIS: 120.075
+OPS: -
+GND: -
+TWR: 119.9
+APP/DEP: -
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/EGYPT/Luxur/Luxur_Airport.png" onclick="return chart(this)">Airport Diagram</a>
+<a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/EGYPT/Luxur/Luxur_APC_RWY05L.png" onclick="return chart(this)">APC - RWY 05L</a>
+<a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/EGYPT/Luxur/Luxur_APC_RWY23R.png" onclick="return chart(this)">APC - RWY 23R</a>
+<a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/EGYPT/Luxur/Luxur_APC_RWY05R.png" onclick="return chart(this)">APC - RWY 05R</a>
+<a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/EGYPT/Luxur/Luxur_APC_RWY23L.png" onclick="return chart(this)">APC - RWY 23L</a>
+</pre></div></div>
+
+<div id="NEW_VALLEY" class="modal"><div class="modal-content">
+<center><b>NEW VALLEY (HEKG)</center></b></center><hr><pre>
+N26&deg06.754' E030&deg07.187'
+Elevation: 393 ft
+RWY: 03/21
+TCN: 85X
+ATIS: 123.075
+OPS: -
+GND: -
+TWR: 122.3
+APP/DEP: -
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/EGYPT/New Valley/New Valley_Airport.png" onclick="return chart(this)">Airport Diagram</a>
+<a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/EGYPT/New Valley/New Valley_APC_RWY03.png" onclick="return chart(this)">APC - RWY 03</a>
+<a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/EGYPT/New Valley/New Valley_APC_RWY21.png" onclick="return chart(this)">APC - RWY 21</a>
+</pre></div></div>
+
+<div id="PORT_SAID" class="modal"><div class="modal-content">
+<center><b>PORT SAID (HEPS)</center></b></center><hr><pre>
+N31&deg16.204' E031&deg56.245'
+Elevation: 8 ft
+RWY: 01/19
+TCN: 77X
+ATIS: 127.025
+OPS: -
+GND: -
+TWR: 120.7
+APP/DEP: -
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/EGYPT/Port Said/Port Said_Airport.png" onclick="return chart(this)">Airport Diagram</a>
+<a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/EGYPT/Port Said/Port Said_APC_RWY01.png" onclick="return chart(this)">APC - RWY 01</a>
+<a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/EGYPT/Port Said/Port Said_APC_RWY19.png" onclick="return chart(this)">APC - RWY 19</a>
+</pre></div></div>
+
+<div id="QUASWYINA" class="modal"><div class="modal-content">
+<center><b>QUASWYINA ()</center></b></center><hr><pre>
+N30&deg41.942' E030&deg45.530'
+Elevation: 39 ft
+RWY: 11/29
+TCN: 29Y
+ATIS: 132.25
+OPS: -
+GND: -
+TWR: 135.5
+APP/DEP: -
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/EGYPT/Quaswyina/Quaswyina_Airport.png" onclick="return chart(this)">Airport Diagram</a>
+<a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/EGYPT/Quaswyina/Quaswyina_APC_RWY11.png" onclick="return chart(this)">APC - RWY 11</a>
+<a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/EGYPT/Quaswyina/Quaswyina_APC_RWY29.png" onclick="return chart(this)">APC - RWY 29</a>
+</pre></div></div>
+
+<div id="RAS_JIMSHA_NEW" class="modal"><div class="modal-content">
+<center><b>RAS JIMSHA NEW ()</center></b></center><hr><pre>
+N28&deg15.375' E033&deg16.141'
+Elevation: 214 ft
+RWY: 11/29
+TCN: 30Y
+ATIS: 121.975
+OPS: -
+GND: -
+TWR: 120.95
+APP/DEP: -
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/EGYPT/Ras Jimsha New/Ras Jimsha New_Airport.png" onclick="return chart(this)">Airport Diagram</a>
+<a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/EGYPT/Ras Jimsha New/Ras Jimsha New_APC_RWY11.png" onclick="return chart(this)">APC - RWY 11</a>
+<a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/EGYPT/Ras Jimsha New/Ras Jimsha New_APC_RWY29.png" onclick="return chart(this)">APC - RWY 29</a>
+</pre></div></div>
+
+<div id="RAS_NASRANI" class="modal"><div class="modal-content">
+<center><b>RAS NASRANI (HESH)</center></b></center><hr><pre>
+N28&deg25.214' E034&deg05.983'
+Elevation: 824 ft
+RWY: 16/34
+TCN: 89X
+ATIS: 134.0
+OPS: -
+GND: -
+TWR: 118.9
+APP/DEP: -
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/EGYPT/Ras Nasrani/Ras Nasrani_Airport.png" onclick="return chart(this)">Airport Diagram</a>
+<a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/EGYPT/Ras Nasrani/Ras Nasrani_APC_RWY16.png" onclick="return chart(this)">APC - RWY 16</a>
+<a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/EGYPT/Ras Nasrani/Ras Nasrani_APC_RWY34.png" onclick="return chart(this)">APC - RWY 34</a>
+</pre></div></div>
+
+<div id="RAS_SHUKHAYAR_NEW" class="modal"><div class="modal-content">
+<center><b>RAS SHUKHAYAR NEW ()</center></b></center><hr><pre>
+N28&deg33.790' E032&deg54.807'
+Elevation: 11 ft
+RWY: 02/20
+TCN: 31Y
+ATIS: 130.95
+OPS: -
+GND: -
+TWR: 120.8
+APP/DEP: -
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/EGYPT/Ras Shukhayar New/Ras Shukhayar New_Airport.png" onclick="return chart(this)">Airport Diagram</a>
+<a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/EGYPT/Ras Shukhayar New/Ras Shukhayar New_APC_RWY02.png" onclick="return chart(this)">APC - RWY 02</a>
+<a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/EGYPT/Ras Shukhayar New/Ras Shukhayar New_APC_RWY20.png" onclick="return chart(this)">APC - RWY 20</a>
+</pre></div></div>
+
+<div id="RAS_SUDR" class="modal"><div class="modal-content">
+<center><b>RAS SUDR (HE45)</center></b></center><hr><pre>
+N29&deg51.430' E032&deg27.302'
+Elevation: 57 ft
+RWY: 16/34
+TCN: 32Y
+ATIS: 119.525
+OPS: -
+GND: -
+TWR: 119.425
+APP/DEP: -
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/EGYPT/Ras Sudr/Ras Sudr_Airport.png" onclick="return chart(this)">Airport Diagram</a>
+<a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/EGYPT/Ras Sudr/Ras Sudr_APC_RWY16.png" onclick="return chart(this)">APC - RWY 16</a>
+<a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/EGYPT/Ras Sudr/Ras Sudr_APC_RWY34.png" onclick="return chart(this)">APC - RWY 34</a>
+</pre></div></div>
+
+<div id="ST_CATHRINE" class="modal"><div class="modal-content">
+<center><b>ST. CATHRINE (HESC)</center></b></center><hr><pre>
+N28&deg59.876' E033&deg53.750'
+Elevation: 4338 ft
+RWY: 01/19
+TCN: 33Y
+ATIS: 126.925
+OPS: -
+GND: -
+TWR: 122.8
+APP/DEP: -
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/EGYPT/St Cathrine/St Cathrine_Airport.png" onclick="return chart(this)">Airport Diagram</a>
+<a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/EGYPT/St Cathrine/St Cathrine_APC_RWY01.png" onclick="return chart(this)">APC - RWY 01</a>
+<a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/EGYPT/St Cathrine/St Cathrine_APC_RWY19.png" onclick="return chart(this)">APC - RWY 19</a>
+</pre></div></div>
+
+<div id="TANTA" class="modal"><div class="modal-content">
+<center><b>TANTA (OTT)</center></b></center><hr><pre>
+N31&deg02.986' E030&deg36.063'
+Elevation: 33 ft
+RWY: 08/26
+TCN: 18Y
+ATIS: 124.05
+OPS: -
+GND: 386.175
+TWR: 297.875
+APP/DEP: 314.525
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/EGYPT/Tanta/Tanta_Airport.png" onclick="return chart(this)">Airport Diagram</a>
+<a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/EGYPT/Tanta/Tanta_APC_RWY08.png" onclick="return chart(this)">APC - RWY 08</a>
+<a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/EGYPT/Tanta/Tanta_APC_RWY26.png" onclick="return chart(this)">APC - RWY 26</a>
+</pre></div></div>
+
+<div id="WADI_ABU_SHIFAT" class="modal"><div class="modal-content">
+<center><b>WADI ABU SHIFAT ()</center></b></center><hr><pre>
+N27&deg00.252' E032&deg43.664'
+Elevation: 1201 ft
+RWY: 01/19
+TCN: 34Y
+ATIS: 122.025
+OPS: -
+GND: 248.2
+TWR: 312.475
+APP/DEP: 372.375
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/EGYPT/Wadi Abu Shifat/Wadi Abu Shifat_Airport.psd.png" onclick="return chart(this)">Airport Diagram</a>
+<a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/EGYPT/Wadi Abu Shifat/Wadi Abu Shifat_APC_RWY01.png" onclick="return chart(this)">APC - RWY 01</a>
+<a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/EGYPT/Wadi Abu Shifat/Wadi Abu Shifat_APC_RWY19.png" onclick="return chart(this)">APC - RWY 19</a>
+</pre></div></div>
+
+<div id="WADI_AL_JANDALI" class="modal"><div class="modal-content">
+<center><b>WADI AL JANDALI (HEKT)</center></b></center><hr><pre>
+N30&deg18.395' E031&deg27.799'
+Elevation: 778 ft
+RWY: 03/21
+TCN: 35Y
+ATIS: 122.0
+OPS: -
+GND: -
+TWR: 121.75
+APP/DEP: -
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/EGYPT/Wadi Al Jandali/Wadi Al Jandali_Airport.png" onclick="return chart(this)">Airport Diagram</a>
+<a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/EGYPT/Wadi Al Jandali/Wadi Al Jandali_APC_RWY03.png" onclick="return chart(this)">APC - RWY 03</a>
+<a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/EGYPT/Wadi Al Jandali/Wadi Al Jandali_APC_RWY21.png" onclick="return chart(this)">APC - RWY 21</a>
+</pre></div></div>
+
+<div id="H-3" class="modal"><div class="modal-content">
+<center><b>H-3 ()</center></b></center><hr><pre>
+N32&deg51.820' E040&deg17.390'
+Elevation: 2574 ft
+RWY: 05L/23R - 05R/23L
+TCN: 36Y
+ATIS: 128.65
+OPS: -
+GND: 304.35
+TWR: 372.3
+APP/DEP: 374.725
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/IRAQ/H-3/H-3_Airport.png" onclick="return chart(this)">Airport Diagram</a>
+<a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/IRAQ/H-3/H-3_APC_RWY05L.png" onclick="return chart(this)">APC - RWY 05L</a>
+<a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/IRAQ/H-3/H-3_APC_RWY23R.png" onclick="return chart(this)">APC - RWY 23R</a>
+<a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/IRAQ/H-3/H-3_APC_RWY05R.png" onclick="return chart(this)">APC - RWY 05R</a>
+<a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/IRAQ/H-3/H-3_APC_RWY23L.png" onclick="return chart(this)">APC - RWY 23L</a>
+</pre></div></div>
+
+<div id="H-3_NORTHWEST" class="modal"><div class="modal-content">
+<center><b>H-3 NORTHWEST (202C)</center></b></center><hr><pre>
+N33&deg03.798' E040&deg07.286'
+Elevation: 2553 ft
+RWY: 16/34
+TCN: 38Y
+ATIS: 129.325
+OPS: -
+GND: 301.9
+TWR: 328.625
+APP/DEP: 396.175
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/IRAQ/H-3 Northwest/H-3 Northwest_Airport.png" onclick="return chart(this)">Airport Diagram</a>
+<a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/IRAQ/H-3 Northwest/H-3 Northwest_APC_RWY16.png" onclick="return chart(this)">APC - RWY 16</a>
+<a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/IRAQ/H-3 Northwest/H-3 Northwest_APC_RWY34.png" onclick="return chart(this)">APC - RWY 34</a>
+</pre></div></div>
+
+<div id="H-3_SOUTH" class="modal"><div class="modal-content">
+<center><b>H-3 SOUTH ()</center></b></center><hr><pre>
+N32&deg43.861' E040&deg06.194'
+Elevation: 2674 ft
+RWY: 16/34
+TCN: 39Y
+ATIS: 128.425
+OPS: -
+GND: 235.475
+TWR: 269.075
+APP/DEP: 290.675
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/IRAQ/H-3 South/H-3 South_Airport.png" onclick="return chart(this)">Airport Diagram</a>
+<a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/IRAQ/H-3 South/H-3 South_APC_RWY16.png" onclick="return chart(this)">APC - RWY 16</a>
+<a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/IRAQ/H-3 South/H-3 South_APC_RWY34.png" onclick="return chart(this)">APC - RWY 34</a>
+</pre></div></div>
+
+<div id="RUWAYSHID" class="modal"><div class="modal-content">
+<center><b>RUWAYSHID ()</center></b></center><hr><pre>
+N32&deg28.949' E039&deg31.030'
+Elevation: 2919 ft
+RWY: 01/19
+TCN: 40Y
+ATIS: 395.0
+OPS: -
+GND: 370.125
+TWR: 370.65
+APP/DEP: 270.85
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/IRAQ/Ruwayshid/Ruwayshid_Airport.png" onclick="return chart(this)">Airport Diagram</a>
+<a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/IRAQ/Ruwayshid/Ruwayshid_APC_RWY01.png" onclick="return chart(this)">APC - RWY 01</a>
+<a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/IRAQ/Ruwayshid/Ruwayshid_APC_RWY19.png" onclick="return chart(this)">APC - RWY 19</a>
+</pre></div></div>
+
+<div id="BEN_GURION" class="modal"><div class="modal-content">
+<center><b>BEN GURION (LLGB)</center></b></center><hr><pre>
+N32&deg03.014' E034&deg53.276'
+Elevation: 162 ft
+RWY: 14L/32R - 14R/32L
+TCN: 82X
+ATIS: 132.5
+OPS: -
+GND: 246.45
+TWR: 331.0
+APP/DEP: 337.025
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/ISRAEL/Ben Gurion/Ben Gurion_Airport.png" onclick="return chart(this)">Airport Diagram</a>
+<a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/ISRAEL/Ben Gurion/Ben Gurion_APC_RWY14L.png" onclick="return chart(this)">APC - RWY 14L</a>
+<a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/ISRAEL/Ben Gurion/Ben Gurion_APC_RWY32R.png" onclick="return chart(this)">APC - RWY 32R</a>
+<a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/ISRAEL/Ben Gurion/Ben Gurion_APC_RWY14R.png" onclick="return chart(this)">APC - RWY 14R</a>
+<a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/ISRAEL/Ben Gurion/Ben Gurion_APC_RWY32L.png" onclick="return chart(this)">APC - RWY 32L</a>
+<a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/ISRAEL/Ben Gurion/Ben Gurion_ILS_32R.png" onclick="return chart(this)">ILS - RWY 32R</a>
+<a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/ISRAEL/Ben Gurion/Ben Gurion_SID_14L+R_1.png" onclick="return chart(this)">SID - RWY 14L/R-1</a>
+<a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/ISRAEL/Ben Gurion/Ben Gurion_SID_14L+R_2.png" onclick="return chart(this)">SID - RWY 14L/R-2</a>
+<a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/ISRAEL/Ben Gurion/Ben Gurion_SID_32L+R_1.png" onclick="return chart(this)">SID - RWY 32L/R-1</a>
+<a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/ISRAEL/Ben Gurion/Ben Gurion_SID_32L+R_2.png" onclick="return chart(this)">SID - RWY 32L/R-2</a>
+</pre></div></div>
+
+<div id="EILAT" class="modal"><div class="modal-content">
+<center><b>EILAT (LLET)</center></b></center><hr><pre>
+N29&deg50.528' E034&deg48.725'
+Elevation: 42 ft
+RWY: 01/19
+TCN: 57X
+ATIS: 132.55
+OPS: -
+GND: 302.175
+TWR: 279.15
+APP/DEP: 337.025
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/ISRAEL/Eilat/Eilat_Airport.png" onclick="return chart(this)">Airport Diagram</a>
+<a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/ISRAEL/Eilat/Eilat_APC_RWY01.png" onclick="return chart(this)">APC - RWY 01</a>
+<a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/ISRAEL/Eilat/Eilat_APC_RWY19.png" onclick="return chart(this)">APC - RWY 19</a>
+</pre></div></div>
+
+<div id="HATZERIM" class="modal"><div class="modal-content">
+<center><b>HATZERIM (LLHB)</center></b></center><hr><pre>
+N31&deg22.045' E034&deg33.387'
+Elevation: 643 ft
+RWY: 10L/28R - 10R/28L
+TCN: 100X
+ATIS: 119.2
+OPS: -
+GND: 290.775
+TWR: 341.0
+APP/DEP: 352.9
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/ISRAEL/Hatzerim/Hatzerim_Airport.png" onclick="return chart(this)">Airport Diagram</a>
+<a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/ISRAEL/Hatzerim/Hatzerim_APC_RWY11L.png" onclick="return chart(this)">APC - RWY 11L</a>
+<a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/ISRAEL/Hatzerim/Hatzerim_APC_RWY29R.png" onclick="return chart(this)">APC - RWY 29R</a>
+<a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/ISRAEL/Hatzerim/Hatzerim_APC_RWY11R.png" onclick="return chart(this)">APC - RWY 11R</a>
+<a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/ISRAEL/Hatzerim/Hatzerim_APC_RWY29L.png" onclick="return chart(this)">APC - RWY 29L</a>
+</pre></div></div>
+
+<div id="HATZOR" class="modal"><div class="modal-content">
+<center><b>HATZOR (LLHS)</center></b></center><hr><pre>
+N31&deg46.919' E034&deg43.138'
+Elevation: 277 ft
+RWY: 11R/29L - 05/23
+TCN: 117X
+ATIS: 128.275
+OPS: -
+GND: 309.45
+TWR: 342.05
+APP/DEP: 397.875
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/ISRAEL/Hatzor/Hatzor_Airport.png" onclick="return chart(this)">Airport Diagram</a>
+<a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/ISRAEL/Hatzor/Hatzor_APC_RWY05.png" onclick="return chart(this)">APC - RWY 05</a>
+<a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/ISRAEL/Hatzor/Hatzor_APC_RWY23.png" onclick="return chart(this)">APC - RWY 23</a>
+<a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/ISRAEL/Hatzor/Hatzor_APC_RWY11.png" onclick="return chart(this)">APC - RWY 11R</a>
+<a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/ISRAEL/Hatzor/Hatzor_APC_RWY29.png" onclick="return chart(this)">APC - RWY 29L</a>
+</pre></div></div>
+
+<div id="NEVATIM" class="modal"><div class="modal-content">
+<center><b>NEVATIM (LLNV)</center></b></center><hr><pre>
+N31&deg19.205' E035&deg03.603'
+Elevation: 1585 ft
+RWY: 02L/20R - 02R/20L
+TCN: 52X
+ATIS: 125.575
+OPS: -
+GND: 379.05
+TWR: 341.5
+APP/DEP: 250.525
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/ISRAEL/Nevatim/Nevatim_Airport.png" onclick="return chart(this)">Airport Diagram</a>
+<a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/ISRAEL/Nevatim/Nevatim_APC_RWY02L.png" onclick="return chart(this)">APC - RWY 02L</a>
+<a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/ISRAEL/Nevatim/Nevatim_APC_RWY20R.png" onclick="return chart(this)">APC - RWY 20R</a>
+<a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/ISRAEL/Nevatim/Nevatim_APC_RWY02R.png" onclick="return chart(this)">APC - RWY 02R</a>
+<a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/ISRAEL/Nevatim/Nevatim_APC_RWY20L.png" onclick="return chart(this)">APC - RWY 20L</a>
+<a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/ISRAEL/Nevatim/Nevatim_ILS_02R.png" onclick="return chart(this)">ILS - RWY 02R</a>
+</pre></div></div>
+
+<div id="OVDA" class="modal"><div class="modal-content">
+<center><b>OVDA (LLOV)</center></b></center><hr><pre>
+N30&deg03.880' E034&deg49.501'
+Elevation: 1990 ft
+RWY: 03L/21R - 03R/21L
+TCN: 88X
+ATIS: 130.275
+OPS: -
+GND: 299.725
+TWR: 340.0
+APP/DEP: 337.625
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/ISRAEL/Ovda/Ovda_Airport.png" onclick="return chart(this)">Airport Diagram</a>
+<a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/ISRAEL/Ovda/Ovda_APC_RWY03L.png" onclick="return chart(this)">APC - RWY 03L</a>
+<a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/ISRAEL/Ovda/Ovda_APC_RWY21R.png" onclick="return chart(this)">APC - RWY 21R</a>
+<a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/ISRAEL/Ovda/Ovda_APC_RWY03R.png" onclick="return chart(this)">APC - RWY 03R</a>
+<a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/ISRAEL/Ovda/Ovda_APC_RWY21L.png" onclick="return chart(this)">APC - RWY 21L</a>
+</pre></div></div>
+
+<div id="PALMACHIM" class="modal"><div class="modal-content">
+<center><b>PALMACHIM (LL59)</center></b></center><hr><pre>
+N31&deg57.367' E034&deg38.163'
+Elevation: 36 ft
+RWY: 08/26
+TCN: 79X
+ATIS: 126.1
+OPS: -
+GND: 397.975
+TWR: 341.35
+APP/DEP: 228.975
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/ISRAEL/Palmachim/Palmachim_Airport.png" onclick="return chart(this)">Airport Diagram</a>
+<a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/ISRAEL/Palmachim/Palmachim_APC_RWY08.png" onclick="return chart(this)">APC - RWY 08</a>
+<a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/ISRAEL/Palmachim/Palmachim_APC_RWY26.png" onclick="return chart(this)">APC - RWY 26</a>
+</pre></div></div>
+
+<div id="RAMAT_DAVID" class="modal"><div class="modal-content">
+<center><b>RAMAT DAVID (LLRD)</center></b></center><hr><pre>
+N32&deg39.121' E035&deg14.746'
+Elevation: 193 ft
+RWY: 09/27 - 15/33
+TCN: 45X
+ATIS: 127.45
+OPS: -
+GND: 360.75
+TWR: 341.4
+APP/DEP: 292.425
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/ISRAEL/Ramat David/Ramat David_Airport.png" onclick="return chart(this)">Airport Diagram</a>
+<a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/ISRAEL/Ramat David/Ramat David_APC_RWY09.png" onclick="return chart(this)">APC - RWY 09</a>
+<a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/ISRAEL/Ramat David/Ramat David_APC_RWY27.png" onclick="return chart(this)">APC - RWY 27</a>
+<a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/ISRAEL/Ramat David/Ramat David_APC_RWY15.png" onclick="return chart(this)">APC - RWY 15</a>
+<a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/ISRAEL/Ramat David/Ramat David_APC_RWY33.png" onclick="return chart(this)">APC - RWY 33</a>
+<a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/ISRAEL/Ramat David/Ramat David_ILS_27.png" onclick="return chart(this)">APC - RWY 27</a>
+</pre></div></div>
+
+<div id="RAMON" class="modal"><div class="modal-content">
+<center><b>RAMON (LLRM)</center></b></center><hr><pre>
+N30&deg54.882' E034&deg32.516'
+Elevation: 1948 ft
+RWY: 07L/25R - 07R/25L
+TCN: 39X
+ATIS: 129.975
+OPS: -
+GND: 364.45
+TWR: 340.5
+APP/DEP: 289.275
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/ISRAEL/Ramon/Ramon_Airport.png" onclick="return chart(this)">Airport Diagram</a>
+<a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/ISRAEL/Ramon/Ramon_APC_RWY07L.png" onclick="return chart(this)">APC - RWY 07L</a>
+<a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/ISRAEL/Ramon/Ramon_APC_RWY25R.png" onclick="return chart(this)">APC - RWY 25R</a>
+<a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/ISRAEL/Ramon/Ramon_APC_RWY07R.png" onclick="return chart(this)">APC - RWY 07R</a>
+<a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/ISRAEL/Ramon/Ramon_APC_RWY25L.png" onclick="return chart(this)">APC - RWY 25L</a>
+</pre></div></div>
+
+<div id="SDE_DOV" class="modal"><div class="modal-content">
+<center><b>SDE DOV (LLSD)</center></b></center><hr><pre>
+N32&deg11.095' E034&deg46.203'
+Elevation: 46 ft
+RWY: 02/20
+TCN: 71X
+ATIS: 122.9
+OPS: -
+GND: 242.975
+TWR: 343.35
+APP/DEP: 348.45
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/ISRAEL/Sde Dov/Sde Dov_Airport.png" onclick="return chart(this)">Airport Diagram</a>
+<a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/ISRAEL/Sde Dov/Sde Dov_APC_RWY02.png" onclick="return chart(this)">APC - RWY 02</a>
+<a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/ISRAEL/Sde Dov/Sde Dov_APC_RWY20.png" onclick="return chart(this)">APC - RWY 20</a>
+</pre></div></div>
+
+<div id="TEL_NOF" class="modal"><div class="modal-content">
+<center><b>TEL NOF (LLEK)</center></b></center><hr><pre>
+N31&deg52.344' E034&deg41.939'
+Elevation: 187 ft
+RWY: 01/19 - 18/36
+TCN: 59X
+ATIS: 118.35
+OPS: -
+GND: 389.075
+TWR: 342.0
+APP/DEP: 250.825
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/ISRAEL/Tel Nof/Tel Nof_airport.png" onclick="return chart(this)">Airport Diagram</a>
+<a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/ISRAEL/Tel Nof/Tel Nof_APC_RWY01.png" onclick="return chart(this)">APC - RWY 01</a>
+<a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/ISRAEL/Tel Nof/Tel Nof_APC_RWY19.png" onclick="return chart(this)">APC - RWY 19</a>
+<a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/ISRAEL/Tel Nof/Tel Nof_APC_RWY18.png" onclick="return chart(this)">APC - RWY 18</a>
+<a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/ISRAEL/Tel Nof/Tel Nof_APC_RWY36.png" onclick="return chart(this)">APC - RWY 36</a>
+</pre></div></div>
+
+<div id="AQABA" class="modal"><div class="modal-content">
+<center><b>AQABA (OJAQ)</center></b></center><hr><pre>
+N29&deg51.307' E034&deg52.050'
+Elevation: 158 ft
+RWY: 05L/23R - 05R/23L
+TCN: 78X
+ATIS: 119.45
+GND: -
+TWR: 119.45
+APP/DEP: -
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/JORDAN/Aqaba INT/Aqaba INT_Airport.png" onclick="return chart(this)">Airport Diagram</a>
+<a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/JORDAN/Aqaba INT/Aqaba INT_APC_RWY05L.png" onclick="return chart(this)">APC - RWY 05L</a>
+<a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/JORDAN/Aqaba INT/Aqaba INT_APC_RWY23R.png" onclick="return chart(this)">APC - RWY 23R</a>
+<a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/JORDAN/Aqaba INT/Aqaba INT_APC_RWY05R.png" onclick="return chart(this)">APC - RWY 05R</a>
+<a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/JORDAN/Aqaba INT/Aqaba INT_APC_RWY23L.png" onclick="return chart(this)">APC - RWY 23L</a>
+</pre></div></div>
+
+<div id="H-4" class="modal"><div class="modal-content">
+<center><b>H-4 ()</center></b></center><hr><pre>
+N32&deg36.799' E038&deg38.073'
+Elevation: 15 ft
+RWY: 02L/20R - 02R/20L
+TCN: 45Y
+ATIS: -
+GND: 390.15
+TWR: 283.825
+APP/DEP: 302.8
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/JORDAN/H-4/H-4_Airport.png" onclick="return chart(this)">Airport Diagram</a>
+<a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/JORDAN/H-4/H-4_APC_RWY02L.png" onclick="return chart(this)">APC - RWY 02L</a>
+<a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/JORDAN/H-4/H-4_APC_RWY20R.png" onclick="return chart(this)">APC - RWY 20R</a>
+<a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/JORDAN/H-4/H-4_APC_RWY02R.png" onclick="return chart(this)">APC - RWY 02R</a>
+<a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/JORDAN/H-4/H-4_APC_RWY20L.png" onclick="return chart(this)">APC - RWY 20L</a>
+</pre></div></div>
+
+<div id="KING_ABDULLHA_BEN" class="modal"><div class="modal-content">
+<center><b>KING ABDULLHA BEN ()</center></b></center><hr><pre>
+N31&deg58.306' E036&deg07.239'
+Elevation: 2732 ft
+RWY: 02L/20R - 02R/20L
+TCN: 111X
+ATIS: -
+GND: 394.65
+TWR: 247.25
+APP/DEP: 366.925
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/JORDAN/King Abdullha Ben/King Abdullha Ben_Airport.png" onclick="return chart(this)">Airport Diagram</a>
+<a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/JORDAN/King Abdullha Ben/King Abdullha Ben_APC_RWY02L.png" onclick="return chart(this)">APC - RWY 02L</a>
+<a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/JORDAN/King Abdullha Ben/King Abdullha Ben_APC_RWY20R.png" onclick="return chart(this)">APC - RWY 20R</a>
+<a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/JORDAN/King Abdullha Ben/King Abdullha Ben_APC_RWY02R.png" onclick="return chart(this)">APC - RWY 02R</a>
+<a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/JORDAN/King Abdullha Ben/King Abdullha Ben_APC_RWY20L.png" onclick="return chart(this)">APC - RWY 20L</a>
+</pre></div></div>
+
+<div id="KING_FAISAL" class="modal"><div class="modal-content">
+<center><b>KING FAISAL ()</center></b></center><hr><pre>
+N30&deg35.475' E036&deg10.328'
+Elevation: 2896 ft
+RWY: 11/29
+TCN: 47Y
+ATIS: -
+GND: -
+TWR: 125.8
+APP/DEP: -
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/JORDAN/King Faisal/King Faisal_Airport.png" onclick="return chart(this)">Airport Diagram</a>
+<a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/JORDAN/King Faisal/King Faisal_APC_RWY11.png" onclick="return chart(this)">APC - RWY 11</a>
+<a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/JORDAN/King Faisal/King Faisal_APC_RWY29.png" onclick="return chart(this)">APC - RWY 29</a>
+</pre></div></div>
+
+<div id="KING_HUSSEIN" class="modal"><div class="modal-content">
+<center><b>KING HUSSEIN ()</center></b></center><hr><pre>
+N32&deg27.180' E036&deg24.820'
+Elevation: 2145 ft
+RWY: 03/21
+TCN: 48Y
+ATIS: -
+GND: 308.725
+TWR: 313.425
+APP/DEP: 247.675
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/JORDAN/King Hussein/King Hussein_Airport.png" onclick="return chart(this)">Airport Diagram</a>
+<a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/JORDAN/King Hussein/King Hussein_APC_RWY03.png" onclick="return chart(this)">APC - RWY 03</a>
+<a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/JORDAN/King Hussein/King Hussein_APC_RWY21.png" onclick="return chart(this)">APC - RWY 21</a>
+</pre></div></div>
+
+<div id="PRINCE_HASSAN" class="modal"><div class="modal-content">
+<center><b>PRINCE HASSAN (OJPH)</center></b></center><hr><pre>
+N32&deg10.613' E037&deg19.168'
+Elevation: 17 ft
+RWY: 02/20
+TCN: 49Y
+ATIS: -
+GND: -
+TWR: 128.9
+APP/DEP: -
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/JORDAN/Prince Hassan/Prince Hassan_Airport.png" onclick="return chart(this)">Airport Diagram</a>
+<a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/JORDAN/Prince Hassan/Prince Hassan_APC_RWY02.png" onclick="return chart(this)">APC - RWY 02</a>
+<a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/JORDAN/Prince Hassan/Prince Hassan_APC_RWY20.png" onclick="return chart(this)">APC - RWY 20</a>
+</pre></div></div>
+
+<div id="QUEEN_ALIA" class="modal"><div class="modal-content">
+<center><b>QUEEN ALIA (OJAI)</center></b></center><hr><pre>
+N33&deg55.112' E036&deg03.804'
+Elevation: 17 ft
+RWY: 02/20
+TCN: 49Y
+ATIS: -
+GND: -
+TWR: 119.8
+APP/DEP: -
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/JORDAN/Queen Alia Int/Queen Alia Int_Airport.png" onclick="return chart(this)">Airport Diagram</a>
+<a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/JORDAN/Queen Alia Int/Queen Alia INT_APC_RWY12.png" onclick="return chart(this)">APC - RWY 12</a>
+<a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/JORDAN/Queen Alia Int/Queen Alia INT_APC_RWY30.png" onclick="return chart(this)">APC - RWY 30</a>
+</pre></div></div>
+
+<div id="SHAHEED_MWAFFAQ" class="modal"><div class="modal-content">
+<center><b>SHAHEED MWAFFAQ (OJ40)</center></b></center><hr><pre>
+N31&deg50.937' E036&deg53.149'
+Elevation: 1700 ft
+RWY: 08/26
+TCN: 50Y
+ATIS: -
+GND: -
+TWR: 125.1
+APP/DEP: -
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/JORDAN/Shaheed Mwaffaq/Shaheed Mwaffaq_Airport.psd.png" onclick="return chart(this)">Airport Diagram</a>
+<a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/JORDAN/Shaheed Mwaffaq/Shaheed Mwaffaq_APC_RWY08.png" onclick="return chart(this)">APC - RWY 08</a>
+<a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/JORDAN/Shaheed Mwaffaq/Shaheed Mwaffaq_APC_RWY26.png" onclick="return chart(this)">APC - RWY 26</a>
+<a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/JORDAN/Shaheed Mwaffaq/Shaheed Mwaffaq_TCN_08.png" onclick="return chart(this)">TACAN - RWY 08</a>
+</pre></div></div>
+
+<div id="WADI_EL_MURBHA" class="modal"><div class="modal-content">
+<center><b>WADI EL MURBHA ()</center></b></center><hr><pre>
+N32&deg46.195' E039&deg25.023'
+Elevation: 2597 ft
+RWY: 09/27
+TCN: 51Y
+ATIS: -
+GND: 257.8
+TWR: 257.8
+APP/DEP: 257.8
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/JORDAN/Wadi El Murbha/Wadi El Murbha_Airport.png" onclick="return chart(this)">Airport Diagram</a>
+<a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/JORDAN/Wadi El Murbha/Wadi El Murbha_APC_RWY09.png" onclick="return chart(this)">APC - RWY 09</a>
+<a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/JORDAN/Wadi El Murbha/Wadi El Murbha_APC_RWY27.png" onclick="return chart(this)">APC - RWY 27</a>
+</pre></div></div>
+
+<div id="ALAT" class="modal"><div class="modal-content">
+<center><b>ALAT ()</center></b></center><hr><pre>
+N34&deg04.283' E035&deg55.126'
+Elevation: 23 ft
+RWY: 16/34
+TCN: 52Y
+ATIS: -
+GND: -
+TWR: 119.3
+APP/DEP: -
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/LEBANON/Alat/Alat_Airport.png" onclick="return chart(this)">Airport Diagram</a>
+<a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/LEBANON/Alat/Alat_APC_RWY16.png" onclick="return chart(this)">APC - RWY 16</a>
+<a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/LEBANON/Alat/Alat_APC_RWY34.png" onclick="return chart(this)">APC - RWY 34</a>
+</pre></div></div>
+
+<div id="RAFIC_HARIRI" class="modal"><div class="modal-content">
+<center><b>RAFIC HARIRI (OLBA)</center></b></center><hr><pre>
+N33&deg44.106' E035&deg38.106'
+Elevation: 182 ft
+RWY: 05L/23R - 05R/23L
+TCN: 73X
+ATIS: -
+GND: -
+TWR: 118.9
+APP/DEP: -
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/LEBANON/Rafic Hariri/Rafic Hariri Intl_Airport.png" onclick="return chart(this)">Airport Diagram</a>
+<a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/LEBANON/Rafic Hariri/Rafic Hariri Intl_APC_RWY05L.png" onclick="return chart(this)">APC - RWY 05L</a>
+<a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/LEBANON/Rafic Hariri/Rafic Hariri Intl_APC_RWY23R.png" onclick="return chart(this)">APC - RWY 23R</a>
+<a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/LEBANON/Rafic Hariri/Rafic Hariri Intl_APC_RWY05R.png" onclick="return chart(this)">APC - RWY 05R</a>
+<a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/LEBANON/Rafic Hariri/Rafic Hariri Intl_APC_RWY23L.png" onclick="return chart(this)">APC - RWY 23L</a>
+<a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/LEBANON/Rafic Hariri/Rafic Hariri Intl_ILS_05Lt.png" onclick="return chart(this)">ILS - RWY 05L</a>
+</pre></div></div>
+
+<div id="RIYAQ" class="modal"><div class="modal-content">
+<center><b>RIYAQ (OLRA)</center></b></center><hr><pre>
+N33&deg41.113' E036&deg08.297'
+Elevation: 3038 ft
+RWY: 01/19
+TCN: 53Y
+ATIS: -
+GND: -
+TWR: 119.7
+APP/DEP: -
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/LEBANON/Riyaq/Riyaq_Airport.png" onclick="return chart(this)">Airport Diagram</a>
+<a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/LEBANON/Riyaq/Riyaq_APC_RWY01.png" onclick="return chart(this)">APC - RWY 01</a>
+<a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/LEBANON/Riyaq/Riyaq_APC_RWY19.png" onclick="return chart(this)">APC - RWY 19</a>
+</pre></div></div>
+
+<div id="WUJAH_AL_HAJAR" class="modal"><div class="modal-content">
+<center><b>WUJAH AL HAJAR (Z190)</center></b></center><hr><pre>
+N34&deg08.234' E035&deg53.555'
+Elevation: 734 ft
+RWY: 05L/23R - 05R/23L
+TCN: 109X
+ATIS: -
+GND: -
+TWR: 119.1
+APP/DEP: -
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/LEBANON/Wujah Al Hajar/Wujah Al Hajar_Airport.png" onclick="return chart(this)">Airport Diagram</a>
+<a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/LEBANON/Wujah Al Hajar/Wujah Al Hajar_APC_RWY05L.png" onclick="return chart(this)">APC - RWY 05L</a>
+<a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/LEBANON/Wujah Al Hajar/Wujah Al Hajar_APC_RWY23R.png" onclick="return chart(this)">APC - RWY 23R</a>
+<a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/LEBANON/Wujah Al Hajar/Wujah Al Hajar_APC_RWY05R.png" onclick="return chart(this)">APC - RWY 05R</a>
+<a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/LEBANON/Wujah Al Hajar/Wujah Al Hajar_APC_RWY23L.png" onclick="return chart(this)">APC - RWY 23L</a>
+</pre></div></div>
+
+<div id="AKROTIRI" class="modal"><div class="modal-content">
+<center><b>AKROTIRI (LCRA)</center></b></center><hr><pre>
+N34&deg26.641' E032&deg53.399'
+Elevation: 70 ft
+RWY: 11/29
+TCN: 107X
+ATIS: 119.4
+GND: 320.0
+TWR: 339.85
+APP/DEP: 325.375
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/NATO/Akrotiri/Akrotiri_Airport.png" onclick="return chart(this)">Airport Diagram</a>
+<a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/NATO/Akrotiri/Akrotiri_APC_RWY11.png" onclick="return chart(this)">APC - RWY 11</a>
+<a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/NATO/Akrotiri/Akrotiri_APC_RWY29.png" onclick="return chart(this)">APC - RWY 29</a>
+</pre></div></div>
+
+<div id="YASSER_ARAFAT" class="modal"><div class="modal-content">
+<center><b>YASSER ARAFAT (LVGZ)</center></b></center><hr><pre>
+N31&deg23.024' E034&deg15.527'
+Elevation: 228 ft
+RWY: 18/36
+TCN: 80X
+ATIS: 120.9
+GND: -
+TWR: 329.325
+APP/DEP: -
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/PA/Yasser Arafat Intl/Yasser Arafat Intl_Airport.png" onclick="return chart(this)">Airport Diagram</a>
+<a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/PA/Yasser Arafat Intl/Yasser Arafat Intl_APC_RWY18.png" onclick="return chart(this)">APC - RWY 18</a>
+<a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/PA/Yasser Arafat Intl/Yasser Arafat Intl_APC_RWY36.png" onclick="return chart(this)">APC - RWY 36</a>
+</pre></div></div>
+
+<div id="GURIAT" class="modal"><div class="modal-content">
+<center><b>GURIAT (OEGT)</center></b></center><hr><pre>
+N31&deg24.534' E037&deg20.749'
+Elevation: 1868 ft
+RWY: 08/26
+TCN: 94X
+ATIS: 123.65
+GND: -
+TWR: 122.8
+APP/DEP: -
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/SAUDI ARABIA/Guriat/Guriat_Airport.png" onclick="return chart(this)">Airport Diagram</a>
+<a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/SAUDI ARABIA/Guriat/Guriat_APC_RWY08.png" onclick="return chart(this)">APC - RWY 08</a>
+<a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/SAUDI ARABIA/Guriat/Guriat_APC_RWY26.png" onclick="return chart(this)">APC - RWY 26</a>
+</pre></div></div>
+
+<div id="PRINCE_SULTAN_BIN_ABDULAZIZ" class="modal"><div class="modal-content">
+<center><b>PRINCE SULTAN BIN ABDULAZIZ (OETB)</center></b></center><hr><pre>
+N28&deg43.696' E036&deg35.322'
+Elevation: 2567 ft
+RWY: 02/20
+TCN: 104X
+ATIS: 123.525
+GND: 348.65
+TWR: 374.1
+APP/DEP: 257.6
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/SAUDI ARABIA/Prince Sultan Bin Abdulaziz/Prince Sultan Bin Abdulaziz_Airport.png" onclick="return chart(this)">Airport Diagram</a>
+<a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/SAUDI ARABIA/Prince Sultan Bin Abdulaziz/Prince Sultan Bin Abdulaziz_APC_RWY02.png" onclick="return chart(this)">APC - RWY 02</a>
+<a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/SAUDI ARABIA/Prince Sultan Bin Abdulaziz/Prince Sultan Bin Abdulaziz_APC_RWY20.png" onclick="return chart(this)">APC - RWY 20</a>
+<a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/SAUDI ARABIA/Prince Sultan Bin Abdulaziz/Prince Sultan Bin Abdulaziz_ILS_02.png" onclick="return chart(this)">ILS - RWY 02</a>
+</pre></div></div>
+
+<div id="TURAIF" class="modal"><div class="modal-content">
+<center><b>TURAIF ()</center></b></center><hr><pre>
+N31&deg41.530' E038&deg55.488'
+Elevation: 2690 ft
+RWY: 01/19
+TCN: 108X
+ATIS: 123.775
+GND: -
+TWR: 122.75
+APP/DEP: -
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/SAUDI ARABIA/Turaif/Turaif_Airport.png" onclick="return chart(this)">Airport Diagram</a>
+<a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/SAUDI ARABIA/Turaif/Turaif_APC_RWY01.png" onclick="return chart(this)">APC - RWY 01</a>
+<a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/SAUDI ARABIA/Turaif/Turaif_APC_RWY19.png" onclick="return chart(this)">APC - RWY 19</a>
+</pre></div></div>
+
+<div id="WEJH" class="modal"><div class="modal-content">
+<center><b>WEJH (OEWJ)</center></b></center><hr><pre>
+N26&deg45.703' E036&deg18.702'
+Elevation: 308 ft
+RWY: 01/19
+TCN: 86X
+ATIS: 130.075
+GND: -
+TWR: 122.85
+APP/DEP: -
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/SAUDI ARABIA/Wejh/Wejh_Airport.png" onclick="return chart(this)">Airport Diagram</a>
+<a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/SAUDI ARABIA/Wejh/Wejh_APC_RWY01.png" onclick="return chart(this)">APC - RWY 01</a>
+<a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/SAUDI ARABIA/Wejh/Wejh_APC_RWY19.png" onclick="return chart(this)">APC - RWY 19</a>
+</pre></div></div>
+
+<div id="AL_QUSAYR" class="modal"><div class="modal-content">
+<center><b>AL QUSAYR (OS70)</center></b></center><hr><pre>
+N34&deg29.498' E037&deg00.107'
+Elevation: 1754 ft
+RWY: 03/21
+TCN: 56Y
+ATIS: 127.375
+GND: 360.6
+TWR: 339.375
+APP/DEP: 399.25
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/SYRIA/Al Qusayr/Al Qusayr_Airport.png" onclick="return chart(this)">Airport Diagram</a>
+<a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/SYRIA/Al Qusayr/Al Qusayr_APC_RWY03.png" onclick="return chart(this)">APC - RWY 03</a>
+<a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/SYRIA/Al Qusayr/Al Qusayr_APC_RWY21.png" onclick="return chart(this)">APC - RWY 21</a>
+</pre></div></div>
+
+<div id="AN_NASIRIYAH" class="modal"><div class="modal-content">
+<center><b>AL NASIRIYAH (ORTL)</center></b></center><hr><pre>
+N33&deg55.225' E037&deg07.043'
+Elevation: 4921 ft
+RWY: 04/22
+TCN: 57Y
+ATIS: 128.775
+GND: 306.925
+TWR: 366.4
+APP/DEP: 239.275
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/SYRIA/An Nasiriyah/An Nasiriyah_Airport.png" onclick="return chart(this)">Airport Diagram</a>
+<a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/SYRIA/An Nasiriyah/An Nasiriyah_APC_RWY04.png" onclick="return chart(this)">APC - RWY 04</a>
+<a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/SYRIA/An Nasiriyah/An Nasiriyah_APC_RWY22.png" onclick="return chart(this)">APC - RWY 22</a>
+</pre></div></div>
+
+<div id="AS_SUWAYDA_WEST" class="modal"><div class="modal-content">
+<center><b>AS SUWAYDA WEST ()</center></b></center><hr><pre>
+N32&deg45.855' E036&deg28.782'
+Elevation: 2147 ft
+RWY: 06/24
+TCN: 58Y
+ATIS: 125.475
+GND: 256.7
+TWR: 312.3
+APP/DEP: 388.125
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/SYRIA/As Suwayda West/As Suwayda West_Airport.png" onclick="return chart(this)">Airport Diagram</a>
+<a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/SYRIA/As Suwayda West/As Suwayda West_APC_RWY06.png" onclick="return chart(this)">APC - RWY 06</a>
+<a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/SYRIA/As Suwayda West/As Suwayda West_APC_RWY24.png" onclick="return chart(this)">APC - RWY 24</a>
+</pre></div></div>
+
+<div id="DAMASKUS_INT" class="modal"><div class="modal-content">
+<center><b>DAMASKUS INT. (OSDI)</center></b></center><hr><pre>
+N33&deg21.917' E036&deg41.611'
+Elevation: 2021 ft
+RWY: 05L/23R - 05R/23L
+TCN: 106X
+ATIS: 128.225
+GND: 343.25
+TWR: 282.65
+APP/DEP: 297.0
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/SYRIA/Damascus Int/Damascus INT_Airport.png" onclick="return chart(this)">Airport Diagram</a>
+<a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/SYRIA/Damascus Int/Damascus INT_APC_RWY05L.png" onclick="return chart(this)">APC - RWY 05L</a>
+<a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/SYRIA/Damascus Int/Damascus INT_APC_RWY23R.png" onclick="return chart(this)">APC - RWY 23R</a>
+<a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/SYRIA/Damascus Int/Damascus INT_APC_RWY05R.png" onclick="return chart(this)">APC - RWY 05R</a>
+<a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/SYRIA/Damascus Int/Damascus INT_APC_RWY23L.png" onclick="return chart(this)">APC - RWY 23L</a>
+</pre></div></div>
+
+<div id="DUMYAR" class="modal"><div class="modal-content">
+<center><b>DUMYAR ()</center></b></center><hr><pre>
+N33&deg37.810' E037&deg01.448'
+Elevation: 2669 ft
+RWY: 06/24
+TCN: 59Y
+ATIS: 128.975
+GND: 376.3
+TWR: 271.875
+APP/DEP: 270.2
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/SYRIA/Dumyar/Dumyar_Airport.png" onclick="return chart(this)">Airport Diagram</a>
+<a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/SYRIA/Dumyar/Dumyar_APC_RWY06.png" onclick="return chart(this)">APC - RWY 06</a>
+<a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/SYRIA/Dumyar/Dumyar_APC_RWY24.png" onclick="return chart(this)">APC - RWY 24</a>
+</pre></div></div>
+
+<div id="KHALKHALAH" class="modal"><div class="modal-content">
+<center><b>KHALKHALAH (OS69)</center></b></center><hr><pre>
+N33&deg01.298' E036&deg38.405'
+Elevation: 2221 ft
+RWY: 07/25 - 15/33
+TCN: 60Y
+ATIS: 130.225
+GND: 279.35
+TWR: 319.9
+APP/DEP: 333.325
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/SYRIA/Khalkhalah/Khalkhalah_Airport.png" onclick="return chart(this)">Airport Diagram</a>
+<a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/SYRIA/Khalkhalah/Khalkhalah_APC_RWY07.png" onclick="return chart(this)">APC - RWY 07</a>
+<a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/SYRIA/Khalkhalah/Khalkhalah_APC_RWY25.png" onclick="return chart(this)">APC - RWY 25</a>
+<a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/SYRIA/Khalkhalah/Khalkhalah_APC_RWY15.png" onclick="return chart(this)">APC - RWY 15</a>
+<a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/SYRIA/Khalkhalah/Khalkhalah_APC_RWY33.png" onclick="return chart(this)">APC - RWY 33</a>
+</pre></div></div>
+
+<div id="MARJ_RUHAYYIL" class="modal"><div class="modal-content">
+<center><b>MARJ RUHAYYIL (OS63)</center></b></center><hr><pre>
+N33&deg16.095' E036&deg40.761'
+Elevation: 2059 ft
+RWY: 06/24
+TCN: 61Y
+ATIS: 126.075
+GND: 322.45
+TWR: 273.425
+APP/DEP: 294.05
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/SYRIA/Marj Ruhayyil/Marj Ruhayyil_Airport.png" onclick="return chart(this)">Airport Diagram</a>
+<a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/SYRIA/Marj Ruhayyil/Marj Ruhayyil_APC_RWY06.png" onclick="return chart(this)">APC - RWY 06</a>
+<a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/SYRIA/Marj Ruhayyil/Marj Ruhayyil_APC_RWY24.png" onclick="return chart(this)">APC - RWY 24</a>
+</pre></div></div>
+
+<div id="MEZZEH" class="modal"><div class="modal-content">
+<center><b>MEZZEH (OS67)</center></b></center><hr><pre>
+N33&deg29.655' E036&deg42.605'
+Elevation: 2038 ft
+RWY: 06/24
+TCN: 62Y
+ATIS: 127.05
+GND: 283.4
+TWR: 327.925
+APP/DEP: 377.525
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/SYRIA/Mezzeh/Mezzeh_Airport.png" onclick="return chart(this)">Airport Diagram</a>
+<a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/SYRIA/Mezzeh/Mezzeh_APC_RWY06.png" onclick="return chart(this)">APC - RWY 06</a>
+<a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/SYRIA/Mezzeh/Mezzeh_APC_RWY24.png" onclick="return chart(this)">APC - RWY 24</a>
+</pre></div></div>
+
+<div id="PALMYR" class="modal"><div class="modal-content">
+<center><b>PALMYR (OSPR)</center></b></center><hr><pre>
+N34&deg31.091' E038&deg51.167'
+Elevation: 2180 ft
+RWY: 16/34
+TCN: 63Y
+ATIS: 128.925
+GND: 232.25
+TWR: 391.825
+APP/DEP: 394.55
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/SYRIA/Palmyr/Palmyr_Airport.png" onclick="return chart(this)">Airport Diagram</a>
+<a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/SYRIA/Palmyr/Palmyr_APC_RWY16.png" onclick="return chart(this)">APC - RWY 16</a>
+<a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/SYRIA/Palmyr/Palmyr_APC_RWY34.png" onclick="return chart(this)">APC - RWY 34</a>
+</pre></div></div>
+
+<div id="SAYQAL" class="modal"><div class="modal-content">
+<center><b>SAYQAL (OS68)</center></b></center><hr><pre>
+N33&deg35.902' E037&deg40.026'
+Elevation: 2336 ft
+RWY: 06/24 - 09/27
+TCN: 64Y
+ATIS: 118.075
+GND: 252.825
+TWR: 302.275
+APP/DEP: 236.875
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/SYRIA/Sayqal/Sayqal_Airport.png" onclick="return chart(this)">Airport Diagram</a>
+<a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/SYRIA/Sayqal/Sayqal_APC_RWY06.png" onclick="return chart(this)">APC - RWY 06</a>
+<a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/SYRIA/Sayqal/Sayqal_APC_RWY24.png" onclick="return chart(this)">APC - RWY 24</a>
+<a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/SYRIA/Sayqal/Sayqal_APC_RWY09.png" onclick="return chart(this)">APC - RWY 09</a>
+<a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/SYRIA/Sayqal/Sayqal_APC_RWY27.png" onclick="return chart(this)">APC - RWY 27</a>
+</pre></div></div>
+
+<div id="SHAYRAT" class="modal"><div class="modal-content">
+<center><b>SHAYRAT (OS65)</center></b></center><hr><pre>
+N34&deg16.764' E037&deg21.622'
+Elevation: 2638 ft
+RWY: 14/32
+TCN: 65Y
+ATIS: 128.025
+GND: 232.725
+TWR: 294.375
+APP/DEP: 273.875
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/SYRIA/Shayrat/Shayrat_Airport.png" onclick="return chart(this)">Airport Diagram</a>
+<a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/SYRIA/Shayrat/Shayrat_APC_RWY14.png" onclick="return chart(this)">APC - RWY 14</a>
+<a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/SYRIA/Shayrat/Shayrat_APC_RWY32.png" onclick="return chart(this)">APC - RWY 32</a>
+</pre></div></div>
+
+<div id="TIYAS" class="modal"><div class="modal-content">
+<center><b>TIYAS ()</center></b></center><hr><pre>
+N34&deg21.014' E037&deg59.617'
+Elevation: 1791 ft
+RWY: 02/20
+TCN: 66Y
+ATIS: 133.025
+GND: 245.9
+TWR: 308.25
+APP/DEP: 317.6
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/SYRIA/Tiyas/Tiyas_Airport.png" onclick="return chart(this)">Airport Diagram</a>
+<a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/SYRIA/Tiyas/Tiyas_APC_RWY02.png" onclick="return chart(this)">APC - RWY 02</a>
+<a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/SYRIA/Tiyas/Tiyas_APC_RWY20.png" onclick="return chart(this)">APC - RWY 20</a>
+</pre></div></div>
+
+<!-- Airstrips -->
+<div id="H-3_Airstrip" class="modal"><div class="modal-content">
+<center><b>AIRSTRIP (H-3)</center></b></center><hr><pre>
+N32&deg54.564' E039&deg43.722'
+Elevation: 52 ft
+RWY: 18/36
+TCN: 1X
+ATIS: -
+GND: -
+TWR: 132.15
+APP/DEP: -
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/IRAQ/H-3 (Airstrip)/H-3 (Airstrip)_Airport.png" onclick="return chart(this)">Airport Diagram</a>
+<a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/IRAQ/H-3 (Airstrip)/H-3_APC_RWY18.png" onclick="return chart(this)">APC - RWY 18</a>
+<a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/IRAQ/H-3 (Airstrip)/H-3_APC_RWY36.png" onclick="return chart(this)">APC - RWY 36</a>
+</pre></div></div>
+
+<div id="MEGGIDO_Airstrip" class="modal"><div class="modal-content">
+<center><b>AIRSTRIP (MEGIDDO)</center></b></center><hr><pre>
+N32&deg35.418' E035&deg15.690'
+Elevation: 243 ft
+RWY: 18/36
+TCN: -
+ATIS: -
+GND: -
+TWR: 124.4
+APP/DEP: -
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/ISRAEL/Meggido (Airstrip)/Meggido_Airport.png" onclick="return chart(this)">Airport Diagram</a>
+<a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/ISRAEL/Meggido (Airstrip)/Megiddo_APC_RWY09.png" onclick="return chart(this)">APC - RWY 18</a>
+<a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/ISRAEL/Meggido (Airstrip)/Megiddo_APC_RWY27.png" onclick="return chart(this)">APC - RWY 36</a>
+</pre></div></div>
+
+<div id="ROSH_PINA_Airstrip" class="modal"><div class="modal-content">
+<center><b>AIRSTRIP (ROSH PINA)</center></b></center><hr><pre>
+N32&deg59.953' E035&deg42.122'
+Elevation: 461 ft
+RWY: 18/36
+TCN: -
+ATIS: -
+GND: -
+TWR: 118.45
+APP/DEP: -
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/ISRAEL/Rosh Pina (Airstrip)/Rosh Pina_Airport.png" onclick="return chart(this)">Airport Diagram</a>
+<a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/ISRAEL/Rosh Pina (Airstrip)/Rosh Pina_APC_RWY18.png" onclick="return chart(this)">APC - RWY 18</a>
+<a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/ISRAEL/Rosh Pina (Airstrip)/Rosh Pina_APC_RWY36.png" onclick="return chart(this)">APC - RWY 36</a>
+</pre></div></div>
+
+<div id="AL_GADHAF_Airstrip" class="modal"><div class="modal-content">
+<center><b>AIRSTRIP (AL GADHAF)</center></b></center><hr><pre>
+N31&deg44.766' E037&deg05.958'
+Elevation: 1696 ft
+RWY: 09/27
+TCN: 41Y
+ATIS: -
+GND: 254.1
+TWR: 254.1
+APP/DEP: 254.1
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/JORDAN/Al Gadhaf (Airstrip)/Al Gadhaf_Airport.png" onclick="return chart(this)">Airport Diagram</a>
+<a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/JORDAN/Al Gadhaf (Airstrip)/Al Gadhaf_APC_RWY09.png" onclick="return chart(this)">APC - RWY 09</a>
+<a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/JORDAN/Al Gadhaf (Airstrip)/Al Gadhaf_APC_RWY27.png" onclick="return chart(this)">APC - RWY 27</a>
+</pre></div></div>
+
+<div id="AL_QANTRANAH_Airstrip" class="modal"><div class="modal-content">
+<center><b>AIRSTRIP (AL QANTRANAH)</center></b></center><hr><pre>
+N31&deg17.572' E036&deg11.862'
+Elevation: 2752 ft
+RWY: 18/36
+TCN: 42Y
+ATIS: -
+GND: 255.7
+TWR: 255.7
+APP/DEP: 255.7
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/JORDAN/Al Qantranah (Airstrip)/Al Qantranah_Airport.png" onclick="return chart(this)">Airport Diagram</a>
+<a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/JORDAN/Al Qantranah (Airstrip)/Al Qantranah_APC_RWY18.png" onclick="return chart(this)">APC - RWY 18</a>
+<a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/JORDAN/Al Qantranah (Airstrip)/Al Qantranah_APC_RWY36.png" onclick="return chart(this)">APC - RWY 36</a>
+</pre></div></div>
+
+<div id="AL_QUWAYHRA_Airstrip" class="modal"><div class="modal-content">
+<center><b>AIRSTRIP (AL QUWAYHRA)</center></b></center><hr><pre>
+N30&deg00.230' E035&deg18.872'
+Elevation: 2782 ft
+RWY: 09/27
+TCN: 43Y
+ATIS: -
+GND: 256.4
+TWR: 256.4
+APP/DEP: 256.4
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/JORDAN/Al Quwayhra (Airstrip)/Al Quwayhra_Airport.png" onclick="return chart(this)">Airport Diagram</a>
+<a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/JORDAN/Al Quwayhra (Airstrip)/Al Quwayhra_APC_RWY09.png" onclick="return chart(this)">APC - RWY 09</a>
+<a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/JORDAN/Al Quwayhra (Airstrip)/Al Quwayhra_APC_RWY27.png" onclick="return chart(this)">APC - RWY 27</a>
+</pre></div></div>
+
+<div id="AZRAQ_Airstrip" class="modal"><div class="modal-content">
+<center><b>AIRSTRIP (AZRAQ)</center></b></center><hr><pre>
+N32&deg04.165' E036&deg28.125'
+Elevation: 2084 ft
+RWY: 09/27
+TCN: 44Y
+ATIS: -
+GND: 252.5
+TWR: 252.5
+APP/DEP: 252.5
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/JORDAN/Azraq (Airstrip)/Azraq_Airport.png" onclick="return chart(this)">Airport Diagram</a>
+<a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/JORDAN/Azraq (Airstrip)/Azraq_APC_RWY09.png" onclick="return chart(this)">APC - RWY 09</a>
+<a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/JORDAN/Azraq (Airstrip)/Azraq_APC_RWY27.png" onclick="return chart(this)">APC - RWY 27</a>
+</pre></div></div>
+
+<div id="Highway_H_Airstrip" class="modal"><div class="modal-content">
+<center><b>AIRSTRIP (HIGHWAY H)</center></b></center><hr><pre>
+N31&deg49.903' E036&deg13.535'
+Elevation: 2674 ft
+RWY: 18/36
+TCN: 42Y
+ATIS: -
+GND: 251.25
+TWR: 251.25
+APP/DEP: 251.25
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/JORDAN/Highway H (Airstrip)/Highway H_Airport.png" onclick="return chart(this)">Airport Diagram</a>
+<a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/JORDAN/Highway H (Airstrip)/Highway H_APC_RWY18.png" onclick="return chart(this)">APC - RWY 18</a>
+<a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/JORDAN/Highway H (Airstrip)/Highway H_APC_RWY36.png" onclick="return chart(this)">APC - RWY 36</a>
+</pre></div></div>
+
+<div id="AL_BIR_Airstrip" class="modal"><div class="modal-content">
+<center><b>AIRSTRIP (AL BIR)</center></b></center><hr><pre>
+N29&deg08.501' E036&deg03.441'
+Elevation: 2426 ft
+RWY: 09/27
+TCN: 54Y
+ATIS: -
+GND: 299.3
+TWR: 299.3
+APP/DEP: 299.3
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/SAUDI ARABIA/Al Bir (Airstrip)/Al Bir_Airport.png" onclick="return chart(this)">Airport Diagram</a>
+<a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/SAUDI ARABIA/Al Bir (Airstrip)/Al Bir_APC_RWY09.png" onclick="return chart(this)">APC - RWY 09</a>
+<a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/SAUDI ARABIA/Al Bir (Airstrip)/Al Bir_APC_RWY27.png" onclick="return chart(this)">APC - RWY 27</a>
+</pre></div></div>
+
+<div id="QALIBHA_Airstrip" class="modal"><div class="modal-content">
+<center><b>AIRSTRIP (QALIBHA)</center></b></center><hr><pre>
+N28&deg16.519' E037&deg48.943'
+Elevation: 3572 ft
+RWY: 18/36
+TCN: 55Y
+ATIS: -
+GND: 296.2
+TWR: 296.2
+APP/DEP: 296.2
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/SAUDI ARABIA/Qalibha (Airstrip)/Qalibha_Airport.png" onclick="return chart(this)">Airport Diagram</a>
+<a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/SAUDI ARABIA/Qalibha (Airstrip)/Qalibha_APC_RWY18.png" onclick="return chart(this)">APC - RWY 18</a>
+<a href="https://cdn.falcon-bms.com/maps/03_ITO/charts/SAUDI ARABIA/Qalibha (Airstrip)/Qalibha_APC_RWY36.png" onclick="return chart(this)">APC - RWY 36</a>
+</pre></div></div>
+
+<!-- VORTACs/TACAN -->
+
+<!-- Other Menus and popups -->
+<div id="SIDC" class="modal" ondrop="dropHandler(event);" ondragover="allowDrop(event)"><div class="modal-content">
+  <center><b>C2 Symbols</center></b></center>
+  <br><b>Symbol Set</b><hr>
+  <table width="95%">
+    <tr>
+      <td align="left" >Identity</td>
+      <td align="left"><select name="sidc-identity" id="sidc-identity" onchange="selectSymbols(this);" style="width:140px">
+        <option value="1006">Hostile</option>
+        <option value="1003">Friend</option>
+      </select></td>
+    </tr>
+    <tr>
+      <td align="left" >Type</td>
+      <td align="left">  <select name="sidc-set" id="sidc-set" onchange="selectSymbols(this);" style="width:140px">
+        <option value="100016">Land Unit</option>
+        <option value="010000">Air</option>
+        <option value="300000">Sea Surface</option>
+      </select></td>
+    </tr>
+   </table>
+
+<br><b>Identification</b><hr>
+  <table width="95%">
+  <tr>
+    <td align="left">Entity</td>
+    <td align="left"><select name="sidc-entity" id="sidc-entity" onchange="selectSymbols(this);" style="width:140px">
+    </select></td>
+    <tr>
+      <td align="left" >Sector 1</td>
+      <td align="left"><select name="sidc-sec1" id="sidc-sec1" onchange="selectSymbols(this);" style="width:140px">
+        <option value="00">Unspecified</option>
+        <option value="00">Airmobile</option>
+        <option value="41">Multi Rocket Launcher</option>
+      </select></td>
+    </tr>
+    <tr>
+      <td align="left" >Sector 2</td>
+      <td align="left"><select name="sidc-sec2" id="sidc-sec2" onchange="selectSymbols(this);" style="width:140px">
+        <option value="00">Unspecified</option>
+      </select></td>
+    </tr>
+  </table>
+  <br><b>Symbol Identification Code</b><hr><br>
+  <table>
+    <tr>
+    <td align="left">
+      <img src="../common/assets/10061000161211000000.ico" id="sidc-symbol" width="32" height="32" alt="symbol">
+    </td>
+    <td align="right">
+      <label>&nbsp;</label>
+      <label id="sidc-val" style='font-size:95%''>10061000161211000000</label>
+    </td>
+    </tr>
+  </table>
+  <center><a href="https://www.jcs.mil/Portals/36/Documents/Doctrine/Other_Pubs/ms_2525d.pdf" style='font-size:70%' target="_blank">MIL-STD-2525D</a></center>
+</div></div>
+
+
+<div id="STYLE" class="modal" ondrop="dropHandler(event);" ondragover="allowDrop(event)"><div class="modal-content">
+  <center><b>Whiteboard</center></b></center>
+
+<br><b>Pencil</b><hr>
+  <table width="95%">
+  <tr>
+    <td align="right" >Line</td>
+    <td align="center"><select name="line-style" id="line-style" onchange="selectStyle(this);">
+      <option value="0">Solid</option>
+      <option value="1">Dash</option>
+      <option value="2">Dots</option>
+    </select></td>
+    <td align="center"><input type="color" name="line-color" id="line-color" value="#000000" onchange="selectStyle(this);" ></td>
+    <td align="center"><input type="number" name="line-width" id="line-width" value="2"  min="1" max="30" onchange="selectStyle(this);" style="width:40px"></td>
+  </tr>
+  <tr>
+    <td align="right">Fill</td>
+    <td align="center"><select name="fill-style" id="fill-style" onchange="selectStyle(this);">
+      <option value="0">None</option>
+      <option value="1">Solid</option>
+    </select></td>
+    <td align="center"><input type="color" name="fill-color" id="fill-color" value="#000000" onchange="selectStyle(this);"></td>
+    <td align="center"></td>
+  </tr>
+  </table>
+  <br><b>Opacity</b><hr>
+  <table width="95%">
+  <tr>
+  <td align="center"><input type="range" name="opacity-range" id="opacity-range" value=20 min="0" max="100" onchange="selectStyle(this);">
+  </td>
+  <td align="right"><input type="number" name="opacity-num" id="opacity-num" value=20 min="0" max="100" onchange="selectStyle(this);" style="width:40px">
+  </td>
+  </tr>
+  </table>
+  <br><b>Eraser</b><hr>
+  <table width="95%">
+    <tr>
+      <td align="center"><input type="range" name="erase-rng" id="erase-rng" value=16 min="1" max="100" onchange="selectStyle(this);">
+      </td>
+      <td align="right"><input type="number" name="erase-num" id="erase-num" value=16 min="1" max="100" onchange="selectStyle(this);" style="width:40px">
+      </td>
+      </tr>
+      </table>
+  </table>
+  </div></div>
+
+  <div id="CONFIG" class="modal" ondrop="dropHandler(event);" ondragover="allowDrop(event)">
+    <div class="modal-content">
+      <!-- Tabs -->
+      <div class="tab">
+        <button class="tablinks" name="Settings" onclick="openTab('Settings')">Settings</button>
+        <button class="tablinks" name="Connections" onclick="openTab('Connections')">Connectivity</button>
+      </div><br>
+
+      <!-- Tab Content with Settings as default display -->
+      <div id="Settings" class="tabcontent" ondrop="dropHandler(event);" ondragover="allowDrop(event)">
+      <b>Common</b><hr>
+      <input type="checkbox" id="unit" name="imperial" onchange="selectUnit(this);">
+      <label for="unit">Imperial Units</label><br>
+
+      <br><b>Chart</b><hr>
+      <table width="95%">
+      <tr><td><label for="alt-select">Wind Alt.</label></td>
+      <td><select name="altitudes" id="alt-select" onchange="selectAltitude(this);" style="width:110px">
+        <option value="0">0</option>
+        <option value="1">3000</option>
+        <option value="2">6000</option>
+        <option value="3">9000</option>
+        <option value="4">12000</option>
+        <option value="5">18000</option>
+        <option value="6">24000</option>
+        <option value="7">30000</option>
+        <option value="8">40000</option>
+        <option value="9">50000</option>
+      </select></td></tr>
+      <tr><td><label for="wx-select">Weather</label></td>
+      <td><select name="weather" id="wx-select" onchange="selectChart(this);" style="width:110px">
+        <option value="2">Temperature</option>
+        <option value="1">Winds</option>
+        <option value="3">Isobar</option>
+        <option value="0">Doppler</option>
+        <option value="4">Clouds</option>
+      </select></td></tr>
+      <tr><td><label for="flt-select">Map Filter</label></td>
+        <td><select name="filter" id="flt-select" onchange="selectFilter(this);" style="width:110px">
+          <option value="0">Default</option>
+          <option value="3">Night Mode</option>
+          <option value="1">Grayscale</option>
+          <option value="2">Sepia</option>
+        </select></td></tr>
+      </table>
+
+      <br><b>Visibility</b><hr>
+      <input type="checkbox" id="bullseye_hide" name="hide_be" value="on" onchange="selectVisibility(this);">
+      <label for="bullseye_hide">Hide Bullseye</label><br>
+      <input type="checkbox" id="mission_hide" name="hide_ms" value="on" onchange="selectVisibility(this);">
+      <label for="mission_hide">Hide Mission</label><br>
+      <input type="checkbox" id="weather_hide" name="hide_wx" value="on" onchange="selectVisibility(this);">
+      <label for="weather_hide">Hide Weather</label><br>
+      <input type="checkbox" id="whitebrd_hide" name="hide_wb" value="on" onchange="selectVisibility(this);">
+      <label for="whitebrd_hide">Hide Whiteboard</label><br>
+      <input type="checkbox" id="coordinates_hide" name="hide_xy" checked value="on" onchange="selectVisibility(this);">
+      <label for="coordinates_hide">Hide Coordinates</label><br><br>
+      <button><img src="../common/assets/icon_save.png"  id="save" width="32" height="32" alt="save" onclick="button(event)"></button>
+      <button><img src="../common/assets/icon_clear.png" id="clear" width="32" height="32" alt="clear" onclick="button(event)"></button>
+      <button><img src="../common/assets/icon_reset.png" id="reset" width="32" height="32" alt="reset" onclick="button(event)"></button>
+      </div>
+
+      <!-- Connectivity TAB -->
+      <div id="Connections" class="tabcontent">
+        <b>Collaboration</b><hr>
+        <input type="checkbox" id="imcs-secure" value="on" onchange="changedIMCS(this);"><label for="secure">&nbspSecure Connection</label><br><br>
+        <table width="95%">
+          <tr><td align="right">Callsign</td><td><input type="text" id="imcs-callsign" name="callsign" onchange="changedIMCS(this);" style="width:130px"></td></tr>
+          <tr><td align="right">Session</td><td><input type="text" id="imcs-session" name="session" onchange="changedIMCS(this);" style="width:130px"></td></tr>
+          <tr><td align="right">Address</td><td><input type="text" id="imcs-host" name="host" value="collab.falcon-bms.com" onchange="changedIMCS(this);"  style="width:130px"></td></tr>
+          <tr><td align="right" valign="top">Port</td><td><input type="text" id="imcs-port" name="port" value="443" onchange="changedIMCS(this);"  style="width:50px"><br>
+            <button id="imcs-connection" style="float: right; width:50px"" onclick="button(event)">&nbspJoin&nbsp</button></td></tr>
+        </table>
+        <br>
+        <b>Global Forecast System</b><hr>
+        <table width="95%">
+          <tr><td align="right">Date</td><td>
+            <select id="gfs-date" name="date" style="width:100px">
+              <option value="20230531">May 31, 2023</option>
+          </select></td></tr></td></tr>
+          <tr><td align="right">Cycle</td><td>
+            <select name="cycle" id="gfs-cycle" name="cycle" style="width:64px">
+              <option value="00">0000Z</option>
+              <option value="06">0600Z</option>
+              <option value="12">1200Z</option>
+              <option value="18">1800Z</option>
+            </select></td></tr>
+          <tr><td align="right" valign="top">Forecast</td><td><input type="number" id="gfs-off" name="offset"  min="1" max="384" value="1" step="1" required style="width:60px"><br>
+            <!-- <button id="gfs-fetch" style="float: right;" onclick="button(event)">&nbspFetch&nbsp</button></td></tr>-->
+        </table>
+        <br>
+        <button><img src="../common/assets/icon_download.png"  id="download" width="32" height="32" alt="download" onclick="button(event)"></button>
+        <button><img src="../common/assets/icon_save.png"      id="export"   width="32" height="32" alt="export"   onclick="button(event)"></button>
+      </div> <!-- TAB end -->
+    </div>
+  </div>
+
+ <div id="ROUTE" class="modal" ondrop="dropHandler(event);" ondragover="allowDrop(event)">
+  <div class="modal-content">
+    <!-- Tabs -->
+    <div class="tab">
+      <button class="tablinks" name="Route" onclick="openTab('Route')">Route</button>
+      <button class="tablinks" name="Radio" onclick="openTab('Radio')">Radio</button>
+      <button class="tablinks" name="Mission" onclick="openTab('Mission')">Mission</button>
+    </div><br>
+
+    <!-- Tab Content with Route as default display -->
+    <div id="Route" class="tabcontent">
+      <table width="95%">
+        <tr><td align="left"><label id="stpt-lab">STPT</label></td><td align="left"><label id="stpt-val">1</label></td>
+            <td align="right">
+              <img src="../common/assets/icon_left.png" id="left" width="16" height="16" alt="left" onclick="button(event)">
+              <img src="../common/assets/icon_right.png" id="right" width="16" height="16" alt="right" onclick="button(event)">
+          </td></tr>
+      </table>
+      <hr><br>
+      <center>
+      <label id="lat-val">0</label>&nbsp&nbsp<label id="long-val">0</label><br>
+      <table width="100%">
+        <tr><td><br></td></tr>
+        <tr><th align="right">TOS</th><td align="left">
+          <select name="hrs" id="tos-hrs" onchange="updatedTOS();"><option value="0">09</option></select>
+          <select name="min" id="tos-min" onchange="updatedTOS();"><option value="0">00</option></select>
+          <select name="sec" id="tos-sec" onchange="updatedTOS();"><option value="0">00</option></select>
+          <input type="text" id="day-val" name="day" value="0" readonly hidden>
+        </td></tr>
+        <tr><th align="right">TAS</th><td align="left"><input style="width:65px;" type="number" id="tas-val" name="tas" min="150" max="600" value="350" step="1" onchange=updatedSpeed() required> kts</td></tr>
+        <tr><th align="right">ALT</th><td align="left"><input style="width:65px;" type="number" id="alt-val" name="alt" min="0" max="45000" value="24000" step="100" onchange=updatedAltitude() required> ft</td></tr>
+        </table><br>
+        <table>
+        <tr><th align="right">Track&nbsp</th><td align="left"><label id="trk-val">0&deg</label></td></tr>
+        <tr><td><br></td></tr>
+        <tr><th align="right">Formatation</th><td align="left">
+          <select name="formation" id="formation-select" onchange="selectFormation(this);" style="width:98px">
+            <option value="0">Arrowhead</option>
+            <option value="1">Box</option>
+            <option value="2">Fighting Wing</option>
+            <option value="3">Finger Four</option>
+            <option value="4">Fluid Four</option>
+            <option value="5">Ladder</option>
+            <option value="6">Line Abreast</option>
+            <option value="7">ResCell</option>
+            <option value="8">Route</option>
+            <option value="9">Spread</option>
+            <option value="10">Stack</option>
+            <option value="11">Trail</option>
+            <option value="12">Wedge</option>
+          </select>
+        <tr><td align="right"><b>Enroute</b></td><td align="left">
+          <select name="enroute" id="enroute-select" onchange="selectEnroute(this);" style="width:98px">
+            <option value="0">Nav</option>
+            <option value="1">SEAD</option>
+          </select>
+        </td></tr>
+        <tr><th align="right">Action</th><td align="left">
+          <select name="action" id="action-select" onchange="selectAction(this);" style="width:98px">
+            <option value="0">Nav</option>
+            <option value="1">Takeoff</option>
+            <option value="2">Push</option>
+            <option value="3">Split</option>
+            <option value="4">Refuel</option>
+            <option value="5">Rearm</option>
+            <option value="6">Pickup</option>
+            <option value="7">Land</option>
+            <option value="8">Holding Pt</option>
+            <option value="9">Contact</option>
+            <option value="10">Escort</option>
+            <option value="11">Sweep</option>
+            <option value="12">CAP</option>
+            <option value="13">Intercept</option>
+            <option value="14">Grnd Attack</option>
+            <option value="15">Surf Attack</option>
+            <option value="16">S&D</option>
+            <option value="17">Strike</option>
+            <option value="18">Bomb</option>
+            <option value="19">SEAD</option>
+            <option value="20">ELINT</option>
+            <option value="21">Recon</option>
+            <option value="22">Rescue</option>
+            <option value="23">ASW</option>
+            <option value="24">Fuel</option>
+            <option value="25">Air Drop</option>
+            <option value="26">Jamming</option>
+          </select>
+        </td></tr>
+        <tr><th align="right">Duration</th><td align="left"><input type="number" id="dur-val" onchange="selectDuration(this);" name="dur" min="0" max="120" value="0" step="1" required> min</td></tr>
+      </table><br>
+      </center>
+      <hr><br>
+      <center><label id="options-val">No Options.</label></center>
+      <br>
+    </div>
+
+    <div id="Radio" class="tabcontent">
+      <table width="100%" style='font-size:95%'>
+        <tr><th>PRESET</th><th>UHF</th><th>VHF</th></tr>
+        <tr><td align="left">01 OPS</td><td align="center"><label id="UHF_1">000.000</label></td><td align="center"><label id="VHF_1">000.000</label></td></tr>
+        <tr><td align="left">02 GND</td><td align="center"><label id="UHF_2">000.000</label></td><td align="center"><label id="VHF_2">000.000</label></td></tr>
+        <tr><td align="left">03 TWR</td><td align="center"><label id="UHF_3">000.000</label></td><td align="center"><label id="VHF_3">000.000</label></td></tr>
+        <tr><td align="left">04 DEP</td><td align="center"><label id="UHF_4">000.000</label></td><td align="center"><label id="VHF_4">000.000</label></td></tr>
+        <tr><td align="left">05 CHK</td><td align="center"><label id="UHF_5">000.000</label></td><td align="center"><label id="VHF_5">000.000</label></td></tr>
+        <tr><td align="left">06 TAC</td><td align="center"><label id="UHF_6">000.000</label></td><td align="center"><label id="VHF_6">000.000</label></td></tr>
+        <tr><td align="left">07 APP</td><td align="center"><label id="UHF_7">000.000</label></td><td align="center"><label id="VHF_7">000.000</label></td></tr>
+        <tr><td align="left">08 TWR</td><td align="center"><label id="UHF_8">000.000</label></td><td align="center"><label id="VHF_8">000.000</label></td></tr>
+        <tr><td align="left">09 GND</td><td align="center"><label id="UHF_9">000.000</label></td><td align="center"><label id="VHF_9">000.000</label></td></tr>
+        <tr><td align="left">10 APP</td><td align="center"><label id="UHF_10">000.000</label></td><td align="center"><label id="VHF_10">000.000</label></td></tr>
+        <tr><td align="left">11 TWR</td><td align="center"><label id="UHF_11">000.000</label></td><td align="center"><label id="VHF_11">000.000</label></td></tr>
+        <tr><td align="left">12 GND</td><td align="center"><label id="UHF_12">000.000</label></td><td align="center"><label id="VHF_12">000.000</label></td></tr>
+        <tr><td align="left">13 AAR</td><td align="center"><label id="UHF_13">000.000</label></td><td align="center"><label id="VHF_13">000.000</label></td></tr>
+        <tr><td align="left">14 CMN</td><td align="center"><label id="UHF_14">000.000</label></td><td align="center"><label id="VHF_14">000.000</label></td></tr>
+        <tr><td align="left">15 FLT1</td><td align="center"><label id="UHF_15">000.000</label></td><td align="center"><label id="VHF_15">000.000</label></td></tr>
+        <tr><td align="left">16 FLT2</td><td align="center"><label id="UHF_16">000.000</label></td><td align="center"><label id="VHF_16">000.000</label></td></tr>
+        <tr><td align="left">17 FLT3</td><td align="center"><label id="UHF_17">000.000</label></td><td align="center"><label id="VHF_17">000.000</label></td></tr>
+        <tr><td align="left">18 FLT4</td><td align="center"><label id="UHF_18">000.000</label></td><td align="center"><label id="VHF_18">000.000</label></td></tr>
+        <tr><td align="left">19 FLT5</td><td align="center"><label id="UHF_19">000.000</label></td><td align="center"><label id="VHF_19">000.000</label></td></tr>
+        <tr><td align="left">20 LSO</td><td align="center"><label id="UHF_20">000.000</label></td><td align="center"><label id="VHF_20">000.000</label></td></tr>
+      </table>
+    </div>
+
+    <div id="Mission" class="tabcontent">
+      <b>Flight&nbsp;<label id="flt-num">1</label></b><hr>
+      <table width="100%" style='font-size:95%'>
+        <tr><td align="right">Total Distance</td><td align="right"><label id="flt-dist">0</label></td><td>&nbspNM</td></tr>
+        <tr><td align="right">Flight Duration</td><td align="right"><label id="flt-time">0</label></td><td>&nbsphrs</td></tr>
+        <tr><td align="right">Estimated Fuel</td><td align="right"><label id="flt-fuel">0</label></td><td>&nbsplbs</td></tr>
+        <tr><td align="right">Bingo</td><td align="right"><label id="flt-bingo">0</label></td><td>&nbsplbs</td></tr>
+        <tr><td align="right">Playtime</td><td align="right"><label id="flt-play">0</label></td><td>&nbspmin</td></tr>
+      </table><br>
+      <b>Package&nbsp;</b><input style="width:30px; background-color: #f5f5f5; border: none; font-weight:bold;" type="number" id="pkg-num" onchange="selectPackage(this);" name="package" min="1" max="2" value="1" step="1" required><hr>
+      <table width="100%" style='font-size:95%'>
+        <tr><th align="right">Flight: </th>
+          <td align="left">
+          <select name="flight" id="pkg-flight" onchange="selectPackage(this);" style="width:90px">
+          </select>
+          <select name="seat" id="pkg-seat" onchange="selectPackage(this);" style="width:40px">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+          </select>
+        </td></tr>
+        <tr><th align="right">Chx:</th><td align="left">
+          <select name="channel" id="pkg-chx" onchange="selectPackage(this);" style="width:90px">
+            <option value="11">11/74</option>
+            <option value="12">12/75</option>
+            <option value="13">13/76</option>
+            <option value="14">14/77</option>
+            <option value="15">15/78</option>
+            <option value="16">16/79</option>
+            <option value="17">17/80</option>
+            <option value="18">18/81</option>
+            <option value="19">19/82</option>
+            <option value="20">20/83</option>
+          </select>
+          <select name="band" id="pkg-band" onchange="selectPackage(this);" style="width:40px">
+            <option value="1">Y</option>
+            <option value="-1">X</option>
+          </select>
+        </td></tr>
+        <tr><td align="right"><b>Fuel:</b></td><td align="left"><input style="width:86px;" type="number" id="pkg-fuel" onchange="selectPackage(this);" name="fuel" min="2000" max="15000" value="7000" step="100" required> lbs</td></tr>
+      </table><br>
+      <button class="button"><img src="../common/assets/icon_table1.png" id="btn-flight" width="32" height="32" alt="STPT" onclick="button(event)"></button>
+      <button class="button"><img src="../common/assets/icon_table.png" id="btn-wx" width="32" height="32" alt="WX" onclick="button(event)"></button>
+      <br>
+    </div>
+  </div>
+</div>
+
+<div id="tableDatacard" class="chart">
+  <center><b>Mission Briefing</b></center>
+  <table id="tbl-brf" width="100%" border="1" style="border-collapse:collapse; border-color:Black; border-style:solid; border-width:1pt; font-size:95%">
+    <tr class="d1"><th width="15%" align="right">Callsign</th><td colspan="4">Beast5</td></tr>
+    <tr class="d1"><th  width="15%" align="right">Times</th><td>08:40:00</td><td>08:50:00</td><td>08:54:00</td><td>09:00:00</td></tr>
+    <tr class="d1"><th  width="15%" align="right">Fuel</th><td>8000</td><td>5300/4300</td><th align="right">Laser Code</th><td>1511</td></tr>
+    <tr class="d1"><th  width="15%" align="right">Intel</th><td colspan="4">SA-10</td></tr>
+  </table><br>
+  <center><b>Package</b></center>
+  <table id="tbl-pkg" width="100%" border="1" style="border-collapse:collapse; border-color:Black; border-style:solid; border-width:1pt; font-size:95%">
+    <tr class="d0"><th>Callsign</th><th>UHF</th><th>VHF</th><th>IDM</th><th>TCN</th></tr>
+  </table><br>
+  <center><b>Airbases</b></center>
+  <table id="tbl-afb" width="100%" border="1" style="border-collapse:collapse; border-color:Black; border-style:solid; border-width:1pt; font-size:95%">
+    <tr class="d0"><th width="5%">Type</th><th width="25%">Location</th><th>Airport</th><th>TCN</th><th>GND</th><th>TWR</th><th>APP</th><th>ATIS</th></tr>
+  </table><br>
+  <center><b>Flight Plan</b></center>
+  <table id="tbl-stpts" width="100%" border="1" style="border-collapse:collapse; border-color:Black; border-style:solid; border-width:1pt; font-size:95%">
+    <tr class="d0"><th width="5%">STPT</th><th width="25%">Location</th><th>Action</th><th>TOS</th><th>Hdg.</th><th>Dist.</th><th>TAS</th><th>Mach</th><th>Alt.</th><th>Fuel</th></tr>
+  </table><br>
+  <center><b>Objectives</b></center>
+  <table id="tbl-objs" width="100%" border="1" style="border-collapse:collapse; border-color:Black; border-style:solid; border-width:1pt; font-size:95%">
+    <tr class="d0"><th width="5%">STPT</th><th width="25%">Location</th><th>Target</th></tr>
+  </table><br>
+  <center><b>Support</b></center>
+  <table id="tbl-sppt" width="100%" border="1" style="border-collapse:collapse; border-color:Black; border-style:solid; border-width:1pt; font-size:95%">
+    <tr class="d0"><th width="5%">STPT</th><th width="25%">Location</th><th>Callsign</th><th>Type</th><th>UHF</th><th>VHF</th></tr>
+  </table><br>
+</div>
+
+<div id="tableWeather" class="chart">
+  <center><b>Weather Briefing</b></center>
+  <table id="tbl-wxhdr" width="100%" border="1" style="border-collapse:collapse; border-color:Black; border-style:solid; border-width:1pt; font-size:95%">
+    <tr class="d1"><th width="15%">Callsign</th><td width="60%"></td><th width="10%">Time</th><td>010000Z</td></tr>
+  </table><br>
+  <center><b>Performance Data</b></center>
+  <table id="tbl-wxafb" width="100%" border="1" style="border-collapse:collapse; border-color:Black; border-style:solid; border-width:1pt; font-size:95%">
+    <tr class="d0"><th width="5%">Type</th><th width="20%">Airport</th><th>RWY</th><th>ELEV.</th><th>OAT</th><th>QNH</th><th>PA</th><th>DA</th></tr>
+  </table><br>
+  <center><b>Route METARs</b></center>
+  <table id="tbl-metar" width="100%" border="1" style="border-collapse:collapse; border-color:Black; border-style:solid; border-width:1pt; font-size:95%">
+    <tr class="d0"><th width="5%">#</th><th width="20%">Station</th><th width="63%">METAR</th></tr>
+  </table><br>
+  <center><b>Winds and Temperatures Aloft</b></center>
+  <table id="tbl-winds" width="100%" border="1" style="border-collapse:collapse; border-color:Black; border-style:solid; border-width:1pt; font-size:95%">
+    <tr class="d0"><th width="5%">#</th><th width="20%">Station</th><th>3000 ft</th><th>6000 ft</th><th>9000 ft</th><th>12000 ft</th><th>18000 ft</th><th>24000 ft</th><th>30000 ft</th></tr>
+  </table><br>
+</div>
+
+<div id="chartAltitudes" class="chart">
+<center><h3>Altitude and Velocity</h3></center>
+<center><canvas id="chart" width="800" height="550"></canvas></center>
+</div>
+
+<textarea id="TextEntry" class="text-area""></textarea>
+
+  <!-- The Maps and Airbases Overlay -->
+  <div id="container">
+    <img src="https://cdn.falcon-bms.com/maps/03_ITO/maps/ITO_UI_Map_4K.png" class="background" id="map" width="3840" height="3840" alt="">
+    <div id="Layers" class="overlay" ondrop="dropHandler(event);" ondragover="allowDrop(event)">
+      <canvas id="annotation" width="3840" height="3840"></canvas>
+      <div id=Airbases class="overlay">
+        <img src="resources/map_airbases.png" id="airbases" width="3840" height="3840" alt="" border="0" usemap="#Map">
+        <div id="UserInputs" class="inputs">
+          <table id="locate" border="0" cellpadding="0" cellspacing="0">
+            <tr>
+            <td style="width: 50px;">&nbsp;</td>
+            <td align="left"><label id="cursor-val" style="color: #ffffff; font-size: small;"></label></td></tr>
+            <tr>
+            <td style="width: 50px;"></td>
+            <td height="40"><select name="airport" id="airports" onchange="locateAirport(this);" onfocus="this.selectedIndex = -1;" size="1" style="width: 282px;font-size: min(3vw, 16px);z-index: 2;"></select></td>
+          </tr>
+          <table id="toolbar" border="0" cellpadding="0" cellspacing="0">
+          <tr><td><img src="../common/assets/icon_toolbar.png" width="32" height="8" border="0" style="display:block"></td></tr>
+          <tr><td><img src="../common/assets/icon_move1.png" id="move" width="32" height="32" alt="move" border="0" style="display:block" onclick="button(event)"></td></tr>
+          <tr><td><img src="../common/assets/icon_zoom1.png" id="zoom1" width="32" height="32" alt="zoom-out" border="0" style="display:block" onclick="button(event)"></td></tr>
+          <tr><td><img src="../common/assets/icon_zoom2.png" id="zoom2" width="32" height="32" alt="zoom-in" border="0" style="display:block" onclick="button(event)"></td></tr>
+          <tr><td><img src="../common/assets/icon_bullseye.png" id="bullseye" width="32" height="32" alt="bullseye" border="0" style="display:block" onclick="button(event)"></td></tr>
+          <tr><td><img src="../common/assets/icon_compass.png" id="compass" width="32" height="32" alt="compass" border="0" style="display:block" onclick="button(event)"></td></tr>
+          <tr><td><img src="../common/assets/icon_ruler.png" id="ruler" width="32" height="32" alt="ruler" border="0" style="display:block" onclick="button(event)"></td></tr>
+          <tr><td><img src="../common/assets/icon_sword.png" id="symbol" width="32" height="32" alt="symbol" border="0" style="display:block" onclick="button(event)"></td></tr>
+          <tr><td><img src="../common/assets/icon_pencil.png" id="pencil" width="32" height="32" alt="pencil" border="0" style="display:block" onclick="button(event)"></td></tr>
+          <tr><td><img src="../common/assets/icon_text.png" id="text" width="32" height="32" alt="text" border="0" style="display:block" onclick="button(event)"></td></tr>
+          <tr><td><img src="../common/assets/icon_eraser.png" id="eraser" width="32" height="32" alt="eraser" border="0" style="display:block" onclick="button(event)"></td></tr>
+          <tr><td><img src="../common/assets/icon_menu.png" id="settings" width="32" height="32" alt="reset" border="0" style="display:block" onclick="button(event)"></td></tr>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+<!-- All Map Coordinates based on 4096x4096 Javascript scales to 3840.
+You must set the map datum in degrees for the map south west corner for Lat/Long calculations-->
+<map name="Map" id="imgMap" data-map-datum="25.6250019,29.5599976">
+<!-- Israel -->
+<area shape="circle" coords="2008,1240,17" href="javascript:void(0);" alt="Israel" title="BEN GURION" onclick="return popup('BEN_GURION');"/>
+<area shape="circle" coords="2024,2220,17" href="javascript:void(0);" alt="Israel" title="EILAT" onclick="return popup('EILAT');"/>
+<area shape="circle" coords="1894,1542,17" href="javascript:void(0);" alt="Israel" title="HATZERIM" onclick="return popup('HATZERIM');"/>
+<area shape="circle" coords="1952,1356,17" href="javascript:void(0);" alt="Israel" title="HATZOR" onclick="return popup('HATZOR');"/>
+<area shape="circle" coords="2088,1560,17" href="javascript:void(0);" alt="Israel" title="NEVATIM" onclick="return popup('NEVATIM');"/>
+<area shape="circle" coords="2024,2120,17" href="javascript:void(0);" alt="Israel" title="OVDA" onclick="return popup('OVDA');"/>
+<area shape="circle" coords="1912,1276,17" href="javascript:void(0);" alt="Israel" title="PALMACHIM" onclick="return popup('PALMACHIM');"/>
+<area shape="circle" coords="2130,966,17" href="javascript:void(0);" alt="Israel" title="RAMAT DAVID" onclick="return popup('RAMAT_DAVID');"/>
+<area shape="circle" coords="1900,1740,17" href="javascript:void(0);" alt="Israel" title="RAMON" onclick="return popup('RAMON');"/>
+<area shape="circle" coords="1960,1176,17" href="javascript:void(0);" alt="Israel" title="SDE DOV" onclick="return popup('SDE_DOV');"/>
+<area shape="circle" coords="1940,1320,17" href="javascript:void(0);" alt="Israel" title="TEL NOF" onclick="return popup('TEL_NOF');"/>
+
+<area shape="circle" coords="2132,996,17" href="javascript:void(0);" alt="Israel Airstrips" title="MEGGIDO Airstrip" onclick="return popup('MEGGIDO_Airstrip');"/>
+<area shape="circle" coords="2292,808,17" href="javascript:void(0);" alt="Israel Airstrips" title="ROSH PINA Airstrip" onclick="return popup('ROSH_PINA_Airstrip');"/>
+
+<!-- Egypt -->
+<area shape="circle" coords="1312,2528,17" href="javascript:void(0);" alt="Egypt" title="ABU RUDIES" onclick="return popup('ABU_RUDIES');"/>
+<area shape="circle" coords="836,1816,17" href="javascript:void(0);" alt="Egypt" title="ABU SUWAYR" onclick="return popup('ABU_SUWAYR');"/>
+<area shape="circle" coords="584,1608,17" href="javascript:void(0);" alt="Egypt" title="AL MANSURHA" onclick="return popup('AL_MANSURHA');"/>
+<area shape="circle" coords="800,1628,17" href="javascript:void(0);" alt="Egypt" title="AL MANZILAH" onclick="return popup('AL_MANZILAH');"/>
+<area shape="circle" coords="376,2852,17" href="javascript:void(0);" alt="Egypt" title="AL MINYA" onclick="return popup('AL_MINYA');"/>
+<area shape="circle" coords="264,1628,17" href="javascript:void(0);" alt="Egypt" title="AL RHAMANIYA" onclick="return popup('AL_RHAMANIYA');"/>
+<area shape="circle" coords="668,1804,17" href="javascript:void(0);" alt="Egypt" title="AL ZAQAZIQ" onclick="return popup('AS_ZAQAZIQ');"/>
+<area shape="circle" coords="876,1816,17" href="javascript:void(0);" alt="Egypt" title="ALISMAYLIA" onclick="return popup('ALISMAYLIA');"/>
+<area shape="circle" coords="864,1680,17" href="javascript:void(0);" alt="Egypt" title="AS SALIHIYA" onclick="return popup('AS_SALIHIYA');"/>
+<area shape="circle" coords="396,3244,17" href="javascript:void(0);" alt="Egypt" title="AYSUT" onclick="return popup('AYSUT');"/>
+<area shape="circle" coords="1048,1628,17" href="javascript:void(0);" alt="Egypt" title="BALUZA" onclick="return popup('BALUZA');"/>
+<area shape="circle" coords="404,2328,17" href="javascript:void(0);" alt="Egypt" title="BEN SUEF" onclick="return popup('BEN_SUEF');"/>
+<area shape="circle" coords="668,1908,17" href="javascript:void(0);" alt="Egypt" title="BILBAYS" onclick="return popup('BILBAYS');"/>
+<area shape="circle" coords="692,1900,17" href="javascript:void(0);" alt="Egypt" title="BILBAYS 2" onclick="return popup('BILBAYS_2');"/>
+<area shape="circle" coords="1284,1900,17" href="javascript:void(0);" alt="Egypt" title="BIR GIFGAFA" onclick="return popup('BIR_GIFGAFA');"/>
+<area shape="circle" coords="1372,1948,17" href="javascript:void(0);" alt="Egypt" title="BIR HASSANA" onclick="return popup('BIR_HASSANA');"/>
+<area shape="circle" coords="520,2040,17" href="javascript:void(0);" alt="Egypt" title="CAIRO ALMAZA" onclick="return popup('CAIRO_ALMAZA');"/>
+<area shape="circle" coords="616,2024,17" href="javascript:void(0);" alt="Egypt" title="CAIRO INT" onclick="return popup('CAIRO_INT');"/>
+<area shape="circle" coords="356,2020,17" href="javascript:void(0);" alt="Egypt" title="CAIRO WEST" onclick="return popup('CAIRO_WEST');"/>
+<area shape="circle" coords="1552,1632,17" href="javascript:void(0);" alt="Egypt" title="EL ARISH" onclick="return popup('EL_ARISH');"/>
+<area shape="circle" coords="1704,1616,17" href="javascript:void(0);" alt="Egypt" title="EL GORA" onclick="return popup('EL_GORA');"/>
+<area shape="circle" coords="1516,2776,17" href="javascript:void(0);" alt="Egypt" title="EL TOR" onclick="return popup('EL_TOR');"/>
+<area shape="circle" coords="488,2004,17" href="javascript:void(0);" alt="Egypt" title="EMBADA" onclick="return popup('EMBADA');"/>
+<area shape="circle" coords="932,1904,17" href="javascript:void(0);" alt="Egypt" title="FAID" onclick="return popup('FAID');"/>
+<area shape="circle" coords="228,1828,17" href="javascript:void(0);" alt="Egypt" title="GEBEL EL BASUR" onclick="return popup('GEBEL_EL_BASUR');"/>
+<area shape="circle" coords="568,2140,17" href="javascript:void(0);" alt="Egypt" title="HULWAN" onclick="return popup('HULWAN');"/>
+<area shape="circle" coords="1544,3228,17" href="javascript:void(0);" alt="Egypt" title="HURGHADA" onclick="return popup('HURGHADA');"/>
+<area shape="circle" coords="624,1904,17" href="javascript:void(0);" alt="Egypt" title="INSHAS" onclick="return popup('INSHAS');"/>
+<area shape="circle" coords="108,1672,17" href="javascript:void(0);" alt="Egypt" title="JINKALIS NEW" onclick="return popup('JINKALIS_NEW');"/>
+<area shape="circle" coords="988,1960,17" href="javascript:void(0);" alt="Egypt" title="KIRBAN" onclick="return popup('KIRBAN');"/>
+<area shape="circle" coords="344,2200,17" href="javascript:void(0);" alt="Egypt" title="KOM AWASHIM" onclick="return popup('KOM_AWASHIM');"/>
+<area shape="circle" coords="1100,3868,17" href="javascript:void(0);" alt="Egypt" title="LUXUR" onclick="return popup('LUXUR');"/>
+<area shape="circle" coords="220,3880,17" href="javascript:void(0);" alt="Egypt" title="NEW VALLEY" onclick="return popup('NEW_VALLEY');"/>
+<area shape="circle" coords="900,1584,17" href="javascript:void(0);" alt="Egypt" title="PORT SAID" onclick="return popup('PORT_SAID');"/>
+<area shape="circle" coords="456,1836,17" href="javascript:void(0);" alt="Egypt" title="QUASWYINA" onclick="return popup('QUASWYINA');"/>
+<area shape="circle" coords="1452,2924,17" href="javascript:void(0);" alt="Egypt" title="RAS JIMSHA NEW" onclick="return popup('RAS_JIMSHA_NEW');"/>
+<area shape="circle" coords="1772,2852,17" href="javascript:void(0);" alt="Egypt" title="RAS NASRANI" onclick="return popup('RAS_NASRANI');"/>
+<area shape="circle" coords="1308,2788,17" href="javascript:void(0);" alt="Egypt" title="RAS SHUKHAYAR NEW" onclick="return popup('RAS_SHUKHAYAR_NEW');"/>
+<area shape="circle" coords="1112,2212,17" href="javascript:void(0);" alt="Egypt" title="RAS SUDR" onclick="return popup('RAS_SUDR');"/>
+<area shape="circle" coords="1684,2596,17" href="javascript:void(0);" alt="Egypt" title="ST CATHRINE" onclick="return popup('ST_CATHRINE');"/>
+<area shape="circle" coords="392,1680,17" href="javascript:void(0);" alt="Egypt" title="TANTA" onclick="return popup('TANTA');"/>
+<area shape="circle" coords="1252,3484,17" href="javascript:void(0);" alt="Egypt" title="WADI ABU SHIFAT" onclick="return popup('WADI_ABU_SHIFAT');"/>
+<area shape="circle" coords="728,2012,17" href="javascript:void(0);" alt="Egypt" title="WADI AL JANDALI" onclick="return popup('WADI_AL_JANDALI');"/>
+
+<!-- Iraq -->
+<area shape="circle" coords="4008,876,17" href="javascript:void(0);" alt="Iraq" title="H-3" onclick="return popup('H-3');"/>
+<area shape="circle" coords="3936,784,17" href="javascript:void(0);" alt="Iraq" title="H-3 NORTHWEST" onclick="return popup('H-3_NORTHWEST');"/>
+<area shape="circle" coords="3944,932,17" href="javascript:void(0);" alt="Iraq" title="H-3 SOUTH" onclick="return popup('H-3_SOUTH');"/>
+<area shape="circle" coords="3736,1044,17" href="javascript:void(0);" alt="Iraq" title="RUWAYSHID" onclick="return popup('RUWAYSHID');"/>
+
+<area shape="circle" coords="3800,3768,17" href="javascript:void(0);" alt="Iraq Airstrips" title="H-3 Airstrip" onclick="return popup('H-3_Airstrip');"/>
+
+<!--Jordan -->
+<area shape="circle" coords="2044,2216,17" href="javascript:void(0);" alt="Jordan" title="AQABA" onclick="return popup('AQABA');"/>
+<area shape="circle" coords="3356,984,17" href="javascript:void(0);" alt="Jordan" title="H-4" onclick="return popup('H-4');"/>
+<area shape="circle" coords="2476,1272,17" href="javascript:void(0);" alt="Jordan" title="KING ABDULLHA BEN" onclick="return popup('KING_ABDULLHA_BEN');"/>
+<area shape="circle" coords="2532,1884,17" href="javascript:void(0);" alt="Jordan" title="KING FAISAL" onclick="return popup('KING_FAISAL');"/>
+<area shape="circle" coords="2572,1056,17" href="javascript:void(0);" alt="Jordan" title="KING HUSSEIN" onclick="return popup('KING_HUSSEIN');"/>
+<area shape="circle" coords="2920,1180,17" href="javascript:void(0);" alt="Jordan" title="PRINCE HASSAN" onclick="return popup('PRINCE_HASSAN');"/>
+<area shape="circle" coords="2456,1292,17" href="javascript:void(0);" alt="Jordan" title="QUEEN ALIA" onclick="return popup('QUEEN_ALIA');"/>
+<area shape="circle" coords="2764,1324,17" href="javascript:void(0);" alt="Jordan" title="SHAHEED MWAFFAQ" onclick="return popup('SHAHEED_MWAFFAQ');"/>
+<area shape="circle" coords="3684,916,17" href="javascript:void(0);" alt="Jordan" title="WADI EL MURBHA" onclick="return popup('WADI_EL_MURBHA');"/>
+
+<area shape="circle" coords="2848,1372,17" href="javascript:void(0);" alt="Jordan Airstrips" title="AL GADHAF Airstrip" onclick="return popup('AL_GADHAF_Airstrip');"/>
+<area shape="circle" coords="2524,1568,17" href="javascript:void(0);" alt="Jordan Airstrips" title="AL QANTRANAH Airstrip" onclick="return popup('AL_QANTRANAH_Airstrip');"/>
+<area shape="circle" coords="2212,2148,17" href="javascript:void(0);" alt="Jordan Airstrips" title="AL QUWAYHRA Airstrip" onclick="return popup('AL_QUWAYHRA_Airstrip');"/>
+<area shape="circle" coords="2600,1228,17" href="javascript:void(0);" alt="Jordan Airstrips" title="AZRAQ Airstrip" onclick="return popup('AZRAQ_Airstrip');"/>
+<area shape="circle" coords="2520,1328,17" href="javascript:void(0);" alt="Jordan Airstrips" title="HIGHWAY H Airstrip" onclick="return popup('Highway_H_Airstrip');"/>
+
+<!--Lebanon -->
+<area shape="circle" coords="2344,336,17" href="javascript:void(0);" alt="Lebanon" title="ALAT" onclick="return popup('ALAT');"/>
+<area shape="circle" coords="2244,488,17" href="javascript:void(0);" alt="Lebanon" title="RAFIC HARIRI" onclick="return popup('RAFIC_HARIRI');"/>
+<area shape="circle" coords="2436,508,17" href="javascript:void(0);" alt="Lebanon" title="RIYAQ" onclick="return popup('RIYAQ');"/>
+<area shape="circle" coords="2324,308,17" href="javascript:void(0);" alt="Lebanon" title="WUJAH AL HAJAR" onclick="return popup('WUJAH_AL_HAJAR');"/>
+
+<!--NATO -->
+<area shape="circle" coords="1220,168,17" href="javascript:void(0);" alt="NATO" title="AKROTIRI" onclick="return popup('AKROTIRI');"/>
+
+<!--PA -->
+<area shape="circle" coords="1780,1532,17" href="javascript:void(0);" alt="PA" title="YASSER ARAFAT" onclick="return popup('YASSER_ARAFAT');"/>
+
+<!--Saudi Arabia -->
+<area shape="circle" coords="2952,1520,17" href="javascript:void(0);" alt="Saudi Arabia" title="GURIAT" onclick="return popup('GURIAT');"/>
+<area shape="circle" coords="2740,2716,17" href="javascript:void(0);" alt="Saudi Arabia" title="PRINCE SULTAN BIN ABDULAZIZ" onclick="return popup('PRINCE_SULTAN_BIN_ABDULAZIZ');"/>
+<area shape="circle" coords="3544,1396,17" href="javascript:void(0);" alt="Saudi Arabia" title="TURAIF" onclick="return popup('TURAIF');"/>
+<area shape="circle" coords="2680,3592,17" href="javascript:void(0);" alt="Saudi Arabia" title="WEJH" onclick="return popup('WEJH');"/>
+
+<area shape="circle" coords="2520,2532,17" href="javascript:void(0);" alt="Saudi Arabia Airstrips" title="AL BIR Airstrip" onclick="return popup('AL_BIR_Airstrip');"/>
+<area shape="circle" coords="3236,2912,17" href="javascript:void(0);" alt="Saudi Arabia Airstrips" title="QALIBHA Airstrip" onclick="return popup('QALIBHA_Airstrip');"/>
+
+<!--Syria -->
+<area shape="circle" coords="2728,148,17" href="javascript:void(0);" alt="Syria" title="AL QUSAYR" onclick="return popup('AL_QUSAYR');"/>
+<area shape="circle" coords="2796,396,17" href="javascript:void(0);" alt="Syria" title="AN NASIRIYAH" onclick="return popup('AN_NASIRIYAH');"/>
+<area shape="circle" coords="2588,920,17" href="javascript:void(0);" alt="Syria" title="AS SUWAYDA WEST" onclick="return popup('AS_SUWAYDA_WEST');"/>
+<area shape="circle" coords="2652,652,17" href="javascript:void(0);" alt="Syria" title="DAMASKUS INT" onclick="return popup('DAMASKUS_INT');"/>
+<area shape="circle" coords="2768,532,17" href="javascript:void(0);" alt="Syria" title="DUMYAR" onclick="return popup('DUMYAR');"/>
+<area shape="circle" coords="2636,804,17" href="javascript:void(0);" alt="Syria" title="KHALKHALAH" onclick="return popup('KHALKHALAH');"/>
+<area shape="circle" coords="2644,696,17" href="javascript:void(0);" alt="Syria" title="MARJ RUHAYYIL" onclick="return popup('MARJ_RUHAYYIL');"/>
+<area shape="circle" coords="2652,596,17" href="javascript:void(0);" alt="Syria" title="MEZZEH" onclick="return popup('MEZZEH');"/>
+<area shape="circle" coords="3404,136,17" href="javascript:void(0);" alt="Syria" title="PALMYR" onclick="return popup('PALMYR');"/>
+<area shape="circle" coords="3000,544,17" href="javascript:void(0);" alt="Syria" title="SAYQAL" onclick="return popup('SAYQAL');"/>
+<area shape="circle" coords="2868,244,17" href="javascript:void(0);" alt="Syria" title="SHAYRAT" onclick="return popup('SHAYRAT');"/>
+<area shape="circle" coords="3096,212,17" href="javascript:void(0);" alt="Syria" title="TIYAS" onclick="return popup('TIYAS');"/>
+
+<!-- VORTACs -->
+
+<!-- Special Map areas and Coordinates based on 4096x4096-->
+<!-- Map Legend Area -->
+<area shape="rect" coords="0,0,1,1" alt="Legend">
+<!-- Set Default Bullseye coordinates -->
+<area shape="circle" coords="1800,1400,1" alt="Bullseye">
+
+</map>
+</body>
+</html>

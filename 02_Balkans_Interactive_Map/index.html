@@ -1,0 +1,2559 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Balkans Interactive Map</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../common/scripts/map_style.css">
+<script type="text/javascript" src="../common/scripts/map_math.js"></script>
+<script type="text/javascript" src="../common/scripts/map_conrec.js"></script>
+<script type="text/javascript" src="../common/scripts/map_mission.js"></script>
+<script type="text/javascript" src="../common/scripts/map_weather.js"></script>
+<script type="text/javascript" src="../common/scripts/map_files.js"></script>
+<script type="text/javascript" src="../common/scripts/map_draw.js"></script>
+<script type="text/javascript" src="../common/scripts/map_radio.js"></script>
+<script type="text/javascript" src="../common/scripts/map_symbology.js"></script>
+<script type="text/javascript" src="../common/scripts/map_charts.js"></script>
+<script type="text/javascript" src="../common/scripts/map_imcs.js"></script>
+<script type="text/javascript" src="../common/scripts/map_gfs.js"></script>
+<script type="text/javascript" src="../common/scripts/map_actions.js"></script>
+</head>
+<body>
+
+<!-- Ranges -->
+<div id="AXALP-Range" class="modal"><div class="modal-content">
+<center><b>AXALP Range</center></b></center><hr><pre>
+N45&deg30.147' E012&deg14.191'
+Elevation: 8475 ft
+CTRL: 233.8
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/NATO/Axalp-Range/Axalp_Area.png" onclick="return chart(this)">Range Diagram</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/NATO/Axalp-Range/Axalp_Range_Targets.png" onclick="return chart(this)">Range Targets</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/NATO/Axalp-Range/Axalp_Restrictions.png" onclick="return chart(this)">Restrictions</a>
+</pre></div></div>
+
+<div id="GASINCI-Range" class="modal"><div class="modal-content">
+<center><b>GASINCI Range</center></b></center><hr><pre>
+N44&deg43.806' E020&deg17.862'
+Elevation: 490 ft
+CTRL: 233.8
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/CROATIA/Gasinci-Range/Gasinci_Range.png" onclick="return chart(this)">Range Diagram</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/CROATIA/Gasinci-Range/Gasinci_Targets.png" onclick="return chart(this)">Range Targets</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/CROATIA/Gasinci-Range/Gasinci_Targets.png" onclick="return chart(this)">Restrictions</a>
+</pre></div></div>
+
+<div id="SICILY-Range" class="modal"><div class="modal-content">
+<center><b>SICILY Range</center></b></center><hr><pre>
+N37&deg12.792' E014&deg29.411'
+Elevation: 2854 ft
+CTRL: 233.8
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/NATO/Sicily Range/Sicily_Range.png" onclick="return chart(this)">Range Diagram</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/NATO/Sicily Range/Sicily_Targets.png" onclick="return chart(this)">Range Targets</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/NATO/Sicily Range/Sicily_Restrictions.png" onclick="return chart(this)">Restrictions</a>
+</pre></div></div>
+
+<!-- Airbases -->
+<div id="AMENDOLA" class="modal"><div class="modal-content">
+<center><b>AMENDOLA (LIBA)</center></b></center><hr><pre>
+N41&deg07.569' E016&deg46.819'
+Elevation: 190 ft
+RWY: 11/29
+TCN: 99Y
+ATIS: 131.5
+OPS: -
+GND: 389.15
+TWR: 234.5
+APP/DEP: 362.25
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/NATO/Amendola/Amendola_Airport.png" onclick="return chart(this)">Airport Diagram</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/NATO/Amendola/Amendola_APC_RWY11.png" onclick="return chart(this)">APC - RWY 11</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/NATO/Amendola/Amendola_APC_RWY29.png" onclick="return chart(this)">APC - RWY 29</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/NATO/Amendola/Amendola_TCN_29.png" onclick="return chart(this)">APP - TCN 29</a>
+</pre></div></div>
+
+<div id="AMPUGNANO" class="modal"><div class="modal-content">
+<center><b>AMPUGNANO (LIQS)</center></b></center><hr><pre>
+N42&deg42.204' E011&deg19.523'
+Elevation: 630 ft
+RWY: 18/36
+TCN: 39X
+ATIS: 125.7
+OPS: -
+GND: 227.5
+TWR: 246.4
+APP/DEP: 359.15
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/NATO/Ampugnano/Ampugnano_Airport.png" onclick="return chart(this)">Airport Diagram</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/NATO/Ampugnano/Ampugnano_APC_RWY18.png" onclick="return chart(this)">APC - RWY 18</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/NATO/Ampugnano/Ampugnano_APC_RWY36.png" onclick="return chart(this)">APC - RWY 36</a>
+</pre></div></div>
+
+<div id="ASIAGO" class="modal"><div class="modal-content">
+<center><b>ASIAGO (LIDA)</center></b></center><hr><pre>
+N45&deg08.875' E011&deg40.152'
+Elevation: 3409 ft
+RWY: 05R/23L - 05L/23R
+TCN: 81 X (VICENZA) R-327 17DME
+ATIS: -
+GND: 260.8
+TWR: 277.8
+APP/DEP: 245.35
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/NATO/Asiago/Asiago_Airport.png" onclick="return chart(this)">Airport Diagram</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/NATO/Asiago/Asiago_APC_RWY05R.png" onclick="return chart(this)">APC - RWY 05R</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/NATO/Asiago/Asiago_APC_RWY23L.png" onclick="return chart(this)">APC - RWY 23L</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/NATO/Asiago/Asiago_APC_RWY05L.png" onclick="return chart(this)">APC - RWY 05L</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/NATO/Asiago/Asiago_APC_RWY23R.png" onclick="return chart(this)">APC - RWY 23R</a>
+</pre></div></div>
+
+<div id="AVIANO" class="modal"><div class="modal-content">
+<center><b>AVIANO (LIPA)</center></b></center><hr><pre>
+N45&deg16.137' E013&deg03.652'
+Elevation: 340 ft
+RWY: 05/23
+TCN: 111X
+ATIS: 141.5
+GND: 376.65
+TWR: 284.65
+APP/DEP: 363.25
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/NATO/Aviano/Aviano_Airport.png" onclick="return chart(this)">Airport Diagram</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/NATO/Aviano/Aviano_DEP_05.png" onclick="return chart(this)">DEP - RWY 05</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/NATO/Aviano/Aviano_DEP_23.png" onclick="return chart(this)">DEP - RWY 23</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/NATO/Aviano/Aviano_ILS_05.png" onclick="return chart(this)">ILS - RWY 05</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/NATO/Aviano/Aviano_APC_RWY05.png" onclick="return chart(this)">APC - RWY 05</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/NATO/Aviano/Aviano_APC_RWY23.png" onclick="return chart(this)">APC - RWY 23</a>
+</pre></div></div>
+
+<div id="BIRGI" class="modal"><div class="modal-content">
+<center><b>BIRGI (LICT)</center></b></center><hr><pre>
+N37&deg9.037' E012&deg45.537'
+Elevation: 60 ft
+RWY: 14L/32R - 14R/32L
+TCN: 25X
+ATIS: -
+GND: 240.2
+TWR: 396.85
+APP/DEP: 389.1
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/NATO/Birgi/Birgi_Airport.png" onclick="return chart(this)">Airport Diagram</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/NATO/Birgi/Birgi_APC_RWY14L.png" onclick="return chart(this)">APC - RWY 14L</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/NATO/Birgi/Birgi_APC_RWY23R.png" onclick="return chart(this)">APC - RWY 23R</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/NATO/Birgi/Birgi_APC_RWY14R.png" onclick="return chart(this)">APC - RWY 14R</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/NATO/Birgi/Birgi_APC_RWY23L.png" onclick="return chart(this)">APC - RWY 23L</a>
+</pre></div></div>
+
+<div id="BOLZANO" class="modal"><div class="modal-content">
+<center><b>BOLZANO (LIPB)</center></b></center><hr><pre>
+N45&deg39.001' E011&deg23.692'
+Elevation: 784 ft
+RWY: 02L/20R - 02R/20L
+TCN: 117Y
+ATIS: -
+GND: 294.1
+TWR: 234.3
+APP/DEP: 241.25
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/NATO/Bolzano/Bolzano_Airport.png" onclick="return chart(this)">Airport Diagram</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/NATO/Bolzano/Bolzano_APC_RWY02L.png" onclick="return chart(this)">APC - RWY 02L</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/NATO/Bolzano/Bolzano_APC_RWY20R.png" onclick="return chart(this)">APC - RWY 20R</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/NATO/Bolzano/Bolzano_APC_RWY02R.png" onclick="return chart(this)">APC - RWY 02R</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/NATO/Bolzano/Bolzano_APC_RWY20L.png" onclick="return chart(this)">APC - RWY 20L</a>
+</pre></div></div>
+
+<div id="BORGO_PANIGALE" class="modal"><div class="modal-content">
+<center><b>BORGO PANIGALE (LIPE)</center></b></center><hr><pre>
+N43&deg53.962' E011&deg21.137'
+Elevation: 111 ft
+RWY: 12/30
+TCN: 118X
+ATIS: 134.875
+GND: 230.6
+TWR: 257.85
+APP/DEP: 259.8
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/NATO/Borgo Panigale/Borgo Panigale_Airport.png" onclick="return chart(this)">Airport Diagram</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/NATO/Borgo Panigale/Borgo Panigale_APC_RWY12.png" onclick="return chart(this)">APC - RWY 12</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/NATO/Borgo Panigale/Borgo Panigale_APC_RWY30.png" onclick="return chart(this)">APC - RWY 30</a>
+</pre></div></div>
+
+<div id="CAPODICHINO" class="modal"><div class="modal-content">
+<center><b>CAPODICHINO (LIRN)</center></b></center><hr><pre>
+N40&deg34.571' E014&deg58.554'
+Elevation: 150 ft
+RWY: 08/26
+TCN: 125Y
+ATIS: 135.975
+GND: 257.3
+TWR: 257.825
+APP/DEP: 234.05
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/NATO/Capodichino/Capodichino_Airport.png" onclick="return chart(this)">Airport Diagram</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/NATO/Capodichino/Capodichino_APC_RWY08.png" onclick="return chart(this)">APC - RWY 08</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/NATO/Capodichino/Capodichino_APC_RWY26.png" onclick="return chart(this)">APC - RWY 26</a>
+</pre></div></div>
+
+<div id="CASALE" class="modal"><div class="modal-content">
+<center><b>CASALE (LIBR)</center></b></center><hr><pre>
+N40&deg20.071' E019&deg17.143'
+Elevation: 0 ft
+RWY: 13/31 - 05/23
+TCN: 79X
+ATIS: -
+GND: 313.55
+TWR: 386.875
+APP/DEP: 379.75
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/NATO/Casale/Casale_Airport.png" onclick="return chart(this)">Airport Diagram</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/NATO/Casale/Casale_APC_RWY13.png" onclick="return chart(this)">APC - RWY 13</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/NATO/Casale/Casale_APC_RWY31.png" onclick="return chart(this)">APC - RWY 31</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/NATO/Casale/Casale_APC_RWY05.png" onclick="return chart(this)">APC - RWY 05</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/NATO/Casale/Casale_APC_RWY23.png" onclick="return chart(this)">APC - RWY 23</a>
+</pre></div></div>
+
+<div id="CERVIA" class="modal"><div class="modal-content">
+<center><b>CERVIA (LIPC)</center></b></center><hr><pre>
+N43&deg36.872' E012&deg40.976'
+Elevation: 20 ft
+RWY: 11/29
+TCN: 83X
+ATIS: -
+GND: 272.4
+TWR: 338.225
+APP/DEP: 379.5
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/NATO/Cervia/Cervia_Airport.png" onclick="return chart(this)">Airport Diagram</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/NATO/Cervia/Cervia_APC_RWY11.png" onclick="return chart(this)">APC - RWY 11</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/NATO/Cervia/Cervia_APC_RWY29.png" onclick="return chart(this)">APC - RWY 29</a>
+</pre></div></div>
+
+<div id="CIAMPINO" class="modal"><div class="modal-content">
+<center><b>CIAMPINO (LIRA)</center></b></center><hr><pre>
+N41&deg23.431' E012&deg57.703'
+Elevation: 350 ft
+RWY: 16/34
+TCN: 45X
+ATIS: 122.425
+GND: 300.1
+TWR: 308.775
+APP/DEP: 292.5
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/NATO/Ciampino/Ciampino_Airport.png" onclick="return chart(this)">Airport Diagram</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/NATO/Ciampino/Ciampino_APC_RWY16.png" onclick="return chart(this)">APC - RWY 16</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/NATO/Ciampino/Ciampino_APC_RWY34.png" onclick="return chart(this)">APC - RWY 34</a>
+</pre></div></div>
+
+<div id="CROTONE" class="modal"><div class="modal-content">
+<center><b>CROTONE (LIBC)</center></b></center><hr><pre>
+N38&deg47.799' E018&deg10.669'
+Elevation: 470 ft
+RWY: 02/20
+TCN: 118X
+ATIS: 119.175
+GND: 289.5
+TWR: 261.7
+APP/DEP: 238.05
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/NATO/Crotone/Crotone_Airport.png" onclick="return chart(this)">Airport Diagram</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/NATO/Crotone/Crotone_APC_RWY02.png" onclick="return chart(this)">APC - RWY 02</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/NATO/Crotone/Crotone_APC_RWY20.png" onclick="return chart(this)">APC - RWY 20</a>
+</pre></div></div>
+
+<div id="FALCONARA" class="modal"><div class="modal-content">
+<center><b>FALCONARA (LIPY)</center></b></center><hr><pre>
+N43&deg01.375' E013&deg59.545'
+Elevation: 150 ft
+RWY: 05/23
+TCN: 35X
+ATIS: -
+GND: 316.7
+TWR: 302.2
+APP/DEP: 338.6
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/NATO/Falconara/Falconara_Airport.png" onclick="return chart(this)">Airport Diagram</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/NATO/Falconara/Falconara_APC_RWY05.png" onclick="return chart(this)">APC - RWY 05</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/NATO/Falconara/Falconara_APC_RWY23.png" onclick="return chart(this)">APC - RWY 23</a>
+</pre></div></div>
+
+<div id="FIUMICINO" class="modal"><div class="modal-content">
+<center><b>FIUMICINO (LIRF)</center></b></center><hr><pre>
+N41&deg22.959' E012&deg31.725'
+Elevation: 6 ft
+RWY: 14L/32R - 14R/32L
+TCN: 96X
+ATIS: 121.85
+GND: 259.5
+TWR: 253.9
+APP/DEP: 255.25
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/NATO/FIUMICINO/Fiumicino_Airport.png" onclick="return chart(this)">Airport Diagram</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/NATO/Fiumicino/Fiumicino_APC_RWY14L.png" onclick="return chart(this)">APC - RWY 14L</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/NATO/Fiumicino/Fiumicino_APC_RWY32R.png" onclick="return chart(this)">APC - RWY 32R</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/NATO/Fiumicino/Fiumicino_APC_RWY14R.png" onclick="return chart(this)">APC - RWY 14R</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/NATO/Fiumicino/Fiumicino_APC_RWY32L.png" onclick="return chart(this)">APC - RWY 32L</a>
+</pre></div></div>
+
+<div id="FONTANAROSSA" class="modal"><div class="modal-content">
+<center><b>FONTANAROSSA (LICC)</center></b></center><hr><pre>
+N37&deg25.825' E015&deg39.765'
+Elevation: 450 ft
+RWY: 08/26
+TCN: 109Y
+ATIS: 127.675
+GND: 247.9
+TWR: 234.525
+APP/DEP: 340.15
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/NATO/Fontanarossa/Fonatanarossa_Airport.png" onclick="return chart(this)">Airport Diagram</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/NATO/Fontanarossa/Fontanarossa_APC_RWY08.png" onclick="return chart(this)">APC - RWY 08</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/NATO/Fontanarossa/Fontanarossa_APC_RWY26.png" onclick="return chart(this)">APC - RWY 26</a>
+</pre></div></div>
+
+<div id="FORLI" class="modal"><div class="modal-content">
+<center><b>FORLI (LIPK)</center></b></center><hr><pre>
+N43&deg35.085' E012&deg20.878'
+Elevation: 110 ft
+RWY: 11/29
+TCN: 104Y
+ATIS: -
+GND: 228.4
+TWR: 225.1
+APP/DEP: 338.7
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/NATO/Forli/Forli_Airport.png" onclick="return chart(this)">Airport Diagram</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/NATO/Forli/Forli_APC_RWY11.png" onclick="return chart(this)">APC - RWY 11</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/NATO/Forli/Forli_APC_RWY29.png" onclick="return chart(this)">APC - RWY 29</a>
+</pre></div></div>
+
+<div id="FROSINONE" class="modal"><div class="modal-content">
+<center><b>FROSINONE (LIRH)</center></b></center><hr><pre>
+N41&deg16.426' E013&deg43.378'
+Elevation: 760 ft
+RWY: 16/34
+TCN: 103X
+ATIS: -
+GND: 291.25
+TWR: 258.7
+APP/DEP: 278.925
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/NATO/Frosinone/Frosinone_Airport.png" onclick="return chart(this)">Airport Diagram</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/NATO/Frosinone/Frosinone_APC_RWY16.png" onclick="return chart(this)">APC - RWY 16</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/NATO/Frosinone/Frosinone_APC_RWY34.png" onclick="return chart(this)">APC - RWY 34</a>
+</pre></div></div>
+
+<div id="GALATINA" class="modal"><div class="modal-content">
+<center><b>GALATINA (LIBN)</center></b></center><hr><pre>
+N39&deg57.566' E019&deg34.994'
+Elevation: 170 ft
+RWY: 14/32
+TCN: 75X
+ATIS: -
+GND:280.55
+TWR: 234.6
+APP/DEP: 362.5
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/NATO/Galatina/Galatina_Airport.png" onclick="return chart(this)">Airport Diagram</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/NATO/Galatina/Galatina_APC_RWY14.png" onclick="return chart(this)">APC - RWY 14</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/NATO/Galatina/Galatina_APC_RWY32.png" onclick="return chart(this)">APC - RWY 32</a>
+</pre></div></div>
+
+<div id="GINO_LISA" class="modal"><div class="modal-content">
+<center><b>GINO LISA (LIBF)</center></b></center><hr><pre>
+N41&deg02.955' E016&deg32.159'
+Elevation: 270 ft
+RWY: 16/34
+TCN: 105X
+ATIS: 120.1
+GND: 255.3
+TWR: 288.6
+APP/DEP: 362.15
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/NATO/Gino Lisa/Gino Lisa_Airport.png" onclick="return chart(this)">Airport Diagram</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/NATO/Gino Lisa/Gino Lisa_APC_RWY16.png" onclick="return chart(this)">APC - RWY 16</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/NATO/Gino Lisa/Gino Lisa_APC_RWY34.png" onclick="return chart(this)">APC - RWY 34</a>
+</pre></div></div>
+
+<div id="GIOIA_DEL_COLLE" class="modal"><div class="modal-content">
+<center><b>GIOIA DEL COLLE (LIBV)</center></b></center><hr><pre>
+N40&deg26.112' E018&deg11.464'
+Elevation: 1240 ft
+RWY: 14L/32R - 14R/32L
+TCN: 125X
+ATIS: 126.5
+GND: 369.475
+TWR: 275.325
+APP/DEP: 379.525
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/NATO/Gioia del Colle/Gioia del Colle_Airport.png" onclick="return chart(this)">Airport Diagram</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/NATO/Gioia del Colle/Gioia del Colle_APC_RWY14L.png" onclick="return chart(this)">APC - RWY 14L</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/NATO/Gioia del Colle/Gioia del Colle_APC_RWY32R.png" onclick="return chart(this)">APC - RWY 32R</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/NATO/Gioia del Colle/Gioia del Colle_APC_RWY14R.png" onclick="return chart(this)">APC - RWY 14R</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/NATO/Gioia del Colle/Gioia del Colle_APC_RWY32L.png" onclick="return chart(this)">APC - RWY 32L</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/NATO/Gioia del Colle/Gioia del Colle_ILS_32L.png" onclick="return chart(this)">ILS - RWY 32L</a>
+</pre></div></div>
+
+<div id="GRAZZANISE" class="modal"><div class="modal-content">
+<center><b>GRAZZANISE (LIRM)</center></b></center><hr><pre>
+N40&deg42.654' E014&deg44.108'
+Elevation: 29 ft
+RWY: 08/26
+TCN: 122X
+ATIS: -
+GND: 233.8
+TWR: 234.65
+APP/DEP: 362.6
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/NATO/Grazzanise/Grazzanise_Airport.png" onclick="return chart(this)">Airport Diagram</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/NATO/Grazzanise/Grazzanise_APC_RWY08.png" onclick="return chart(this)">APC - RWY 08</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/NATO/Grazzanise/Grazzanise_APC_RWY26.png" onclick="return chart(this)">APC - RWY 26</a>
+</pre></div></div>
+
+<div id="GROSSETO" class="modal"><div class="modal-content">
+<center><b>GROSSETO (LIRS)</center></b></center><hr><pre>
+N42&deg16.871' E011&deg05.760'
+Elevation: 13 ft
+RWY: 02/20
+TCN: 35Y
+ATIS: -
+GND: 280.35
+TWR: 264.75
+APP/DEP: 275.3
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/NATO/Grosseto/Grosseto_Airport.png" onclick="return chart(this)">Airport Diagram</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/NATO/Grosseto/Grosseto_APC_RWY02.png" onclick="return chart(this)">APC - RWY 02</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/NATO/Grosseto/Grosseto_APC_RWY20.png" onclick="return chart(this)">APC - RWY 20</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/NATO/Grosseto/Grosseto_TCN_02.png" onclick="return chart(this)">TACAN - RWY 02</a>
+</pre></div></div>
+
+<div id="GROTTAGLIE" class="modal"><div class="modal-content">
+<center><b>GROTTAGLIE (LIBG)</center></b></center><hr><pre>
+N40&deg11.859' E018&deg43.423'
+Elevation: 200 ft
+RWY: 02/20
+TCN: 115X
+ATIS: 131.125
+GND: 264.3
+TWR: 257.875
+APP/DEP: 237.4
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/NATO/Grottaglie/Grottaglie_Airport.png" onclick="return chart(this)">Airport Diagram</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/NATO/Grottaglie/Grottaglie_APC_RWY02.png" onclick="return chart(this)">APC - RWY 02</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/NATO/Grottaglie/Grottaglie_APC_RWY20.png" onclick="return chart(this)">APC - RWY 20</a>
+</pre></div></div>
+
+<div id="GUIDONIA" class="modal"><div class="modal-content">
+<center><b>GUIDONIA (LIRG)</center></b></center><hr><pre>
+N41&deg33.912' E013&deg08.733'
+Elevation: 289 ft
+RWY: 18/36
+TCN: 45X
+ATIS: -
+GND: 319.8
+TWR: 257.925
+APP/DEP: 258.1
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/NATO/Guidonia/Guidonia_Airport.png" onclick="return chart(this)">Airport Diagram</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/NATO/Guidonia/Guidonia_APC_RWY18.png" onclick="return chart(this)">APC - RWY 18</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/NATO/Guidonia/Guidonia_APC_RWY36.png" onclick="return chart(this)">APC - RWY 36</a>
+</pre></div></div>
+
+<div id="ISRANA" class="modal"><div class="modal-content">
+<center><b>ISTRANA (LIPS)</center></b></center><hr><pre>
+N44&deg57.808' E012&deg24.178'
+Elevation: 150 ft
+RWY: 08/26
+TCN: 54X
+ATIS: 121.25
+GND: 279.05
+TWR: 387.675
+APP/DEP: 336.825
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/NATO/Istrana/Istrana_Airport.png" onclick="return chart(this)">Airport Diagram</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/NATO/Istrana/Istrana_APC_RWY08.png" onclick="return chart(this)">APC - RWY 08</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/NATO/Istrana/Istrana_APC_RWY26.png" onclick="return chart(this)">APC - RWY 26</a>
+</pre></div></div>
+
+<div id="LAMEZIA_TERME" class="modal"><div class="modal-content">
+<center><b>LAMEZIA TERME (LIKA)</center></b></center><hr><pre>
+N38&deg44.027' E017&deg12.955'
+Elevation: 60 ft
+RWY: 02/20
+TCN: 72X
+ATIS: -
+GND: 287.5
+TWR: 241.6
+APP/DEP: 258.2
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/NATO/Lamezia Terme/Lamezia Terme_Airport.png" onclick="return chart(this)">Airport Diagram</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/NATO/Lamezia Terme/Lamezia Terme_APC_RWY02.png" onclick="return chart(this)">APC - RWY 02</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/NATO/Lamezia Terme/Lamezia Terme_APC_RWY20.png" onclick="return chart(this)">APC - RWY 20</a>
+</pre></div></div>
+
+<div id="LATINA" class="modal"><div class="modal-content">
+<center><b>LATINA (LIRL)</center></b></center><hr><pre>
+N41&deg07.998' E013&deg18.267'
+Elevation: 93 ft
+RWY: 12/30
+TCN: 49X
+ATIS: -
+GND: 249.2
+TWR: 275.375
+APP/DEP: 339.25
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/NATO/Latina/Latina_Airport.png" onclick="return chart(this)">Airport Diagram</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/NATO/Latina/Latina_APC_RWY12.png" onclick="return chart(this)">APC - RWY 12</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/NATO/Latina/Latina_APC_RWY30.png" onclick="return chart(this)">APC - RWY 30</a>
+</pre></div></div>
+
+<div id="MATERA" class="modal"><div class="modal-content">
+<center><b>MATERA ()</center></b></center><hr><pre>
+N40&deg07.954' E017&deg42.243'
+Elevation: 350 ft
+RWY: 14/32
+TCN: 125 X (GIOIA D. COLLE) R-223 28DME
+ATIS: -
+GND: 272.9
+TWR: 295.4
+APP/DEP: 246.2
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/NATO/Matera/Matera_Airport.png" onclick="return chart(this)">Airport Diagram</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/NATO/Matera/Matera_APC_RWY14.png" onclick="return chart(this)">APC - RWY 14</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/NATO/Matera/Matera_APC_RWY32.png" onclick="return chart(this)">APC - RWY 32</a>
+</pre></div></div>
+
+<div id="MATTARELLO" class="modal"><div class="modal-content">
+<center><b>MATTARELLO (LIDT)</center></b></center><hr><pre>
+N45&deg15.917' E011&deg08.994'
+Elevation: 610 ft
+RWY: 18/36
+TCN: 100Y
+ATIS: 119.6
+GND: 291.6
+TWR: 257.5
+APP/DEP: 239.3
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/NATO/Mattarello/Mattarello_Airport.png" onclick="return chart(this)">Airport Diagram</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/NATO/Mattarello/Mattarello_APC_RWY18.png" onclick="return chart(this)">APC - RWY 18</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/NATO/Mattarello/Mattarello_APC_RWY36.png" onclick="return chart(this)">APC - RWY 36</a>
+</pre></div></div>
+
+<div id="MIRAMARE" class="modal"><div class="modal-content">
+<center><b>MIRAMARE (LIRE)</center></b></center><hr><pre>
+N43&deg24.326' E013&deg01.834'
+Elevation: 16 ft
+RWY: 12/30
+TCN: 109X
+ATIS: 126.425
+GND: 309.4
+TWR: 278.1
+APP/DEP: 305.3
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/NATO/Miramare/Miramare_Airport.png" onclick="return chart(this)">Airport Diagram</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/NATO/Miramare/Miramare_APC_RWY12.png" onclick="return chart(this)">APC - RWY 12</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/NATO/Miramare/Miramare_APC_RWY30.png" onclick="return chart(this)">APC - RWY 30</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/NATO/Miramare/Miramare_ILS_30.png" onclick="return chart(this)">ILS- RWY 30</a>
+</pre></div></div>
+
+<div id="PADOVA" class="modal"><div class="modal-content">
+<center><b>PADOVA (LIPU)</center></b></center><hr><pre>
+N44&deg43.010' E012&deg02.600'
+Elevation: 59 ft
+RWY: 05L/23R - 05R/23L
+TCN: 054 X (ISTRANA) R-228 23DME
+ATIS: 123.2
+GND: 278.7
+TWR: 231.8
+APP/DEP: 246.6
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/NATO/Padova/Padova_Airport.png" onclick="return chart(this)">Airport Diagram</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/NATO/Padova/Padova_APC_RWY05L.png" onclick="return chart(this)">APC - RWY 05L</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/NATO/Padova/Padova_APC_RWY23R.png" onclick="return chart(this)">APC - RWY 23R</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/NATO/Padova/Padova_APC_RWY05R.png" onclick="return chart(this)">APC - RWY 05R</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/NATO/Padova/Padova_APC_RWY23L.png" onclick="return chart(this)">APC - RWY 23L</a>
+</pre></div></div>
+
+<div id="PALESE" class="modal"><div class="modal-content">
+<center><b>PALESE (LJBD)</center></b></center><hr><pre>
+N40&deg45.281' E017&deg59.873'
+Elevation: 150 ft
+RWY: 08/26
+TCN: 111X
+ATIS: 124.05
+GND: 248.2
+TWR: 263.3
+APP/DEP: 236.5
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/NATO/Palese/Palese_Airport.png" onclick="return chart(this)">Airport Diagram</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/NATO/Palese/Palese_APC_RWY08.png" onclick="return chart(this)">APC - RWY 08</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/NATO/Palese/Palese_APC_RWY26.png" onclick="return chart(this)">APC - RWY 26</a>
+</pre></div></div>
+
+<div id="PANTELLERIA" class="modal"><div class="modal-content">
+<center><b>PANTELLERIA (LICG)</center></b></center><hr><pre>
+N36&deg47.846' E012&deg06.726'
+Elevation: 69 ft
+RWY: 02L/20R - 02R/20L
+TCN: 108X
+ATIS: -
+GND: 346.8
+TWR: 324.6
+APP/DEP: 240.1
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/NATO/Pantelleria/Pantelleria_Airport.png" onclick="return chart(this)">Airport Diagram</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/NATO/Pantelleria/Pantelleria_APC_RWY02L.png" onclick="return chart(this)">APC - RWY 02L</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/NATO/Pantelleria/Pantelleria_APC_RWY20R.png" onclick="return chart(this)">APC - RWY 20R</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/NATO/Pantelleria/Pantelleria_APC_RWY02R.png" onclick="return chart(this)">APC - RWY 02R</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/NATO/Pantelleria/Pantelleria_APC_RWY20L.png" onclick="return chart(this)">APC - RWY 20L</a>
+</pre></div></div>
+
+<div id="PERETOLA" class="modal"><div class="modal-content">
+<center><b>PERETOLA (LIRQ)</center></b></center><hr><pre>
+N43&deg14.246' E011&deg14.770'
+Elevation: 230 ft
+RWY: 03/21
+TCN: 72X
+ATIS: 129.35
+GND: 266.5
+TWR: 257.95
+APP/DEP: 312.9
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/NATO/Peretola/Peretola_Airport.png" onclick="return chart(this)">Airport Diagram</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/NATO/Peretola/Peretola_APC_RWY03.png" onclick="return chart(this)">APC - RWY 03</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/NATO/Peretola/Peretola_APC_RWY21.png" onclick="return chart(this)">APC - RWY 21</a>
+</pre></div></div>
+
+<div id="PESCARA" class="modal"><div class="modal-content">
+<center><b>PESCARA (LIBP)</center></b></center><hr><pre>
+N41&deg57.375' E014&deg55.740'
+Elevation: 30 ft
+RWY: 04/22
+TCN: 106X
+ATIS: 135.25
+GND: 239.1
+TWR: 257.0
+APP/DEP: 236.9
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/NATO/Pescara/Pescara_Airport.png" onclick="return chart(this)">Airport Diagram</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/NATO/Pescara/Pescara_APC_RWY04.png" onclick="return chart(this)">APC - RWY 04</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/NATO/Pescara/Pescara_APC_RWY22.png" onclick="return chart(this)">APC - RWY 22</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/NATO/Pescara/Pescara_ILS_22.png" onclick="return chart(this)">ILS - RWY 22</a>
+</pre></div></div>
+
+<div id="PRATICA_DI_MARE" class="modal"><div class="modal-content">
+<center><b>PRATICA DI MARE (LIRE)</center></b></center><hr><pre>
+N41&deg14.446' E012&deg48.724'
+Elevation: 140 ft
+RWY: 11/29
+TCN: 24X
+ATIS: -
+GND: 231.75
+TWR: 358.9
+APP/DEP: 377.2
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/NATO/Pratica Di Mare/Pratica Di Mare_Airport.png" onclick="return chart(this)">Airport Diagram</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/NATO/Pratica Di Mare/Pratica di Mare_APC_RWY11.png" onclick="return chart(this)">APC - RWY 11</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/NATO/Pratica Di Mare/Pratica di Mare_APC_RWY29.png" onclick="return chart(this)">APC - RWY 29</a>
+</pre></div></div>
+
+<div id="PUNTA_RAISI" class="modal"><div class="modal-content">
+<center><b>PUNTA RAISI (LICJ)</center></b></center><hr><pre>
+N38&deg03.186' E013&deg28.188'
+Elevation: 50 ft
+RWY: 05L/23R - 05R/23L
+TCN: 77X
+ATIS: 123.875
+GND: 250.9
+TWR: 250.8
+APP/DEP: 387.45
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/NATO/Punta Raisi/Punta Raisi_Airport.png" onclick="return chart(this)">Airport Diagram</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/NATO/Punta Raisi/Punta Raisi_APC_RWY05L.png" onclick="return chart(this)">APC - RWY 05L</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/NATO/Punta Raisi/Punta Raisi_APC_RWY23R.png" onclick="return chart(this)">APC - RWY 23R</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/NATO/Punta Raisi/Punta Raisi_APC_RWY05R.png" onclick="return chart(this)">APC - RWY 05R</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/NATO/Punta Raisi/Punta Raisi_APC_RWY23L.png" onclick="return chart(this)">APC - RWY 23L</a>
+</pre></div></div>
+
+<div id="RAVENNA" class="modal"><div class="modal-content">
+<center><b>RAVENNA (LIPC)</center></b></center><hr><pre>
+N43&deg44.633' E012&deg33.448'
+Elevation: 6 ft
+RWY: 08/26
+TCN: 83 X (CERVIA) R-316 12DME
+ATIS: 124.2
+GND: 262.6
+TWR: 285.6
+APP/DEP: 247.1
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/NATO/Ravenna/Ravenna_Airport.png" onclick="return chart(this)">Airport Diagram</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/NATO/Ravenna/Ravenna_APC_RWY08.png" onclick="return chart(this)">APC - RWY 08</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/NATO/Ravenna/Ravenna_APC_RWY26.png" onclick="return chart(this)">APC - RWY 26</a>
+</pre></div></div>
+
+<div id="REGGIO_CALABRIA" class="modal"><div class="modal-content">
+<center><b>REGGIO CALABRIA (LICR)</center></b></center><hr><pre>
+N37&deg55.291' E016&deg25.133'
+Elevation: 0 ft
+RWY: 01/19 - 15/33
+TCN: 47X
+ATIS: -
+GND: 227.3
+TWR: 246.1
+APP/DEP: 236.6
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/NATO/Reggio Calabria/Reggio Calabria_Airport.png" onclick="return chart(this)">Airport Diagram</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/NATO/Reggio Calabria/Reggio Calabria_APC_RWY01.png" onclick="return chart(this)">APC - RWY 01</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/NATO/Reggio Calabria/Reggio Calabria_APC_RWY19.png" onclick="return chart(this)">APC - RWY 19</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/NATO/Reggio Calabria/Reggio Calabria_APC_RWY15.png" onclick="return chart(this)">APC - RWY 15</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/NATO/Reggio Calabria/Reggio Calabria_APC_RWY33.png" onclick="return chart(this)">APC - RWY 33</a>
+</pre></div></div>
+
+<div id="RIVOLTO" class="modal"><div class="modal-content">
+<center><b>RIVOLTO (LIPI)</center></b></center><hr><pre>
+N45&deg13.579' E013&deg39.770'
+Elevation: 170 ft
+RWY: 06/24
+TCN: 37X
+ATIS: 121.5
+GND: 354.0
+TWR: 242.475
+APP/DEP: 275.35
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/NATO/Rivolto/Rivolto_Airport.png" onclick="return chart(this)">Airport Diagram</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/NATO/Rivolto/Rivolto_APC_RWY06.png" onclick="return chart(this)">APC - RWY 06</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/NATO/Rivolto/Rivolto_APC_RWY24.png" onclick="return chart(this)">APC - RWY 24</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/NATO/Rivolto/Rivolto_DEP_CHI1C-D.png" onclick="return chart(this)">DEP - CHI 1C/D</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/NATO/Rivolto/Rivolto_DEP_ISA1A-B.png" onclick="return chart(this)">DEP - ISA 1A/B</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/NATO/Rivolto/Rivolto_DEP_ROSKA1C-D.png" onclick="return chart(this)">DEP - ROSKA 1C/D</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/NATO/Rivolto/Rivolto_TCN_06.png" onclick="return chart(this)">TACAN RWY 06</a>
+</pre></div></div>
+
+<div id="RONCHI_DEI_LEGIONARI" class="modal"><div class="modal-content">
+<center><b>RONCHI DEI LEGIONARI (LIBQ)</center></b></center><hr><pre>
+N45&deg05.072' E014&deg13.633'
+Elevation: 30 ft
+RWY: 11/29
+TCN: 57Y
+ATIS: 124.15
+GND: 286.5
+TWR: 278.9
+APP/DEP: 260.4
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/NATO/Ronchi Dei Legionari/Ronchi dei Legionari_Airport.png" onclick="return chart(this)">Airport Diagram</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/NATO/Ronchi Dei Legionari/Ronchi dei Legionari_APC_RWY11.png" onclick="return chart(this)">APC - RWY 11</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/NATO/Ronchi Dei Legionari/Ronchi dei Legionari_APC_RWY29.png" onclick="return chart(this)">APC - RWY 29</a>
+</pre></div></div>
+
+<div id="S.ANGELO" class="modal"><div class="modal-content">
+<center><b>S.ANGELO (LIPH)</center></b></center><hr><pre>
+N44&deg54.767' E012&deg32.264'
+Elevation: 57 ft
+RWY: 08/26
+TCN: -
+ATIS: -
+GND: 326.2
+TWR: 278.2
+APP/DEP: 251.5
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/NATO/S.Angelo/S. Angelo_Airport.png" onclick="return chart(this)">Airport Diagram</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/NATO/S.Angelo/S. Angelo_APC_RWY08.png" onclick="return chart(this)">APC - RWY 08</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/NATO/S.Angelo/S. Angelo_APC_RWY26.png" onclick="return chart(this)">APC - RWY 26</a>
+</pre></div></div>
+
+<div id="S.FRANCESCO" class="modal"><div class="modal-content">
+<center><b>S.FRANCESCO (LIRZ)</center></b></center><hr><pre>
+N42&deg35.653' E012&deg53.655'
+Elevation: 693 ft
+RWY: 01/19
+TCN: 31X
+ATIS: -
+GND: 240.7
+TWR: 226.2
+APP/DEP: 236.1
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/NATO/S.Francesco/S. Francesco_Airport.png" onclick="return chart(this)">Airport Diagram</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/NATO/S.Francesco/S. Francesco_APC_RWY01.png" onclick="return chart(this)">APC - RWY 01</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/NATO/S.Francesco/S. Francesco_APC_RWY19.png" onclick="return chart(this)">APC - RWY 19</a>
+</pre></div></div>
+
+<div id="SAN_PANCRAZIO" class="modal"><div class="modal-content">
+<center><b>SAN PANCRAZIO ()</center></b></center><hr><pre>
+N40&deg07.793' E019&deg15.403'
+Elevation: 160 ft
+RWY: 02/20
+TCN: 79 X (CASALE) R-204 13DME
+ATIS: -
+GND: 288.9
+TWR: 254.7
+APP/DEP: 249.8
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/NATO/San Pancrazio/San Pancrazio_Airport.png" onclick="return chart(this)">Airport Diagram</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/NATO/San Pancrazio/San Pancrazio_APC_RWY02.png" onclick="return chart(this)">APC - RWY 02</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/NATO/San Pancrazio/San Pancrazio_APC_RWY20.png" onclick="return chart(this)">APC - RWY 20</a>
+</pre></div></div>
+
+<div id="SIGONELLA" class="modal"><div class="modal-content">
+<center><b>SIGONELLA (LICZ)</center></b></center><hr><pre>
+N37&deg19.559' E015&deg29.859'
+Elevation: 90 ft
+RWY: 10L/28R - 10R/28L
+TCN: 53X
+ATIS: 121.95
+GND: 279.175
+TWR: 337.6
+APP/DEP: 340.1
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/NATO/Sigonella/Sigonella_Airport.png" onclick="return chart(this)">Airport Diagram</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/NATO/Sigonella/Sigonella_APC_RWY10L.png" onclick="return chart(this)">APC - RWY 10L</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/NATO/Sigonella/Sigonella_APC_RWY28R.png" onclick="return chart(this)">APC - RWY 28R</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/NATO/Sigonella/Sigonella_APC_RWY10R.png" onclick="return chart(this)">APC - RWY 10R</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/NATO/Sigonella/Sigonella_APC_RWY28L.png" onclick="return chart(this)">APC - RWY 28L</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/NATO/Sigonella/Sigonella_ILS_10R.png" onclick="return chart(this)">ILS - RWY 10R</a>
+</pre></div></div>
+
+<div id="TESSARA" class="modal"><div class="modal-content">
+<center><b>TESSARA (LIPZ)</center></b></center><hr><pre>
+N44&deg48.398' E012&deg46.748'
+Elevation: 3 ft
+RWY: 05L/23R - 05R/23L
+TCN: 100X
+ATIS: 128.65
+GND: 226.5
+TWR: 291.1
+APP/DEP: 240.4
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/NATO/Tessara/Tessara_Airport.png" onclick="return chart(this)">Airport Diagram</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/NATO/Tessara/Tessera_APC_RWY05L.png" onclick="return chart(this)">APC - RWY 05L</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/NATO/Tessara/Tessera_APC_RWY23R.png" onclick="return chart(this)">APC - RWY 23R</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/NATO/Tessara/Tessera_APC_RWY05R.png" onclick="return chart(this)">APC - RWY 05R</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/NATO/Tessara/Tessera_APC_RWY23L.png" onclick="return chart(this)">APC - RWY 23L</a>
+</pre></div></div>
+
+<div id="URBE" class="modal"><div class="modal-content">
+<center><b>URBE (LIRU)</center></b></center><hr><pre>
+N41&deg31.514' E012&deg53.629'
+Elevation: 88 ft
+RWY: 16/34
+TCN: 96 X (FIUMICINO) R-061 19DME
+ATIS: 125.75
+GND: 243.3
+TWR: 257.975
+APP/DEP: 247.2
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/NATO/Urbe/Urbe_Airport.png" onclick="return chart(this)">Airport Diagram</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/NATO/Urbe/Urbe_APC_RWY16.png" onclick="return chart(this)">APC - RWY 16</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/NATO/Urbe/Urbe_APC_RWY34.png" onclick="return chart(this)">APC - RWY 34</a>
+</pre></div></div>
+
+<div id="VICENZA" class="modal"><div class="modal-content">
+<center><b>VICENZA (LIPT)</center></b></center><hr><pre>
+N44&deg52.605' E011&deg43.819'
+Elevation: 128 ft
+RWY: 18/36
+TCN: 81X
+ATIS: -
+GND: 301.4
+TWR: 257.7
+APP/DEP: 337.95
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/NATO/Vicenza/Vicenza_Airport.png" onclick="return chart(this)">Airport Diagram</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/NATO/Vicenza/Vicenza_APC_RWY18.png" onclick="return chart(this)">APC - RWY 18</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/NATO/Vicenza/Vicenza_APC_RWY36.png" onclick="return chart(this)">APC - RWY 36</a>
+</pre></div></div>
+
+<div id="CERRIK" class="modal"><div class="modal-content">
+<center><b>CERRIK ()</center></b></center><hr><pre>
+N40&deg40.529' E021&deg57.598'
+Elevation: 445 ft
+RWY: 05L/23R - 05R/23L
+TCN: 124 X TIRANA R-142 28DME
+ATIS: -
+GND: 252.6
+TWR: 228.2
+APP/DEP: 244.8
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/ALBANIA/Cerrik/Cerrik_Airbase.png" onclick="return chart(this)">Airport Diagram</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/ALBANIA/Cerrik/Cerrik_APC_RWY05L.png" onclick="return chart(this)">APC - RWY 05L</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/ALBANIA/Cerrik/Cerrik_APC_RWY23R.png" onclick="return chart(this)">APC - RWY 23R</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/ALBANIA/Cerrik/Cerrik_APC_RWY05R.png" onclick="return chart(this)">APC - RWY 05R</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/ALBANIA/Cerrik/Cerrik_APC_RWY23L.png" onclick="return chart(this)">APC - RWY 23L</a>
+</pre></div></div>
+
+<div id="GJADER" class="modal"><div class="modal-content">
+<center><b>GJADER (LAGJ)</center></b></center><hr><pre>
+N41&deg28.280' E021&deg34.916'
+Elevation: 23 ft
+RWY: 16/34
+TCN: 124 X TIRANA R-348 27DME
+ATIS: -
+GND: 234.1
+TWR: 342.4
+APP/DEP: 274.0
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/ALBANIA/Gjader/Gjader_Airport.png" onclick="return chart(this)">Airport Diagram</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/ALBANIA/Gjader/Gjader_APC_RWY16.png" onclick="return chart(this)">APC - RWY 16</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/ALBANIA/Gjader/Gjader_APC_RWY34.png" onclick="return chart(this)">APC - RWY 34</a>
+</pre></div></div>
+
+<div id="GJIROKASTER" class="modal"><div class="modal-content">
+<center><b>GJIROKASTER ()</center></b></center><hr><pre>
+N39&deg46.977' E021&deg57.629'
+Elevation: 777 ft
+RWY: 16/34
+TCN: 124 X TIRANA R-162 79DME
+ATIS: -
+GND: 248.8
+TWR: 266.3
+APP/DEP: 261.3
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/ALBANIA/Gjirokaster/Gjirokaster_Airport.png" onclick="return chart(this)">Airport Diagram</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/ALBANIA/Gjirokaster/Gjirokaster_APC_RWY16.png" onclick="return chart(this)">APC - RWY 16</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/ALBANIA/Gjirokaster/Gjirokaster_APC_RWY34.png" onclick="return chart(this)">APC - RWY 34</a>
+</pre></div></div>
+
+<div id="KORCE_NORTHWEST" class="modal"><div class="modal-content">
+<center><b>KORCE NORTHWEST (LAKO)</center></b></center><hr><pre>
+N40&deg18.864' E022&deg45.908'
+Elevation: 2640 ft
+RWY: 02/20
+TCN: 124 X TIRANA R-128 72DME
+ATIS: -
+GND: 227.2
+TWR: 272.5
+APP/DEP: 255.05
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/ALBANIA/Korce Northwest/Korce Northwest_Airport.png" onclick="return chart(this)">Airport Diagram</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/ALBANIA/Korce Northwest/Korce Northwest_APC_RWY02.png" onclick="return chart(this)">APC - RWY 02</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/ALBANIA/Korce Northwest/Korce Northwest_APC_RWY20.png" onclick="return chart(this)">APC - RWY 20</a>
+</pre></div></div>
+
+<div id="KUCOVA" class="modal"><div class="modal-content">
+<center><b>KUCOVA (LAKV)</center></b></center><hr><pre>
+N40&deg26.653' E021&deg42.861'
+Elevation: 110 ft
+RWY: 02/20
+TCN: 124 X TIRANA R-168 36DME
+ATIS: -
+GND: 303.5
+TWR: 334.3
+APP/DEP: 262.7
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/ALBANIA/Kucova/Kucova_Airport.png" onclick="return chart(this)">Airport Diagram</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/ALBANIA/Kucova/Kucova_APC_RWY02.png" onclick="return chart(this)">APC - RWY 02</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/ALBANIA/Kucova/Kucova_APC_RWY20.png" onclick="return chart(this)">APC - RWY 20</a>
+</pre></div></div>
+
+<div id="KUKES" class="modal"><div class="modal-content">
+<center><b>KUKES (LAKU)</center></b></center><hr><pre>
+N41&deg35.919' E022&deg35.998'
+Elevation: 970 ft
+RWY: 02/20
+TCN: 58Y
+ATIS: -
+GND: 285.7
+TWR: 292.2
+APP/DEP: 239.6
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/ALBANIA/Kukes/Kukes_Airport.png" onclick="return chart(this)">Airport Diagram</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/ALBANIA/Kukes/Kukes_APC_RWY02.png" onclick="return chart(this)">APC - RWY 02</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/ALBANIA/Kukes/Kukes_APC_RWY20.png" onclick="return chart(this)">APC - RWY 20</a>
+</pre></div></div>
+
+<div id="LAPRAKA" class="modal"><div class="modal-content">
+<center><b>LAPRAKA (ZOOH)</center></b></center><hr><pre>
+N40&deg56.682' E021&deg40.805'
+Elevation: 200 ft
+RWY: 12/30
+TCN: 124 X TIRANA R-154 6DME
+ATIS: -
+GND: 230.3
+TWR: 249.65
+APP/DEP: 302.4
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/ALBANIA/Lapraka/Lapraka_Airport.png" onclick="return chart(this)">Airport Diagram</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/ALBANIA/Lapraka/Lapraka_APC_RWY12.png" onclick="return chart(this)">APC - RWY 12</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/ALBANIA/Lapraka/Lapraka_APC_RWY30.png" onclick="return chart(this)">APC - RWY 30</a>
+</pre></div></div>
+
+<div id="MIFOL" class="modal"><div class="modal-content">
+<center><b>MIFOL ()</center></b></center><hr><pre>
+N40&deg17.247' E021&deg09.556'
+Elevation: 13 ft
+RWY: 02/20
+TCN: 124 X TIRANA R-200 48DME
+ATIS: -
+GND: 349.2
+TWR: 256.2
+APP/DEP: 343.7
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/ALBANIA/Mifol/Mifol_Airport.png" onclick="return chart(this)">Airport Diagram</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/ALBANIA/Mifol/Mifol_APC_RWY02.png" onclick="return chart(this)">APC - RWY 02</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/ALBANIA/Mifol/Mifol_APC_RWY20.png" onclick="return chart(this)">APC - RWY 20</a>
+</pre></div></div>
+
+<div id="SHKODER" class="modal"><div class="modal-content">
+<center><b>SHKODER (LASK)</center></b></center><hr><pre>
+N41&deg36.864' E021&deg31.895'
+Elevation: 75 ft
+RWY: 14/32
+TCN: 124 X TIRANA R-346 36DME
+ATIS: -
+GND: 265.4
+TWR: 242.75
+APP/DEP: 265.9
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/ALBANIA/Shkoder/Shkoder_Airport.png" onclick="return chart(this)">Airport Diagram</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/ALBANIA/Shkoder/Shkoder_APC_RWY14.png" onclick="return chart(this)">APC - RWY 14</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/ALBANIA/Shkoder/Shkoder_APC_RWY32.png" onclick="return chart(this)">APC - RWY 32</a>
+</pre></div></div>
+
+<div id="TIRANA" class="modal"><div class="modal-content">
+<center><b>TIRANA (LATI)</center></b></center><hr><pre>
+N41&deg02.511' E021&deg38.637'
+Elevation: 125 ft
+RWY: 02/20
+TCN: 124X
+ATIS: 132.275
+GND: 237.9
+TWR: 226.6
+APP/DEP: 247.6
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/ALBANIA/Tirana/Tirana_Airport.png" onclick="return chart(this)">Airport Diagram</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/ALBANIA/Tirana/Tirana_APC_RWY02.png" onclick="return chart(this)">APC - RWY 02</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/ALBANIA/Tirana/Tirana_APC_RWY20.png" onclick="return chart(this)">APC - RWY 20</a>
+</pre></div></div>
+
+<div id="BANJA_LUKA" class="modal"><div class="modal-content">
+<center><b>BANJA LUKA (LQBK)</center></b></center><hr><pre>
+N44&deg15.981' E019&deg04.543'
+Elevation: 400 ft
+RWY: 17/35
+TCN: 100X
+ATIS: 135.575
+GND: 273.2
+TWR: 252.5
+APP/DEP: 266.1
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/BOSNIA & HERZEGOVINA/Banja Luka/Banja Luka_Airport.png" onclick="return chart(this)">Airport Diagram</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/BOSNIA & HERZEGOVINA/Banja Luka/Banja Luka_APC_RWY17.png" onclick="return chart(this)">APC - RWY 17</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/BOSNIA & HERZEGOVINA/Banja Luka/Banja Luka_APC_RWY35.png" onclick="return chart(this)">APC - RWY 35</a>
+</pre></div></div>
+
+<div id="DUBRAVE" class="modal"><div class="modal-content">
+<center><b>DUBRAVE (LQTZ)</center></b></center><hr><pre>
+N43&deg50.190' E020&deg50.351'
+Elevation: 784 ft
+RWY: 12/30
+TCN: 25X
+ATIS: -
+GND: 341.9
+TWR: 351.8
+APP/DEP: 267.5
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/BOSNIA & HERZEGOVINA/Dubrave/Dubrave_Airport.png" onclick="return chart(this)">Airport Diagram</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/BOSNIA & HERZEGOVINA/Dubrave/Dubrave_APC_RWY12.png" onclick="return chart(this)">APC - RWY 12</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/BOSNIA & HERZEGOVINA/Dubrave/Dubrave_APC_RWY30.png" onclick="return chart(this)">APC - RWY 30</a>
+</pre></div></div>
+
+<div id="MOSTAR" class="modal"><div class="modal-content">
+<center><b>MOSTAR (LQMO)</center></b></center><hr><pre>
+N42&deg43.285' E019&deg34.728'
+Elevation: 175 ft
+RWY: 16/34
+TCN: 116X
+ATIS: 126.225
+GND: 318.1
+TWR: 287.7
+APP/DEP: 368.2
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/BOSNIA & HERZEGOVINA/Mostar/Mostar_Airport.png" onclick="return chart(this)">Airport Diagram</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/BOSNIA & HERZEGOVINA/Mostar/Mostar_APC_RWY16.png" onclick="return chart(this)">APC - RWY 16</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/BOSNIA & HERZEGOVINA/Mostar/Mostar_APC_RWY34.png" onclick="return chart(this)">APC - RWY 34</a>
+</pre></div></div>
+
+<div id="SARAJEVO" class="modal"><div class="modal-content">
+<center><b>SARAJEVO (LQSA)</center></b></center><hr><pre>
+N43&deg14.626' E020&deg17.946'
+Elevation: 1707 ft
+RWY: 12/30
+TCN: 114X
+ATIS: 124.125
+GND: 256.5
+TWR: 265.95
+APP/DEP: 236.4
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/BOSNIA & HERZEGOVINA/Sarajevo/Sarajevo_Airport.png" onclick="return chart(this)">Airport Diagram</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/BOSNIA & HERZEGOVINA/Sarajevo/Sarajevo_APC_RWY12.png" onclick="return chart(this)">APC - RWY 12</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/BOSNIA & HERZEGOVINA/Sarajevo/Sarajevo_APC_RWY30.png" onclick="return chart(this)">APC - RWY 30</a>
+</pre></div></div>
+
+<div id="ZELJAVA" class="modal"><div class="modal-content">
+<center><b>ZELJAVA (LYBI)</center></b></center><hr><pre>
+N44&deg11.187' E017&deg07.250'
+Elevation: 1105 ft
+RWY: 11/29
+TCN: -
+ATIS: 123.425
+GND: 241.8
+TWR: 371.4
+APP/DEP: 372.3
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/BOSNIA & HERZEGOVINA/Zeljava/Zeljava_Airport.png" onclick="return chart(this)">Airport Diagram</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/BOSNIA & HERZEGOVINA/Zeljava/Zeljava_APC_RWY11.png" onclick="return chart(this)">APC - RWY 11</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/BOSNIA & HERZEGOVINA/Zeljava/Zeljava_APC_RWY29.png" onclick="return chart(this)">APC - RWY 29</a>
+</pre></div></div>
+
+<div id="DUBROVNIK" class="modal"><div class="modal-content">
+<center><b>DUBROVNIK (LDDU)</center></b></center><hr><pre>
+N42&deg04.020' E020&deg04.188'
+Elevation: 150 ft
+RWY: 11/29
+TCN: 101X
+ATIS: 118.4
+GND: 225.6
+TWR: 255.7
+APP/DEP: 236.8
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/CROATIA/Dubrovnik/Dubrovnik_Airport.png" onclick="return chart(this)">Airport Diagram</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/CROATIA/Dubrovnik/Dubrovnik_APC_RWY11.png" onclick="return chart(this)">APC - RWY 11</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/CROATIA/Dubrovnik/Dubrovnik_APC_RWY29.png" onclick="return chart(this)">APC - RWY 29</a>
+</pre></div></div>
+
+<div id="KASTELA" class="modal"><div class="modal-content">
+<center><b>KASTELA (LDSP)</center></b></center><hr><pre>
+N42&deg58.963' E017&deg40.373'
+Elevation: 0 ft
+RWY: 05/23
+TCN: 104X
+ATIS: 125.3
+GND: 226.3
+TWR: 238.7
+APP/DEP: 260.9
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/CROATIA/Kastela/Kastela_Airport.png" onclick="return chart(this)">Airport Diagram</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/CROATIA/Kastela/Kastela_APC_RWY05.png" onclick="return chart(this)">APC - RWY 05</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/CROATIA/Kastela/Kastela_APC_RWY23.png" onclick="return chart(this)">APC - RWY 23</a>
+</pre></div></div>
+
+<div id="KLISA" class="modal"><div class="modal-content">
+<center><b>KLISA (LDOS)</center></b></center><hr><pre>
+N44&deg45.116' E021&deg06.053'
+Elevation: 292 ft
+RWY: 02L/20R - 02R/20L
+TCN: 30Y
+ATIS: -
+GND: 252.8
+TWR: 263.4
+APP/DEP: 240.6
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/CROATIA/Klisa/Klisa_Airport.png" onclick="return chart(this)">Airport Diagram</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/CROATIA/Klisa/Klisa_APC_RWY02L.png" onclick="return chart(this)">APC - RWY 02L</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/CROATIA/Klisa/Klisa_APC_RWY20R.png" onclick="return chart(this)">APC - RWY 20R</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/CROATIA/Klisa/Klisa_APC_RWY02R.png" onclick="return chart(this)">APC - RWY 02R</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/CROATIA/Klisa/Klisa_APC_RWY20L.png" onclick="return chart(this)">APC - RWY 20L</a>
+</pre></div></div>
+
+<div id="PLESO" class="modal"><div class="modal-content">
+<center><b>PLESO (LDZA)</center></b></center><hr><pre>
+N45&deg00.033' E017&deg37.430'
+Elevation: 360 ft
+RWY: 05/23
+TCN: 35Y
+ATIS: 124.575
+GND: 239.1
+TWR: 257.0
+APP/DEP: 236.9
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/CROATIA/Pleso/Pleso_Airport.png" onclick="return chart(this)">Airport Diagram</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/CROATIA/Pleso/Pleso_APC_RWY05.png" onclick="return chart(this)">APC - RWY 05</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/CROATIA/Pleso/Pleso_APC_RWY23.png" onclick="return chart(this)">APC - RWY 23</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/CROATIA/Pleso/Pleso_ILS_23.png" onclick="return chart(this)">ILS - RWY 23</a>
+</pre></div></div>
+
+<div id="PULA" class="modal"><div class="modal-content">
+<center><b>PULA (LDPL)</center></b></center><hr><pre>
+N44&deg13.015' E014&deg45.925'
+Elevation: 147 ft
+RWY: 09/27
+TCN: 49Y
+ATIS: 129.15
+GND: 270.1
+TWR: 281.3
+APP/DEP: 264.0
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/CROATIA/Pula/Pula_Airport.png" onclick="return chart(this)">Airport Diagram</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/CROATIA/Pula/Pula_APC_RWY09.png" onclick="return chart(this)">APC - RWY 09</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/CROATIA/Pula/Pula_APC_RWY27.png" onclick="return chart(this)">APC - RWY 27</a>
+</pre></div></div>
+
+<div id="RIJEKA" class="modal"><div class="modal-content">
+<center><b>RIJEKA (LDRI)</center></b></center><hr><pre>
+N44&deg27.816' E015&deg35.923'
+Elevation: 50 ft
+RWY: 14/32
+TCN: 45X
+ATIS: 127.55
+GND: 356.025
+TWR: 356.0
+APP/DEP: 356.75
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/CROATIA/Rijeka/Rijeka_Airport.png" onclick="return chart(this)">Airport Diagram</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/CROATIA/Rijeka/Rijeka_APC_RWY14.png" onclick="return chart(this)">APC - RWY 14</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/CROATIA/Rijeka/Rijeka_APC_RWY32.png" onclick="return chart(this)">APC - RWY 32</a>
+</pre></div></div>
+
+<div id="UDBINA" class="modal"><div class="modal-content">
+<center><b>UDBINA (LDRO)</center></b></center><hr><pre>
+N43&deg55.796' E017&deg03.744'
+Elevation: 2191 ft
+RWY: 13/31
+TCN: 023 X (ZEMUNIK) R-039 33DME
+ATIS: -
+GND: 390.4
+TWR: 362.9
+APP/DEP: 321.9
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/CROATIA/Udbina/Udbina_Airport.png" onclick="return chart(this)">Airport Diagram</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/CROATIA/Udbina/Udbina_APC_RWY13.png" onclick="return chart(this)">APC - RWY 13</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/CROATIA/Udbina/Udbina_APC_RWY31.png" onclick="return chart(this)">APC - RWY 31</a>
+</pre></div></div>
+
+<div id="VARAZDIN" class="modal"><div class="modal-content">
+<center><b>VARAZDIN (LDVA)</center></b></center><hr><pre>
+N45&deg30.317' E018&deg04.338'
+Elevation: 550 ft
+RWY: 02/20
+TCN: 035 Y (PLESO) R-030 34DME
+ATIS: 135.05
+GND: 241.0
+TWR: 296.8
+APP/DEP: 232.5
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/CROATIA/Varazdin/Varazdin_Airport.png" onclick="return chart(this)">Airport Diagram</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/CROATIA/Varazdin/Varazdin_APC_RWY02.png" onclick="return chart(this)">APC - RWY 02</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/CROATIA/Varazdin/Varazdin_APC_RWY20.png" onclick="return chart(this)">APC - RWY 20</a>
+</pre></div></div>
+
+<div id="ZEMUNIK" class="modal"><div class="modal-content">
+<center><b>ZEMUNIK (LDZD)</center></b></center><hr><pre>
+N43&deg29.679' E016&deg33.078'
+Elevation: 245 ft
+RWY: 14/32 - 04/22
+TCN: 23X
+ATIS: 135.5
+GND: 252.3
+TWR: 332.9
+APP/DEP: 324.8
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/CROATIA/Zemunik(Zadar)/Zemunik_Airport.png" onclick="return chart(this)">Airport Diagram</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/CROATIA/Zemunik(Zadar)/Zemunik_APC_RWY14.png" onclick="return chart(this)">APC - RWY 14</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/CROATIA/Zemunik(Zadar)/Zemunik_APC_RWY32.png" onclick="return chart(this)">APC - RWY 32</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/CROATIA/Zemunik(Zadar)/Zemunik_DEP_14.png" onclick="return chart(this)">DEP - RWY 14</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/CROATIA/Zemunik(Zadar)/Zemunik_DEP_32.png" onclick="return chart(this)">DEP - RWY 32</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/CROATIA/Zemunik(Zadar)/Zemunik_ILS_14.png" onclick="return chart(this)">ILS - RWY 14</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/CROATIA/Zemunik(Zadar)/Zemunik_TCN_32.png" onclick="return chart(this)">TACAN - RWY 32</a>
+</pre></div></div>
+
+<div id="BATAJNICA" class="modal"><div class="modal-content">
+<center><b>BATAJNICA (LYBT)</center></b></center><hr><pre>
+N44&deg16.468' E022&deg53.231'
+Elevation: 272 ft
+RWY: 14L/32R - 14R/32L
+TCN: 26X
+ATIS: -
+GND: 304.2
+TWR: 320.7
+APP/DEP: 377.3
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/FRY/Batajnica/Batajnica_Airport.png" onclick="return chart(this)">Airport Diagram</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/FRY/Batajnica/Batajnica_APC_RWY14L.png" onclick="return chart(this)">APC - RWY 14L</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/FRY/Batajnica/Batajnica_APC_RWY32R.png" onclick="return chart(this)">APC - RWY 32R</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/FRY/Batajnica/Batajnica_APC_RWY14R.png" onclick="return chart(this)">DEP - RWY 14R</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts//FRY/Batajnica/Batajnica_APC_RWY32L.png" onclick="return chart(this)">DEP - RWY 32L</a>
+</pre></div></div>
+
+<div id="DOLAC" class="modal"><div class="modal-content">
+<center><b>DOLAC (LYBR)</center></b></center><hr><pre>
+N42&deg17.871' E022&deg01.686'
+Elevation: 2260 ft
+RWY: 01/19
+TCN: 77 X (PODGORICA) R-055 41DME
+ATIS: 123.575
+GND: 232.7
+TWR: 235.5
+APP/DEP: 247.3
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/FRY/Dolac/Dolac_Airport.png" onclick="return chart(this)">Airport Diagram</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/FRY/Dolac/Dolac_APC_RWY01.png" onclick="return chart(this)">APC - RWY 01</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/FRY/Dolac/Dolac_APC_RWY19.png" onclick="return chart(this)">APC - RWY 19</a>
+</pre></div></div>
+
+<div id="KOVIN" class="modal"><div class="modal-content">
+<center><b>KOVIN ()</center></b></center><hr><pre>
+N44&deg06.877' E023&deg42.336'
+Elevation: 242 ft
+RWY: 11/29
+TCN: 57 Y (NIKOLA TESLA) R-096 33DME
+ATIS: -
+GND: 323.5
+TWR: 311.8
+APP/DEP: 270.6
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/FRY/Kovin/Kovin_Airport.png" onclick="return chart(this)">Airport Diagram</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/FRY/Kovin/Kovin_APC_RWY11.png" onclick="return chart(this)">APC - RWY 11</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/FRY/Kovin/Kovin_APC_RWY29.png" onclick="return chart(this)">APC - RWY 29</a>
+</pre></div></div>
+
+<div id="LADEVCI" class="modal"><div class="modal-content">
+<center><b>LADEVCI (LYKV)</center></b></center><hr><pre>
+N43&deg14.395' E023&deg06.902'
+Elevation: 700 ft
+RWY: 14/32
+TCN: 110X
+ATIS: -
+GND: 317.9
+TWR: 365.9
+APP/DEP: 382.5
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/FRY/Ladevci/Ladevci_Airport.png" onclick="return chart(this)">Airport Diagram</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/FRY/Ladevci/Ladevci_APC_RWY14.png" onclick="return chart(this)">APC - RWY 14</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/FRY/Ladevci/Ladevci_APC_RWY32.png" onclick="return chart(this)">APC - RWY 32</a>
+</pre></div></div>
+
+<div id="NIKOLA_TESLA" class="modal"><div class="modal-content">
+<center><b>NIKOLA TESLA (LYBE)</center></b></center><hr><pre>
+N44&deg10.110' E022&deg57.958'
+Elevation: 265 ft
+RWY: 11/29
+TCN: 57Y
+ATIS: 122.925
+GND: 254.6
+TWR: 266.35
+APP/DEP: 237.1
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/FRY/Nikola Tesla/Nikola Tesla_Airport.png" onclick="return chart(this)">Airport Diagram</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/FRY/Nikola Tesla/Nikola Tesla_APC_RWY11.png" onclick="return chart(this)">APC - RWY 11</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/FRY/Nikola Tesla/Nikola Tesla_APC_RWY29.png" onclick="return chart(this)">APC - RWY 29</a>
+</pre></div></div>
+
+<div id="PODGORICA" class="modal"><div class="modal-content">
+<center><b>PODGORICA (LYPG)</center></b></center><hr><pre>
+N41&deg53.273' E021&deg13.472'
+Elevation: 121 ft
+RWY: 05L/23R - 05R/23L
+TCN: 77X
+ATIS: -
+GND: 315.3
+TWR: 344.0
+APP/DEP: 358.825
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/FRY/Podgorica/Podgorica_Airport.png" onclick="return chart(this)">Airport Diagram</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/FRY/Podgorica/Podgorica_APC_RWY05L.png" onclick="return chart(this)">APC - RWY 05L</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/FRY/Podgorica/Podgorica_APC_RWY23R.png" onclick="return chart(this)">APC - RWY 23R</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/FRY/Podgorica/Podgorica_APC_RWY05R.png" onclick="return chart(this)">APC - RWY 05R</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/FRY/Podgorica/Podgorica_APC_RWY23L.png" onclick="return chart(this)">APC - RWY 23L</a>
+</pre></div></div>
+
+<div id="PONIKVE" class="modal"><div class="modal-content">
+<center><b>PONIKVE (LYUZ)</center></b></center><hr><pre>
+N43&deg16.782' E021&deg58.937'
+Elevation: 2733 ft
+RWY: 12/30
+TCN: 57 Y (NIKOLA TESLA) R-213 64DME
+ATIS: -
+GND: 398.2
+TWR: 270.8
+APP/DEP: 253.5
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/FRY/Ponikve/Ponikve_Airport.png" onclick="return chart(this)">Airport Diagram</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/FRY/Ponikve/Ponikve_APC_RWY12.png" onclick="return chart(this)">APC - RWY 12</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/FRY/Ponikve/Ponikve_APC_RWY30.png" onclick="return chart(this)">APC - RWY 30</a>
+</pre></div></div>
+
+<div id="SJENICA" class="modal"><div class="modal-content">
+<center><b>SJENICA (LYSJ)</center></b></center><hr><pre>
+N42&deg42.816' E022&deg19.630'
+Elevation: 3500 ft
+RWY: 11/29
+TCN: 57 Y (NIKOLA TESLA) R-190 89DME
+ATIS: -
+GND: 307.1
+TWR: 277.2
+APP/DEP: 260.1
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/FRY/Sjenica/Sjenica_Airport.png" onclick="return chart(this)">Airport Diagram</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/FRY/Sjenica/Sjenica_APC_RWY11.png" onclick="return chart(this)">APC - RWY 11</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/FRY/Sjenica/Sjenica_APC_RWY29.png" onclick="return chart(this)">APC - RWY 29</a>
+</pre></div></div>
+
+<div id="SOMBOR" class="modal"><div class="modal-content">
+<center><b>SOMBOR (LYSO)</center></b></center><hr><pre>
+N45&deg00.009' E021&deg30.008'
+Elevation: 282 ft
+RWY: 14/32
+TCN: 57 Y (NIKOLA TESLA) R-306 85DME
+ATIS: -
+GND: 230.8
+TWR: 323.3
+APP/DEP: 269.1
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/FRY/Sombor/Sombor_Airport.png" onclick="return chart(this)">Airport Diagram</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/FRY/Sombor/Sombor_APC_RWY14.png" onclick="return chart(this)">APC - RWY 14</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/FRY/Sombor/Sombor_APC_RWY32.png" onclick="return chart(this)">APC - RWY 32</a>
+</pre></div></div>
+
+<div id="ST_PAUL_THE_APOSTILE" class="modal"><div class="modal-content">
+<center><b>ST. PAUL THE APOSTILE (LWOH)</center></b></center><hr><pre>
+N40&deg48.500' E022&deg50.424'
+Elevation: 2250 ft
+RWY: 02/20
+TCN: 72X
+ATIS: -
+GND: 229.9
+TWR: 259.4
+APP/DEP: 238.9
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/FRY/St. Paul the Apostle/St. Paul the Apostle_Airport.png" onclick="return chart(this)">Airport Diagram</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/FRY/St. Paul the Apostle/St. Paul the Apostle_APC_RWY02.png" onclick="return chart(this)">APC - RWY 02</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/FRY/St. Paul the Apostle/St. Paul the Apostle_APC_RWY20.png" onclick="return chart(this)">APC - RWY 20</a>
+</pre></div></div>
+
+<div id="TIVAT" class="modal"><div class="modal-content">
+<center><b>TIVAT (LYTV)</center></b></center><hr><pre>
+N41&deg55.185' E020&deg34.079'
+Elevation: 10 ft
+RWY: 14/32
+TCN: 50X
+ATIS: -
+GND: 272.8
+TWR: 237.5
+APP/DEP: 238.5
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/FRY/Tivat/Tivat_Airport.png" onclick="return chart(this)">Airport Diagram</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/FRY/Tivat/Tivat_APC_RWY14.png" onclick="return chart(this)">APC - RWY 14</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/FRY/Tivat/Tivat_APC_RWY32.png" onclick="return chart(this)">APC - RWY 32</a>
+</pre></div></div>
+
+<div id="AKTION" class="modal"><div class="modal-content">
+<center><b>AKTION (LGPZ)</center></b></center><hr><pre>
+N38&deg43.030' E022&deg32.174'
+Elevation: 3 ft
+RWY: 08/26
+TCN: 29X
+ATIS: -
+GND: 395.2
+TWR: 243.1
+APP/DEP: 362.55
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/GREECE/Aktion/Aktion_Airbase.png" onclick="return chart(this)">Airport Diagram</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/GREECE/Aktion/Aktion_APC_RWY08.png" onclick="return chart(this)">APC - RWY 08</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/GREECE/Aktion/Aktion_APC_RWY26.png" onclick="return chart(this)">APC - RWY 26</a>
+</pre></div></div>
+
+<div id="ANNA_POLLATOU" class="modal"><div class="modal-content">
+<center><b>ANNA POLLATOU (LGKF)</center></b></center><hr><pre>
+N38&deg00.638' E022&deg06.103'
+Elevation: 140 ft
+RWY: 03/21
+TCN: 102X
+ATIS: 126.45
+GND: 249.5
+TWR: 257.9
+APP/DEP: 362.4
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/GREECE/Anna Pollatou/Anna Pollatou_Airport.png" onclick="return chart(this)">Airport Diagram</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/GREECE/Anna Pollatou/Anna Pollatou_APC_RWY03.png" onclick="return chart(this)">APC - RWY 03</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/GREECE/Anna Pollatou/Anna Pollatou_APC_RWY21.png" onclick="return chart(this)">APC - RWY 21</a>
+</pre></div></div>
+
+<div id="DIONYSIOS_SOLOMOS" class="modal"><div class="modal-content">
+<center><b>DIONYSIOS SOLOMOS (LGZA)</center></b></center><hr><pre>
+N37&deg39.904' E022&deg28.135'
+Elevation: 45 ft
+RWY: 02/20
+TCN: 45X
+ATIS: 127.05
+GND: 274.1
+TWR: 257.75
+APP/DEP: 362.7
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/GREECE/Dionysios Solomos/Dionysios Solomos_Airport.png" onclick="return chart(this)">Airport Diagram</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/GREECE/Dionysios Solomos/Dionysios Solomos_APC_RWY02.png" onclick="return chart(this)">APC - RWY 02</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/GREECE/Dionysios Solomos/Dionysios Solomos_APC_RWY20.png" onclick="return chart(this)">APC - RWY 20</a>
+</pre></div></div>
+
+<div id="KING_PYRROS" class="modal"><div class="modal-content">
+<center><b>KING PYRROS (LGIO)</center></b></center><hr><pre>
+N39&deg24.846' E022&deg40.767'
+Elevation: 1730 ft
+RWY: 14/32
+TCN: 23X
+ATIS: -
+GND: 232.9
+TWR: 257.6
+APP/DEP: 258.05
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/GREECE/King Pyrros/King Pyrros_Airport.png" onclick="return chart(this)">Airport Diagram</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/GREECE/King Pyrros/King Pyrros_APC_RWY14.png" onclick="return chart(this)">APC - RWY 14</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/GREECE/King Pyrros/King Pyrros_APC_RWY32.png" onclick="return chart(this)">APC - RWY 32</a>
+</pre></div></div>
+
+<div id="NAGYKANIZSA" class="modal"><div class="modal-content">
+<center><b>NAGYKANIZSA (LHNK)</center></b></center><hr><pre>
+N45&deg37.767' E018&deg52.254'
+Elevation: 449 ft
+RWY: 16/34
+TCN: -
+ATIS: -
+GND: 241.3
+TWR: 231.65
+APP/DEP: 273.5
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/HUNGARY/Nagykanizsa/Nagykanizsa_Airport.png" onclick="return chart(this)">Airport Diagram</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/HUNGARY/Nagykanizsa/Nagykanizsa_APC_RWY16.png" onclick="return chart(this)">APC - RWY 16</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/HUNGARY/Nagykanizsa/Nagykanizsa_APC_RWY34.png" onclick="return chart(this)">APC - RWY 34</a>
+</pre></div></div>
+
+<div id="OCSENY" class="modal"><div class="modal-content">
+<center><b>OCSENY (LHOY)</center></b></center><hr><pre>
+N45&deg30.761' E021&deg11.223'
+Elevation: 230 ft
+RWY: 16/34
+TCN: -
+ATIS: -
+GND: 229.7
+TWR: 242.1
+APP/DEP: 245.6
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/HUNGARY/Ocseny/Ocseny_Airport.png" onclick="return chart(this)">Airport Diagram</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/HUNGARY/Ocseny/Ocseny_APC_RWY16.png" onclick="return chart(this)">APC - RWY 16</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/HUNGARY/Ocseny/Ocseny_APC_RWY34.png" onclick="return chart(this)">APC - RWY 34</a>
+</pre></div></div>
+
+<div id="POGANY" class="modal"><div class="modal-content">
+<center><b>POGANY (LHPP)</center></b></center><hr><pre>
+N45&deg16.212' E020&deg26.495'
+Elevation: 520 ft
+RWY: 16/34
+TCN: 20Y
+ATIS: 126.925
+GND: 264.4
+TWR: 247.5
+APP/DEP: 253.4
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/HUNGARY/Pogany/Pogany_Airport.png" onclick="return chart(this)">Airport Diagram</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/HUNGARY/Pogany/Pogany_APC_RWY16.png" onclick="return chart(this)">APC - RWY 16</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/HUNGARY/Pogany/Pogany_APC_RWY34.png" onclick="return chart(this)">APC - RWY 34</a>
+</pre></div></div>
+
+<div id="SATORHELY" class="modal"><div class="modal-content">
+<center><b>SATORHELY ()</center></b></center><hr><pre>
+N45&deg11.999' E020&deg54.975'
+Elevation: 410 ft
+RWY: 08/26
+TCN: 20 Y (POGANY) R-103 220ME
+ATIS: -
+GND: 238.6
+TWR: 232.2
+APP/DEP: 265.1
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/HUNGARY/Satorhely/Satorhely_Airport.png" onclick="return chart(this)">Airport Diagram</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/HUNGARY/Satorhely/Satorhely_APC_RWY08.png" onclick="return chart(this)">APC - RWY 08</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/HUNGARY/Satorhely/Satorhely_APC_RWY26.png" onclick="return chart(this)">APC - RWY 26</a>
+</pre></div></div>
+
+<div id="SZEGED" class="modal"><div class="modal-content">
+<center><b>SZEGED (LHUD)</center></b></center><hr><pre>
+N45&deg27.146' E022&deg56.465'
+Elevation: 255 ft
+RWY: 02L/20R - 02R/20L
+TCN: 30Y
+ATIS: 128.8
+GND: 353.8
+TWR: 262.1
+APP/DEP: 330.9
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/HUNGARY/Szeged/Szeged_Airport.png" onclick="return chart(this)">Airport Diagram</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/HUNGARY/Szeged/Szeged_APC_RWY02L.png" onclick="return chart(this)">APC - RWY 02L</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/HUNGARY/Szeged/Szeged_APC_RWY20R.png" onclick="return chart(this)">APC - RWY 20R</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/HUNGARY/Szeged/Szeged_APC_RWY02R.png" onclick="return chart(this)">APC - RWY 02R</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/HUNGARY/Szeged/Szeged_APC_RWY20L.png" onclick="return chart(this)">APC - RWY 20L</a>
+</pre></div></div>
+
+<div id="TASZAR" class="modal"><div class="modal-content">
+<center><b>TASZAR (LHTA)</center></b></center><hr><pre>
+N45&deg37.215' E020&deg04.301'
+Elevation: 480 ft
+RWY: 16L/34R - 16R/34L
+TCN: 89X
+ATIS: -
+GND: 316.9
+TWR: 344.3
+APP/DEP: 376.8
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/HUNGARY/Taszar/Taszar_Airport.png" onclick="return chart(this)">Airport Diagram</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/HUNGARY/Taszar/Taszar_APC_RWY16L.png" onclick="return chart(this)">APC - RWY 16L</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/HUNGARY/Taszar/Taszar_APC_RWY34R.png" onclick="return chart(this)">APC - RWY 34R</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/HUNGARY/Taszar/Taszar_APC_RWY16R.png" onclick="return chart(this)">APC - RWY 16R</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/HUNGARY/Taszar/Taszar_APC_RWY34L.png" onclick="return chart(this)">APC - RWY 34L</a>
+</pre></div></div>
+
+<div id="BRNIK" class="modal"><div class="modal-content">
+<center><b>BRNIK (LJLG)</center></b></center><hr><pre>
+N45&deg26.632' E015&deg32.888'
+Elevation: 1230 ft
+RWY: 13/31
+TCN: 119X
+ATIS: 128.175
+GND: 271.9
+TWR: 246.3
+APP/DEP: 236.0
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/SLOVENIA/Brnik/Brnik_Airport.png" onclick="return chart(this)">Airport Diagram</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/SLOVENIA/Brnik/Brnik_APC_RWY13.png" onclick="return chart(this)">APC - RWY 13</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/SLOVENIA/Brnik/Brnik_APC_RWY31.png" onclick="return chart(this)">APC - RWY 31</a>
+</pre></div></div>
+
+<div id="CERKLJE_OB_KRKI" class="modal"><div class="modal-content">
+<center><b>CERKLJE OB KRKI (LJCE)</center></b></center><hr><pre>
+N45&deg09.383' E016&deg53.991'
+Elevation: 528 ft
+RWY: 08/26
+TCN: -
+ATIS: 123.625
+GND: 233.6
+TWR: 272.6
+APP/DEP: 241.5
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/SLOVENIA/Cerklje Ob Krki/Cerklje Ob Krki_Airport.png" onclick="return chart(this)">Airport Diagram</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/SLOVENIA/Cerklje Ob Krki/Cerklje Ob Krki_APC_RWY08.png" onclick="return chart(this)">APC - RWY 08</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/SLOVENIA/Cerklje Ob Krki/Cerklje Ob Krki_APC_RWY26.png" onclick="return chart(this)">APC - RWY 26</a>
+</pre></div></div>
+
+<div id="OREHOVA_VAS" class="modal"><div class="modal-content">
+<center><b>OREHOVA VAS (LJMB)</center></b></center><hr><pre>
+N45&deg40.999' E017&deg10.898'
+Elevation: 876 ft
+RWY: 16/34
+TCN: 38X
+ATIS: 123.825
+GND: 251.7
+TWR: 279.4
+APP/DEP: 268.3
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/SLOVENIA/Orehova Vas/Orehova Vas_Airport.png" onclick="return chart(this)">Airport Diagram</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/SLOVENIA/Orehova Vas/Orehova Vas_APC_RWY16.png" onclick="return chart(this)">APC - RWY 16</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/SLOVENIA/Orehova Vas/Orehova Vas_APC_RWY34.png" onclick="return chart(this)">APC - RWY 34</a>
+</pre></div></div>
+
+<div id="SECOVLJE" class="modal"><div class="modal-content">
+<center><b>SECOVLJE (LJPZ)</center></b></center><hr><pre>
+N44&deg44.421' E014&deg22.455'
+Elevation: 160 ft
+RWY: 16/34
+TCN: 98Y
+ATIS: -
+GND: 280.1
+TWR: 229.15
+APP/DEP: 233.1
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/SLOVENIA/Secovlje/Secovlje_Airport.png" onclick="return chart(this)">Airport Diagram</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/SLOVENIA/Secovlje/Secovlje_APC_RWY16.png" onclick="return chart(this)">APC - RWY 16</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/SLOVENIA/Secovlje/Secovlje_APC_RWY34.png" onclick="return chart(this)">APC - RWY 34</a>
+</pre></div></div>
+
+<div id="SLOVENJ_GRADEC" class="modal"><div class="modal-content">
+<center><b>SLOVENJ GRADEC (LJSG)</center></b></center><hr><pre>
+N45&deg41.538' E016&deg23.900'
+Elevation: 1450 ft
+RWY: 16/34
+TCN: 119 X (BRNIK) R-068 38DME
+ATIS: 123.95
+GND: 226.8
+TWR: 284.3
+APP/DEP: 389.6
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/SLOVENIA/Slovenj Gradec/Slovenj Gradec_Airport.png" onclick="return chart(this)">Airport Diagram</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/SLOVENIA/Slovenj Gradec/Slovenj Gradec_APC_RWY16.png" onclick="return chart(this)">APC - RWY 16</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/SLOVENIA/Slovenj Gradec/Slovenj Gradec_APC_RWY34.png" onclick="return chart(this)">APC - RWY 34</a>
+</pre></div></div>
+
+<!-- Airstrips -->
+<div id="LUSHNJE" class="modal"><div class="modal-content">
+<center><b>AIRSTRIP (LUSHNJE)</center></b></center><hr><pre>
+N40&deg38.901' E021&deg35.015'
+Elevation: 52 ft
+RWY: 18/36
+TCN: 124 X TIRANA R-187 24DME
+ATIS: -
+GND: 256.6
+TWR: 283.1
+APP/DEP: 251.8
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/ALBANIA/Lushnje (Airstrip)/Lushnje_Airport.png" onclick="return chart(this)">Airport Diagram</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/ALBANIA/Lushnje (Airstrip)/Lushnje_APC_RWY18.png" onclick="return chart(this)">APC - RWY 18</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/ALBANIA/Lushnje (Airstrip)/Lushnje_APC_RWY36.png" onclick="return chart(this)">APC - RWY 36</a>
+</pre></div></div>
+
+<div id="BRCKO" class="modal"><div class="modal-content">
+<center><b>AIRSTRIP (BRCKO)</center></b></center><hr><pre>
+N44&deg17.403' E020&deg57.167'
+Elevation: 288 ft
+RWY: 09/27
+TCN: 25 X (TUZLA) R-348 28DME
+ATIS: -
+GND: 295.3
+TWR: 263.1
+APP/DEP: 258.4
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/BOSNIA & HERZEGOVINA/Brcko (Airstrip)/Brcko_Airport.png" onclick="return chart(this)">Airport Diagram</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/BOSNIA & HERZEGOVINA/Brcko (Airstrip)/Brcko_APC_RWY09.png" onclick="return chart(this)">APC - RWY 09</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/BOSNIA & HERZEGOVINA/Brcko (Airstrip)/Brcko_APC_RWY27.png" onclick="return chart(this)">APC - RWY 27</a>
+</pre></div></div>
+
+<div id="JELAS" class="modal"><div class="modal-content">
+<center><b>AIRSTRIP (JELAS)</center></b></center><hr><pre>
+N44&deg28.719' E019&deg55.321'
+Elevation: 288 ft
+RWY: 09/27
+TCN: -
+ATIS: -
+GND: 244.9
+TWR: 276.8
+APP/DEP: 250.2
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/BOSNIA & HERZEGOVINA/Jelas (Airstrip)/Jelas_Airport.png" onclick="return chart(this)">Airport Diagram</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/BOSNIA & HERZEGOVINA/Jelas (Airstrip)/Jelas_APC_RWY09.png" onclick="return chart(this)">APC - RWY 09</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/BOSNIA & HERZEGOVINA/Jelas (Airstrip)/Jelas_APC_RWY27.png" onclick="return chart(this)">APC - RWY 27</a>
+</pre></div></div>
+
+<div id="BREZOVAC" class="modal"><div class="modal-content">
+<center><b>AIRSTRIP (BREZOVAC)</center></b></center><hr><pre>
+N45&deg07.245' E018&deg37.048'
+Elevation: 310 ft
+RWY: 18/36
+TCN: 35 Y (PLESO) R-081 43DME
+ATIS: -
+GND: 247.4
+TWR: 294.8
+APP/DEP: 231.7
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/CROATIA/Brezovac (Airstrip)/Brezovac_Airport.png" onclick="return chart(this)">Airport Diagram</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/CROATIA/Brezovac (Airstrip)/Brezovac_APC_RWY18.png" onclick="return chart(this)">APC - RWY 18</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/CROATIA/Brezovac (Airstrip)/Brezovac_APC_RWY36.png" onclick="return chart(this)">APC - RWY 36</a>
+</pre></div></div>
+
+<div id="GROBNICKO_POLJE" class="modal"><div class="modal-content">
+<center><b>AIRSTRIP (GROBNICKO POLJE)</center></b></center><hr><pre>
+N44&deg37.879' E015&deg32.966'
+Elevation: 777 ft
+RWY: 09/27
+TCN: 23 X (ZEMUNIK) R-325 83DME
+ATIS: 123.475
+GND: 263.3
+TWR: 241.9
+APP/DEP: 249.05
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/CROATIA/Grobnicko Polje (Airstrip)/Grobnicko Polje_Airport.png" onclick="return chart(this)">Airport Diagram</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/CROATIA/Grobnicko Polje (Airstrip)/Grobnicko Polje_APC_RWY09.png" onclick="return chart(this)">APC - RWY 09</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/CROATIA/Grobnicko Polje (Airstrip)/Grobnicko Polje_APC_RWY27.png" onclick="return chart(this)">APC - RWY 27</a>
+</pre></div></div>
+
+<div id="KARLOVAC" class="modal"><div class="modal-content">
+<center><b>AIRSTRIP (KARLOVAC)</center></b></center><hr><pre>
+N44&deg41.058' E016&deg57.340'
+Elevation: 550 ft
+RWY: 18/36
+TCN: -
+ATIS: -
+GND: 291.5
+TWR: 229.1
+APP/DEP: 273.8
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/CROATIA/Karlovac (Airstrip)/Karlovac_Airport.png" onclick="return chart(this)">Airport Diagram</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/CROATIA/Karlovac (Airstrip)/Karlovac_APC_RWY18.png" onclick="return chart(this)">APC - RWY 18</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/CROATIA/Karlovac (Airstrip)/Karlovac_APC_RWY36.png" onclick="return chart(this)">APC - RWY 36</a>
+</pre></div></div>
+
+<div id="SEPURINE" class="modal"><div class="modal-content">
+<center><b>AIRSTRIP (SEPURINE)</center></b></center><hr><pre>
+N43&deg36.451' E016&deg20.744'
+Elevation: 60 ft
+RWY: 09/27
+TCN: 23 X (ZEMUNIK) R-306 11DME
+ATIS: -
+GND: 234.7
+TWR: 293.6
+APP/DEP: 251.6
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/CROATIA/Sepurine (Airstrip)/Sepurine_Airport.png" onclick="return chart(this)">Airport Diagram</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/CROATIA/Sepurine (Airstrip)/Sepurine_APC_RWY09.png" onclick="return chart(this)">APC - RWY 09</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/CROATIA/Sepurine (Airstrip)/Sepurine_APC_RWY27.png" onclick="return chart(this)">APC - RWY 27</a>
+</pre></div></div>
+
+<div id="DANILOVGRAD" class="modal"><div class="modal-content">
+<center><b>AIRSTRIP (DANILOVGRAD)</center></b></center><hr><pre>
+N42&deg02.153' E021&deg07.245'
+Elevation: 180 ft
+RWY: 09/27
+TCN: 77 X (PODGORICA) R-331 11DME
+ATIS: -
+GND: 250.1
+TWR: 281.2
+APP/DEP: 258.9
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/FRY/Danilovgrad (Airstrip)/Danilovgrad_Airport.png" onclick="return chart(this)">Airport Diagram</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/FRY/Danilovgrad (Airstrip)/Danilovgrad_APC_RWY09.png" onclick="return chart(this)">APC - RWY 09</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/FRY/Danilovgrad (Airstrip)/Danilovgrad_APC_RWY27.png" onclick="return chart(this)">APC - RWY 27</a>
+</pre></div></div>
+
+<div id="GORAZDE" class="modal"><div class="modal-content">
+<center><b>AIRSTRIP (GORAZDE)</center></b></center><hr><pre>
+N42&deg59.809' E021&deg09.288'
+Elevation: 2475 ft
+RWY: 09/27
+TCN: 114 X {SARAJEVO) R-111 42DME
+ATIS: -
+GND: 239.7
+TWR: 292.6
+APP/DEP: 245.7
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/FRY/Gorazde (Airstrip)/Gorazde_Airport.png" onclick="return chart(this)">Airport Diagram</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/FRY/Gorazde (Airstrip)/Gorazde_APC_RWY09.png" onclick="return chart(this)">APC - RWY 09</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/FRY/Gorazde (Airstrip)/Gorazde_APC_RWY27.png" onclick="return chart(this)">APC - RWY 27</a>
+</pre></div></div>
+
+<div id="SABAC" class="modal"><div class="modal-content">
+<center><b>AIRSTRIP (SABAC)</center></b></center><hr><pre>
+N44&deg08.512' E022&deg04.907'
+Elevation: 209 ft
+RWY: 18/36
+TCN: 57 Y (NIKOLA TESLA) R-267 38DME
+ATIS: -
+GND: 249.4
+TWR: 256.4
+APP/DEP: 248.7
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/FRY/Sabac (Airstrip)/Sabac_Airport.png" onclick="return chart(this)">Airport Diagram</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/FRY/Sabac (Airstrip)/Sabac_APC_RWY18.png" onclick="return chart(this)">APC - RWY 18</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/FRY/Sabac (Airstrip)/Sabac_APC_RWY36.png" onclick="return chart(this)">APC - RWY 36</a>
+</pre></div></div>
+
+<div id="BLOSKA_POLICA" class="modal"><div class="modal-content">
+<center><b>AIRSTRIP (BLOSKA POLICA)</center></b></center><hr><pre>
+N45&deg06.977' E06&deg40.567'
+Elevation: 508 ft
+RWY: 09/27
+TCN: 119 X (BRNIK) R-165 27DME
+ATIS: 118.525
+GND: 246.8
+TWR: 295.8
+APP/DEP: 290.4
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/SLOVENIA/Bloska Polica (Airstrip)/Bloska Polica_Airport.png" onclick="return chart(this)">Airport Diagram</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/SLOVENIA/Bloska Polica (Airstrip)/Bloska Polica_APC_RWY09.png" onclick="return chart(this)">APC - RWY 09</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/SLOVENIA/Bloska Polica (Airstrip)/Bloska Polica_APC_RWY27.png" onclick="return chart(this)">APC - RWY 27</a>
+</pre></div></div>
+
+<div id="NOVO_MESTO" class="modal"><div class="modal-content">
+<center><b>AIRSTRIP (NOVO MESTO)</center></b></center><hr><pre>
+N45&deg06.977' E06&deg40.567'
+Elevation: 508 ft
+RWY: 09/27
+TCN: -
+ATIS: 118.525
+GND: 246.8
+TWR: 295.8
+APP/DEP: 290.4
+
+<b>Charts</b><hr><a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/SLOVENIA/Novo Mesto (Airstrip)/Novo Mesto_Airport.png" onclick="return chart(this)">Airport Diagram</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/SLOVENIA/Novo Mesto (Airstrip)/Novo Mesto_APC_RWY09.png" onclick="return chart(this)">APC - RWY 09</a>
+<a href="https://cdn.falcon-bms.com/maps/02_Balkans/charts/SLOVENIA/Novo Mesto (Airstrip)/Novo Mesto_APC_RWY27.png" onclick="return chart(this)">APC - RWY 27</a>
+</pre></div></div>
+
+
+<!-- VORTACs/TACAN -->
+<div id="AMENDOLA_TACAN" class="modal"><div class="modal-content">
+<center><b>AMENDOLA TACAN</center></b></center><hr><pre>
+Channel: 99Y  Type: A
+Range: 40Nm</pre>
+</div></div>
+
+<div id="AVIANO_TACAN" class="modal"><div class="modal-content">
+<center><b>AVIANO TACAN</center></b></center><hr><pre>
+Channel: 111X  Type: A
+Range: 40Nm</pre>
+</div></div>
+
+<div id="CERVIA_TACAN" class="modal"><div class="modal-content">
+<center><b>CERVIA TACAN</center></b></center><hr><pre>
+Channel: 83X  Type: A
+Range: 40Nm</pre>
+</div></div>
+
+<div id="CHIOGGIA_TACAN" class="modal"><div class="modal-content">
+<center><b>CHIOGGIA TACAN</center></b></center><hr><pre>
+Channel: 88X  Type: A
+Range: 80Nm</pre>
+</div></div>
+
+<div id="GIOIA_DEL_COLLE_TACAN" class="modal"><div class="modal-content">
+<center><b>GIOIA DEL COLLE TACAN</center></b></center><hr><pre>
+Channel: 125X  Type: E
+Range: 150Nm</pre>
+</div></div>
+
+<div id="ISTRANA_TACAN" class="modal"><div class="modal-content">
+<center><b>ISTRANA TACAN</center></b></center><hr><pre>
+Channel: 54X  Type: E
+Range: 220Nm</pre>
+</div></div>
+
+<div id="RIVOLTO_TACAN" class="modal"><div class="modal-content">
+<center><b>RIVOLTO TACAN</center></b></center><hr><pre>
+Channel: 37X  Type: E
+Range: 40Nm</pre>
+</div></div>
+
+<div id="SIGONELLA_TACAN" class="modal"><div class="modal-content">
+<center><b>SIGONELLA TACAN</center></b></center><hr><pre>
+Channel: 53X  Type: E
+Range: 200Nm</pre>
+</div></div>
+
+<div id="PESCARA_TACAN" class="modal"><div class="modal-content">
+<center><b>PESCARA VORTAC</center></b></center><hr><pre>
+Channel: 106X  Type: E
+Range: 80Nm</pre>
+</div></div>
+
+<div id="VICENZA_TACAN" class="modal"><div class="modal-content">
+<center><b>VICENZA VORTAC</center></b></center><hr><pre>
+Channel: 81X  Type: E
+Range: 80Nm</pre>
+</div></div>
+
+<!-- Other Menus and popups -->
+<div id="SIDC" class="modal" ondrop="dropHandler(event);" ondragover="allowDrop(event)"><div class="modal-content">
+  <center><b>C2 Symbols</center></b></center>
+  <br><b>Symbol Set</b><hr>
+  <table width="95%">
+    <tr>
+      <td align="left" >Identity</td>
+      <td align="left"><select name="sidc-identity" id="sidc-identity" onchange="selectSymbols(this);" style="width:140px">
+        <option value="1006">Hostile</option>
+        <option value="1003">Friend</option>
+      </select></td>
+    </tr>
+    <tr>
+      <td align="left" >Type</td>
+      <td align="left">  <select name="sidc-set" id="sidc-set" onchange="selectSymbols(this);" style="width:140px">
+        <option value="100016">Land Unit</option>
+        <option value="010000">Air</option>
+        <option value="300000">Sea Surface</option>
+      </select></td>
+    </tr>
+   </table>
+
+<br><b>Identification</b><hr>
+  <table width="95%">
+  <tr>
+    <td align="left">Entity</td>
+    <td align="left"><select name="sidc-entity" id="sidc-entity" onchange="selectSymbols(this);" style="width:140px">
+    </select></td>
+    <tr>
+      <td align="left" >Sector 1</td>
+      <td align="left"><select name="sidc-sec1" id="sidc-sec1" onchange="selectSymbols(this);" style="width:140px">
+        <option value="00">Unspecified</option>
+        <option value="00">Airmobile</option>
+        <option value="41">Multi Rocket Launcher</option>
+      </select></td>
+    </tr>
+    <tr>
+      <td align="left" >Sector 2</td>
+      <td align="left"><select name="sidc-sec2" id="sidc-sec2" onchange="selectSymbols(this);" style="width:140px">
+        <option value="00">Unspecified</option>
+      </select></td>
+    </tr>
+  </table>
+  <br><b>Symbol Identification Code</b><hr><br>
+  <table>
+    <tr>
+    <td align="left">
+      <img src="../common/assets/10061000161211000000.ico" id="sidc-symbol" width="32" height="32" alt="symbol">
+    </td>
+    <td align="right">
+      <label>&nbsp;</label>
+      <label id="sidc-val" style='font-size:95%''>10061000161211000000</label>
+    </td>
+    </tr>
+  </table>
+  <center><a href="https://www.jcs.mil/Portals/36/Documents/Doctrine/Other_Pubs/ms_2525d.pdf" style='font-size:70%' target="_blank">MIL-STD-2525D</a></center>
+</div></div>
+
+
+<div id="STYLE" class="modal" ondrop="dropHandler(event);" ondragover="allowDrop(event)"><div class="modal-content">
+  <center><b>Whiteboard</center></b></center>
+
+<br><b>Pencil</b><hr>
+  <table width="95%">
+  <tr>
+    <td align="right" >Line</td>
+    <td align="center"><select name="line-style" id="line-style" onchange="selectStyle(this);">
+      <option value="0">Solid</option>
+      <option value="1">Dash</option>
+      <option value="2">Dots</option>
+    </select></td>
+    <td align="center"><input type="color" name="line-color" id="line-color" value="#000000" onchange="selectStyle(this);" ></td>
+    <td align="center"><input type="number" name="line-width" id="line-width" value="2"  min="1" max="30" onchange="selectStyle(this);" style="width:40px"></td>
+  </tr>
+  <tr>
+    <td align="right">Fill</td>
+    <td align="center"><select name="fill-style" id="fill-style" onchange="selectStyle(this);">
+      <option value="0">None</option>
+      <option value="1">Solid</option>
+    </select></td>
+    <td align="center"><input type="color" name="fill-color" id="fill-color" value="#000000" onchange="selectStyle(this);"></td>
+    <td align="center"></td>
+  </tr>
+  </table>
+  <br><b>Opacity</b><hr>
+  <table width="95%">
+  <tr>
+  <td align="center"><input type="range" name="opacity-range" id="opacity-range" value=20 min="0" max="100" onchange="selectStyle(this);">
+  </td>
+  <td align="right"><input type="number" name="opacity-num" id="opacity-num" value=20 min="0" max="100" onchange="selectStyle(this);" style="width:40px">
+  </td>
+  </tr>
+  </table>
+  <br><b>Eraser</b><hr>
+  <table width="95%">
+    <tr>
+      <td align="center"><input type="range" name="erase-rng" id="erase-rng" value=16 min="1" max="100" onchange="selectStyle(this);">
+      </td>
+      <td align="right"><input type="number" name="erase-num" id="erase-num" value=16 min="1" max="100" onchange="selectStyle(this);" style="width:40px">
+      </td>
+      </tr>
+      </table>
+  </table>
+  </div></div>
+
+  <div id="CONFIG" class="modal" ondrop="dropHandler(event);" ondragover="allowDrop(event)">
+    <div class="modal-content">
+      <!-- Tabs -->
+      <div class="tab">
+        <button class="tablinks" name="Settings" onclick="openTab('Settings')">Settings</button>
+        <button class="tablinks" name="Connections" onclick="openTab('Connections')">Connectivity</button>
+      </div><br>
+
+      <!-- Tab Content with Settings as default display -->
+      <div id="Settings" class="tabcontent" ondrop="dropHandler(event);" ondragover="allowDrop(event)">
+      <b>Common</b><hr>
+      <input type="checkbox" id="unit" name="imperial" onchange="selectUnit(this);">
+      <label for="unit">Imperial Units</label><br>
+
+      <br><b>Chart</b><hr>
+      <table width="95%">
+      <tr><td><label for="alt-select">Wind Alt.</label></td>
+      <td><select name="altitudes" id="alt-select" onchange="selectAltitude(this);" style="width:110px">
+        <option value="0">0</option>
+        <option value="1">3000</option>
+        <option value="2">6000</option>
+        <option value="3">9000</option>
+        <option value="4">12000</option>
+        <option value="5">18000</option>
+        <option value="6">24000</option>
+        <option value="7">30000</option>
+        <option value="8">40000</option>
+        <option value="9">50000</option>
+      </select></td></tr>
+      <tr><td><label for="wx-select">Weather</label></td>
+      <td><select name="weather" id="wx-select" onchange="selectChart(this);" style="width:110px">
+        <option value="2">Temperature</option>
+        <option value="1">Winds</option>
+        <option value="3">Isobar</option>
+        <option value="0">Doppler</option>
+        <option value="4">Clouds</option>
+      </select></td></tr>
+      <tr><td><label for="flt-select">Map Filter</label></td>
+        <td><select name="filter" id="flt-select" onchange="selectFilter(this);" style="width:110px">
+          <option value="0">Default</option>
+          <option value="3">Night Mode</option>
+          <option value="1">Grayscale</option>
+          <option value="2">Sepia</option>
+        </select></td></tr>
+      </table>
+
+      <br><b>Visibility</b><hr>
+      <input type="checkbox" id="bullseye_hide" name="hide_be" value="on" onchange="selectVisibility(this);">
+      <label for="bullseye_hide">Hide Bullseye</label><br>
+      <input type="checkbox" id="mission_hide" name="hide_ms" value="on" onchange="selectVisibility(this);">
+      <label for="mission_hide">Hide Mission</label><br>
+      <input type="checkbox" id="weather_hide" name="hide_wx" value="on" onchange="selectVisibility(this);">
+      <label for="weather_hide">Hide Weather</label><br>
+      <input type="checkbox" id="whitebrd_hide" name="hide_wb" value="on" onchange="selectVisibility(this);">
+      <label for="whitebrd_hide">Hide Whiteboard</label><br>
+      <input type="checkbox" id="coordinates_hide" name="hide_xy" checked value="on" onchange="selectVisibility(this);">
+      <label for="coordinates_hide">Hide Coordinates</label><br><br>
+      <button><img src="../common/assets/icon_save.png"  id="save" width="32" height="32" alt="save" onclick="button(event)"></button>
+      <button><img src="../common/assets/icon_clear.png" id="clear" width="32" height="32" alt="clear" onclick="button(event)"></button>
+      <button><img src="../common/assets/icon_reset.png" id="reset" width="32" height="32" alt="reset" onclick="button(event)"></button>
+      </div>
+
+      <!-- Connectivity TAB -->
+      <div id="Connections" class="tabcontent">
+        <b>Collaboration</b><hr>
+        <input type="checkbox" id="imcs-secure" value="on" onchange="changedIMCS(this);"><label for="secure">&nbspSecure Connection</label><br><br>
+        <table width="95%">
+          <tr><td align="right">Callsign</td><td><input type="text" id="imcs-callsign" name="callsign" onchange="changedIMCS(this);" style="width:130px"></td></tr>
+          <tr><td align="right">Session</td><td><input type="text" id="imcs-session" name="session" onchange="changedIMCS(this);" style="width:130px"></td></tr>
+          <tr><td align="right">Address</td><td><input type="text" id="imcs-host" name="host" value="collab.falcon-bms.com" onchange="changedIMCS(this);"  style="width:130px"></td></tr>
+          <tr><td align="right" valign="top">Port</td><td><input type="text" id="imcs-port" name="port" value="443" onchange="changedIMCS(this);"  style="width:50px"><br>
+            <button id="imcs-connection" style="float: right; width:50px"" onclick="button(event)">&nbspJoin&nbsp</button></td></tr>
+        </table>
+        <br>
+        <b>Global Forecast System</b><hr>
+        <table width="95%">
+          <tr><td align="right">Date</td><td>
+            <select id="gfs-date" name="date" style="width:100px">
+              <option value="20230531">May 31, 2023</option>
+          </select></td></tr></td></tr>
+          <tr><td align="right">Cycle</td><td>
+            <select name="cycle" id="gfs-cycle" name="cycle" style="width:64px">
+              <option value="00">0000Z</option>
+              <option value="06">0600Z</option>
+              <option value="12">1200Z</option>
+              <option value="18">1800Z</option>
+            </select></td></tr>
+          <tr><td align="right" valign="top">Forecast</td><td><input type="number" id="gfs-off" name="offset"  min="1" max="384" value="1" step="1" required style="width:60px"><br>
+            <!-- <button id="gfs-fetch" style="float: right;" onclick="button(event)">&nbspFetch&nbsp</button></td></tr>-->
+        </table>
+        <br>
+        <button><img src="../common/assets/icon_download.png"  id="download" width="32" height="32" alt="download" onclick="button(event)"></button>
+        <button><img src="../common/assets/icon_save.png"      id="export"   width="32" height="32" alt="export"   onclick="button(event)"></button>
+      </div> <!-- TAB end -->
+    </div>
+  </div>
+
+  <div id="ROUTE" class="modal" ondrop="dropHandler(event);" ondragover="allowDrop(event)">
+  <div class="modal-content">
+    <!-- Tabs -->
+    <div class="tab">
+      <button class="tablinks" name="Route" onclick="openTab('Route')">Route</button>
+      <button class="tablinks" name="Radio" onclick="openTab('Radio')">Radio</button>
+      <button class="tablinks" name="Mission" onclick="openTab('Mission')">Mission</button>
+    </div><br>
+
+    <!-- Tab Content with Route as default display -->
+    <div id="Route" class="tabcontent">
+      <table width="95%">
+        <tr><td align="left"><label id="stpt-lab">STPT</label></td><td align="left"><label id="stpt-val">1</label></td>
+            <td align="right">
+              <img src="../common/assets/icon_left.png" id="left" width="16" height="16" alt="left" onclick="button(event)">
+              <img src="../common/assets/icon_right.png" id="right" width="16" height="16" alt="right" onclick="button(event)">
+          </td></tr>
+      </table>
+      <hr><br>
+      <center>
+      <label id="lat-val">0</label>&nbsp&nbsp<label id="long-val">0</label><br>
+      <table width="100%">
+        <tr><td><br></td></tr>
+        <tr><th align="right">TOS</th><td align="left">
+          <select name="hrs" id="tos-hrs" onchange="updatedTOS();"><option value="0">09</option></select>
+          <select name="min" id="tos-min" onchange="updatedTOS();"><option value="0">00</option></select>
+          <select name="sec" id="tos-sec" onchange="updatedTOS();"><option value="0">00</option></select>
+          <input type="text" id="day-val" name="day" value="0" readonly hidden>
+        </td></tr>
+        <tr><th align="right">TAS</th><td align="left"><input style="width:65px;" type="number" id="tas-val" name="tas" min="150" max="600" value="350" step="1" onchange=updatedSpeed() required> kts</td></tr>
+        <tr><th align="right">ALT</th><td align="left"><input style="width:65px;" type="number" id="alt-val" name="alt" min="0" max="45000" value="24000" step="100" onchange=updatedAltitude() required> ft</td></tr>
+        </table><br>
+        <table>
+        <tr><th align="right">Track&nbsp</th><td align="left"><label id="trk-val">0&deg</label></td></tr>
+        <tr><td><br></td></tr>
+        <tr><th align="right">Formatation</th><td align="left">
+          <select name="formation" id="formation-select" onchange="selectFormation(this);" style="width:98px">
+            <option value="0">Arrowhead</option>
+            <option value="1">Box</option>
+            <option value="2">Fighting Wing</option>
+            <option value="3">Finger Four</option>
+            <option value="4">Fluid Four</option>
+            <option value="5">Ladder</option>
+            <option value="6">Line Abreast</option>
+            <option value="7">ResCell</option>
+            <option value="8">Route</option>
+            <option value="9">Spread</option>
+            <option value="10">Stack</option>
+            <option value="11">Trail</option>
+            <option value="12">Wedge</option>
+          </select>
+        <tr><td align="right"><b>Enroute</b></td><td align="left">
+          <select name="enroute" id="enroute-select" onchange="selectEnroute(this);" style="width:98px">
+            <option value="0">Nav</option>
+            <option value="1">SEAD</option>
+          </select>
+        </td></tr>
+        <tr><th align="right">Action</th><td align="left">
+          <select name="action" id="action-select" onchange="selectAction(this);" style="width:98px">
+            <option value="0">Nav</option>
+            <option value="1">Takeoff</option>
+            <option value="2">Push</option>
+            <option value="3">Split</option>
+            <option value="4">Refuel</option>
+            <option value="5">Rearm</option>
+            <option value="6">Pickup</option>
+            <option value="7">Land</option>
+            <option value="8">Holding Pt</option>
+            <option value="9">Contact</option>
+            <option value="10">Escort</option>
+            <option value="11">Sweep</option>
+            <option value="12">CAP</option>
+            <option value="13">Intercept</option>
+            <option value="14">Grnd Attack</option>
+            <option value="15">Surf Attack</option>
+            <option value="16">S&D</option>
+            <option value="17">Strike</option>
+            <option value="18">Bomb</option>
+            <option value="19">SEAD</option>
+            <option value="20">ELINT</option>
+            <option value="21">Recon</option>
+            <option value="22">Rescue</option>
+            <option value="23">ASW</option>
+            <option value="24">Fuel</option>
+            <option value="25">Air Drop</option>
+            <option value="26">Jamming</option>
+          </select>
+        </td></tr>
+        <tr><th align="right">Duration</th><td align="left"><input type="number" id="dur-val" onchange="selectDuration(this);" name="dur" min="0" max="120" value="0" step="1" required> min</td></tr>
+      </table><br>
+      </center>
+      <hr><br>
+      <center><label id="options-val">No Options.</label></center>
+      <br>
+    </div>
+
+    <div id="Radio" class="tabcontent">
+      <table width="100%" style='font-size:95%'>
+        <tr><th>PRESET</th><th>UHF</th><th>VHF</th></tr>
+        <tr><td align="left">01 OPS</td><td align="center"><label id="UHF_1">000.000</label></td><td align="center"><label id="VHF_1">000.000</label></td></tr>
+        <tr><td align="left">02 GND</td><td align="center"><label id="UHF_2">000.000</label></td><td align="center"><label id="VHF_2">000.000</label></td></tr>
+        <tr><td align="left">03 TWR</td><td align="center"><label id="UHF_3">000.000</label></td><td align="center"><label id="VHF_3">000.000</label></td></tr>
+        <tr><td align="left">04 DEP</td><td align="center"><label id="UHF_4">000.000</label></td><td align="center"><label id="VHF_4">000.000</label></td></tr>
+        <tr><td align="left">05 CHK</td><td align="center"><label id="UHF_5">000.000</label></td><td align="center"><label id="VHF_5">000.000</label></td></tr>
+        <tr><td align="left">06 TAC</td><td align="center"><label id="UHF_6">000.000</label></td><td align="center"><label id="VHF_6">000.000</label></td></tr>
+        <tr><td align="left">07 APP</td><td align="center"><label id="UHF_7">000.000</label></td><td align="center"><label id="VHF_7">000.000</label></td></tr>
+        <tr><td align="left">08 TWR</td><td align="center"><label id="UHF_8">000.000</label></td><td align="center"><label id="VHF_8">000.000</label></td></tr>
+        <tr><td align="left">09 GND</td><td align="center"><label id="UHF_9">000.000</label></td><td align="center"><label id="VHF_9">000.000</label></td></tr>
+        <tr><td align="left">10 APP</td><td align="center"><label id="UHF_10">000.000</label></td><td align="center"><label id="VHF_10">000.000</label></td></tr>
+        <tr><td align="left">11 TWR</td><td align="center"><label id="UHF_11">000.000</label></td><td align="center"><label id="VHF_11">000.000</label></td></tr>
+        <tr><td align="left">12 GND</td><td align="center"><label id="UHF_12">000.000</label></td><td align="center"><label id="VHF_12">000.000</label></td></tr>
+        <tr><td align="left">13 AAR</td><td align="center"><label id="UHF_13">000.000</label></td><td align="center"><label id="VHF_13">000.000</label></td></tr>
+        <tr><td align="left">14 CMN</td><td align="center"><label id="UHF_14">000.000</label></td><td align="center"><label id="VHF_14">000.000</label></td></tr>
+        <tr><td align="left">15 FLT1</td><td align="center"><label id="UHF_15">000.000</label></td><td align="center"><label id="VHF_15">000.000</label></td></tr>
+        <tr><td align="left">16 FLT2</td><td align="center"><label id="UHF_16">000.000</label></td><td align="center"><label id="VHF_16">000.000</label></td></tr>
+        <tr><td align="left">17 FLT3</td><td align="center"><label id="UHF_17">000.000</label></td><td align="center"><label id="VHF_17">000.000</label></td></tr>
+        <tr><td align="left">18 FLT4</td><td align="center"><label id="UHF_18">000.000</label></td><td align="center"><label id="VHF_18">000.000</label></td></tr>
+        <tr><td align="left">19 FLT5</td><td align="center"><label id="UHF_19">000.000</label></td><td align="center"><label id="VHF_19">000.000</label></td></tr>
+        <tr><td align="left">20 LSO</td><td align="center"><label id="UHF_20">000.000</label></td><td align="center"><label id="VHF_20">000.000</label></td></tr>
+      </table>
+    </div>
+
+    <div id="Mission" class="tabcontent">
+      <b>Flight&nbsp;<label id="flt-num">1</label></b><hr>
+      <table width="100%" style='font-size:95%'>
+        <tr><td align="right">Total Distance</td><td align="right"><label id="flt-dist">0</label></td><td>&nbspNM</td></tr>
+        <tr><td align="right">Flight Duration</td><td align="right"><label id="flt-time">0</label></td><td>&nbsphrs</td></tr>
+        <tr><td align="right">Estimated Fuel</td><td align="right"><label id="flt-fuel">0</label></td><td>&nbsplbs</td></tr>
+        <tr><td align="right">Bingo</td><td align="right"><label id="flt-bingo">0</label></td><td>&nbsplbs</td></tr>
+        <tr><td align="right">Playtime</td><td align="right"><label id="flt-play">0</label></td><td>&nbspmin</td></tr>
+      </table><br>
+      <b>Package&nbsp;</b><input style="width:30px; background-color: #f5f5f5; border: none; font-weight:bold;" type="number" id="pkg-num" onchange="selectPackage(this);" name="package" min="1" max="2" value="1" step="1" required><hr>
+      <table width="100%" style='font-size:95%'>
+        <tr><th align="right">Flight: </th>
+          <td align="left">
+          <select name="flight" id="pkg-flight" onchange="selectPackage(this);" style="width:90px">
+          </select>
+          <select name="seat" id="pkg-seat" onchange="selectPackage(this);" style="width:40px">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+          </select>
+        </td></tr>
+        <tr><th align="right">Chx:</th><td align="left">
+          <select name="channel" id="pkg-chx" onchange="selectPackage(this);" style="width:90px">
+            <option value="11">11/74</option>
+            <option value="12">12/75</option>
+            <option value="13">13/76</option>
+            <option value="14">14/77</option>
+            <option value="15">15/78</option>
+            <option value="16">16/79</option>
+            <option value="17">17/80</option>
+            <option value="18">18/81</option>
+            <option value="19">19/82</option>
+            <option value="20">20/83</option>
+          </select>
+          <select name="band" id="pkg-band" onchange="selectPackage(this);" style="width:40px">
+            <option value="1">Y</option>
+            <option value="-1">X</option>
+          </select>
+        </td></tr>
+        <tr><td align="right"><b>Fuel:</b></td><td align="left"><input style="width:86px;" type="number" id="pkg-fuel" onchange="selectPackage(this);" name="fuel" min="2000" max="15000" value="7000" step="100" required> lbs</td></tr>
+      </table><br>
+      <button class="button"><img src="../common/assets/icon_table1.png" id="btn-flight" width="32" height="32" alt="STPT" onclick="button(event)"></button>
+      <button class="button"><img src="../common/assets/icon_table.png" id="btn-wx" width="32" height="32" alt="WX" onclick="button(event)"></button>
+      <br>
+    </div>
+  </div>
+</div>
+
+<div id="tableDatacard" class="chart">
+  <center><b>Mission Briefing</b></center>
+  <table id="tbl-brf" width="100%" border="1" style="border-collapse:collapse; border-color:Black; border-style:solid; border-width:1pt; font-size:95%">
+    <tr class="d1"><th width="15%" align="right">Callsign</th><td colspan="4">Beast5</td></tr>
+    <tr class="d1"><th  width="15%" align="right">Times</th><td>08:40:00</td><td>08:50:00</td><td>08:54:00</td><td>09:00:00</td></tr>
+    <tr class="d1"><th  width="15%" align="right">Fuel</th><td>8000</td><td>5300/4300</td><th align="right">Laser Code</th><td>1511</td></tr>
+    <tr class="d1"><th  width="15%" align="right">Intel</th><td colspan="4">SA-10</td></tr>
+  </table><br>
+  <center><b>Package</b></center>
+  <table id="tbl-pkg" width="100%" border="1" style="border-collapse:collapse; border-color:Black; border-style:solid; border-width:1pt; font-size:95%">
+    <tr class="d0"><th>Callsign</th><th>UHF</th><th>VHF</th><th>IDM</th><th>TCN</th></tr>
+  </table><br>
+  <center><b>Airbases</b></center>
+  <table id="tbl-afb" width="100%" border="1" style="border-collapse:collapse; border-color:Black; border-style:solid; border-width:1pt; font-size:95%">
+    <tr class="d0"><th width="5%">Type</th><th width="25%">Location</th><th>Airport</th><th>TCN</th><th>GND</th><th>TWR</th><th>APP</th><th>ATIS</th></tr>
+  </table><br>
+  <center><b>Flight Plan</b></center>
+  <table id="tbl-stpts" width="100%" border="1" style="border-collapse:collapse; border-color:Black; border-style:solid; border-width:1pt; font-size:95%">
+    <tr class="d0"><th width="5%">STPT</th><th width="25%">Location</th><th>Action</th><th>TOS</th><th>Hdg.</th><th>Dist.</th><th>TAS</th><th>Mach</th><th>Alt.</th><th>Fuel</th></tr>
+  </table><br>
+  <center><b>Objectives</b></center>
+  <table id="tbl-objs" width="100%" border="1" style="border-collapse:collapse; border-color:Black; border-style:solid; border-width:1pt; font-size:95%">
+    <tr class="d0"><th width="5%">STPT</th><th width="25%">Location</th><th>Target</th></tr>
+  </table><br>
+  <center><b>Support</b></center>
+  <table id="tbl-sppt" width="100%" border="1" style="border-collapse:collapse; border-color:Black; border-style:solid; border-width:1pt; font-size:95%">
+    <tr class="d0"><th width="5%">STPT</th><th width="25%">Location</th><th>Callsign</th><th>Type</th><th>UHF</th><th>VHF</th></tr>
+  </table><br>
+</div>
+
+<div id="tableWeather" class="chart">
+  <center><b>Weather Briefing</b></center>
+  <table id="tbl-wxhdr" width="100%" border="1" style="border-collapse:collapse; border-color:Black; border-style:solid; border-width:1pt; font-size:95%">
+    <tr class="d1"><th width="15%">Callsign</th><td width="60%"></td><th width="10%">Time</th><td>010000Z</td></tr>
+  </table><br>
+  <center><b>Performance Data</b></center>
+  <table id="tbl-wxafb" width="100%" border="1" style="border-collapse:collapse; border-color:Black; border-style:solid; border-width:1pt; font-size:95%">
+    <tr class="d0"><th width="5%">Type</th><th width="20%">Airport</th><th>RWY</th><th>ELEV.</th><th>OAT</th><th>QNH</th><th>PA</th><th>DA</th></tr>
+  </table><br>
+  <center><b>Route METARs</b></center>
+  <table id="tbl-metar" width="100%" border="1" style="border-collapse:collapse; border-color:Black; border-style:solid; border-width:1pt; font-size:95%">
+    <tr class="d0"><th width="5%">#</th><th width="20%">Station</th><th width="63%">METAR</th></tr>
+  </table><br>
+  <center><b>Winds and Temperatures Aloft</b></center>
+  <table id="tbl-winds" width="100%" border="1" style="border-collapse:collapse; border-color:Black; border-style:solid; border-width:1pt; font-size:95%">
+    <tr class="d0"><th width="5%">#</th><th width="20%">Station</th><th>3000 ft</th><th>6000 ft</th><th>9000 ft</th><th>12000 ft</th><th>18000 ft</th><th>24000 ft</th><th>30000 ft</th></tr>
+  </table><br>
+</div>
+
+<div id="chartAltitudes" class="chart">
+<center><h3>Altitude and Velocity</h3></center>
+<center><canvas id="chart" width="800" height="550"></canvas></center>
+</div>
+
+<textarea id="TextEntry" class="text-area""></textarea>
+
+  <!-- The Maps and Airbases Overlay -->
+  <div id="container">
+    <img src="https://cdn.falcon-bms.com/maps/02_Balkans/maps/Balkans_UI_Map_4k.png" class="background" id="map" width="3840" height="3840" alt="">
+    <div id="Layers" class="overlay" ondrop="dropHandler(event);" ondragover="allowDrop(event)">
+      <canvas id="annotation" width="3840" height="3840"></canvas>
+      <div id=Airbases class="overlay">
+        <img src="resources/map_airbases.png" id="airbases" width="3840" height="3840" alt="" border="0" usemap="#Map">
+        <div id="UserInputs" class="inputs">
+          <table id="locate" border="0" cellpadding="0" cellspacing="0">
+          <tr>
+          <td style="width: 50px;">&nbsp;</td>
+          <td align="left"><label id="cursor-val" style="color: #ffffff; font-size: small;"></label></td></tr>
+          <tr>
+            <td style="width: 50px;"></td>
+            <td height="40"><select name="airport" id="airports" onchange="locateAirport(this);" onfocus="this.selectedIndex = -1;" size="1" style="width: 282px;font-size: min(3vw, 16px);z-index: 2;"></select></td>
+          </tr>
+          <table id="toolbar" border="0" cellpadding="0" cellspacing="0">
+          <tr><td><img src="../common/assets/icon_toolbar.png" width="32" height="8" border="0" style="display:block"></td></tr>
+          <tr><td><img src="../common/assets/icon_move1.png" id="move" width="32" height="32" alt="move" border="0" style="display:block" onclick="button(event)"></td></tr>
+          <tr><td><img src="../common/assets/icon_zoom1.png" id="zoom1" width="32" height="32" alt="zoom-out" border="0" style="display:block" onclick="button(event)"></td></tr>
+          <tr><td><img src="../common/assets/icon_zoom2.png" id="zoom2" width="32" height="32" alt="zoom-in" border="0" style="display:block" onclick="button(event)"></td></tr>
+          <tr><td><img src="../common/assets/icon_bullseye.png" id="bullseye" width="32" height="32" alt="bullseye" border="0" style="display:block" onclick="button(event)"></td></tr>
+          <tr><td><img src="../common/assets/icon_compass.png" id="compass" width="32" height="32" alt="compass" border="0" style="display:block" onclick="button(event)"></td></tr>
+          <tr><td><img src="../common/assets/icon_ruler.png" id="ruler" width="32" height="32" alt="ruler" border="0" style="display:block" onclick="button(event)"></td></tr>
+          <tr><td><img src="../common/assets/icon_sword.png" id="symbol" width="32" height="32" alt="symbol" border="0" style="display:block" onclick="button(event)"></td></tr>
+          <tr><td><img src="../common/assets/icon_pencil.png" id="pencil" width="32" height="32" alt="pencil" border="0" style="display:block" onclick="button(event)"></td></tr>
+          <tr><td><img src="../common/assets/icon_text.png" id="text" width="32" height="32" alt="text" border="0" style="display:block" onclick="button(event)"></td></tr>
+          <tr><td><img src="../common/assets/icon_eraser.png" id="eraser" width="32" height="32" alt="eraser" border="0" style="display:block" onclick="button(event)"></td></tr>
+          <tr><td><img src="../common/assets/icon_menu.png" id="settings" width="32" height="32" alt="reset" border="0" style="display:block" onclick="button(event)"></td></tr>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+<!-- All Map Coordinates based on 4096x4096 Javascript scales to 3840.
+You must set the map datum in degrees for the map south west corner for Lat/Long calculations-->
+<map name="Map" id="imgMap" data-map-datum="36.625,11">
+<!-- NATO -->
+<area shape="circle" coords="1936,2092,17" href="javascript:void(0);" alt="NATO" title="AMENDOLA" onclick="return popup('AMENDOLA');"/>
+<area shape="circle" coords="104,1392,17" href="javascript:void(0);" alt="NATO" title="AMPUGNANO" onclick="return popup('AMPUGNANO');"/>
+<area shape="circle" coords="204,304,17" href="javascript:void(0);" alt="NATO" title="ASIAGO" onclick="return popup('ASIAGO');"/>
+<area shape="circle" coords="648,248,17" href="javascript:void(0);" alt="NATO" title="AVIANO" onclick="return popup('AVIANO');"/>
+<area shape="circle" coords="384,144,17" href="javascript:void(0);" alt="NATO" title="AXALP-Range" onclick="return popup('AXALP-Range');"/>
+<area shape="circle" coords="616,3572,17" href="javascript:void(0);" alt="NATO" title="BIRGI" onclick="return popup('BIRGI');"/>
+<area shape="circle" coords="120,80,17" href="javascript:void(0);" alt="NATO" title="BOLZANO" onclick="return popup('BOLZANO');"/>
+<area shape="circle" coords="112,856,17" href="javascript:void(0);" alt="NATO" title="BORGO PANIGALE" onclick="return popup('BORGO_PANIGALE');"/>
+<area shape="circle" coords="1340,2336,17" href="javascript:void(0);" alt="NATO" title="CAPODICHINO" onclick="return popup('CAPODICHINO');"/>
+<area shape="circle" coords="2808,2444,17" href="javascript:void(0);" alt="NATO" title="CASALE" onclick="return popup('CASALE');"/>
+<area shape="circle" coords="540,984,17" href="javascript:void(0);" alt="NATO" title="CERVIA" onclick="return popup('CERVIA');"/>
+<area shape="circle" coords="652,1976,17" href="javascript:void(0);" alt="NATO" title="CIAMPINO" onclick="return popup('CIAMPINO');"/>
+<area shape="circle" coords="2488,3132,17" href="javascript:void(0);" alt="NATO" title="CROTONE" onclick="return popup('CROTONE');"/>
+<area shape="circle" coords="972,1248,17" href="javascript:void(0);" alt="NATO" title="FALCONARA" onclick="return popup('FALCONARA');"/>
+<area shape="circle" coords="508,1984,17" href="javascript:void(0);" alt="NATO" title="FIUMICINO" onclick="return popup('FIUMICINO');"/>
+<area shape="circle" coords="1644,3736,17" href="javascript:void(0);" alt="NATO" title="FONTANAROSSA" onclick="return popup('FONTANAROSSA');"/>
+<area shape="circle" coords="432,996,17" href="javascript:void(0);" alt="NATO" title="FORLI" onclick="return popup('FORLI');"/>
+<area shape="circle" coords="908,2028,17" href="javascript:void(0);" alt="NATO" title="FROSINONE" onclick="return popup('FROSINONE');"/>
+<area shape="circle" coords="2924,2616,17" href="javascript:void(0);" alt="NATO" title="GALATINA" onclick="return popup('GALATINA');"/>
+<area shape="circle" coords="1856,2128,17" href="javascript:void(0);" alt="NATO" title="GINO LISA" onclick="return popup('GINO_LISA');"/>
+<area shape="circle" coords="2428,2400,17" href="javascript:void(0);" alt="NATO" title="GIOIA DEL COLLE" onclick="return popup('GIOIA_DEL_COLLE');"/>
+<area shape="circle" coords="1256,2276,17" href="javascript:void(0);" alt="NATO" title="GRAZZANISE" onclick="return popup('GRAZZANISE');"/>
+<area shape="circle" coords="28,1580,17" href="javascript:void(0);" alt="NATO" title="GROSSETO" onclick="return popup('GROSSETO');"/>
+<area shape="circle" coords="2624,2508,17" href="javascript:void(0);" alt="NATO" title="GROTTAGLIE" onclick="return popup('GROTTAGLIE');"/>
+<area shape="circle" coords="712,1896,17" href="javascript:void(0);" alt="NATO" title="GUIDONIA" onclick="return popup('GUIDONIA');"/>
+<area shape="circle" coords="436,380,17" href="javascript:void(0);" alt="NATO" title="ISTRANA" onclick="return popup('ISRANA');"/>
+<area shape="circle" coords="2156,3160,17" href="javascript:void(0);" alt="NATO" title="LAMEZIA TERME" onclick="return popup('LAMEZIA_TERME');"/>
+<area shape="circle" coords="772,2088,17" href="javascript:void(0);" alt="NATO" title="LATINA" onclick="return popup('LATINA');"/>
+<area shape="circle" coords="2280,2536,17" href="javascript:void(0);" alt="NATO" title="MATERA" onclick="return popup('MATERA');"/>
+<area shape="circle" coords="44,248,17" href="javascript:void(0);" alt="NATO" title="MATTARELLO" onclick="return popup('MATTARELLO');"/>
+<area shape="circle" coords="656,1076,17" href="javascript:void(0);" alt="NATO" title="MIRAMARE" onclick="return popup('MIRAMARE');"/>
+<area shape="circle" coords="324,496,17" href="javascript:void(0);" alt="NATO" title="PADOVA" onclick="return popup('PADOVA');"/>
+<area shape="circle" coords="2356,2256,17" href="javascript:void(0);" alt="NATO" title="PALESE" onclick="return popup('PALESE');"/>
+<area shape="circle" coords="392,4020,17" href="javascript:void(0);" alt="NATO" title="PANTELLERIA" onclick="return popup('PANTELLERIA');"/>
+<area shape="circle" coords="76,1152,17" href="javascript:void(0);" alt="NATO" title="PERETOLA" onclick="return popup('PERETOLA');"/>
+<area shape="circle" coords="1296,1724,17" href="javascript:void(0);" alt="NATO" title="PESCARA" onclick="return popup('PESCARA');"/>
+<area shape="circle" coords="604,2040,17" href="javascript:void(0);" alt="NATO" title="PRATICA DI MARE" onclick="return popup('PRATICA_DI_MARE');"/>
+<area shape="circle" coords="860,3464,17" href="javascript:void(0);" alt="NATO" title="PUNTA RAISI" onclick="return popup('PUNTA_RAISI');"/>
+<area shape="circle" coords="496,924,17" href="javascript:void(0);" alt="NATO" title="RAVENNA" onclick="return popup('RAVENNA');"/>
+<area shape="circle" coords="1900,3520,17" href="javascript:void(0);" alt="NATO" title="REGGIO CALABRIA" onclick="return popup('REGGIO_CALABRIA');"/>
+<area shape="circle" coords="832,268,17" href="javascript:void(0);" alt="NATO" title="RIVOLTO" onclick="return popup('RIVOLTO');"/>
+<area shape="circle" coords="1012,328,17" href="javascript:void(0);" alt="NATO" title="RONCHI DEI LEGIONARI" onclick="return popup('RONCHI_DEI_LEGIONARI');"/>
+<area shape="circle" coords="480,404,17" href="javascript:void(0);" alt="NATO" title="S.ANGELO" onclick="return popup('S.ANGELO');"/>
+<area shape="circle" coords="616,1440,17" href="javascript:void(0);" alt="NATO" title="S.FRANCESCO" onclick="return popup('S.FRANCESCO');"/>
+<area shape="circle" coords="2808,2536,17" href="javascript:void(0);" alt="NATO" title="SAN PANCRAZIO" onclick="return popup('SAN_PANCRAZIO');"/>
+<area shape="circle" coords="1236,3836,17" href="javascript:void(0);" alt="NATO" title="SICILY-Range" onclick="return popup('SICILY-Range');"/>
+<area shape="circle" coords="1592,3788,17" href="javascript:void(0);" alt="NATO" title="SIGONELLA" onclick="return popup('SIGONELLA');"/>
+<area shape="circle" coords="556,456,17" href="javascript:void(0);" alt="NATO" title="TESSARA" onclick="return popup('TESSARA');"/>
+<area shape="circle" coords="628,1916,17" href="javascript:void(0);" alt="NATO" title="URBE" onclick="return popup('URBE');"/>
+<area shape="circle" coords="228,424,17" href="javascript:void(0);" alt="NATO" title="VICENZA" onclick="return popup('VICENZA');"/>
+
+<!-- Albania -->
+<area shape="circle" coords="3696,2296,17" href="javascript:void(0);" alt="Albania" title="CERRIK" onclick="return popup('CERRIK');"/>
+<area shape="circle" coords="3528,1940,17" href="javascript:void(0);" alt="Albania" title="GJADER" onclick="return popup('GJADER');"/>
+<area shape="circle" coords="3748,2692,17" href="javascript:void(0);" alt="Albania" title="GJIROKASTER" onclick="return popup('GJIROKASTER');"/>
+<area shape="circle" coords="3992,2456,17" href="javascript:void(0);" alt="Albania" title="KORCE NORTHWEST" onclick="return popup('KORCE_NORTHWEST');"/>
+<area shape="circle" coords="3628,2396,17" href="javascript:void(0);" alt="Albania" title="KUCOVA" onclick="return popup('KUCOVA');"/>
+<area shape="circle" coords="3860,1884,17" href="javascript:void(0);" alt="Albania" title="KUKES" onclick="return popup('KUKES');"/>
+<area shape="circle" coords="3592,2172,17" href="javascript:void(0);" alt="Albania" title="LAPRAKA" onclick="return popup('LAPRAKA');"/>
+<area shape="circle" coords="3448,2468,17" href="javascript:void(0);" alt="Albania" title="MIFOL" onclick="return popup('MIFOL');"/>
+<area shape="circle" coords="3504,1876,17" href="javascript:void(0);" alt="Albania" title="SHKODER" onclick="return popup('SHKODER');"/>
+<area shape="circle" coords="3572,2132,17" href="javascript:void(0);" alt="Albania" title="TIRANA" onclick="return popup('TIRANA');"/>
+
+<area shape="circle" coords="3552,2304,17" href="javascript:void(0);" alt="Albania Airstrips" title="LUSHNJE" onclick="return popup('LUSHNJE');"/>
+
+<!-- Bosnia & Herzegovina -->
+<area shape="circle" coords="2572,692,17" href="javascript:void(0);" alt="Bosnia & Herzegovina" title="BANJA LUKA" onclick="return popup('BANJA_LUKA');"/>
+<area shape="circle" coords="3160,884,17" href="javascript:void(0);" alt="Bosnia & Herzegovina" title="DUBRAVE" onclick="return popup('DUBRAVE');"/>
+<area shape="circle" coords="2804,1380,17" href="javascript:void(0);" alt="Bosnia & Herzegovina" title="MOSTAR" onclick="return popup('MOSTAR');"/>
+<area shape="circle" coords="3016,1148,17" href="javascript:void(0);" alt="Bosnia & Herzegovina" title="SARAJEVO" onclick="return popup('SARAJEVO');"/>
+<area shape="circle" coords="1952,728,17" href="javascript:void(0);" alt="Bosnia & Herzegovina" title="ZELJAVA" onclick="return popup('ZELJAVA');"/>
+
+<area shape="circle" coords="3116,684,17" href="javascript:void(0);" alt="Bosnia & Herzegovina Airstrips" title="BRCKO" onclick="return popup('BRCKO');"/>
+<area shape="circle" coords="2832,600,17" href="javascript:void(0);" alt="Bosnia & Herzegovina Airstrips" title="JELAS" onclick="return popup('JELAS');"/>
+
+<!--Croatia -->
+<area shape="circle" coords="2996,1672,17" href="javascript:void(0);" alt="Croatia" title="DUBROVNIK" onclick="return popup('DUBROVNIK');"/>
+<area shape="circle" coords="2940,488,17" href="javascript:void(0);" alt="Croatia" title="GASINCI-Range" onclick="return popup('GASINCI-Range');"/>
+<area shape="circle" coords="2168,1264,17" href="javascript:void(0);" alt="Croatia" title="KASTELA" onclick="return popup('KASTELA');"/>
+<area shape="circle" coords="3192,480,17" href="javascript:void(0);" alt="Croatia" title="KLISA" onclick="return popup('KLISA');"/>
+<area shape="circle" coords="2080,364,17" href="javascript:void(0);" alt="Croatia" title="PLESO" onclick="return popup('PLESO');"/>
+<area shape="circle" coords="1196,716,17" href="javascript:void(0);" alt="Croatia" title="PULA" onclick="return popup('PULA');"/>
+<area shape="circle" coords="1464,604,17" href="javascript:void(0);" alt="Croatia" title="RIJEKA" onclick="return popup('RIJEKA');"/>
+<area shape="circle" coords="1944,844,17" href="javascript:void(0);" alt="Croatia" title="PLESO" onclick="return popup('UDBINA');"/>
+<area shape="circle" coords="1301,2109,17" href="javascript:void(0);" alt="Croatia" title="UDBINA" onclick="return popup('PULA');"/>
+<area shape="circle" coords="2204,144,17" href="javascript:void(0);" alt="Croatia" title="VARAZDIN" onclick="return popup('VARAZDIN');"/>
+<area shape="circle" coords="1788,1036,17" href="javascript:void(0);" alt="Croatia" title="ZEMUNIK" onclick="return popup('ZEMUNIK');"/>
+
+<area shape="circle" coords="2392,312,17" href="javascript:void(0);" alt="Croatia Airstrips" title="BREZOVAC" onclick="return popup('BREZOVAC');"/>
+<area shape="circle" coords="1440,532,17" href="javascript:void(0);" alt="Croatia Airstrips" title="GROBNICKO" onclick="return popup('GROBNICKO');"/>
+<area shape="circle" coords="1884,504,17" href="javascript:void(0);" alt="Croatia Airstrips" title="KARLOVAC" onclick="return popup('KARLOVAC');"/>
+<area shape="circle" coords="1720,988,17" href="javascript:void(0);" alt="Croatia Airstrips" title="SEPURINE" onclick="return popup('SEPURINE');"/>
+
+<!--FRY -->
+<area shape="circle" coords="3788,696,17" href="javascript:void(0);" alt="FRY" title="BATAJNICA" onclick="return popup('BATAJNICA');"/>
+<area shape="circle" coords="3628,1572,17" href="javascript:void(0);" alt="FRY" title="DOLAC" onclick="return popup('DOLAC');"/>
+<area shape="circle" coords="4060,760,17" href="javascript:void(0);" alt="FRY" title="KOVIN" onclick="return popup('KOVIN');"/>
+<area shape="circle" coords="3928,1152,17" href="javascript:void(0);" alt="FRY" title="LADEVCI" onclick="return popup('LADEVCI');"/>
+<area shape="circle" coords="3820,736,17" href="javascript:void(0);" alt="FRY" title="NIKOLA TESLA" onclick="return popup('NIKOLA_TESLA');"/>
+<area shape="circle" coords="3384,1756,17" href="javascript:void(0);" alt="FRY" title="PODGORICA" onclick="return popup('PODGORICA');"/>
+<area shape="circle" coords="3560,1132,17" href="javascript:void(0);" alt="FRY" title="PONIKVE" onclick="return popup('PONIKVE');"/>
+<area shape="circle" coords="3704,1384,17" href="javascript:void(0);" alt="FRY" title="SJENICA" onclick="return popup('SJENICA');"/>
+<area shape="circle" coords="3304,368,17" href="javascript:void(0);" alt="FRY" title="SOMBOR" onclick="return popup('SOMBOR');"/>
+<area shape="circle" coords="3988,2236,17" href="javascript:void(0);" alt="FRY" title="ST. PAUL THE APOSTLE" onclick="return popup('ST_PAUL_THE_APOSTLE');"/>
+<area shape="circle" coords="3168,1740,17" href="javascript:void(0);" alt="FRY" title="TIVAT" onclick="return popup('TIVAT');"/>
+
+<area shape="circle" coords="3344,1688,17" href="javascript:void(0);" alt="FRY Airstrips" title="DANILOVGRAD" onclick="return popup('DANILOVGRAD');"/>
+<area shape="circle" coords="3304,1260,17" href="javascript:void(0);" alt="FRY Airstrips" title="GORAZDE" onclick="return popup('GORAZDE');"/>
+<area shape="circle" coords="3540,748,17" href="javascript:void(0);" alt="FRY Airstrips" title="SABAC" onclick="return popup('SABAC');"/>
+
+<!--Greece -->
+<area shape="circle" coords="4004,3164,17" href="javascript:void(0);" alt="Greece" title="AKTION" onclick="return popup('AKTION');"/>
+<area shape="circle" coords="3892,3480,17" href="javascript:void(0);" alt="Greece" title="ANNA POLLATOU" onclick="return popup('ANNA_POLLATOU');"/>
+<area shape="circle" coords="4040,3636,17" href="javascript:void(0);" alt="Greece" title="DIONYSIOS SOLOMOS" onclick="return popup('DIONYSIOS_SOLOMOS');"/>
+<area shape="circle" coords="4016,2856,17" href="javascript:void(0);" alt="Greece" title="KING PYRROS" onclick="return popup('KING_PYRROS');"/>
+
+<!--Hungary -->
+<area shape="circle" coords="2448,88,17" href="javascript:void(0);" alt="Hungary" title="NAGYKANIZSA" onclick="return popup('NAGYKANIZSA');"/>
+<area shape="circle" coords="3176,140,17" href="javascript:void(0);" alt="Hungary" title="OCSENY" onclick="return popup('OCSENY');"/>
+<area shape="circle" coords="2956,248,17" href="javascript:void(0);" alt="Hungary" title="POGANY" onclick="return popup('POGANY');"/>
+<area shape="circle" coords="3108,284,17" href="javascript:void(0);" alt="Hungary" title="SATORHELY" onclick="return popup('SATORHELY');"/>
+<area shape="circle" coords="3728,168,17" href="javascript:void(0);" alt="Hungary" title="SZEGED" onclick="return popup('SZEGED');"/>
+<area shape="circle" coords="2824,92,17" href="javascript:void(0);" alt="Hungary" title="TASZAR" onclick="return popup('TASZAR');"/>
+
+<!--Slovenia -->
+<area shape="circle" coords="1416,168,17" href="javascript:void(0);" alt="Slovenia" title="BRNIK" onclick="return popup('BRNIK');"/>
+<area shape="circle" coords="1848,296,17" href="javascript:void(0);" alt="Slovenia" title="CERKLJE OB KRKI" onclick="return popup('CERKLJE_OB_KRKI');"/>
+<area shape="circle" coords="1920,64,17" href="javascript:void(0);" alt="Slovenia" title="OREHOVA VAS" onclick="return popup('OREHOVA_VAS');"/>
+<area shape="circle" coords="1064,484,17" href="javascript:void(0);" alt="Slovenia" title="SECOVLJE" onclick="return popup('SECOVLJE');"/>
+<area shape="circle" coords="1676,60,17" href="javascript:void(0);" alt="Slovenia" title="SLOVENJ GRADEC" onclick="return popup('SLOVENJ_GRADEC');"/>
+
+<area shape="circle" coords="1464,360,17" href="javascript:void(0);" alt="Slovenia Airstrips" title="BLOSKA POLICA" onclick="return popup('BLOSKA_POLICA');"/>
+<area shape="circle" coords="1780,316,17" href="javascript:void(0);" alt="Slovenia Airstrips" title="NOVO MESTO" onclick="return popup('NOVO_MESTO');"/>
+
+<!-- VORTACs -->
+<area shape="circle" coords="1936,2096,17" href="javascript:void(0);" alt="VORTAC" title="AMENDOLA" onclick="return popup('AMENDOLA_TACAN');"/>
+<area shape="circle" coords="644,248,17" href="javascript:void(0);" alt="VORTAC" title="AVIANO" onclick="return popup('AVIANO_TACAN');"/>
+<area shape="circle" coords="564,992,17" href="javascript:void(0);" alt="VORTAC" title="CERVIA" onclick="return popup('CERVIA_TACAN');"/>
+<area shape="circle" coords="524,656,17" href="javascript:void(0);" alt="VORTAC" title="CHIOGGIA" onclick="return popup('CHIOGGIA_TACAN');"/>
+<area shape="circle" coords="2424,2384,17" href="javascript:void(0);" alt="VORTAC" title="GIOIA DEL COLLE" onclick="return popup('GIOIA_DEL_COLLE_TACAN');"/>
+<area shape="circle" coords="456,380,17" href="javascript:void(0);" alt="VORTAC" title="ISTRANA" onclick="return popup('ISTRANA_TACAN');"/>
+<area shape="circle" coords="844,260,17" href="javascript:void(0);" alt="VORTAC" title="RIVOLTO" onclick="return popup('RIVOLTO_TACAN');"/>
+<area shape="circle" coords="1612,3792,17" href="javascript:void(0);"  alt="VORTAC" title="SIGONELLA" onclick="return popup('SIGONELLA_TACAN');"/>
+<area shape="circle" coords="1296,1724,17" href="javascript:void(0);" alt="VORTAC" title="PESCARA" onclick="return popup('PESCARA_TACAN');"/>
+<area shape="circle" coords="276,408,17" href="javascript:void(0);"  alt="VORTAC" title="VICENZA" onclick="return popup('VICENZA_TACAN');"/>
+
+<!-- Special Map areas and Coordinates based on 4096x4096-->
+<!-- Map Legend Area -->
+<area shape="rect" coords="3177,3582,3921,4096" alt="Legend">
+<!-- Set Default Bullseye coordinates -->
+<area shape="circle" coords="1000,500,1" alt="Bullseye">
+
+</map>
+</body>
+</html>
