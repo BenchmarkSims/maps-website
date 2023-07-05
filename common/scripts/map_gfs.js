@@ -823,23 +823,27 @@ function gfsProcessGrib2Msg() {
             if (gfs_msg.s4.def.surface1_value != 0) return;
             gfsDecodeMsg('PRMSL', gfs.prmsl);
             gfsTranscodeMsg('PRMSL',gfs.prmsl, fmap.pressure);
+            gfs.prmsl.data = [];
             break;
 
         case gfsMsgType.VIS:
             if (gfs_msg.s4.def.surface1_value != 0) return;
             gfsDecodeMsg('VIS', gfs.vis);
             gfsTranscodeMsg('VIS', gfs.vis, fmap.visibility);
+            gfs.vis.data = [];
             break;
 
         case gfsMsgType.TMP:
             if (gfs_msg.s4.def.surface1_value != 2) return;
             gfsDecodeMsg('TMP', gfs.tmp);
             gfsTranscodeMsg('TMP',  gfs.tmp, fmap.temperature);
+            gfs.tmp.data = [];
             break;
 
         case gfsMsgType.TCDC:
             gfsDecodeMsg('TCDC', gfs.tcdc);
             gfsTranscodeCloudCoverage();
+            gfs.tcdc.data = [];
             break;
 
         case gfsMsgType.UGRD:
@@ -849,25 +853,31 @@ function gfsProcessGrib2Msg() {
         case gfsMsgType.VGRD:
             gfsDecodeMsg('VGRD', gfs.vgrd);
             gfsTranscodeWinds(); // UGRD and VGRD come in pairs
+            gfs.ugrd.data = [];
+            gfs.vgrd.data = [];
             break;
 
         case gfsMsgType.PRES:
             gfsDecodeMsg('PRES', gfs.pres);
             gfsTranscodeCloudBase();
             gfsTranscodeFogAltitude();
+            gfs.pres.data = [];
             break;
 
         case gfsMsgType.PRATE:
             gfsDecodeMsg('PRATE', gfs.prate);
             gfsTranscodeShowers();
+            gfs.prate.data = [];
             break;
 
         case gfsMsgType.APCP:
             gfsDecodeMsg('APCP', gfs.apcp);
+            gfs.apcp.data = [];
             break;
 
         case gfsMsgType.ACPCP:
             gfsDecodeMsg('ACPCP', gfs.acpcp);
+            gfs.acpcp.data = [];
             break;
         default:
             console.log("Warning: Unknown Message");
@@ -925,7 +935,6 @@ function ProcessGrib2(buffer){
     gfs_file.msg_cnt = 0;
 
     while (gfs_file.offset < gfs_file.bytes.length) {
-    //while (gfs_file.offset < gfs_file.bytes.length && gfs_file.msg_cnt < 55) {
         gfs_file.msg_cnt++;
         gfsReadGrib2Msg();
         gfsProcessGrib2Msg();
@@ -936,8 +945,8 @@ function ProcessGrib2(buffer){
     gfsAirmassDirSpd();
     gfsForecastTime();
 
-    // Generate the Doppler Radar and METARs
-    dopplerScan();
+    // Update Airport METAR
     updateAirportTitles();
     fmap.changed = true;
+    gfs_file.bytes = [];
 }
