@@ -58,36 +58,6 @@ var mission = {
     }
 };
 
-// List of Mission Text Abbreviations
-// This is used to keep the Objectives list remain within max 2 lines per
-// objective
-function abbreviate(text){
-    // Add as many abbreviations as needed
-    // This will keep the text within a line if possible
-    text = text.replace("Air Defense", "AD");
-    text = text.replace("Airbase", "AB");
-    text = text.replace("Depot", "Dep");
-    text = text.replace("Runway", "Rwy");
-    text = text.replace("Complex", "Cmplx");
-    text = text.replace("Tower", "Twr");
-    text = text.replace("Control", "Ctrl");
-    text = text.replace("Center", "Ctr");
-    text = text.replace("Factory", "Fac");
-    text = text.replace("Section", "Sec");
-    text = text.replace("Warehouse", "Wrhs");
-    text = text.replace("Maintenance", "Maint.");
-    text = text.replace("Hangar", "Hngr");
-    text = text.replace("Battalion", "BN");
-    text = text.replace("Brigade", "BDE");
-    text = text.replace("Defense", "Def.");
-    text = text.replace("Manufacturer", "Mfr.");
-    text = text.replace("Bridge Bridge", "Bridge");
-    text = text.replace("Village", "Vill.");
-    text = text.replace("Transport", "Tpt.");
-    text = text.replace("Station", "Sta.");
-    return text;
-  }
-
 // MISSION DATA PROCESSING
 function clearMissionData() {
     mission.ppts = [];
@@ -127,10 +97,7 @@ function isTargetWaypoint(index) {
 }
 
 function getSteerpointType(index) {
-    if (isTargetWaypoint(index)) {
-        return "TGT";
-    }
-    return "STPT";
+    return (isTargetWaypoint(index))?"TGT":"STPT";
 }
 
 // Parse and create ppt object
@@ -244,18 +211,14 @@ function getMissionTime() {
 
 function getTankerIndex() {
     for (var i = 0; i < mission.targets.length; i++) {
-        if (mission.targets[i].action == Action.Refuel) {
-            return i;
-        }
+        if (mission.targets[i].action == Action.Refuel) return i;
     }
     return -1;
 }
 
 function getHomePlateIndex() {
     for (var i = 0; i < mission.targets.length; i++) {
-        if (mission.targets[i].action == Action.Land) {
-            return i;
-        }
+        if (mission.targets[i].action == Action.Land) return i;
     }
     return -1;
 }
@@ -263,12 +226,9 @@ function getHomePlateIndex() {
 function getAlternateIndex() {
     var index = getHomePlateIndex();
     for (var i = (index + 1); i < mission.targets.length; i++) {
-        if (mission.targets[i].action == Action.Land) {
-            index = i;
-            break;
-        }
+        if (mission.targets[i].action == Action.Land) return i;
     }
-    return index;
+    return -1;
 }
 
 function getEstimatedFuelUntil(index) {
@@ -317,9 +277,7 @@ function getMaxHomePlateDistance() {
 function getMissionDistance() {
     var distance = 0;
     for (var i = 0; i < mission.route.length; i++) {
-        if (mission.targets[i].action == Action.Land) {
-            break;
-        }
+        if (mission.targets[i].action == Action.Land) break;
         distance += mission.route[i].dist;
     }
     return(distance);

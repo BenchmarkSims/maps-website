@@ -24,7 +24,7 @@ var fmap = {
     turbulence: {top: 31000, bottom: 28000},
     contrail: [34000,28000,25000,2000],
     cells: 0,        // Total cells
-    type: [],        // [y][x] 1: Sunny, 1: Fair, 2: Poor, 3: Inclement
+    type: [],        // [y][x] 1: Sunny, 2: Fair, 3: Poor, 4: Inclement
     pressure: [],    // [y][x] hPa
     temperature: [], // [y][x] C
     wind: [],        // [y][x][alt] Direction and Speed in Kts at Altitudes (10 levels)
@@ -37,9 +37,6 @@ var fmap = {
     shower: [],     // 0 No, 1 Yes
     visibility: [], // 0 .. 60 km
     fog: [],        // 0 .. 10000 ft
-
-    // Simulated Doppler Radar using Weather Type, Pressure and Temperature
-    radar: [],
 
     // Analytics done on the data
     analytics: {
@@ -67,32 +64,22 @@ function isIMC(x,y){
 //
 // Frontal zones are based on 10C delta per 20NM
 // Tornado is 15% pressure drop with neighbors (Not Implemented)
-
 // Snow is determined by looking at the surface temperature being at or below 0C.
-//
-function dopplerScan() {
+function dopplerSense(x,y) {
+    var wx = 0;
 
-    // Setup Doppler Radar Data
-    for (var y=0;y < fmap.dimension.y; y++) {
-        var scan = Array(fmap.dimension.x).fill(0);
-        fmap.radar.push(scan);
-        for (var x = 0;x < fmap.dimension.x; x++) {
-            var wx = 0;
-            // Initialize Rain and add extra scores
-            if (fmap.type[y][x] == 4 || fmap.shower == 1) {
-                wx++;
-                if (fmap.pressure[y][x] < 1004) wx++;
-                if (fmap.wind[x][y][0] > 20 ) wx++;
-                if (fmap.cloud.type == 1 && fmap.cloud.size < 2) wx=+2;
-            }
-
-            // Check if is below zero C
-            if (fmap.temperature[y][x] <= 0) wx = -wx;
-
-            // Assign Weather to Radar
-            fmap.radar[y][x] = wx;
-        }
+    if (fmap.type[y][x] == 4 || fmap.shower == 1) {
+        wx++;
+        if (fmap.pressure[y][x] < 1004) wx++;
+        if (fmap.wind[x][y][0] > 20 ) wx++;
+        if (fmap.cloud.type == 1 && fmap.cloud.size < 2) wx=+2;
     }
+
+    // Check if is below zero C
+    if (fmap.temperature[y][x] <= 0) wx = -wx;
+
+    // Assign Weather to Radar
+    return wx;
 }
 
 //
@@ -129,7 +116,6 @@ function clearWeather() {
     fmap.shower = [];
     fmap.visibility = [];
     fmap.fog = [];
-    fmap.radar = [];
     fmap.analytics = {
         pressure_min: 1060,
         pressure_max: 950,
@@ -158,8 +144,6 @@ function readMapInfo(buffer) {
 
 // Read the BMS Weather Type (1:Sunny, 2: Fair, 3: Poor, 4: Inclement)
 function readWeatherType(buffer) {
-    let view = new Uint32Array(buffer);
-
     const offset = 11;
     let type = new Int32Array(buffer);
 
@@ -634,9 +618,6 @@ function processWeather(buffer) {
     readFog(buffer);
 
     updateAirportTitles();
-
-    // Create Doppler Radar Scan
-    dopplerScan();
 
     // Tell the action layer weather has changed so it will redener the main canvas
     fmap.changed = true;

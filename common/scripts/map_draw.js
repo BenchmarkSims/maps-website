@@ -356,7 +356,7 @@ function getDopplerColor(scan) {
 // Draw the Radar from the fmap
 function drawDopplerRadar(ctx) {
     // Guard
-    if (fmap.radar.length == 0) return;
+    if (fmap.type.length == 0) return;
 
     // Set Transparency
     ctx.globalAlpha = 0.6;
@@ -374,8 +374,8 @@ function drawDopplerRadar(ctx) {
             var y = ((point.y + 1920) / 65) >> 0 ;
             if (x > 58) x = 58;
             if (y > 58) y = 58;
-            //console.log(x,y);
-            var scan = fmap.radar[y][x];
+
+            var scan = dopplerSense(x,y);
             var occluded = ((Math.random() * 15) >> 0) > 13;
             if (scan != 0 && !occluded) {
                 ctx.beginPath();

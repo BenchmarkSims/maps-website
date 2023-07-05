@@ -1618,9 +1618,6 @@ window.onload = function(e) {
   this.addEventListener('mousemove', pointer_drag);
   this.addEventListener('mouseup',   pointer_end);
 
-  // Install the File handler
-  reader.addEventListener('load', processFile);
-
   // Trigger a Render
   updateToolbar();
 
