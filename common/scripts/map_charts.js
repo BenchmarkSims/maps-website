@@ -331,13 +331,15 @@ function addAirbaseRow(table, afb, type) {
 
 function updateAirbasesTable(id) {
     var table = document.getElementById(id);
+    var idx_home = getHomePlateIndex();
+    var idx_alt = getAlternateIndex();
 
     // Clear and remove td rows rows
     clearTable(table);
 
     addAirbaseRow(table, 0, "DEP");
-    addAirbaseRow(table, getHomePlateIndex(), "ARR");
-    addAirbaseRow(table, getAlternateIndex(), "ALT");
+    if (idx_home >= 0) addAirbaseRow(table, idx_home, "ARR");
+    if (idx_alt >= 0) addAirbaseRow(table, idx_alt, "ALT");
 }
 
 function translateThreats(t) {
@@ -475,24 +477,29 @@ function addWxAirportRow(table, afb, type) {
 
 function updateWxAirportsTable(id) {
     var table = document.getElementById(id);
+    var idx_home = getHomePlateIndex();
+    var idx_alt = getAlternateIndex();
 
     // Clear and remove td rows rows
     clearTable(table);
 
     addWxAirportRow(table, 0, "DEP");
-    addWxAirportRow(table, getHomePlateIndex(), "ARR");
-    addWxAirportRow(table, getAlternateIndex(), "ALT");
+    if (idx_home >= 0) addWxAirportRow(table, idx_home, "ARR");
+    if (idx_alt >= 0) addWxAirportRow(table, idx_alt, "ALT");
 }
 
 function updateWxMetarTable(id) {
     var table = document.getElementById(id);
-    var alternate_idx = getAlternateIndex();
+    var last_idx = getHomePlateIndex();
+    var alt_idx = getAlternateIndex();
     var airports = [];
 
     // Clear and remove td rows rows
     clearTable(table);
 
-    for (var i=0;i < alternate_idx+1; i++) {
+    if (alt_idx >= 0 ) last_idx = alt_idx;
+
+    for (var i=0;i < last_idx+1; i++) {
 
         // Get Airport Data nearest to the route
         var airport = getAirportNearby({x: mission.targets[i].x, y: mission.targets[i].y});
@@ -545,13 +552,16 @@ function getWindsAlotStr(wind,alt,t) {
 
 function updateWxWindsTable(id) {
     var table = document.getElementById(id);
-    var alternate_idx = getAlternateIndex();
+    var last_idx = getHomePlateIndex();
+    var alt_idx = getAlternateIndex();
     var airports = [];
+
+    if (alt_idx >= 0 ) last_idx = alt_idx;
 
     // Clear and remove td rows rows
     clearTable(table);
 
-    for (var i=0;i < alternate_idx+1; i++) {
+    for (var i=0;i < last_idx+1; i++) {
 
         // Get Airport Data nearest to the route
         var airport = getAirportNearby({x: mission.targets[i].x, y: mission.targets[i].y});
