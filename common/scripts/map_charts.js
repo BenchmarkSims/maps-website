@@ -619,7 +619,7 @@ function openChart(id) {
         updateSteerpointsTable("tbl-stpts");
         updateTargetsTable("tbl-objs");
         updateSupportTable("tbl-sppt");
-        DataWindow.document.writeln('<html><head><title>Mission Datacard</title><link rel="stylesheet" href="../common/assets/map_chart.css"></head><body style="background-color: #F5F5F5;">');
+        DataWindow.document.writeln('<html><head><title>Mission Datacard</title><link rel="stylesheet" href="../common/scripts/map_chart.css"></head><body style="background-color: #F5F5F5;">');
     }
 
     if (id == "tableWeather") {
@@ -627,7 +627,7 @@ function openChart(id) {
         updateWxAirportsTable("tbl-wxafb");
         updateWxMetarTable("tbl-metar");
         updateWxWindsTable("tbl-winds");
-        DataWindow.document.writeln('<html><head><title>Weather Report</title><link rel="stylesheet" href="../common/assets/map_chart.css"></head><body style="background-color: #F5F5F5;">');
+        DataWindow.document.writeln('<html><head><title>Weather Report</title><link rel="stylesheet" href="../common/scripts/map_chart.css"></head><body style="background-color: #F5F5F5;">');
     }
 
     // Write the HTML for the Report
