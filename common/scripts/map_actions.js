@@ -1336,16 +1336,16 @@ function scaleView(zoom) {
   var offset_right = scroll_width - (scroll_left + client_width);
   var offset_bottom = scroll_height - (scroll_top + client_height);
 
-  setTimeout(function() {
-    scroll_element.scrollTop = scroll_element.scrollHeight * scroll_top_ratio;
-    scroll_element.scrollLeft = scroll_element.scrollWidth * scroll_left_ratio;
-    var new_offset_right = scroll_element.scrollWidth - (scroll_element.scrollLeft + client_width);
-    var new_offset_bottom = scroll_element.scrollHeight - (scroll_element.scrollTop + client_height);
-    var diff_right = offset_right - new_offset_right;
-    var diff_bottom = offset_bottom - new_offset_bottom;
-    scroll_element.scrollLeft = scroll_element.scrollLeft - (diff_right / 2) / 2;
-    scroll_element.scrollTop = scroll_element.scrollTop - (diff_bottom / 2) / 2;
-  }, 0);
+  scroll_element.scrollTop = scroll_height * scroll_top_ratio * scale;
+  scroll_element.scrollLeft = scroll_width * scroll_left_ratio * scale;
+
+  var new_offset_right = scroll_element.scrollWidth * scale - (scroll_element.scrollLeft + client_width);
+  var new_offset_bottom = scroll_element.scrollHeight * scale - (scroll_element.scrollTop + client_height);
+  var diff_right = offset_right - new_offset_right;
+  var diff_bottom = offset_bottom - new_offset_bottom;
+
+  scroll_element.scrollTop = scroll_element.scrollTop - (diff_bottom / 2) / 2;
+  scroll_element.scrollLeft = scroll_element.scrollLeft - (diff_right / 2) / 2;
 
   var base_map = document.getElementById('map');
   base_map.style.height = dim_str;
