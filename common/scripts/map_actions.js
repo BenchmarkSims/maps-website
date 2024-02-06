@@ -1373,6 +1373,52 @@ function scaleView(zoom, event) { // Add event parameter to capture mouse positi
   var scale = properties.zoom / last_zoom;
 
   var scroll_element = document.scrollingElement;
+  var scroll_top = scroll_element.scrollTop;
+  var scroll_left = scroll_element.scrollLeft;
+  var scroll_height = scroll_element.scrollHeight;
+  var scroll_width = scroll_element.scrollWidth;
+  var client_height = scroll_element.clientHeight;
+  var client_width = scroll_element.clientWidth;
+  var scroll_left_ratio = scroll_left / scroll_width;
+  var scroll_top_ratio = scroll_top / scroll_height;
+  var offset_right = scroll_width - (scroll_left + client_width);
+  var offset_bottom = scroll_height - (scroll_top + client_height);
+
+  setTimeout(function() {
+    scroll_element.scrollTop = scroll_element.scrollHeight * scroll_top_ratio;
+    scroll_element.scrollLeft = scroll_element.scrollWidth * scroll_left_ratio;
+    var new_offset_right = scroll_element.scrollWidth - (scroll_element.scrollLeft + client_width);
+    var new_offset_bottom = scroll_element.scrollHeight - (scroll_element.scrollTop + client_height);
+    var diff_right = offset_right - new_offset_right;
+    var diff_bottom = offset_bottom - new_offset_bottom;
+    scroll_element.scrollLeft = scroll_element.scrollLeft - (diff_right / 2) / 2;
+    scroll_element.scrollTop = scroll_element.scrollTop - (diff_bottom / 2) / 2;
+  }, 0);
+
+  var scroll_element = document.scrollingElement;
+  var scroll_top = scroll_element.scrollTop;
+  var scroll_left = scroll_element.scrollLeft;
+  var scroll_height = scroll_element.scrollHeight;
+  var scroll_width = scroll_element.scrollWidth;
+  var client_height = scroll_element.clientHeight;
+  var client_width = scroll_element.clientWidth;
+  var scroll_left_ratio = scroll_left / scroll_width;
+  var scroll_top_ratio = scroll_top / scroll_height;
+  var offset_right = scroll_width - (scroll_left + client_width);
+  var offset_bottom = scroll_height - (scroll_top + client_height);
+
+  setTimeout(function() {
+    scroll_element.scrollTop = scroll_element.scrollHeight * scroll_top_ratio;
+    scroll_element.scrollLeft = scroll_element.scrollWidth * scroll_left_ratio;
+    var new_offset_right = scroll_element.scrollWidth - (scroll_element.scrollLeft + client_width);
+    var new_offset_bottom = scroll_element.scrollHeight - (scroll_element.scrollTop + client_height);
+    var diff_right = offset_right - new_offset_right;
+    var diff_bottom = offset_bottom - new_offset_bottom;
+    scroll_element.scrollLeft = scroll_element.scrollLeft - (diff_right / 2) / 2;
+    scroll_element.scrollTop = scroll_element.scrollTop - (diff_bottom / 2) / 2;
+  }, 0);
+  
+  var scroll_element = document.scrollingElement;
   var client_width = scroll_element.clientWidth;
   var client_height = scroll_element.clientHeight;
 
