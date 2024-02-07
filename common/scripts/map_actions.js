@@ -1324,6 +1324,29 @@ function scaleView(zoom) {
   var dim_str = dimension.toString() + "px";
   var scale = properties.zoom / last_zoom;
 
+  var scroll_element = document.scrollingElement;
+  var scroll_top = scroll_element.scrollTop;
+  var scroll_left = scroll_element.scrollLeft;
+  var scroll_height = scroll_element.scrollHeight;
+  var scroll_width = scroll_element.scrollWidth;
+  var client_height = scroll_element.clientHeight;
+  var client_width = scroll_element.clientWidth;
+  var scroll_left_ratio = scroll_left / scroll_width;
+  var scroll_top_ratio = scroll_top / scroll_height;
+  var offset_right = scroll_width - (scroll_left + client_width);
+  var offset_bottom = scroll_height - (scroll_top + client_height);
+
+  scroll_element.scrollTop = scroll_height * scroll_top_ratio * scale;
+  scroll_element.scrollLeft = scroll_width * scroll_left_ratio * scale;
+
+  var new_offset_right = scroll_element.scrollWidth * scale - (scroll_element.scrollLeft + client_width);
+  var new_offset_bottom = scroll_element.scrollHeight * scale - (scroll_element.scrollTop + client_height);
+  var diff_right = offset_right - new_offset_right;
+  var diff_bottom = offset_bottom - new_offset_bottom;
+
+  scroll_element.scrollTop = scroll_element.scrollTop - (diff_bottom / 2) / 2;
+  scroll_element.scrollLeft = scroll_element.scrollLeft - (diff_right / 2) / 2;
+
   var base_map = document.getElementById('map');
   base_map.style.height = dim_str;
   base_map.style.width = dim_str;
