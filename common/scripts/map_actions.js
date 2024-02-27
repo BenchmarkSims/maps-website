@@ -97,6 +97,12 @@ var properties = {
   }
 };
 
+const limits = {
+  zoom_max: 2.0,
+  zoom_min: 0.5,
+  wheel_rate_hz: 20
+}
+
 // Toolbar Icons for actions
 const toolbar = {
   icon: {
@@ -827,13 +833,13 @@ function button(e) {
         break;
 
     case "zoom1":
-        if (id == "zoom1" && properties.zoom > 0.55) {
-          if (e.shiftKey) properties.zoom = 0.55;
+        if (id == "zoom1" && properties.zoom > limits.zoom_min) {
+          if (e.shiftKey) properties.zoom = limits.zoom_min;
           else properties.zoom -= 0.05;
         }
     case "zoom2":
-        if (id == "zoom2" && properties.zoom < 1.0) {
-          if (e.shiftKey) properties.zoom = 1;
+        if (id == "zoom2" && properties.zoom < limits.zoom_max) {
+          if (e.shiftKey) properties.zoom = limits.zoom_max;
           else properties.zoom += 0.05;
         }
         scaleView(properties.zoom);
@@ -1220,6 +1226,26 @@ var pointer_end = function(e) {
   }
   properties.shifted = false;
   properties.ctrl = false;
+}
+
+var wheel_enabled = true;
+function enable_wheel() {
+  wheel_enabled = true;
+}
+
+// Allow zooming with the mouse but limit it to a set wheel rate
+// See Limiters (20 hz)
+var mouse_zoom = function(e) {
+  e.preventDefault();
+  var zoom = properties.zoom - (e.deltaY/200);
+  if ( wheel_enabled && zoom >= limits.zoom_min && zoom <= limits.zoom_max ) {
+    properties.zoom = zoom;
+    scaleView(properties.zoom);
+    saveSettings();
+    refreshCanvas();
+    wheel_enabled = false;
+    setTimeout(enable_wheel, (1 / limits.wheel_rate_hz) * 1000);
+  }
 }
 
 //
@@ -1640,6 +1666,7 @@ window.onload = function(e) {
   this.addEventListener('mousedown', pointer_start);
   this.addEventListener('mousemove', pointer_drag);
   this.addEventListener('mouseup',   pointer_end);
+  this.addEventListener("wheel",     mouse_zoom,   {passive:false} );
 
   // Trigger a Render
   updateToolbar();
@@ -1648,6 +1675,7 @@ window.onload = function(e) {
   window.scrollTo(bullseye.x-window.innerWidth/2,bullseye.y-window.innerHeight/2);
 
   // Draw the Layers
+  enable_wheel();
   scaleView(properties.zoom);
   refreshCanvas();
 }
