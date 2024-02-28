@@ -221,7 +221,7 @@ function locateAirport(list) {
   refreshCanvas();
   x = parseInt(coords[0]);
   y = parseInt(coords[1]);
-  drawHighlight(context,x,y,radius);
+  drawHighlight(context,x,y,radius * properties.zoom);
 
   // Make the airport the focus
   window.scrollTo(x-window.innerWidth/2,y-window.innerHeight/2);
@@ -538,14 +538,21 @@ function selectVisibility(list) {
   refreshCanvas();
 }
 
+var hotspots;
+function storeMapCoordinates() {
+  var imgMap = document.getElementById("imgMap");
+  hotspots = [];
+  for (area of imgMap.children) hotspots.push(area);
+}
 
 // Scale the image map coordinates to match the airport overlay image
 function scaleMap(scale) {
   var imageMap = document.getElementById("imgMap");
   var areas  = imageMap.children;
+  i = 0;
   for (area of areas) {
-      area.coordArr = area.coords.split(',');
-      area.coords = area.coordArr.map(coord => Math.round(coord * scale)).join(',');
+      var coordArr = hotspots[i++].coords.split(',');
+      area.coords = coordArr.map(coord => Math.round(coord * scale)).join(',');
       if (area.alt == "Legend") properties.legend = area.coords;
       if (area.alt == "Bullseye") bullseye.coords = area.coords;
   }
@@ -1641,7 +1648,9 @@ window.onload = function(e) {
 
     // Adjust map to used scale
   // Safari will slow beyond 3840 canvas size
+  storeMapCoordinates();
   scaleMap(3840/4096);
+  storeMapCoordinates();
 
   // Setup the Layers to be rendered on the main canvas
   setupLayer(layer.mission, canvas.width, canvas.height );
