@@ -1,13 +1,14 @@
 <!doctype html>
 <html>
 <head>
-<title>Falcon BMS - Interactive Maps (BMS 4.37)</title>
+<title>Falcon BMS - Interactive Maps</title>
 <style type="text/css">
-
-    color_backround {
-		color: #163546;
+	body {
+        margin: 0;
+        padding: 0;
+        background-color: white;
     }
-	
+
     h1, h2, h3, h4, h5, h6 {
 		font-family: 'Montserrat',Helvetica,Arial,Lucida,sans-serif;
 		color: #5a87a4;
@@ -23,11 +24,7 @@
 		font-size: 12px;
 		color: #5a87a4;
     }
-	
-    div {
-		margin: 30px 50px
-    }
-	
+
     center {
 		display: block;
 		margin-left: auto;
@@ -70,7 +67,6 @@
 		font-size: 1.5em;
 	}
 
-
 	table th,
 	table td {
 	  text-align: center;
@@ -79,89 +75,42 @@
 	table th {
 	  text-transform: uppercase;
 	}
+    .color_background {
+		color: #163546;
+    }
 
+	.blue-bar {
+        width: 100%;
+        height: 50px;
+        background-color: #1E3444;
+		padding-top: 20px; /* Adds 20px space above the image */
+    }
 
-@media screen and (max-width: 768px) {
-  table {
-    border: 0;
-  }
+	.content {
+        padding: 20px;
+		margin: 30px 50px;
+    }
 
-  table caption {
-    font-size: 1.3em;
-  }
-  
-  table thead {
-    border: none;
-    clip: rect(0 0 0 0);
-    height: 1px;
-    margin: -1px;
-    overflow: hidden;
-    padding: 0;
-    position: absolute;
-    width: 1px;
-  }
-  
-  table tr {
-    border-bottom: 3px solid #ddd;
-    display: block;
-    margin-bottom: .625em;
-  }
-  
-  table td {
-    border-bottom: 1px solid #ddd;
-    display: block;
-    font-size: .8em;
-    text-align: center;
-  }
-  
-  table td::before {
-    /*
-    * aria-label has no advantage, it won't be read inside a table
-    content: attr(aria-label);
-    */
-    content: attr(data-label);
-    float: center;
-    font-weight: bold;
-    text-transform: uppercase;
-  }
-  
-  table td:last-child {
-    border-bottom: 0;
-  }
 </style>
 </head>
 <body>
-<div class="color_backround">
-	<center>
-	  	<a href="https://www.falcon-bms.com"><img src="https://cdn.falcon-bms.com/maps/web_assets/web_logo_small.jpg" width="324" height="83"  border="0"></a>
-	</center>
+<div class="blue-bar">
+    <center>
+	    <!-- <a href="https://www.falcon-bms.com"><img src="https://cdn.falcon-bms.com/maps/web_assets/web_logo_small.jpg" width="324" height="83"  border="0"></a> -->
+		<a href="https://www.falcon-bms.com"><img src="https://www.falcon-bms.com/wp-content/uploads/2021/07/web_logo_large_alt.png" width="324" height="83"  border="0"></a>
+    </center>
+</div>
+<div class="content">
 	<font>
-		<h1>Falcon BMS 4.37 - Interactive Maps</h1><hr>
-		You find here Interactive Maps providing access to airbase and airstrip information for the respective theater of operations. The maps provide the following features:
-		<ul>
-            <li>Locate airports and navigation beacons and request their information by hovering over them</li>
-            <li>Move map, zoom in/out and measure distances on map</li>
-            <li>Mission.ini or Pilot.ini drag and drop to show route on map and more.</li>
-            <li>Full whiteboard collaboration using collaboration server</li>
-            <li>Save Whiteboard(.png) and restore with drag and drop</li>
-			<li>MIL-STD-2525D symbology</li>
-            <li>Weather import (fmap drop) for weather charts (Temperature, Doppler, Winds, Isobars)</li>
-            <li>Route Waypoint dialog (actions, heading, distance and duration updates, etc)</li>
-            <li>Computed Mission Flight Info, Mission Radio Frequencies and Mission Objectives</li>
-            <li>Show Lat/Long on map and x,y of image map</li>
-            <li>Aerodrome Weather Report (METAR) as tooltips and on route dialog (uses) fmap </li>
-            <li>Add notes on Whiteboard</li>
-            <li>Bullseye placement</li>
-			<li>Download and Import GFS data and files</li>
-        </ul>
-		<h5 style="text-align: left;"><a href="https://forum.falcon-bms.com/topic/22922/falcon-bms-interactive-maps" target="_blank">Change log</a> &nbsp;| &nbsp;<a href="https://cdn.falcon-bms.com/maps/manual/BMS_Interactive_Maps.pdf" target="_blank">Manual (PDF)</a></h5>
-		<hr>
+		<h1>Falcon BMS - Interactive Maps</h1><hr>
+		<h2>Theater Maps 4.37</h2>
 		<table>
 			<thead>
 				<tr>
 					<th scope="col"><strong>Korea Theater</strong><br><em><font_small>Rev: 26 JUNE 2023</font_small></em></th>
 					<th scope="col"><strong>Balkans Theater</strong><br><em><font_small>Rev: 26 JUNE 2023</font_small></em></th>
 					<th scope="col"><strong>Israel Theater</strong><br><em><font_small>Rev: 26 JUNE 2023</font_small></em></th>
+					<th scope="col"></th>
 				</tr>
 			</thead>
 			<tbody>
@@ -193,6 +142,75 @@
 				</tr>
 			</tbody>
 		</table>
+
+		<br>
+		<h2>Theater Maps 4.38</h2>
+		<table>
+			<thead>
+				<tr>
+					<th scope="col"><strong>Korea Theater</strong><br><em><font_small>UNDER CONSTRUCTION</font_small></em></th>
+					<th scope="col"><strong>Balkans Theater</strong><br><em><font_small>UNDER CONSTRUCTION</font_small></em></th>
+					<th scope="col"><strong>Israel Theater</strong><br><em><font_small>UNDER CONSTRUCTION</font_small></em></th>
+					<th scope="col"><strong>Hellenic Theater</strong><br><em><font_small>UNDER CONSTRUCTION</font_small></em></th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td data-label="Korea Theater">
+						<div class="container">
+						<div class="polaroid">
+						<a href="index.html" target="blank"><img src="https://cdn.falcon-bms.com/maps/web_assets/kto.jpeg" width="150" height="150" alt="Korea Theater" border="0" class="image"></a>
+						</div>
+						<!-- a href="https://github.com/BenchmarkSims/maps-website/releases">Download</a -->
+						</div>
+					</td>
+					<td data-label="Balkans Theater">
+						<div class="container">
+						<div class="polaroid">
+						<a href="index.html" target="blank"><img src="https://cdn.falcon-bms.com/maps/web_assets/balkans.jpeg" width="150" height="150" alt="Balkans Theater" border="0" class="image"></a>
+						</div>
+						<!-- a href="https://github.com/BenchmarkSims/maps-website/releases">Download</a -->
+						</div>
+					</td>
+					<td data-label="Israel Theater">
+						<div class="container">
+						<div class="polaroid">
+						<a href="index.html" target="blank"><img src="https://cdn.falcon-bms.com/maps/web_assets/israel.jpeg" width="150" height="150" alt="Israel Theater" border="0" class="image"></a>
+						</div>
+						<!-- a href="https://github.com/BenchmarkSims/maps-website/releases">Download</a -->
+						</div>
+					</td>
+					<td data-label="Hellenic Theater">
+						<div class="container">
+						<div class="polaroid">
+						<a href="index.html" target="blank"><img src="https://cdn.falcon-bms.com/maps/web_assets/hellenic.jpeg" width="150" height="150" alt="Hellenic Theater" border="0" class="image"></a>
+						</div>
+						<!-- a href="https://github.com/BenchmarkSims/maps-website/releases">Download</a -->
+						</div>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<br>
+		<h2>Map Features</h2>
+		The maps provide the following features:
+		<ul>
+            <li>Locate airports and navigation beacons and request their information by hovering over them</li>
+            <li>Move map, zoom in/out and measure distances on map</li>
+            <li>Mission.ini or Pilot.ini drag and drop to show route on map and more.</li>
+            <li>Full whiteboard collaboration using collaboration server</li>
+            <li>Save Whiteboard(.png) and restore with drag and drop</li>
+			<li>MIL-STD-2525D symbology</li>
+            <li>Weather import (fmap drop) for weather charts (Temperature, Doppler, Winds, Isobars)</li>
+            <li>Route Waypoint dialog (actions, heading, distance and duration updates, etc)</li>
+            <li>Computed Mission Flight Info, Mission Radio Frequencies and Mission Objectives</li>
+            <li>Show Lat/Long on map and x,y of image map</li>
+            <li>Aerodrome Weather Report (METAR) as tooltips and on route dialog (uses) fmap </li>
+			<li>Download and Import GFS data and files</li>
+			<li>Bullseye placement</li>
+        </ul>
+		<h5 style="text-align: left;"><a href="https://forum.falcon-bms.com/topic/22922/falcon-bms-interactive-maps" target="_blank">Change log</a> &nbsp;| &nbsp;<a href="https://cdn.falcon-bms.com/maps/manual/BMS_Interactive_Maps.pdf" target="_blank">Manual (PDF)</a></h5>
+		<hr>
 	</font>
 </div>
 </body>
