@@ -98,7 +98,7 @@ var properties = {
 };
 
 const limits = {
-  zoom_max: 2.0,
+  zoom_max: 2.5,
   zoom_min: 0.5,
   wheel_rate_hz: 20
 }
@@ -1241,19 +1241,26 @@ function enable_wheel() {
 }
 
 // Allow zooming with the mouse but limit it to a set wheel rate
-// See Limiters (20 hz)
+// See Limiters (20 hz) and set discrete steps
 var mouse_zoom = function(e) {
   e.preventDefault();
-  var zoom = properties.zoom - (e.deltaY/200);
-  if ( wheel_enabled && zoom >= limits.zoom_min && zoom <= limits.zoom_max ) {
-    properties.zoom = zoom;
+  
+  // Normalize deltaY to a consistent step (e.g., 0.1 zoom per scroll)
+  var zoomStep = Math.sign(e.deltaY) * 0.1; // Adjust step size as needed
+  var newZoom = properties.zoom - zoomStep;
+
+  // Ensure zoom stays within limits and apply rounding to avoid floating-point drift
+  if (wheel_enabled && newZoom >= limits.zoom_min && newZoom <= limits.zoom_max) {
+    properties.zoom = Math.round(newZoom * 100) / 100; // Round to 2 decimal places
     scaleView(properties.zoom);
     saveSettings();
     refreshCanvas();
     wheel_enabled = false;
-    setTimeout(enable_wheel, (1 / limits.wheel_rate_hz) * 1000);
+    setTimeout(function() {
+      wheel_enabled = true;
+    }, (1 / limits.wheel_rate_hz) * 1000);
   }
-}
+};
 
 //
 //  Canvas and Layer Routines
@@ -1352,51 +1359,47 @@ function setupLayer(layer, width, height) {
 }
 
 var last_zoom = 1;
-function scaleView(zoom) {
+function scaleView(zoom, event) { // Add event parameter to capture mouse position
   var dimension = 3840 * properties.zoom;
   var dim_str = dimension.toString() + "px";
   var scale = properties.zoom / last_zoom;
 
   var scroll_element = document.scrollingElement;
-  var scroll_top = scroll_element.scrollTop;
-  var scroll_left = scroll_element.scrollLeft;
-  var scroll_height = scroll_element.scrollHeight;
-  var scroll_width = scroll_element.scrollWidth;
-  var client_height = scroll_element.clientHeight;
   var client_width = scroll_element.clientWidth;
-  var scroll_left_ratio = scroll_left / scroll_width;
-  var scroll_top_ratio = scroll_top / scroll_height;
-  var offset_right = scroll_width - (scroll_left + client_width);
-  var offset_bottom = scroll_height - (scroll_top + client_height);
+  var client_height = scroll_element.clientHeight;
 
-  scroll_element.scrollTop = scroll_height * scroll_top_ratio * scale;
-  scroll_element.scrollLeft = scroll_width * scroll_left_ratio * scale;
+  // Get mouse position relative to the viewport
+  var mouseX = event ? event.clientX : client_width / 2; // Fallback to center if no event
+  var mouseY = event ? event.clientY : client_height / 2;
 
-  var new_offset_right = scroll_element.scrollWidth * scale - (scroll_element.scrollLeft + client_width);
-  var new_offset_bottom = scroll_element.scrollHeight * scale - (scroll_element.scrollTop + client_height);
-  var diff_right = offset_right - new_offset_right;
-  var diff_bottom = offset_bottom - new_offset_bottom;
+  // Calculate mouse position relative to the document before scaling
+  var doc_mouseX = scroll_element.scrollLeft + mouseX;
+  var doc_mouseY = scroll_element.scrollTop + mouseY;
 
-  scroll_element.scrollTop = scroll_element.scrollTop - (diff_bottom / 2) / 2;
-  scroll_element.scrollLeft = scroll_element.scrollLeft - (diff_right / 2) / 2;
-
+  // Update map dimensions
   var base_map = document.getElementById('map');
-  base_map.style.height = dim_str;
   base_map.style.width = dim_str;
+  base_map.style.height = dim_str;
 
   var ovly_map = document.getElementById('airbases');
-  ovly_map.style.height = dim_str;
   ovly_map.style.width = dim_str;
-  ovly_map.useMap = "#Map";
-
+  ovly_map.style.height = dim_str;
   window.canvas.width = dimension;
   window.canvas.height = dimension;
 
+  // Scale bullseye coordinates
   bullseye.x *= scale;
   bullseye.y *= scale;
 
-  // Adjust the airport coordinates on the image map
+  // Scale the airport coordinates on the image map
   scaleMap(scale);
+
+  // Calculate new scroll position to keep mouse point fixed
+  var new_doc_mouseX = doc_mouseX * scale;
+  var new_doc_mouseY = doc_mouseY * scale;
+  scroll_element.scrollLeft = new_doc_mouseX - mouseX;
+  scroll_element.scrollTop = new_doc_mouseY - mouseY;
+
   last_zoom = properties.zoom;
 }
 
