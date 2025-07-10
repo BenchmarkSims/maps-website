@@ -387,6 +387,10 @@ function selectFilter(list) {
   if (properties.settings.filter == 3) {
     bg_img.setAttribute('class', 'background_dark');
   }
+  if (properties.settings.filter == 4) {
+    bg_img.setAttribute('class', 'background_night');
+  }
+  
 
   //chart_changed = true;
   saveSettings();
