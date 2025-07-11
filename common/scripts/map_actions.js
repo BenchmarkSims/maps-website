@@ -37,7 +37,8 @@ var context;
 var origin = 0;
 var theater = "";
 var map = {
-  feet: 3358679,
+  version: 1,
+  feet: 3359580,
   pixels: 0,
   offset: 0,
   resolution: 0,
@@ -1094,7 +1095,7 @@ function updateCursorData(e) {
   var cursor_val = " ";
 
   if (properties.settings.visibility.coordinates) {
-    var scalar = 3840 / canvas.height;
+    var scalar = 4096 / canvas.height;
     var map_x = (e.pageX * scalar) >> 0;
     var map_y = (e.pageY * scalar) >> 0;
     var position = XY2LatLong({x: (e.pageX ) * scalar, y:(e.pageY) * scalar});
@@ -1622,6 +1623,7 @@ window.onload = function(e) {
   var select = document.getElementById("airports");
   var imageMap = document.getElementById("imgMap");
   var map_datum = imageMap.getAttribute("data-map-datum").split(",");
+  var map_version = imageMap.getAttribute("data-map-version");
   var areas  = imageMap.children;
   var groups = [];
 
@@ -1671,6 +1673,7 @@ window.onload = function(e) {
   map.offset = map.pixels;
   map.datum.lat = parseFloat(map_datum[0]);
   map.datum.long = parseFloat(map_datum[1]);
+  map.version = parseFloat(map_version);
 
   // Setup Bullseye based on Theater
   resetBullseye();
