@@ -178,8 +178,9 @@ function writeText() {
 }
 
 // Open a new window for the chart (587x900) 1:1.534
-function chart(url) {
-  window.open(url,'popup','width=610,height=835');
+function chart(url, width=610,height=835 ) {
+  const features = `width=${width},height=${height}`;
+  window.open(url,'popup',features);
   return false;
 }
 
