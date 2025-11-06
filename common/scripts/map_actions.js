@@ -241,7 +241,9 @@ function getAirportNearby(point1) {
     var coords = area.coords.split(",");
     var point2 = {x: coords[0] / properties.zoom, y: coords[1] / properties.zoom};
     var dist = distance(point1, point2);
-    if (dist <= nearby.distance && area.alt != "Legend" && area.alt != "Bullseye") {
+    if (dist <= nearby.distance && area.alt != "Legend" && area.alt != "Bullseye" &&
+        area.alt != "VORTAC" && area.alt != "VOR/DME")
+    {
       nearby.distance = dist;
       nearby.name = area.title.split(" METAR")[0];
       nearby.x = point2.x;
