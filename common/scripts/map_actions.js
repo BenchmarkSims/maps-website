@@ -1421,6 +1421,19 @@ function animationLoop(timestamp) {
     // Throttle rendering to reduce CPU usage on large maps
     if (!lastAnimationFrameTime || (timestamp - lastAnimationFrameTime) >= animationFrameInterval) {
       lastAnimationFrameTime = timestamp;
+      // Update viewport using bounding rect to get exact canvas-space coordinates,
+      // regardless of zoom or CSS scaling
+      const _cvs = layer.wind_particles.canvas;
+      const _rect = _cvs.getBoundingClientRect();
+      if (_rect.width > 0 && _rect.height > 0) {
+        const _ratioX = _cvs.width / _rect.width;
+        const _ratioY = _cvs.height / _rect.height;
+        const _visX = Math.max(0, -_rect.left) * _ratioX;
+        const _visY = Math.max(0, -_rect.top) * _ratioY;
+        const _visW = (Math.min(window.innerWidth, _rect.right) - Math.max(0, _rect.left)) * _ratioX;
+        const _visH = (Math.min(window.innerHeight, _rect.bottom) - Math.max(0, _rect.top)) * _ratioY;
+        windParticles.setViewport(_visX, _visY, _visW, _visH);
+      }
       windParticles.animate();
       refreshCanvas();
     }

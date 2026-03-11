@@ -28,6 +28,7 @@ class WindParticles {
         this.isRunning = false;
         this.windField = null;
         this.colorCache = {};  // Cache for color strings
+        this.viewport = null;  // {x, y, width, height} in canvas pixels, null = full canvas
         
         this.initParticles();
     }
@@ -42,8 +43,16 @@ class WindParticles {
     
     // Create a single particle
     createParticle() {
-        const x = Math.random() * this.canvas.width;
-        const y = Math.random() * this.canvas.height;
+        // Spawn only within the visible viewport (with a small margin to avoid pop-in)
+        const margin = 50;
+        const vp = this.viewport;
+        const spawnX = vp ? vp.x - margin : 0;
+        const spawnY = vp ? vp.y - margin : 0;
+        const spawnW = vp ? vp.width + margin * 2 : this.canvas.width;
+        const spawnH = vp ? vp.height + margin * 2 : this.canvas.height;
+
+        const x = spawnX + Math.random() * spawnW;
+        const y = spawnY + Math.random() * spawnH;
 
         return {
             x: x,
@@ -193,10 +202,18 @@ class WindParticles {
     updateParticle(particle) {
         particle.age++;
         
-        // Reset particle if too old or out of bounds
+        // Define active bounds (viewport + margin, or full canvas)
+        const margin = 50;
+        const vp = this.viewport;
+        const minX = vp ? vp.x - margin : 0;
+        const minY = vp ? vp.y - margin : 0;
+        const maxX = vp ? vp.x + vp.width + margin : this.canvas.width;
+        const maxY = vp ? vp.y + vp.height + margin : this.canvas.height;
+
+        // Reset particle if too old or outside active area
         if (particle.age > this.config.particleLifetime || 
-            particle.x < 0 || particle.x > this.canvas.width ||
-            particle.y < 0 || particle.y > this.canvas.height) {
+            particle.x < minX || particle.x > maxX ||
+            particle.y < minY || particle.y > maxY) {
             Object.assign(particle, this.createParticle());
             return;
         }
@@ -227,18 +244,37 @@ class WindParticles {
     
     // Draw all particles
     draw() {
-        // Fade effect - only affects existing content, doesn't cover background
+        const vp = this.viewport;
+
         this.ctx.save();
+
+        // Clip to viewport so fade and drawing don't touch offscreen regions
+        if (vp) {
+            this.ctx.beginPath();
+            this.ctx.rect(vp.x, vp.y, vp.width, vp.height);
+            this.ctx.clip();
+        }
+
+        // Fade effect - erodes trails without darkening background
         this.ctx.globalCompositeOperation = 'destination-out';
-        this.ctx.fillStyle = `rgba(0, 0, 0, ${1 - this.config.fadeOpacity})`;
-        this.ctx.fillRect(0, 0, this.canvas.width, this.canvas.height);
-        this.ctx.restore();
+        this.ctx.globalAlpha = 1 - this.config.fadeOpacity;
+        this.ctx.fillStyle = '#ffffff';
+        if (vp) {
+            this.ctx.fillRect(vp.x, vp.y, vp.width, vp.height);
+        } else {
+            this.ctx.fillRect(0, 0, this.canvas.width, this.canvas.height);
+        }
+        this.ctx.globalAlpha = 1;
+        this.ctx.globalCompositeOperation = 'source-over';
 
         this.ctx.lineCap = 'round';
         this.ctx.lineJoin = 'round';
         
         // Draw particles as short rounded trail segments
-        for (const particle of this.particles) {
+        const particles = this.particles;
+        const len = particles.length;
+        for (let i = 0; i < len; i++) {
+            const particle = particles[i];
             // Calculate opacity based on age
             const ageRatio = Math.min(particle.age / 10, 1);
             
@@ -263,6 +299,8 @@ class WindParticles {
                 this.ctx.stroke();
             }
         }
+
+        this.ctx.restore();
     }
     
     // Convert hex color to RGB
@@ -334,6 +372,28 @@ class WindParticles {
         this.initParticles();
     }
     
+    // Update the visible viewport so particles are only rendered/spawned in the visible area
+    // x, y, width, height are in canvas pixel coordinates
+    setViewport(x, y, width, height) {
+        if (width <= 0 || height <= 0) return;
+
+        const prev = this.viewport;
+        // Only respawn particles if viewport changed significantly (> 10px)
+        if (!prev || Math.abs(prev.x - x) > 10 || Math.abs(prev.y - y) > 10 ||
+                Math.abs(prev.width - width) > 10 || Math.abs(prev.height - height) > 10) {
+            this.viewport = { x, y, width, height };
+            // Respawn out-of-viewport particles immediately so coverage is dense
+            const margin = 50;
+            for (let i = 0; i < this.particles.length; i++) {
+                const p = this.particles[i];
+                if (p.x < x - margin || p.x > x + width + margin ||
+                    p.y < y - margin || p.y > y + height + margin) {
+                    Object.assign(p, this.createParticle());
+                }
+            }
+        }
+    }
+
     // Update altitude level to display
     setAltitude(altitudeIndex) {
         const nextAltitude = Number(altitudeIndex);
