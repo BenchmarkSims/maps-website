@@ -1479,6 +1479,10 @@ function scaleView(zoom, event) { // Add event parameter to capture mouse positi
   var dim_str = dimension.toString() + "px";
   var scale = properties.zoom / last_zoom;
 
+  if (windParticles) {
+    windParticles.setZoom(properties.zoom);
+  }
+
   var scroll_element = document.scrollingElement;
   var scroll_top = scroll_element.scrollTop;
   var scroll_left = scroll_element.scrollLeft;

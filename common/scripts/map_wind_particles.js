@@ -11,24 +11,30 @@ class WindParticles {
         
         // Particle configuration
         this.config = {
-            particleCount: 5000,       // Lower count to reduce CPU load
+            particleCount: 5000,       // Active particle count after zoom adjustment
+            baseParticleCount: 5000,   // Reference count used at zoom 1
+            minParticleCount: 1200,    // Prevent the layer from becoming too sparse
+            maxParticleCount: 9000,    // Cap CPU usage when zoomed out
             particleLifetime: 90,      // Frames before regeneration
             particleSpeed: 0.05,       // Speed multiplier
             particleWidth: 2,        // Thicker trail width
             particleLength: 1.15,      // Slightly longer trail multiplier
-            particleOpacity: 0.8,      // Base opacity
+            particleOpacity: 1,      // Base opacity
             particleColor: '#ffffff',   // Particle color (overridden by speed)
             fadeOpacity: 0.95,          // Trail fade rate
             minWindSpeed: 0.1,          // Minimum wind speed to show particles (very low)
             altitudeIndex: 0,           // Which altitude layer to use (0 = surface)
-            velocitySmoothing: 0.92     // Higher values produce smoother directional transitions
+            velocitySmoothing: 0.92,    // Higher values produce smoother directional transitions
+            zoom: 1                     // Current map zoom used to tune density
         };
         
         this.particles = [];
         this.isRunning = false;
-        this.windField = null;
-        this.colorCache = {};  // Cache for color strings
-        this.viewport = null;  // {x, y, width, height} in canvas pixels, null = full canvas
+        this.windField = null;      // Precomputed Float32Array [u0,v0, u1,v1, ...]
+        this.windFieldDimX = 0;
+        this.windFieldDimY = 0;
+        this.colorCache = {};       // Cache for color strings
+        this.viewport = null;       // {x, y, width, height} in canvas pixels, null = full canvas
         
         this.initParticles();
     }
@@ -38,6 +44,53 @@ class WindParticles {
         this.particles = [];
         for (let i = 0; i < this.config.particleCount; i++) {
             this.particles.push(this.createParticle());
+        }
+    }
+
+    syncParticleCount() {
+        const targetCount = Math.max(0, Math.round(this.config.particleCount));
+        const currentCount = this.particles.length;
+
+        if (targetCount === currentCount) {
+            return;
+        }
+
+        if (targetCount > currentCount) {
+            for (let i = currentCount; i < targetCount; i++) {
+                this.particles.push(this.createParticle());
+            }
+            return;
+        }
+
+        this.particles.length = targetCount;
+    }
+
+    getParticleCountForZoom(zoomLevel) {
+        const safeZoom = Math.max(Number(zoomLevel) || 1, 0.01);
+        const zoomRatio = 1 / (safeZoom * safeZoom);
+        const baseCount = this.config.baseParticleCount;
+        const minCount = this.config.minParticleCount;
+        const maxCount = this.config.maxParticleCount;
+
+        return Math.max(minCount, Math.min(maxCount, Math.round(baseCount * zoomRatio)));
+    }
+
+    setZoom(zoomLevel, forceRebuild) {
+        const safeZoom = Math.max(Number(zoomLevel) || 1, 0.01);
+        const targetCount = this.getParticleCountForZoom(safeZoom);
+        const zoomChanged = Math.abs((this.config.zoom || 1) - safeZoom) > 0.001;
+        const countChanged = targetCount !== this.config.particleCount;
+
+        this.config.zoom = safeZoom;
+        this.config.particleCount = targetCount;
+
+        if (forceRebuild) {
+            this.initParticles();
+            return;
+        }
+
+        if (zoomChanged || countChanged) {
+            this.syncParticleCount();
         }
     }
     
@@ -66,116 +119,82 @@ class WindParticles {
         };
     }
     
-    // Get wind vector at a specific position
-    getWindAt(x, y) {
-        if (!this.weatherData || !this.weatherData.wind || 
-            this.weatherData.wind.length === 0 ||
-            !this.weatherData.dimension ||
-            !this.weatherData.dimension.x ||
-            !this.weatherData.dimension.y ||
-            !this.canvas.width ||
-            !this.canvas.height) {
-            return { u: 0, v: 0, speed: 0 };
-        }
-        
+    // Precompute u/v for every grid cell into a flat Float32Array.
+    // Called once when weather data changes — O(dimX*dimY) instead of per-particle per-frame.
+    _buildWindField() {
         const fmap = this.weatherData;
-        const normalizedX = Math.max(0, Math.min(this.canvas.width - 1, x));
-        const normalizedY = Math.max(0, Math.min(this.canvas.height - 1, y));
-        const gridX = Math.min(
-            fmap.dimension.x - 1,
-            Math.floor(normalizedX / this.canvas.width * fmap.dimension.x)
-        );
-        const gridY = Math.min(
-            fmap.dimension.y - 1,
-            Math.floor(normalizedY / this.canvas.height * fmap.dimension.y)
-        );
-        
-        // Boundary check
-        if (gridX < 0 || gridX >= fmap.dimension.x || 
-            gridY < 0 || gridY >= fmap.dimension.y) {
-            return { u: 0, v: 0, speed: 0 };
+        if (!fmap || !fmap.wind || !fmap.dimension) {
+            this.windField = null;
+            return;
         }
-        
-        // Get wind data
-        const row = fmap.wind[gridY];
-        const column = row && row[gridX];
-        const windData = column && column[this.config.altitudeIndex];
-        if (!windData) {
-            return { u: 0, v: 0, speed: 0 };
+        const dimX = fmap.dimension.x;
+        const dimY = fmap.dimension.y;
+        const alt  = this.config.altitudeIndex;
+        const buf  = new Float32Array(dimX * dimY * 2); // [u, v, u, v, ...]
+        const PI_DIV_180 = Math.PI / 180;
+
+        for (let gy = 0; gy < dimY; gy++) {
+            const row = fmap.wind[gy];
+            for (let gx = 0; gx < dimX; gx++) {
+                const idx = (gy * dimX + gx) * 2;
+                const col  = row && row[gx];
+                const cell = col && col[alt];
+                if (cell) {
+                    const dir = cell.direction * PI_DIV_180;
+                    const spd = cell.speed;
+                    buf[idx]     = -Math.sin(dir) * spd;  // u
+                    buf[idx + 1] =  Math.cos(dir) * spd;  // v
+                }
+                // else remains 0,0
+            }
         }
-        
-        // Convert direction and speed to u,v components
-        // Direction is "from" in degrees, speed in knots
-        const direction = windData.direction * Math.PI / 180;
-        const speed = windData.speed;
-        
-        // Convert to screen space velocity (direction is where wind is coming FROM)
-        const u = -Math.sin(direction) * speed;
-        const v = Math.cos(direction) * speed;
-        
-        return { u, v, speed };
+        this.windField    = buf;
+        this.windFieldDimX = dimX;
+        this.windFieldDimY = dimY;
     }
-    
-    // Interpolate wind between grid points (bilinear interpolation)
+
+    // Get wind vector at a specific position (kept for compatibility)
+    getWindAt(x, y) {
+        const res = { u: 0, v: 0, speed: 0 };
+        if (!this.windField) return res;
+        const dimX = this.windFieldDimX;
+        const dimY = this.windFieldDimY;
+        const gx = Math.min(dimX - 1, Math.max(0, Math.floor(x / this.canvas.width  * dimX)));
+        const gy = Math.min(dimY - 1, Math.max(0, Math.floor(y / this.canvas.height * dimY)));
+        const idx = (gy * dimX + gx) * 2;
+        res.u = this.windField[idx];
+        res.v = this.windField[idx + 1];
+        res.speed = Math.sqrt(res.u * res.u + res.v * res.v);
+        return res;
+    }
+
+    // Bilinear interpolation directly on the precomputed Float32Array — no object allocations
     getInterpolatedWind(x, y) {
-        if (!this.weatherData || !this.weatherData.wind || 
-            this.weatherData.wind.length === 0 ||
-            !this.weatherData.dimension ||
-            !this.weatherData.dimension.x ||
-            !this.weatherData.dimension.y ||
-            !this.canvas.width ||
-            !this.canvas.height) {
-            return { u: 0, v: 0, speed: 0 };
-        }
-        
-        const fmap = this.weatherData;
-        const clampedX = Math.max(0, Math.min(this.canvas.width - 1, x));
-        const clampedY = Math.max(0, Math.min(this.canvas.height - 1, y));
-        const fx = (clampedX / this.canvas.width) * (fmap.dimension.x - 1);
-        const fy = (clampedY / this.canvas.height) * (fmap.dimension.y - 1);
-        
+        if (!this.windField) return { u: 0, v: 0, speed: 0 };
+
+        const dimX = this.windFieldDimX;
+        const dimY = this.windFieldDimY;
+        const buf  = this.windField;
+
+        const fx = (x / this.canvas.width)  * (dimX - 1);
+        const fy = (y / this.canvas.height) * (dimY - 1);
         const x0 = Math.floor(fx);
         const y0 = Math.floor(fy);
-        const x1 = Math.min(x0 + 1, fmap.dimension.x - 1);
-        const y1 = Math.min(y0 + 1, fmap.dimension.y - 1);
-        
-        // Boundary check
-        if (x0 < 0 || y0 < 0 || x0 >= fmap.dimension.x || y0 >= fmap.dimension.y) {
-            return { u: 0, v: 0, speed: 0 };
-        }
-        
-        // Get fractional parts
+        const x1 = x0 + 1 < dimX ? x0 + 1 : x0;
+        const y1 = y0 + 1 < dimY ? y0 + 1 : y0;
         const sx = fx - x0;
         const sy = fy - y0;
-        
-        // Direct grid access - much faster than calling getWindAt 4 times
-        const alt = this.config.altitudeIndex;
-        const getWindDirect = (gx, gy) => {
-            const row = fmap.wind[gy];
-            const column = row && row[gx];
-            const windData = column && column[alt];
-            if (!windData) return { u: 0, v: 0 };
-            const direction = windData.direction * Math.PI / 180;
-            const speed = windData.speed;
-            const u = -Math.sin(direction) * speed;
-            const v = Math.cos(direction) * speed;
-            return { u, v };
-        };
-        
-        // Get wind at corners
-        const w00 = getWindDirect(x0, y0);
-        const w10 = getWindDirect(x1, y0);
-        const w01 = getWindDirect(x0, y1);
-        const w11 = getWindDirect(x1, y1);
-        
-        // Bilinear interpolation
-        const u = (1 - sx) * (1 - sy) * w00.u + sx * (1 - sy) * w10.u +
-                  (1 - sx) * sy * w01.u + sx * sy * w11.u;
-        const v = (1 - sx) * (1 - sy) * w00.v + sx * (1 - sy) * w10.v +
-                  (1 - sx) * sy * w01.v + sx * sy * w11.v;
-        const speed = Math.sqrt(u * u + v * v);
-        
-        return { u, v, speed };
+        const _sx = 1 - sx;
+        const _sy = 1 - sy;
+
+        const i00 = (y0 * dimX + x0) * 2;
+        const i10 = (y0 * dimX + x1) * 2;
+        const i01 = (y1 * dimX + x0) * 2;
+        const i11 = (y1 * dimX + x1) * 2;
+
+        const u = _sx * _sy * buf[i00] + sx * _sy * buf[i10] + _sx * sy * buf[i01] + sx * sy * buf[i11];
+        const v = _sx * _sy * buf[i00+1] + sx * _sy * buf[i10+1] + _sx * sy * buf[i01+1] + sx * sy * buf[i11+1];
+        return { u, v, speed: Math.sqrt(u * u + v * v) };
     }
     
     // Convert wind speed to a continuous color ramp (with caching)
@@ -200,46 +219,93 @@ class WindParticles {
     
     // Update particle position
     updateParticle(particle) {
-        particle.age++;
-        
-        // Define active bounds (viewport + margin, or full canvas)
-        const margin = 50;
-        const vp = this.viewport;
-        const minX = vp ? vp.x - margin : 0;
-        const minY = vp ? vp.y - margin : 0;
-        const maxX = vp ? vp.x + vp.width + margin : this.canvas.width;
-        const maxY = vp ? vp.y + vp.height + margin : this.canvas.height;
+        // Kept for API compatibility — actual update is done inline in animate()
+    }
+    
+    // Advance one animation step
+    animate() {
+        if (!this.isRunning) return;
 
-        // Reset particle if too old or outside active area
-        if (particle.age > this.config.particleLifetime || 
-            particle.x < minX || particle.x > maxX ||
-            particle.y < minY || particle.y > maxY) {
-            Object.assign(particle, this.createParticle());
-            return;
+        // Hoist all per-frame constants outside the particle loop
+        const vp         = this.viewport;
+        const margin     = 50;
+        const minX       = vp ? vp.x - margin : 0;
+        const minY       = vp ? vp.y - margin : 0;
+        const maxX       = vp ? vp.x + vp.width  + margin : this.canvas.width;
+        const maxY       = vp ? vp.y + vp.height + margin : this.canvas.height;
+        const lifetime   = this.config.particleLifetime;
+        const smoothing  = this.config.velocitySmoothing;
+        const iSmoothing = 1 - smoothing;
+        const scaleFactor = this.weatherData
+            ? this.canvas.width / Math.max(this.windFieldDimX * 12, 1)
+            : 0;
+        const speedMul   = this.config.particleSpeed * scaleFactor;
+        const particles  = this.particles;
+        const len        = particles.length;
+        const buf        = this.windField;
+        const dimX       = this.windFieldDimX;
+        const dimY       = this.windFieldDimY;
+        const cw         = this.canvas.width;
+        const ch         = this.canvas.height;
+        const dimX1      = dimX - 1;
+        const dimY1      = dimY - 1;
+
+        for (let i = 0; i < len; i++) {
+            const p = particles[i];
+            p.age++;
+
+            if (p.age > lifetime || p.x < minX || p.x > maxX || p.y < minY || p.y > maxY) {
+                // Inline createParticle to avoid function call + object allocation
+                const spawnX = vp ? vp.x - margin : 0;
+                const spawnY = vp ? vp.y - margin : 0;
+                const spawnW = vp ? vp.width  + margin * 2 : cw;
+                const spawnH = vp ? vp.height + margin * 2 : ch;
+                p.x  = spawnX + Math.random() * spawnW;
+                p.y  = spawnY + Math.random() * spawnH;
+                p.xt = p.x;
+                p.yt = p.y;
+                p.vx = 0;
+                p.vy = 0;
+                p.age = Math.random() * lifetime;
+                p.windSpeed = 0;
+                continue;
+            }
+
+            // Bilinear wind interpolation directly on Float32Array — zero allocations
+            let u = 0, v = 0, speed = 0;
+            if (buf) {
+                const fx = (p.x / cw) * dimX1;
+                const fy = (p.y / ch) * dimY1;
+                const x0 = fx | 0;
+                const y0 = fy | 0;
+                const x1 = x0 < dimX1 ? x0 + 1 : x0;
+                const y1 = y0 < dimY1 ? y0 + 1 : y0;
+                const sx = fx - x0;
+                const sy = fy - y0;
+                const _sx = 1 - sx;
+                const _sy = 1 - sy;
+                const i00 = (y0 * dimX + x0) * 2;
+                const i10 = (y0 * dimX + x1) * 2;
+                const i01 = (y1 * dimX + x0) * 2;
+                const i11 = (y1 * dimX + x1) * 2;
+                u = _sx * _sy * buf[i00]   + sx * _sy * buf[i10]   + _sx * sy * buf[i01]   + sx * sy * buf[i11];
+                v = _sx * _sy * buf[i00+1] + sx * _sy * buf[i10+1] + _sx * sy * buf[i01+1] + sx * sy * buf[i11+1];
+                speed = Math.sqrt(u * u + v * v);
+            }
+
+            p.windSpeed = speed;
+            p.xt = p.x;
+            p.yt = p.y;
+
+            const tvx = u * speedMul;
+            const tvy = v * speedMul;
+            p.vx = p.vx * smoothing + tvx * iSmoothing;
+            p.vy = p.vy * smoothing + tvy * iSmoothing;
+            p.x += p.vx;
+            p.y += p.vy;
         }
-        
-        // Get wind at particle position
-        const wind = this.getInterpolatedWind(particle.x, particle.y);
-        
-        // Store wind speed for coloring (always, even if very low)
-        particle.windSpeed = wind.speed;
-        
-        // Update tail position
-        particle.xt = particle.x;
-        particle.yt = particle.y;
-        
-        // Move particle according to wind with highly smooth velocity transitions
-        const scaleFactor = this.canvas.width / Math.max(this.weatherData.dimension.x * 12, 1);
-        const targetVx = wind.u * this.config.particleSpeed * scaleFactor;
-        const targetVy = wind.v * this.config.particleSpeed * scaleFactor;
-        const smoothing = this.config.velocitySmoothing;
 
-        // Exponential smoothing for very smooth acceleration
-        particle.vx = particle.vx * smoothing + targetVx * (1 - smoothing);
-        particle.vy = particle.vy * smoothing + targetVy * (1 - smoothing);
-
-        particle.x += particle.vx;
-        particle.y += particle.vy;
+        this.draw();
     }
     
     // Draw all particles
@@ -303,6 +369,9 @@ class WindParticles {
         this.ctx.restore();
     }
     
+    // Advance one animation step — the real implementation is the new animate() above
+    // This old stub is replaced; keeping hexToRgb below for compatibility if needed.
+    
     // Convert hex color to RGB
     hexToRgb(hex) {
         const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
@@ -311,19 +380,6 @@ class WindParticles {
             g: parseInt(result[2], 16),
             b: parseInt(result[3], 16)
         } : { r: 255, g: 255, b: 255 };
-    }
-    
-    // Advance one animation step
-    animate() {
-        if (!this.isRunning) return;
-        
-        // Update all particles
-        for (const particle of this.particles) {
-            this.updateParticle(particle);
-        }
-        
-        // Draw
-        this.draw();
     }
     
     // Start animation
@@ -353,15 +409,29 @@ class WindParticles {
         // Clear color cache on config changes
         this.colorCache = {};
         
+        // Rebuild wind field if altitude changed
+        if (newConfig.altitudeIndex !== undefined) {
+            this._buildWindField();
+        }
+
+        if (newConfig.baseParticleCount !== undefined ||
+            newConfig.minParticleCount !== undefined ||
+            newConfig.maxParticleCount !== undefined ||
+            newConfig.zoom !== undefined) {
+            this.setZoom(this.config.zoom, false);
+            return;
+        }
+        
         // Reinitialize particles if count changed
         if (newConfig.particleCount && newConfig.particleCount !== this.particles.length) {
-            this.initParticles();
+            this.syncParticleCount();
         }
     }
     
     // Update weather data
     setWeatherData(weatherData) {
         this.weatherData = weatherData;
+        this._buildWindField();
         this.initParticles();
     }
     
@@ -369,7 +439,7 @@ class WindParticles {
     resize(width, height) {
         this.canvas.width = width;
         this.canvas.height = height;
-        this.initParticles();
+        this.setZoom(this.config.zoom, true);
     }
     
     // Update the visible viewport so particles are only rendered/spawned in the visible area
@@ -398,8 +468,9 @@ class WindParticles {
     setAltitude(altitudeIndex) {
         const nextAltitude = Number(altitudeIndex);
         this.config.altitudeIndex = Math.max(0, Math.min(9, Number.isNaN(nextAltitude) ? 0 : nextAltitude));
-        this.colorCache = {};  // Clear cache on altitude change
-        this.initParticles(); // Reset particles for new altitude
+        this.colorCache = {};
+        this._buildWindField();  // Rebuild field for new altitude layer
+        this.initParticles();
     }
 }
 
