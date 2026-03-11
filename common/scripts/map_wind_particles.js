@@ -11,20 +11,20 @@ class WindParticles {
         
         // Particle configuration
         this.config = {
-            particleCount: 9000,       // Reduced count for smoother rendering
+            particleCount: 5000,       // Lower count to reduce CPU load
             particleLifetime: 90,      // Frames before regeneration
-            particleSpeed: 0.18,       // Speed multiplier
-            particleWidth: 1.1,        // Line width for visible particles
-            particleLength: 1.0,       // Trail multiplier
+            particleSpeed: 0.05,       // Speed multiplier
+            particleWidth: 2,        // Thicker trail width
+            particleLength: 1.15,      // Slightly longer trail multiplier
             particleOpacity: 0.8,      // Base opacity
             particleColor: '#ffffff',   // Particle color (overridden by speed)
             fadeOpacity: 0.95,          // Trail fade rate
             minWindSpeed: 1,            // Minimum wind speed to show particles
-            altitudeIndex: 0            // Which altitude layer to use (0 = surface)
+            altitudeIndex: 0,           // Which altitude layer to use (0 = surface)
+            velocitySmoothing: 0.84     // Higher values produce smoother directional transitions
         };
         
         this.particles = [];
-        this.animationId = null;
         this.isRunning = false;
         this.windField = null;
         
@@ -50,6 +50,8 @@ class WindParticles {
             age: Math.random() * this.config.particleLifetime,
             xt: x,
             yt: y,
+            vx: 0,
+            vy: 0,
             windSpeed: 0  // wind speed for coloring
         };
     }
@@ -192,11 +194,16 @@ class WindParticles {
         particle.yt = particle.y;
         
         // Move particle according to wind
-        // Use a more realistic scale factor: canvas pixels / map cells / scale factor
-        // This creates smooth, visible movement without being too fast
         const scaleFactor = this.canvas.width / Math.max(this.weatherData.dimension.x * 12, 1);
-        particle.x += wind.u * this.config.particleSpeed * scaleFactor;
-        particle.y += wind.v * this.config.particleSpeed * scaleFactor;
+        const targetVx = wind.u * this.config.particleSpeed * scaleFactor;
+        const targetVy = wind.v * this.config.particleSpeed * scaleFactor;
+        const smoothing = this.config.velocitySmoothing;
+
+        particle.vx = particle.vx * smoothing + targetVx * (1 - smoothing);
+        particle.vy = particle.vy * smoothing + targetVy * (1 - smoothing);
+
+        particle.x += particle.vx;
+        particle.y += particle.vy;
     }
     
     // Draw all particles
@@ -206,8 +213,11 @@ class WindParticles {
         this.ctx.fillStyle = `rgba(255, 255, 255, ${this.config.fadeOpacity})`;
         this.ctx.fillRect(0, 0, this.canvas.width, this.canvas.height);
         this.ctx.restore();
+
+        this.ctx.lineCap = 'round';
+        this.ctx.lineJoin = 'round';
         
-        // Draw particles as small dots (Windy-style)
+        // Draw particles as short rounded trail segments
         for (const particle of this.particles) {
             // Calculate opacity based on age
             const ageRatio = Math.min(particle.age / 10, 1);
@@ -220,13 +230,16 @@ class WindParticles {
                 this.ctx.strokeStyle = this.getColorFromWindSpeed(particle.windSpeed, alpha);
                 this.ctx.lineWidth = this.config.particleWidth;
                 
-                // Draw particle as a short trail segment for visibility on large maps
+                const dx = particle.x - particle.xt;
+                const dy = particle.y - particle.yt;
+                const controlX = particle.xt + dx * 0.5 + particle.vx * 0.35;
+                const controlY = particle.yt + dy * 0.5 + particle.vy * 0.35;
+                const endX = particle.xt + dx * this.config.particleLength;
+                const endY = particle.yt + dy * this.config.particleLength;
+
                 this.ctx.beginPath();
                 this.ctx.moveTo(particle.xt, particle.yt);
-                this.ctx.lineTo(
-                    particle.xt + (particle.x - particle.xt) * this.config.particleLength,
-                    particle.yt + (particle.y - particle.yt) * this.config.particleLength
-                );
+                this.ctx.quadraticCurveTo(controlX, controlY, endX, endY);
                 this.ctx.stroke();
             }
         }
@@ -242,7 +255,7 @@ class WindParticles {
         } : { r: 255, g: 255, b: 255 };
     }
     
-    // Animation loop
+    // Advance one animation step
     animate() {
         if (!this.isRunning) return;
         
@@ -253,25 +266,17 @@ class WindParticles {
         
         // Draw
         this.draw();
-        
-        // Continue animation
-        this.animationId = requestAnimationFrame(() => this.animate());
     }
     
     // Start animation
     start() {
         if (this.isRunning) return;
         this.isRunning = true;
-        this.animate();
     }
     
     // Stop animation
     stop() {
         this.isRunning = false;
-        if (this.animationId) {
-            cancelAnimationFrame(this.animationId);
-            this.animationId = null;
-        }
     }
     
     // Clear canvas

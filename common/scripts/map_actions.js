@@ -33,6 +33,8 @@ var layer = {
 // Wind Particles System
 var windParticles = null;
 var animationLoopId = null;
+var lastAnimationFrameTime = 0;
+var animationFrameInterval = 1000 / 60;
 
 // Global Variables
 var modal;
@@ -1411,11 +1413,17 @@ function refreshCanvas(){
 }
 
 // Animation loop for continuous rendering of wind particles
-function animationLoop() {
+function animationLoop(timestamp) {
   // Only continue if wind particles are active
   if (layer.wind_particles.used && windParticles && windParticles.isRunning) {
-    // Redraw the entire canvas each frame
-    refreshCanvas();
+    if (!timestamp) timestamp = 0;
+
+    // Throttle rendering to reduce CPU usage on large maps
+    if (!lastAnimationFrameTime || (timestamp - lastAnimationFrameTime) >= animationFrameInterval) {
+      lastAnimationFrameTime = timestamp;
+      windParticles.animate();
+      refreshCanvas();
+    }
     
     // Continue the animation loop
     animationLoopId = requestAnimationFrame(animationLoop);
@@ -1425,6 +1433,7 @@ function animationLoop() {
       cancelAnimationFrame(animationLoopId);
       animationLoopId = null;
     }
+    lastAnimationFrameTime = 0;
   }
 }
 
@@ -1441,6 +1450,7 @@ function updateAnimationLoop() {
       cancelAnimationFrame(animationLoopId);
       animationLoopId = null;
     }
+    lastAnimationFrameTime = 0;
   }
 }
 
