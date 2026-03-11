@@ -19,14 +19,15 @@ class WindParticles {
             particleOpacity: 0.8,      // Base opacity
             particleColor: '#ffffff',   // Particle color (overridden by speed)
             fadeOpacity: 0.95,          // Trail fade rate
-            minWindSpeed: 1,            // Minimum wind speed to show particles
+            minWindSpeed: 0.1,          // Minimum wind speed to show particles (very low)
             altitudeIndex: 0,           // Which altitude layer to use (0 = surface)
-            velocitySmoothing: 0.84     // Higher values produce smoother directional transitions
+            velocitySmoothing: 0.92     // Higher values produce smoother directional transitions
         };
         
         this.particles = [];
         this.isRunning = false;
         this.windField = null;
+        this.colorCache = {};  // Cache for color strings
         
         this.initParticles();
     }
@@ -138,15 +139,25 @@ class WindParticles {
         const sx = fx - x0;
         const sy = fy - y0;
         
+        // Direct grid access - much faster than calling getWindAt 4 times
+        const alt = this.config.altitudeIndex;
+        const getWindDirect = (gx, gy) => {
+            const row = fmap.wind[gy];
+            const column = row && row[gx];
+            const windData = column && column[alt];
+            if (!windData) return { u: 0, v: 0 };
+            const direction = windData.direction * Math.PI / 180;
+            const speed = windData.speed;
+            const u = -Math.sin(direction) * speed;
+            const v = Math.cos(direction) * speed;
+            return { u, v };
+        };
+        
         // Get wind at corners
-        const w00 = this.getWindAt(x0 / fmap.dimension.x * this.canvas.width, 
-                                    y0 / fmap.dimension.y * this.canvas.height);
-        const w10 = this.getWindAt(x1 / fmap.dimension.x * this.canvas.width, 
-                                    y0 / fmap.dimension.y * this.canvas.height);
-        const w01 = this.getWindAt(x0 / fmap.dimension.x * this.canvas.width, 
-                                    y1 / fmap.dimension.y * this.canvas.height);
-        const w11 = this.getWindAt(x1 / fmap.dimension.x * this.canvas.width, 
-                                    y1 / fmap.dimension.y * this.canvas.height);
+        const w00 = getWindDirect(x0, y0);
+        const w10 = getWindDirect(x1, y0);
+        const w01 = getWindDirect(x0, y1);
+        const w11 = getWindDirect(x1, y1);
         
         // Bilinear interpolation
         const u = (1 - sx) * (1 - sy) * w00.u + sx * (1 - sy) * w10.u +
@@ -158,13 +169,24 @@ class WindParticles {
         return { u, v, speed };
     }
     
-    // Convert wind speed to a continuous color ramp
+    // Convert wind speed to a continuous color ramp (with caching)
     getColorFromWindSpeed(speed, alpha) {
+        // Round speed for better cache hits
+        const roundedSpeed = Math.round(speed);
+        const cacheKey = `${roundedSpeed}_${alpha.toFixed(2)}`;
+        
+        if (this.colorCache[cacheKey]) {
+            return this.colorCache[cacheKey];
+        }
+        
         const normalizedSpeed = Math.max(0, Math.min(1, speed / 60));
         const hue = 220 - (220 * normalizedSpeed);
         const saturation = 85;
         const lightness = 58;
-        return `hsla(${hue}, ${saturation}%, ${lightness}%, ${alpha})`;
+        const color = `hsla(${hue}, ${saturation}%, ${lightness}%, ${alpha})`;
+        
+        this.colorCache[cacheKey] = color;
+        return color;
     }
     
     // Update particle position
@@ -181,24 +203,21 @@ class WindParticles {
         
         // Get wind at particle position
         const wind = this.getInterpolatedWind(particle.x, particle.y);
-        if (wind.speed < this.config.minWindSpeed) {
-            Object.assign(particle, this.createParticle());
-            return;
-        }
         
-        // Store wind speed for coloring
+        // Store wind speed for coloring (always, even if very low)
         particle.windSpeed = wind.speed;
         
         // Update tail position
         particle.xt = particle.x;
         particle.yt = particle.y;
         
-        // Move particle according to wind
+        // Move particle according to wind with highly smooth velocity transitions
         const scaleFactor = this.canvas.width / Math.max(this.weatherData.dimension.x * 12, 1);
         const targetVx = wind.u * this.config.particleSpeed * scaleFactor;
         const targetVy = wind.v * this.config.particleSpeed * scaleFactor;
         const smoothing = this.config.velocitySmoothing;
 
+        // Exponential smoothing for very smooth acceleration
         particle.vx = particle.vx * smoothing + targetVx * (1 - smoothing);
         particle.vy = particle.vy * smoothing + targetVy * (1 - smoothing);
 
@@ -208,9 +227,10 @@ class WindParticles {
     
     // Draw all particles
     draw() {
+        // Fade effect - only affects existing content, doesn't cover background
         this.ctx.save();
-        this.ctx.globalCompositeOperation = 'destination-in';
-        this.ctx.fillStyle = `rgba(255, 255, 255, ${this.config.fadeOpacity})`;
+        this.ctx.globalCompositeOperation = 'destination-out';
+        this.ctx.fillStyle = `rgba(0, 0, 0, ${1 - this.config.fadeOpacity})`;
         this.ctx.fillRect(0, 0, this.canvas.width, this.canvas.height);
         this.ctx.restore();
 
@@ -292,6 +312,9 @@ class WindParticles {
     setConfig(newConfig) {
         Object.assign(this.config, newConfig);
         
+        // Clear color cache on config changes
+        this.colorCache = {};
+        
         // Reinitialize particles if count changed
         if (newConfig.particleCount && newConfig.particleCount !== this.particles.length) {
             this.initParticles();
@@ -315,6 +338,7 @@ class WindParticles {
     setAltitude(altitudeIndex) {
         const nextAltitude = Number(altitudeIndex);
         this.config.altitudeIndex = Math.max(0, Math.min(9, Number.isNaN(nextAltitude) ? 0 : nextAltitude));
+        this.colorCache = {};  // Clear cache on altitude change
         this.initParticles(); // Reset particles for new altitude
     }
 }
