@@ -380,6 +380,7 @@ function selectSymbols(list) {
 // Update the selected Weather Chart Type
 function selectChart(list) {
   properties.settings.weather = parseInt(list.options[list.selectedIndex].value);
+  properties.settings.visibility.weather = true;
   chart_changed = true;
   saveSettings();
   refreshCanvas();
@@ -1344,8 +1345,8 @@ function refreshCanvas(){
         break;
 
       case 1:
-        // Use particle system for wind visualization
-        layer.weather.used = false; // Don't show weather layer
+        // Use particle system for wind visualization only
+        layer.weather.used = false;
         layer.wind_particles.used = true;
         if (windParticles) {
           windParticles.setWeatherData(fmap);
