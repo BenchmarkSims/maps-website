@@ -13,8 +13,9 @@ class WindParticles {
         this.config = {
             particleCount: 5000,       // Active particle count after zoom adjustment
             baseParticleCount: 5000,   // Reference count used at zoom 1
-            minParticleCount: 1200,    // Prevent the layer from becoming too sparse
+            minParticleCount: 500,     // Prevent the layer from becoming too sparse
             maxParticleCount: 9000,    // Cap CPU usage when zoomed out
+            particleCountZoomPower: 2.2, // >2 reduces particle count faster as zoom increases
             particleLifetime: 90,      // Frames before regeneration
             particleSpeed: 0.05,       // Speed multiplier
             particleWidth: 2,        // Thicker trail width
@@ -25,6 +26,7 @@ class WindParticles {
             minWindSpeed: 0.1,          // Minimum wind speed to show particles (very low)
             altitudeIndex: 0,           // Which altitude layer to use (0 = surface)
             velocitySmoothing: 0.92,    // Higher values produce smoother directional transitions
+            zoomMotionCompensation: 0.8, // Reduces per-frame jump when map is visually enlarged
             zoom: 1                     // Current map zoom used to tune density
         };
         
@@ -67,7 +69,8 @@ class WindParticles {
 
     getParticleCountForZoom(zoomLevel) {
         const safeZoom = Math.max(Number(zoomLevel) || 1, 0.01);
-        const zoomRatio = 1 / (safeZoom * safeZoom);
+        const zoomPower = Math.max(1, Number(this.config.particleCountZoomPower) || 2);
+        const zoomRatio = 1 / Math.pow(safeZoom, zoomPower);
         const baseCount = this.config.baseParticleCount;
         const minCount = this.config.minParticleCount;
         const maxCount = this.config.maxParticleCount;
@@ -239,7 +242,10 @@ class WindParticles {
         const scaleFactor = this.weatherData
             ? this.canvas.width / Math.max(this.windFieldDimX * 12, 1)
             : 0;
-        const speedMul   = this.config.particleSpeed * scaleFactor;
+        const zoomCompensation = this.config.zoom > 1
+            ? 1 / Math.pow(this.config.zoom, this.config.zoomMotionCompensation)
+            : 1;
+        const speedMul   = this.config.particleSpeed * scaleFactor * zoomCompensation;
         const particles  = this.particles;
         const len        = particles.length;
         const buf        = this.windField;
@@ -417,6 +423,8 @@ class WindParticles {
         if (newConfig.baseParticleCount !== undefined ||
             newConfig.minParticleCount !== undefined ||
             newConfig.maxParticleCount !== undefined ||
+            newConfig.particleCountZoomPower !== undefined ||
+            newConfig.zoomMotionCompensation !== undefined ||
             newConfig.zoom !== undefined) {
             this.setZoom(this.config.zoom, false);
             return;
