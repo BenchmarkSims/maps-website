@@ -11,14 +11,14 @@ class WindParticles {
         
         // Particle configuration
         this.config = {
-            particleCount: 24000,      // Number of particles for a 3840x3840 map
+            particleCount: 9000,       // Reduced count for smoother rendering
             particleLifetime: 90,      // Frames before regeneration
             particleSpeed: 0.18,       // Speed multiplier
             particleWidth: 1.1,        // Line width for visible particles
             particleLength: 1.0,       // Trail multiplier
-            particleOpacity: 0.75,     // Base opacity
+            particleOpacity: 0.8,      // Base opacity
             particleColor: '#ffffff',   // Particle color (overridden by speed)
-            fadeOpacity: 0.94,          // Trail fade rate
+            fadeOpacity: 0.95,          // Trail fade rate
             minWindSpeed: 1,            // Minimum wind speed to show particles
             altitudeIndex: 0            // Which altitude layer to use (0 = surface)
         };
@@ -156,22 +156,13 @@ class WindParticles {
         return { u, v, speed };
     }
     
-    // Convert wind speed to color (slow=blue, moderate=green, fast=red/orange)
-    getColorFromWindSpeed(speed) {
-        // Normalize speed: 0-10 knots = slow, 10-25 = moderate, 25+ = fast
-        if (speed < 10) {
-            // Blue (slow wind)
-            return '#4488FF';
-        } else if (speed < 20) {
-            // Green (moderate wind)
-            return '#44FF88';
-        } else if (speed < 35) {
-            // Yellow-Orange (strong wind)
-            return '#FFAA44';
-        } else {
-            // Red (very strong wind)
-            return '#FF4444';
-        }
+    // Convert wind speed to a continuous color ramp
+    getColorFromWindSpeed(speed, alpha) {
+        const normalizedSpeed = Math.max(0, Math.min(1, speed / 60));
+        const hue = 220 - (220 * normalizedSpeed);
+        const saturation = 85;
+        const lightness = 58;
+        return `hsla(${hue}, ${saturation}%, ${lightness}%, ${alpha})`;
     }
     
     // Update particle position
@@ -223,14 +214,10 @@ class WindParticles {
             
             if (ageRatio > 0.1) {
                 // Set color based on wind speed
-                const color = this.getColorFromWindSpeed(particle.windSpeed);
-                
                 // Set alpha based on age for smooth fade-in
                 const alpha = Math.min(this.config.particleOpacity, ageRatio * this.config.particleOpacity);
-                
-                // Convert hex color to RGB with alpha
-                const rgbColor = this.hexToRgb(color);
-                this.ctx.strokeStyle = `rgba(${rgbColor.r}, ${rgbColor.g}, ${rgbColor.b}, ${alpha})`;
+
+                this.ctx.strokeStyle = this.getColorFromWindSpeed(particle.windSpeed, alpha);
                 this.ctx.lineWidth = this.config.particleWidth;
                 
                 // Draw particle as a short trail segment for visibility on large maps
