@@ -26,8 +26,15 @@ const Mode = {
 var layer = {
   mission:  {canvas: document.createElement("canvas"), ctx: null, used: false},
   whitebrd: {canvas: document.createElement("canvas"), ctx: null, used: false},
-  weather:  {canvas: document.createElement("canvas"), ctx: null, used: false}
+  weather:  {canvas: document.createElement("canvas"), ctx: null, used: false},
+  wind_particles: {canvas: document.createElement("canvas"), ctx: null, used: false}
 }
+
+// Wind Particles System
+var windParticles = null;
+var animationLoopId = null;
+var lastAnimationFrameTime = 0;
+var animationFrameInterval = 1000 / 60;
 
 // Global Variables
 var modal;
@@ -280,6 +287,12 @@ function changedIMCS(list) {
 
 function selectAltitude(list) {
    properties.settings.altitude = list.options[list.selectedIndex].value;
+   
+   // Update wind particles altitude if active
+   if (windParticles && layer.wind_particles.used) {
+     windParticles.setAltitude(properties.settings.altitude);
+   }
+   
    chart_changed = true;
    saveSettings();
    refreshCanvas();
@@ -369,6 +382,7 @@ function selectSymbols(list) {
 // Update the selected Weather Chart Type
 function selectChart(list) {
   properties.settings.weather = parseInt(list.options[list.selectedIndex].value);
+  properties.settings.visibility.weather = true;
   chart_changed = true;
   saveSettings();
   refreshCanvas();
@@ -1312,28 +1326,60 @@ function refreshCanvas(){
     chart_changed = false;
     layer.weather.used = true;
     layer.weather.ctx.clearRect(0,0,layer.weather.canvas.width,layer.weather.canvas.height);
+    
+    // Stop wind particles when switching charts
+    if (windParticles && windParticles.isRunning) {
+      windParticles.stop();
+      layer.wind_particles.used = false;
+    }
+    
+    // Clear wind particles canvas when not in use
+    if (properties.settings.weather !== 1) {
+      if (windParticles) {
+        windParticles.clear();
+      }
+      layer.wind_particles.used = false;
+    }
+    
     switch (properties.settings.weather) {
       case 0:
         drawDopplerRadar(layer.weather.ctx);
         break;
 
       case 1:
-        drawWinds(layer.weather.ctx);
+        // Use particle system for wind visualization only
+        layer.weather.used = false;
+        layer.wind_particles.used = true;
+        if (windParticles) {
+          windParticles.setWeatherData(fmap);
+          windParticles.setAltitude(properties.settings.altitude);
+          windParticles.clear();
+          windParticles.start();
+          updateAnimationLoop(); // Start animation loop when wind particles are enabled
+        } else {
+          console.error('WindParticles not initialized!');
+        }
         break;
 
       case 2:
         drawTemperatures(layer.weather.ctx);
+        updateAnimationLoop(); // Stop animation loop for other weather modes
         break;
 
       case 3:
         drawIsoBars(layer.weather.ctx);
+        updateAnimationLoop();
         break;
 
       case 4:
         drawClouds(layer.weather.ctx);
+        updateAnimationLoop();
         break;
     }
   }
+  
+  // Call updateAnimationLoop to ensure consistent state
+  updateAnimationLoop();
 
   // Render the layers on the Main Canvas
   var img_size = 3840 * properties.zoom;
@@ -1341,6 +1387,12 @@ function refreshCanvas(){
     context.drawImage(layer.weather.canvas,0, 0,img_size,img_size);
 
     // Don't draw weather over the legend
+    clearLegend(context);
+  }
+  
+  // Render wind particles layer
+  if (layer.wind_particles.used && properties.settings.visibility.weather) {
+    context.drawImage(layer.wind_particles.canvas,0, 0,img_size,img_size);
     clearLegend(context);
   }
 
@@ -1360,10 +1412,65 @@ function refreshCanvas(){
   }
 }
 
+// Animation loop for continuous rendering of wind particles
+function animationLoop(timestamp) {
+  // Only continue if wind particles are active
+  if (layer.wind_particles.used && windParticles && windParticles.isRunning) {
+    if (!timestamp) timestamp = 0;
+
+    // Throttle rendering to reduce CPU usage on large maps
+    if (!lastAnimationFrameTime || (timestamp - lastAnimationFrameTime) >= animationFrameInterval) {
+      lastAnimationFrameTime = timestamp;
+      // Update viewport using bounding rect to get exact canvas-space coordinates,
+      // regardless of zoom or CSS scaling
+      const _cvs = layer.wind_particles.canvas;
+      const _rect = _cvs.getBoundingClientRect();
+      if (_rect.width > 0 && _rect.height > 0) {
+        const _ratioX = _cvs.width / _rect.width;
+        const _ratioY = _cvs.height / _rect.height;
+        const _visX = Math.max(0, -_rect.left) * _ratioX;
+        const _visY = Math.max(0, -_rect.top) * _ratioY;
+        const _visW = (Math.min(window.innerWidth, _rect.right) - Math.max(0, _rect.left)) * _ratioX;
+        const _visH = (Math.min(window.innerHeight, _rect.bottom) - Math.max(0, _rect.top)) * _ratioY;
+        windParticles.setViewport(_visX, _visY, _visW, _visH);
+      }
+      windParticles.animate();
+      refreshCanvas();
+    }
+    
+    // Continue the animation loop
+    animationLoopId = requestAnimationFrame(animationLoop);
+  } else {
+    // Stop animation loop if wind particles are not active
+    if (animationLoopId) {
+      cancelAnimationFrame(animationLoopId);
+      animationLoopId = null;
+    }
+    lastAnimationFrameTime = 0;
+  }
+}
+
+// Start or stop animation loop based on wind particles state
+function updateAnimationLoop() {
+  if (layer.wind_particles.used && windParticles && windParticles.isRunning) {
+    // Start animation loop if not already running
+    if (!animationLoopId) {
+      animationLoopId = requestAnimationFrame(animationLoop);
+    }
+  } else {
+    // Stop animation loop
+    if (animationLoopId) {
+      cancelAnimationFrame(animationLoopId);
+      animationLoopId = null;
+    }
+    lastAnimationFrameTime = 0;
+  }
+}
+
 function setupLayer(layer, width, height) {
   layer.canvas.width = width;
   layer.canvas.height = height;
-  layer.ctx = layer.canvas.getContext("2d");
+  layer.ctx = layer.canvas.getContext("2d", { alpha: true });
 }
 
 var last_zoom = 1;
@@ -1372,6 +1479,56 @@ function scaleView(zoom, event) { // Add event parameter to capture mouse positi
   var dim_str = dimension.toString() + "px";
   var scale = properties.zoom / last_zoom;
 
+  if (windParticles) {
+    windParticles.setZoom(properties.zoom);
+  }
+
+  var scroll_element = document.scrollingElement;
+  var scroll_top = scroll_element.scrollTop;
+  var scroll_left = scroll_element.scrollLeft;
+  var scroll_height = scroll_element.scrollHeight;
+  var scroll_width = scroll_element.scrollWidth;
+  var client_height = scroll_element.clientHeight;
+  var client_width = scroll_element.clientWidth;
+  var scroll_left_ratio = scroll_left / scroll_width;
+  var scroll_top_ratio = scroll_top / scroll_height;
+  var offset_right = scroll_width - (scroll_left + client_width);
+  var offset_bottom = scroll_height - (scroll_top + client_height);
+
+  scroll_element.scrollTop = scroll_height * scroll_top_ratio * scale;
+  scroll_element.scrollLeft = scroll_width * scroll_left_ratio * scale;
+
+  var new_offset_right = scroll_element.scrollWidth * scale - (scroll_element.scrollLeft + client_width);
+  var new_offset_bottom = scroll_element.scrollHeight * scale - (scroll_element.scrollTop + client_height);
+  var diff_right = offset_right - new_offset_right;
+  var diff_bottom = offset_bottom - new_offset_bottom;
+
+  scroll_element.scrollTop = scroll_element.scrollTop - (diff_bottom / 2) / 2;
+  scroll_element.scrollLeft = scroll_element.scrollLeft - (diff_right / 2) / 2;
+
+  var scroll_element = document.scrollingElement;
+  var scroll_top = scroll_element.scrollTop;
+  var scroll_left = scroll_element.scrollLeft;
+  var scroll_height = scroll_element.scrollHeight;
+  var scroll_width = scroll_element.scrollWidth;
+  var client_height = scroll_element.clientHeight;
+  var client_width = scroll_element.clientWidth;
+  var scroll_left_ratio = scroll_left / scroll_width;
+  var scroll_top_ratio = scroll_top / scroll_height;
+  var offset_right = scroll_width - (scroll_left + client_width);
+  var offset_bottom = scroll_height - (scroll_top + client_height);
+
+  setTimeout(function() {
+    scroll_element.scrollTop = scroll_element.scrollHeight * scroll_top_ratio;
+    scroll_element.scrollLeft = scroll_element.scrollWidth * scroll_left_ratio;
+    var new_offset_right = scroll_element.scrollWidth - (scroll_element.scrollLeft + client_width);
+    var new_offset_bottom = scroll_element.scrollHeight - (scroll_element.scrollTop + client_height);
+    var diff_right = offset_right - new_offset_right;
+    var diff_bottom = offset_bottom - new_offset_bottom;
+    scroll_element.scrollLeft = scroll_element.scrollLeft - (diff_right / 2) / 2;
+    scroll_element.scrollTop = scroll_element.scrollTop - (diff_bottom / 2) / 2;
+  }, 0);
+  
   var scroll_element = document.scrollingElement;
   var client_width = scroll_element.clientWidth;
   var client_height = scroll_element.clientHeight;
@@ -1418,6 +1575,13 @@ function resetLayers() {
   layer.whitebrd.used = false;
   layer.weather.ctx.clearRect(0,0,canvas.width,canvas.height);
   layer.weather.used = false;
+  
+  // Reset wind particles via the WindParticles system
+  if (windParticles) {
+    windParticles.clear();
+    windParticles.stop();
+  }
+  layer.wind_particles.used = false;
 }
 
 // Set the default bullseye based on the bullseye defined in the image map.
@@ -1483,7 +1647,7 @@ function loadSettings() {
   properties.settings.metric = (window.localStorage.getItem("metric") === "true");
   properties.settings.altitude = Number(window.localStorage.getItem("altitude"));
   properties.settings.weather = Number(window.localStorage.getItem("chart"));
-  properties.settings.visibility.bullseye = (window.localStorage.getItem("bullseye") === "true");
+  properties.settings.windStyle = window.localStorage.getItem("windStyle") || 'barbs';
   properties.settings.visibility.mission = (window.localStorage.getItem("mission") === "true");
   properties.settings.visibility.weather = (window.localStorage.getItem("weather") === "true");
   properties.settings.visibility.whitebrd = (window.localStorage.getItem("whitebrd") === "true");
@@ -1668,6 +1832,18 @@ window.onload = function(e) {
   setupLayer(layer.mission, canvas.width, canvas.height );
   setupLayer(layer.whitebrd, canvas.width, canvas.height );
   setupLayer(layer.weather, canvas.width, canvas.height );
+  
+  // Setup wind particles canvas (don't create context - WindParticles manages its own)
+  layer.wind_particles.canvas.width = canvas.width;
+  layer.wind_particles.canvas.height = canvas.height;
+  
+  // Initialize Wind Particles System
+  if (typeof WindParticles !== 'undefined') {
+    windParticles = new WindParticles(layer.wind_particles.canvas, fmap);
+    console.log('Wind Particles system initialized successfully');
+  } else {
+    console.error('WindParticles class not found! Check if map_wind_particles.js is loaded.');
+  }
 
   // Determine Map Properties
   map.pixels = canvas.height;
